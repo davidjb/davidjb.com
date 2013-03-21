@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DavidJB.com</title><link href="http://davidjb.com/" rel="alternate"></link><link href="http://davidjb.com/feeds/linux.atom.xml" rel="self"></link><id>http://davidjb.com/</id><updated>2012-02-16T15:16:00+10:00</updated><entry><title>Java HTTP request fails with "javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated"</title><link href="http://davidjb.com/blog/2012/02/java-http-request-fails-with-javax-net-ssl-sslpeerunverifiedexception-peer-not-authenticated/" rel="alternate"></link><updated>2012-02-16T15:16:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2012-02-16:blog/2012/02/java-http-request-fails-with-javax-net-ssl-sslpeerunverifiedexception-peer-not-authenticated/</id><summary type="html">&lt;p&gt;Searching the above-mentioned stack trace reveals lots and lots of
+results, unsurprisingly. &amp;nbsp;Most results are workarounds where you modify
+the code, but what about if an application (like Jenkins/Hudson CI, in
+my case) throws this error at you? The reason the error is occurring is
+because the SSL certificate of the target you're connecting to isn't
+considered valid by your Java instance's keystore. This may be because
+the certificate itself is invalid, or, in my case, the CA chain couldn't
+be validated (my OS is RHEL (Red Hat) 5.7, with OpenJDK 1.6). &amp;nbsp;For
+completeness, I should also mention that the issue here arose when I
+asked Jenkins CI to use&amp;nbsp;GitHub OAuth. As GitHub's SSL certificate has
+been signed by DigiCert, and this isn't included within RHEL 5.7, the
+error arises. &amp;nbsp;A solution is, assuming you trust the cert or the CA, to
+add the relevant certificates/root certificates to your Java keystore.&lt;/p&gt;
+&lt;p&gt;To do so, get your relevant certificates/root certificates, locate your
+keystore, and add them accordingly:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+wget https://www.digicert.com/CACerts/DigiCertHighAssuranceEVCA-1.crt
+wget https://www.digicert.com/testroot/DigiCertHighAssuranceEVRootCA.crt
+keytool -importcert -storepass changeit -keystore /etc/alternatives/java_sdk/jre/lib/security/cacerts -alias digicertevrootca -file DigiCertHighAssuranceEVRootCA.crt
+keytool -importcert -storepass changeit -keystore /etc/alternatives/java_sdk/jre/lib/security/cacerts -alias digicertevca1 -file DigiCertHighAssuranceEVCA-1.crt
+&lt;/pre&gt;
+&lt;p&gt;This resolved the issue for me and GitHub OAuth completed successfully.
+If you're having issues with just a single certificate, then just import
+that one certificate.&lt;/p&gt;
+&lt;p&gt;For the interested Googlers, here's what the relevant chunk of
+stacktrace looked like:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated
+at sun.security.ssl.SSLSessionImpl.getPeerCertificates&lt;span class="o"&gt;(&lt;/span&gt;SSLSessionImpl.java:371&lt;span class="o"&gt;)&lt;/span&gt;
+at org.apache.http.conn.ssl.AbstractVerifier.verify&lt;span class="o"&gt;(&lt;/span&gt;AbstractVerifier.java:128&lt;span class="o"&gt;)&lt;/span&gt;
+at org.apache.http.conn.ssl.SSLSocketFactory.connectSocket&lt;span class="o"&gt;(&lt;/span&gt;SSLSocketFactory.java:390&lt;span class="o"&gt;)&lt;/span&gt;
+at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection&lt;span class="o"&gt;(&lt;/span&gt;DefaultClientConnectionOperator.java:148&lt;span class="o"&gt;)&lt;/span&gt;
+at org.apache.http.impl.conn.AbstractPoolEntry.open&lt;span class="o"&gt;(&lt;/span&gt;AbstractPoolEntry.java:149&lt;span class="o"&gt;)&lt;/span&gt;
+at org.apache.http.impl.conn.AbstractPooledConnAdapter.open&lt;span class="o"&gt;(&lt;/span&gt;AbstractPooledConnAdapter.java:121&lt;span class="o"&gt;)&lt;/span&gt;
+at org.apache.http.impl.client.DefaultRequestDirector.tryConnect&lt;span class="o"&gt;(&lt;/span&gt;DefaultRequestDirector.java:562&lt;span class="o"&gt;)&lt;/span&gt;
+at org.apache.http.impl.client.DefaultRequestDirector.execute&lt;span class="o"&gt;(&lt;/span&gt;DefaultRequestDirector.java:415&lt;span class="o"&gt;)&lt;/span&gt;
+at org.apache.http.impl.client.AbstractHttpClient.execute&lt;span class="o"&gt;(&lt;/span&gt;AbstractHttpClient.java:820&lt;span class="o"&gt;)&lt;/span&gt;
+at org.apache.http.impl.client.AbstractHttpClient.execute&lt;span class="o"&gt;(&lt;/span&gt;AbstractHttpClient.java:754&lt;span class="o"&gt;)&lt;/span&gt;
+at org.apache.http.impl.client.AbstractHttpClient.execute&lt;span class="o"&gt;(&lt;/span&gt;AbstractHttpClient.java:732&lt;span class="o"&gt;)&lt;/span&gt;
+at org.jenkinsci.plugins.GithubSecurityRealm.doFinishLogin&lt;span class="o"&gt;(&lt;/span&gt;GithubSecurityRealm.java:278&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;This &lt;a class="reference external" href="http://my.opera.com/karmazilla/blog/how-to-grab-the-certificate-from-a-website-and-import-it-with-java-keytool"&gt;fantastic post&lt;/a&gt; set me on the right track.&lt;/p&gt;
+</summary><category term="certificate"></category><category term="java"></category><category term="key"></category><category term="linux"></category><category term="ssl"></category><category term="store"></category></entry><entry><title>Logitech G930 Headphones audio quality under Ubuntu</title><link href="http://davidjb.com/blog/2011/10/logitech-g930-headphones-audio-quality-under-ubuntu/" rel="alternate"></link><updated>2011-10-24T09:28:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2011-10-24:blog/2011/10/logitech-g930-headphones-audio-quality-under-ubuntu/</id><summary type="html">&lt;p&gt;So I recently purchased a new set of Logitech G930 headphones and am
+currently using them with the latest version of Ubuntu, 11.10.&amp;nbsp; Set up
+was a breeze - just plug, check your PulseAudio config, and play.&amp;nbsp; For
+those of you, like me originally, who were wondering whether the G930
+works on Linux, it certain does on Ubuntu.&lt;/p&gt;
+&lt;p&gt;Now, it wasn't all peaches and cream because of two things.&amp;nbsp; Firstly,
+the audio output with the default configuration was completely lacking
+any depth and 'substance' to the sound being produced.&amp;nbsp; I'm not an
+audiophile and I have slight hearing problems, but the sound was
+entirely lacking anything in the form of bass, and overall, just very
+tinny and washed out.&amp;nbsp; Praying it's not the headset itself, I went and
+obtained &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;pulseaudio-equalizer&lt;/span&gt;&lt;/tt&gt; from &lt;a class="reference external" href="https://launchpad.net/~nilarimogard/+archive/webupd8"&gt;this PPA&lt;/a&gt; (and it comes with
+its GTK counterpart, &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;pulseaudio-equalizer-gtk&lt;/span&gt;&lt;/tt&gt;).&amp;nbsp; Running the latter
+of these two commands brings you up the interface, and I selected the
+'Laptop' preset and enabled this.&amp;nbsp; I had to re-jig around a little with
+clicking the 'EQ enabled' checkbox and the 'Apply Settings' button
+whilst listening to music but this preset makes things 100% better.
+First hurdle solved.&lt;/p&gt;
+&lt;p&gt;The second issue was the constant static being introduced in my audio.
+Only when sound was being played mind you, not just when the headset was
+sitting turned on in silence, so this lead me to think it must
+(hopefully) be something I could configure and not an interference issue
+or something hardware related.&amp;nbsp; Thankfully, I was right.&amp;nbsp; Firing up
+&lt;tt class="docutils literal"&gt;pavucontrol&lt;/tt&gt;, my much-preferred application over the default Ubuntu
+sound panel, I found the static was being introduced when my headphone
+output device was set at 100% volume (the Output Device, not anything
+else). The static is gone after I dropped the device output back (I'm
+using 33%). If I need more amplification, then I can simply use the
+Equalizer virtual output device to increase the volume (and/or amplify
+the applications behind the output).&lt;/p&gt;
+&lt;p&gt;Now, the headset works fantastically.&lt;/p&gt;
+</summary><category term="g930"></category><category term="headphones"></category><category term="linux"></category><category term="logitech"></category><category term="pulseaudio"></category><category term="ubuntu"></category></entry><entry><title>SCP remote files back home using reverse SSH (in 1 command)</title><link href="http://davidjb.com/blog/2011/09/scp-files-back-home-using-reverse-ssh-in-1-command/" rel="alternate"></link><updated>2011-09-13T12:55:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2011-09-13:blog/2011/09/scp-files-back-home-using-reverse-ssh-in-1-command/</id><summary type="html">&lt;p&gt;My recent work has involved copying files from a remote host, only
+accessible via a hop, back to my local computer. This has been simple in
+the past as the remote host has been able to connect to the local
+computer and SCP files directly, on account of the firewall allowing
+this. Recently, the firewall against the local computer has been
+reconfigured for security and direct connection is no longer possible. I
+could pass my files through a 3rd-party that both the remote and local
+machines can get to, but let's say I don't have one.&lt;/p&gt;
+&lt;p&gt;What you can do is use SSH to tunnel your local SSH port onto the remote
+machine, with something like:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+ssh -R 9999:localhost:22 hop.example.com
+&lt;/pre&gt;
+&lt;p&gt;where &lt;tt class="docutils literal"&gt;22&lt;/tt&gt; is your local SSH port, and &lt;tt class="docutils literal"&gt;9999&lt;/tt&gt; is where you can SCP
+files onto your local machine to.&lt;/p&gt;
+&lt;p&gt;This works great, but my files are beyond the hop on the remote machine.
+So, you can chain SSH commands together like so:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+ssh -A -R 9999:localhost:22 hop.example.com &lt;span class="s1"&gt;'ssh -A -R 9999:localhost:9999 remote.example.com scp -P 9999 /path/to/file.tgz david&amp;#64;localhost:/tmp/'&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;which maps your SSH port onto the hop and then maps that over to the
+remote host. Using the &lt;tt class="docutils literal"&gt;ssh &lt;span class="pre"&gt;-A&lt;/span&gt;&lt;/tt&gt; fowards your authentication so the
+&lt;tt class="docutils literal"&gt;scp&lt;/tt&gt; will work automatically (assuming your own SSH public key is in
+your own &lt;tt class="docutils literal"&gt;.ssh/authorized_keys&lt;/tt&gt; file). Thus, one command to pull
+whatever files you need onto your local machine. The command could be
+extended, if need be, if there were more hops in the middle.&lt;/p&gt;
+&lt;p&gt;In my specific case I needed to add &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;-o&lt;/span&gt; &amp;quot;StrictHostKeyChecking no&amp;quot;&lt;/tt&gt;
+into the second SSH command because, for whatever reason, the hop is not
+allowed to edit the &lt;tt class="docutils literal"&gt;.ssh/known_hosts&lt;/tt&gt; file. This SSH option disables
+this check, but I would take great care using it.&lt;/p&gt;
+</summary><category term="files"></category><category term="linux"></category><category term="scp"></category><category term="security"></category><category term="ssh"></category><category term="transfer"></category></entry><entry><title>Ubuntu 11.04 boot freezes with 2.6.38-8-generic-pae kernel</title><link href="http://davidjb.com/blog/2011/05/ubuntu-11-04-boot-freezes-with-2-6-38-8-generic-pae-kernel/" rel="alternate"></link><updated>2011-05-05T15:46:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2011-05-05:blog/2011/05/ubuntu-11-04-boot-freezes-with-2-6-38-8-generic-pae-kernel/</id><summary type="html">&lt;p&gt;So you've just installed 32-bit Ubuntu 11.04 (Natty Narwhal), and in my
+case, upgraded from Ubuntu 10.04 (Maverick Meerkat). &amp;nbsp;The upgrade
+process seemingly went fine and then you were asked to restart your
+computer. &amp;nbsp;You diligently do so, only to come back to find that your
+computer has frozen at GRUB2 upon trying to boot the
+2.6.38-8-generic-pae kernel from the GRUB list. &amp;nbsp;Now what? &amp;nbsp;How do you
+fix this?&lt;/p&gt;
+&lt;p&gt;The issue appears to stem from some form of installation issue where
+this new kernel isn't set up right. &amp;nbsp;Note: I don't actually know what's
+wrong and can't investigate.&lt;/p&gt;
+&lt;p&gt;The good news is that you can use the 'Previous Versions' entry in the
+GRUB listing to boot to one of your older kernels and get your system
+started. &amp;nbsp;Once you're booted, then load up Synaptic Package Manager and
+(re-)install:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+linux-image-2.6.38-8-generic-pae&amp;nbsp;linux-generic-pae&amp;nbsp;linux-headers-generic-pae&amp;nbsp;linux-image-generic-pae&amp;nbsp;linux-headers-2.6.38-8-generic-pae
+&lt;/pre&gt;
+&lt;p&gt;You should now be able to restart your computer and use the PAE-based
+kernel. Thanks to a post on the Ubuntu forums for pointing me in the
+right direction.&lt;/p&gt;
+</summary><category term="11.04"></category><category term="boot"></category><category term="frozen"></category><category term="kernel"></category><category term="natty"></category><category term="ubuntu"></category></entry><entry><title>Linux: Printing at James Cook University</title><link href="http://davidjb.com/blog/2010/10/linux-printing-at-james-cook-university/" rel="alternate"></link><updated>2010-10-04T15:57:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2010-10-04:blog/2010/10/linux-printing-at-james-cook-university/</id><summary type="html">&lt;p&gt;Printing at JCU is difficult on Linux, given JCU exists as a Windows
+environment. The fact that Xerox Postscript drivers for Linux aren't
+exactly straight forward to install doesn't help either - they require
+custom filter applications to be compiled.&lt;/p&gt;
+&lt;div class="section" id="setting-up-the-drivers"&gt;
+&lt;h2&gt;Setting up the drivers&lt;/h2&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;To make sure you have the right drivers, get this file:
+&lt;a class="reference external" href="http://davidjb.com/wp-content/uploads/2008/12/fxlinuxprint-src-1.0.1.tar.gz"&gt;fxlinuxprint-src-1.0.1.tar.gz&lt;/a&gt;, which is the drive source kindly
+obtained from the &lt;a class="reference external" href="http://www.fujixerox.co.jp/download/apeosport/download/c4300series/linux_module.html"&gt;Japanese Xerox site&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Extract the archive somewhere on your hard drive:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+tar -xf fxlinuxprint-src-1.0.1.tar.gz
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Make sure you've got &lt;strong&gt;build-essential&lt;/strong&gt; and &lt;strong&gt;libcups2-dev&lt;/strong&gt;
+packages installed (if on Debian/Ubuntu). Other systems (Red Hat,
+CentOS) will require equivalent packages; post if you've done it.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+sudo apt-get install build-essential libcups2-dev
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;CMMI:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+./configure
+make
+sudo make install
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Select this as your PPD when adding your printer as this file:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+/usr/share/cups/model/FujiXerox/en/fxlinuxprint.ppd&lt;span class="o"&gt;[&lt;/span&gt;/sourcecode&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="setting-up-the-printer"&gt;
+&lt;h2&gt;Setting up the printer&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Add a new &lt;tt class="docutils literal"&gt;Windows printer via SAMBA&lt;/tt&gt;&lt;/li&gt;
+&lt;li&gt;Specify the printer address as
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;smb://AD/137.219.9.111/DB017-51-Colour&lt;/span&gt;&lt;/tt&gt;, where 'DB017-51-Colour'
+is your printer name (you'll probably need to ask someone or browse
+the machine at 137.219.9.111 to find out; on Linux you can use
+&lt;tt class="docutils literal"&gt;smbclient &lt;span class="pre"&gt;-L&lt;/span&gt; [hostname]&lt;/tt&gt;)&lt;/li&gt;
+&lt;li&gt;Set your authentication details (JC number and password)&lt;/li&gt;
+&lt;li&gt;Press Verify to make sure it works, and then click Forward&lt;/li&gt;
+&lt;li&gt;Under &amp;quot;Choose Driver&amp;quot; (or when selecting a Make and Model), make sure
+you choose to &amp;quot;Provide PPD file&amp;quot;, and use the one that you've just
+installed using the instructions above.
+(&lt;tt class="docutils literal"&gt;/usr/share/cups/model/FujiXerox/en/fxlinuxprint.ppd&lt;/tt&gt;). Click
+'Forward' when done.&lt;/li&gt;
+&lt;li&gt;Add the rest of your printer's details and click Apply.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Try and print something and it should be good now.&lt;/p&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Linux: Make time with faketime</title><link href="http://davidjb.com/blog/2010/07/linux-make-time-with-faketime/" rel="alternate"></link><updated>2010-07-12T12:02:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2010-07-12:blog/2010/07/linux-make-time-with-faketime/</id><summary type="html">&lt;p&gt;So you, like me, have hit a situation where you've got a time-sensitive
+application that won't run? Maybe you've downloaded one of those apps
+(like a demo) that won't run after a certain date and time because it's
+&amp;quot;expired&amp;quot;. Or else, maybe some other arbitrary time constraint is
+keeping you from running a Linux (or even Windows) program. On Linux
+(Ubuntu for me), there's &lt;tt class="docutils literal"&gt;faketime&lt;/tt&gt; to the rescue - a very handy tool
+that does what it says on the box, changes the system time for given
+command.&lt;/p&gt;
+&lt;p&gt;After installing faketime by something like:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+sudo apt-get install faketime
+&lt;/pre&gt;
+&lt;p&gt;you can run your program like this, and see the results:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+faketime &lt;span class="s1"&gt;'last Friday 5 pm'&lt;/span&gt; /bin/date
+faketime &lt;span class="s1"&gt;'2008-12-24 08:15:42'&lt;/span&gt; /bin/date
+&lt;/pre&gt;
+&lt;p&gt;Sweet as. Now, if you're running a Windows app in Wine (or any other app
+with arguments), you can do that too. In my specific use-case, I was
+trying to use &lt;a class="reference external" href="http://www.zonums.com/shp2kml.html"&gt;shp2kml&lt;/a&gt;. Ignoring the fact their website fails at
+actually letting me download the file (I had to get my version
+elsewhere; copied here for posterity: &lt;a class="reference external" href="http://davidjb.com/static/files/Shp2kml.zip"&gt;Shp2kml.zip&lt;/a&gt;), their program fails
+at running due to it being &amp;quot;expired&amp;quot;. Noting other posts about people
+turning back their clocks to 2006, I did the same thing with faketime,
+so as not to stuff around with my system clock.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+faketime &lt;span class="s1"&gt;'2006-09-20'&lt;/span&gt; wine Shp2kml.exe
+&lt;/pre&gt;
+&lt;p&gt;and voila, it works. Seems like the change affects Wine's start-up a
+little when first starting with the new date, but it does work just
+fine. Yay for Linux!&lt;/p&gt;
+</summary><category term="faketime"></category><category term="fix"></category><category term="linux"></category><category term="shp2svg"></category><category term="time"></category><category term="wine"></category></entry><entry><title>Things to do on Ubuntu 10.04 Lucid Lynx after install</title><link href="http://davidjb.com/blog/2010/05/things-to-do-on-ubuntu-10-04-lucid-lynx-after-install/" rel="alternate"></link><updated>2010-05-05T11:31:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2010-05-05:blog/2010/05/things-to-do-on-ubuntu-10-04-lucid-lynx-after-install/</id><summary type="html">&lt;p&gt;I'm skipping actually quantifying the number of things to do because
+this post will undoubtedly get updated as time goes on.&amp;nbsp; I've just
+updated both my computers (personal laptop and work desktop) to Ubuntu
+10.04 from 9.10 and I'm very happy with how things have gone. That isn't
+to say a few minor things haven't annoyed me, such as Project Hamster
+removing its Day view for task management or Python 2.4 being dropped
+entirely, but overall, it's gone well. Here's my thoughts on what you
+should do as soon as you've made the jump (or installed).&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;strong&gt;Set up Plymouth (graphical boot) and Virtual Terminals for
+High-resolution:&lt;/strong&gt; &lt;a class="reference external" href="http://idyllictux.wordpress.com/2010/04/26/lucidubuntu-10-04-high-resolution-plymouth-virtual-terminal-for-atinvidia-cards-with-proprietaryrestricted-driver/"&gt;Tux's Idyllic Life&lt;/a&gt; has a perfect guide that has
+worked for both my machines with proprietary Nvidia drivers
+installed.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Learn how to change the splash screen image (and install some new
+ones):&lt;/strong&gt; see &lt;a class="reference external" href="http://www.ubuntugeek.com/how-do-you-change-the-boot-splash-screen-image-for-10-04-lucid-lynx.html"&gt;Ubuntu Geek's guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Follow the next 10 steps&lt;/strong&gt; over at &lt;a class="reference external" href="http://www.omgubuntu.co.uk/2010/04/10-things-to-do-after-installing-ubuntu.html"&gt;OMG Ubuntu's guide&lt;/a&gt; - you
+might have already done some of these, but it's a very useful
+combined post.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;More to come as time progresses...&lt;/p&gt;
+</summary><category term="10.04"></category><category term="drivers"></category><category term="graphics"></category><category term="install"></category><category term="lucid"></category><category term="ubuntu"></category><category term="update"></category></entry><entry><title>Installing Python 2.4 on Ubuntu 10.04 Lucid Lynx</title><link href="http://davidjb.com/blog/2010/05/installing-python-2-4-on-ubuntu-10-04-lucid-lynx/" rel="alternate"></link><updated>2010-05-04T12:00:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2010-05-04:blog/2010/05/installing-python-2-4-on-ubuntu-10-04-lucid-lynx/</id><summary type="html">&lt;p&gt;Whoops.&amp;nbsp; No one sent me the memo that Python
+2.4 support was being removed entirely from the latest version of
+Ubuntu, 10.04 Lucid Lynx.&amp;nbsp; To be fair, I was presented with the message
+that 'these outdated packages will be removed' and in that list was
+python2.4.&amp;nbsp; I made the unfortunate assumption that this just mean the
+package was outdated (which it certainly is) and I'd have the ability to
+install it again in Lucid.&amp;nbsp; There were a number of different packages on
+the list and in order to save time, I let the updater remove them all.
+End result?&amp;nbsp; No more Python 2.4 on Lucid.Now, installing it back again
+isn't too much of a hassle. You just need the old packages again from
+the Jaunty repositories.&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+wget http://mirror.aarnet.edu.au/pub/ubuntu/archive/pool/main/p/python2.4/python2.4-minimal_2.4.6-1ubuntu3.2.9.10.1_i386.deb -O python2.4-minimal.deb
+wget http://mirror.aarnet.edu.au/pub/ubuntu/archive/pool/main/p/python2.4/python2.4_2.4.6-1ubuntu3.2.9.10.1_i386.deb -O python2.4.deb
+wget http://mirror.aarnet.edu.au/pub/ubuntu/archive/pool/main/p/python2.4/python2.4-dev_2.4.6-1ubuntu3.2.9.10.1_i386.deb -O python2.4-dev.deb
+sudo dpkg -i python2.4-minimal.deb python2.4.deb python2.4-dev.deb
+rm python2.4-minimal.deb python2.4.deb python2.4-dev.deb
+&lt;/pre&gt;
+&lt;p&gt;You can use your own mirror for the Ubuntu repository as required. I've
+selected the AARNet mirror since it's about one of the quickest
+(typically) for me here in Australia on an AARNet-connected educational
+institution. Also, I'm using the i386 packages -- presumably this should
+be fine with the amd64 counterparts as well.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note on Python 2.4 packages:&lt;/strong&gt; watch out for old Python 2.4
+system-level packages you had installed (like python-virtualenv and
+similar) previously on Jaunty or earlier.&amp;nbsp; These will now likely be
+their Python 2.6 counterparts and installed differently than the old
+ones.&amp;nbsp; So, if you try and &lt;tt class="docutils literal"&gt;easy_install&lt;/tt&gt; something like virtualenv
+again, expect that you'll have two apps with the same identical name (vs
+virtualenv-2.4 previously) in your system path.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note on Virtualenv:&lt;/strong&gt; Exercise caution -- especially with the example
+of virtualenv. Its latest incarnation has some deeper emotional issues
+when mixing and matching the python-virtualenv package from the official
+Lucid repos and Python2.4. I get the feeling &lt;a class="reference external" href="https://bugs.launchpad.net/ubuntu/+source/python-virtualenv/+bug/339904"&gt;this bug&lt;/a&gt; is related.&lt;/p&gt;
+&lt;div class="section" id="python-2-4-profiler-reinstallation"&gt;
+&lt;h2&gt;Python 2.4 Profiler Reinstallation&lt;/h2&gt;
+&lt;p&gt;If you find that some of your code (hello, Plone unit testing and
+functional testing, I'm talking about you) won't run because you can't
+&amp;quot;import profile&amp;quot; (&lt;tt class="docutils literal"&gt;ImportError: No module named profile&lt;/tt&gt;), then you'll
+need to get a hold of the python2.4-profiler package and install that.
+Now, life is made more fun by the fact that python-profiler (Ubuntu's
+new Python 2.6 version) explicitly conflicts with this package. Soooo...
+do this to install it:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+sudo apt-get remove python-profiler
+wget http://mirror.aarnet.edu.au/pub/ubuntu/archive/pool/multiverse/p/python-profiler/python2.4-profiler_2.4.3-1ubuntu3_all.deb -O python2.4-profiler.deb
+sudo dpkg-deb -x python2.4-profiler.deb /
+rm python2.4-profiler.deb
+sudo apt-get install python-profiler
+&lt;/pre&gt;
+&lt;p&gt;and hey presto, you've got your profile module installed for ye olde
+Python 2.4.&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="help guide"></category><category term="installation"></category><category term="linux"></category><category term="lucid"></category><category term="packages"></category><category term="python"></category><category term="ubuntu"></category></entry><entry><title>Ubuntu: Crackling audio noises on a Dell M1530 (or HDA cards)</title><link href="http://davidjb.com/blog/2010/01/ubuntu-crackling-audio-noises-on-a-dell-m1530-or-hda-cards/" rel="alternate"></link><updated>2010-01-16T12:18:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2010-01-16:blog/2010/01/ubuntu-crackling-audio-noises-on-a-dell-m1530-or-hda-cards/</id><summary type="html">&lt;p&gt;The problem I found (so did everyone else) when updating to Ubuntu 9.10
+Karmic was static/popping noises when your sound card is silent (aka
+goes into power-save mode). It applies to my Dell XPS M1530 laptop's
+on-board sound and probably to the same chipset elsewhere.&lt;/p&gt;
+&lt;p&gt;The fix couldn't be simpler! Simply edit this file (as root):&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+/etc/modprobe.d/alsa-base.conf
+&lt;/pre&gt;
+&lt;p&gt;and comment out the last line. Then, restart ALSA to save you having to
+do a reboot to check it worked:&lt;/p&gt;
+&lt;blockquote&gt;
+sudo /etc/init.d/alsa-utils stop
+sudo alsa force-reload
+sudo /etc/init.d/alsa-utils start&lt;/blockquote&gt;
+&lt;p&gt;Thanks to Ubuntu Geek &lt;a class="reference external" href="http://www.ubuntugeek.com/ubuntu-tip-how-to-fix-crackling-noise-on-hda-audio-cards-in-ubuntu-9-10.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
+</summary><category term="9.10"></category><category term="audio"></category><category term="computer"></category><category term="crackling"></category><category term="dell"></category><category term="intel"></category><category term="karmic"></category><category term="laptop"></category><category term="m1530"></category><category term="popping"></category><category term="sound"></category><category term="ubuntu"></category></entry><entry><title>Start screen after su'ing to another user</title><link href="http://davidjb.com/blog/2009/12/start-screen-after-suing-to-another-user/" rel="alternate"></link><updated>2009-12-04T15:49:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2009-12-04:blog/2009/12/start-screen-after-suing-to-another-user/</id><summary type="html">&lt;p&gt;Today's problem is one that requires no introduction (well, maybe it
+does :-| ) but it's a problem nonetheless.&amp;nbsp; The issue is that after
+using the '&lt;strong&gt;su&lt;/strong&gt;' command to become another user, there's trouble
+running &lt;strong&gt;screen&lt;/strong&gt; sessions.&lt;/p&gt;
+&lt;p&gt;This page
+(&lt;a class="reference external" href="http://dbadump.blogspot.com/2009/04/start-screen-after-sudo-su-to-another.html"&gt;http://dbadump.blogspot.com/2009/04/start-screen-after-sudo-su-to-another.html&lt;/a&gt;)
+details it simply and perfectly (which, yes, I know in turn came from
+another page).&amp;nbsp; Essentially the error is thus:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Cannot open your terminal '/dev/pts/1' - please check.
+&lt;/pre&gt;
+&lt;p&gt;Which really doesn't man nor beast with its descriptiveness.&amp;nbsp; From that
+page, which came from another page mentioned on that page (?), here's
+the fix:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+su &lt;span class="o"&gt;[&lt;/span&gt;userName&lt;span class="o"&gt;]&lt;/span&gt;
+script /dev/null
+screen -x &lt;span class="o"&gt;[&lt;/span&gt;screenName&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;And that's it!&amp;nbsp; Simple solution, and many thanks to that blog for
+sorting it out for me.&lt;/p&gt;
+</summary></entry><entry><title>LDAP-Authenticated Server &amp; Whoami Failures (etc)</title><link href="http://davidjb.com/blog/2009/09/ldap-authenticated-server-whoami-failures-etc/" rel="alternate"></link><updated>2009-09-28T11:53:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2009-09-28:blog/2009/09/ldap-authenticated-server-whoami-failures-etc/</id><summary type="html">&lt;p&gt;I'm back again, after a bit of a unscheduled 'break' in my normal work
+life.&amp;nbsp; After a couple of days away for work on the Gold Coast, then the
+sad passing of my Grandfather and his memorial, then being sick over the
+last weekend from what I can only guess was a nasty 24-hour bug, I'm
+back.&amp;nbsp; And whilst a little worse for wear still today, it's life pretty
+much as normal.&lt;/p&gt;
+&lt;p&gt;Today's fun and games was on a server we use that uses LDAP
+authentication for its users.&amp;nbsp; Nothing special, except that today I
+started getting weird errors when logging in as my LDAP account, and the
+server booting me off with random error messages:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+whoami: cannot find name for user ID 75966
+-tcsh: ldap-nss.c:1312: do\_init: Assertion \`cfg-&amp;gt;ldc\_uris[\_\_session.ls\_current\_uri] != ((void \*)0)' failed.
+&lt;/pre&gt;
+&lt;div class="section" id="solution"&gt;
+&lt;h2&gt;Solution&lt;/h2&gt;
+&lt;p&gt;The simple solution was to check the permissions on &lt;tt class="docutils literal"&gt;/etc/ldap.conf&lt;/tt&gt;
+(Centos) and sure enough, the permissions weren't allowing normal users
+to read it (eg not 644).&amp;nbsp; Running this solves the problem:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+chmod 644 /etc/ldap.conf
+&lt;/pre&gt;
+&lt;p&gt;Cheers to the author &amp;#64;
+&lt;a class="reference external" href="http://www.ducea.com/2008/03/07/ldap-troubleshooting-i-have-no-name/"&gt;http://www.ducea.com/2008/03/07/ldap-troubleshooting-i-have-no-name/&lt;/a&gt; for
+the details.&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="authentication"></category><category term="centos"></category><category term="chmod"></category><category term="ldap"></category><category term="login"></category><category term="permissions"></category><category term="users"></category></entry><entry><title>ffmpeg and FLV on Ubuntu</title><link href="http://davidjb.com/blog/2009/09/ffmpeg-and-flv-on-ubuntu/" rel="alternate"></link><updated>2009-09-22T10:21:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2009-09-22:blog/2009/09/ffmpeg-and-flv-on-ubuntu/</id><summary type="html">&lt;p&gt;Wow, ffmpeg is really great for converting multimedia.&amp;nbsp; Unfortunately,
+the support for MP3 audio doesn't appear available by default.&amp;nbsp; Sure, it
+can decode MP3 audio and write to an MP3 container, but what about
+having an actual MP3 codec available?&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+sudo apt-get purge ffmpeg
+sudo apt-get install libavcodec-unstripped-52 libavdevice-unstripped-52 libavformat-unstripped-52 libavutil-unstripped-49 libpostproc-unstripped-51 libswscale-unstripped-0 ffmpeg
+&lt;/pre&gt;
+&lt;p&gt;As a little bonus, there's a number of other codecs that come along with
+it too (xvid etc).&amp;nbsp; I'm not too fussed on them but now I can use
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;-acodec&lt;/span&gt; libmp3lame&lt;/tt&gt; as my audio codec and have the FLV outputted with
+MP3 audio.&amp;nbsp; There's a problem with either the default FLV encoder or VLC
+not being able to playback the audio with default settings, but this
+seems to work.&lt;/p&gt;
+&lt;p&gt;That said, it remains to be seen if this'll cause any problems with FLV
+playback, but the players I've used so far (web-based) seem happy
+enough.&lt;/p&gt;
+</summary><category term="ffmpeg"></category><category term="flv"></category><category term="linux"></category><category term="multimedia"></category><category term="ubuntu"></category></entry><entry><title>Find and replace across files - Linux command line</title><link href="http://davidjb.com/blog/2009/07/find-and-replace-across-files-linux-command-line/" rel="alternate"></link><updated>2009-07-06T11:21:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2009-07-06:blog/2009/07/find-and-replace-across-files-linux-command-line/</id><summary type="html">&lt;p&gt;Today's interesting post concerns finding and replacing terms across
+multiple files via a simple command.&amp;nbsp; Thanks to &lt;a class="reference external" href="http://www.64bitjungle.com/ubuntu/recursively-search-and-replace-terms-in-multiple-files-with-grep-xargs-and-sed/"&gt;this great blog post&lt;/a&gt;,
+it all comes down to one single line.&amp;nbsp; I had found a previously-useful
+line of code, but the problem with that one was the fact that it used
+the &lt;strong&gt;find&lt;/strong&gt; command.&amp;nbsp; The problem with that is that if you do a
+wildcard search for * in a directory, it'll give you back '.' as a
+result.&amp;nbsp; Trying to work with that just wasn't happening.&lt;/p&gt;
+&lt;p&gt;So, without further ado, the command (replacing 'search' with your
+search term and 'target' with your replacement term'):&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+grep -lr -e &lt;span class="s1"&gt;'search'&lt;/span&gt; * | xargs sed -i &lt;span class="s1"&gt;'s/search/target/g'&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Just remember, the first &lt;strong&gt;grep&lt;/strong&gt; command is doing Regex, so escape
+anything Regex-y (dots, slashes, etc) or otherwise &amp;quot;prepare for
+unforseen consequences&amp;quot; when running &lt;strong&gt;sed&lt;/strong&gt;.&lt;/p&gt;
+</summary><category term="command"></category><category term="find"></category><category term="linux"></category><category term="replace"></category><category term="text"></category><category term="useful"></category></entry><entry><title>Unix: Removing Open Logical Volumes in Centos/RHL</title><link href="http://davidjb.com/blog/2009/05/unix-removing-open-logical-volumes-in-centosrhl/" rel="alternate"></link><updated>2009-05-13T09:19:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2009-05-13:blog/2009/05/unix-removing-open-logical-volumes-in-centosrhl/</id><summary type="html">&lt;p&gt;Because I still haven't remembered to set myself up with a
+limited-access account for blogging on my new site, I'm back here again.
+(EDIT: Migrated from old site)&lt;/p&gt;
+&lt;p&gt;This time is a lot of fun and games with removing an &amp;quot;open&amp;quot; logical
+volume from within a CentOS environment. The dom0 machine has a set of
+logical volumes in a volume group for each of the VMs and one of them
+went and failed dismally, and after its xen destruction (xm destory foo)
+its LV was left with it being &amp;quot;open&amp;quot;.&lt;/p&gt;
+&lt;p&gt;It's not exactly easy to see how/why this would be the case and every
+command (lsof, fuser, mount, etc) told me that the LV wasn't in use. But
+still, lvremove, lvchange, and dmsetup commands failed.&lt;/p&gt;
+&lt;p&gt;But, I've solved my problem! Hopefully yours too.. read on through the
+commands:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+&lt;span class="c"&gt;# lvchange -an /dev/vmsvg1/foo
+&lt;/span&gt;LV vmsvg1/foo in use: not deactivating
+&lt;span class="c"&gt;# dmsetup info -c vmsvg1-foo
+&lt;/span&gt;Name             Maj Min Stat Open Targ Event  UUID
+vmsvg1-foo    253  65 L--w    1    1      2  XXX
+&lt;span class="c"&gt;# dmsetup remove -force vmsvg1-foo
+&lt;/span&gt;device-mapper: remove ioctl failed: Device or resource busy
+&lt;span class="c"&gt;# lvchange -an /dev/vmsvg1/foo
+&lt;/span&gt;/dev/vmsvg1/foo: &lt;span class="nb"&gt;read &lt;/span&gt;failed after 0 of 4096 at 0: Input/output error
+/dev/mapper/vmsvg1-foop1: &lt;span class="nb"&gt;read &lt;/span&gt;failed after 0 of 2048 at 0: Input/output error
+&lt;span class="c"&gt;# dmsetup remove -force vmsvg1-foop1
+# dmsetup remove -force vmsvg1-foo
+# lvs vmsvg1
+&lt;/span&gt;foo    vmsvg1 -wi---   4.00G   &lt;span class="o"&gt;(&lt;/span&gt;it&lt;span class="err"&gt;'&lt;/span&gt;s closed!!&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="c"&gt;# lvchange -an /dev/vmsvg1/foo
+# lvremove /dev/vmsvg1/foo
+&lt;/span&gt;Logical volume &lt;span class="s2"&gt;&amp;quot;foo&amp;quot;&lt;/span&gt; successfully removed
+&lt;/pre&gt;
+&lt;p&gt;So, after all that, it looks like there's some stupid 'p1' references in
+/dev/mapper/ . Nfi why, but removing it (albeit by force with dmsetup)
+solved the problem.&lt;/p&gt;
+</summary><category term="centos"></category><category term="close"></category><category term="logical"></category><category term="red hat"></category><category term="remove"></category><category term="unix"></category><category term="volume"></category></entry><entry><title>Ubuntu: Dual Monitors &amp; Separating Tasks</title><link href="http://davidjb.com/blog/2009/02/ubuntu-dual-monitors-separating-tasks/" rel="alternate"></link><updated>2009-02-04T08:48:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2009-02-04:blog/2009/02/ubuntu-dual-monitors-separating-tasks/</id><summary type="html">&lt;p&gt;Today's puzzle: how to get Ubuntu (specifically GNOME Panels as it turns
+out) to use my new dual-monitor setup and show only the tasks from one
+monitor on that monitor's panel. Sure, people had mentioned that it was
+possible (everywhere) but noone actually seemed to take the time to
+mention how. That's when I found this:
+&lt;a class="reference external" href="http://www.lloydleung.com/2006/10/14/gnome-multiple-monitor-taskbar-window-listing/"&gt;http://www.lloydleung.com/2006/10/14/gnome-multiple-monitor-taskbar-window-listing/&lt;/a&gt;
+so cheers go to Lloyd there. Still works (and should be fine on any
+version from at least now on):&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Right click on anywhere on the launchbar, click “New Panel”&lt;/li&gt;
+&lt;li&gt;Drag that to any monitor.&lt;/li&gt;
+&lt;li&gt;Right click on that panel, and click “Add to Panel”&lt;/li&gt;
+&lt;li&gt;Select “Window List” under Desktop and Windows&lt;/li&gt;
+&lt;li&gt;Click Add.&lt;/li&gt;
+&lt;li&gt;Click Close, and you’re done.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Alright!&lt;/p&gt;
+</summary><category term="dual"></category><category term="graphics"></category><category term="linux"></category><category term="monitors"></category><category term="panel"></category><category term="ubuntu"></category></entry><entry><title>Ubuntu: PulseAudio Joy</title><link href="http://davidjb.com/blog/2009/01/ubuntu-pulseaudio-joy/" rel="alternate"></link><updated>2009-01-06T15:07:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2009-01-06:blog/2009/01/ubuntu-pulseaudio-joy/</id><summary type="html">&lt;p&gt;Well, it's a sad state of affairs when simply unplugging your set of USB
+headphones causes your Intrepid Ibex install of Ubuntu to crap itself.
+Even with the same set of headphones plugged back into the same port not
+10 seconds later. Painful.&lt;/p&gt;
+&lt;p&gt;But, the good news is that after a few hours of pain, PulseAudio works
+and it's magical in comparison to the older audio systems (3 apps
+playing audio at once..wow).&lt;/p&gt;
+&lt;p&gt;Check out &lt;a class="reference external" href="http://ubuntuforums.org/showthread.php?t=789578"&gt;http://ubuntuforums.org/showthread.php?t=789578&lt;/a&gt; for a great
+walk-through on how to set it up on Hardy or Intrepid. Unfortunately,
+Skype doesn't play ball (and presumably any other recording software)
+with audio input through Pulse, but audio works straight from the USB
+headset itself.&lt;/p&gt;
+</summary><category term="audio"></category><category term="headphones"></category><category term="pulseaudio"></category><category term="sound"></category><category term="ubuntu"></category><category term="usb"></category></entry><entry><title>Unix: SSH Port Forwarding</title><link href="http://davidjb.com/blog/2008/12/unix-ssh-port-forwarding/" rel="alternate"></link><updated>2008-12-18T14:57:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2008-12-18:blog/2008/12/unix-ssh-port-forwarding/</id><summary type="html">&lt;p&gt;So it's not that special and I bet 1000 people have already posted the
+same details. Still, it's cool and I need a place to record my thoughts
+about this:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+ssh host.name -L YYYY:other.host:ZZZZ
+&lt;/pre&gt;
+&lt;p&gt;Essentially, this means logging into the first machine and creating port
+YYYY on the local machine as the port ZZZZ from other.host&lt;/p&gt;
+&lt;p&gt;Works well.&lt;/p&gt;
+</summary><category term="linux"></category><category term="port"></category><category term="port forwarding"></category><category term="ssh"></category><category term="unix"></category></entry></feed>

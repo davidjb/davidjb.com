@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>DavidJB.com - cache</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../theme/css/main.css" type="text/css" />
+                <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
+                
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../css/ie.css"/>
+                <script src="../js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../css/ie6.css"/><![endif]-->
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
+                <nav><ul>
+                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                    <li><a href="../pages/blog.html">Blog</a></li>
+                                    <li><a href="../pages/projects.html">Projects</a></li>
+                                                                </ul></nav>
+        </header><!-- /#banner -->
+                
+            
+
+                            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="../blog/2009/01/plone-varnish-configuration-cache-hits-purge-fails/">Plone: Varnish Configuration (Cache Hits, Purge Fails)</a></h1> 
+                    <footer class="post-info">
+        <abbr class="published" title="2009-01-21T08:40:00">
+                Wed 21 January 2009
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/davidjb.html">davidjb</a>
+        </address>
+        <p>In <a href="../category/plone.html">Plone</a>. </p>
+<p>tags: <a href="../tag/cache.html">cache</a><a href="../tag/plone.html">plone</a><a href="../tag/problem.html">problem</a><a href="../tag/purge.html">purge</a><a href="../tag/varnish.html">varnish</a></p>
+</footer><!-- /.post-info --><p>What a painful, painful day. It's taken about the entire day, but I've
+finally figured out why our Varnish configuration around here for
+Plone/Zope hasn't been accepting PURGE requests. Thus, without accepting
+purge requests correctly, any content that gets changed in Plone doesn't
+get updated in the cache until it times out (or we restart it). Ouch -
+especially because it affects all sites under virtual hosting, and a lot
+of these sites have publicly visible content that needs to be available
+immediately.</p>
+<p>So, the problem manifested itself as thus:</p>
+<ul class="simple">
+<li>Cache hits happen</li>
+<li>Performance was good on the Plone sites</li>
+<li>PURGE requests sent to Varnish would produce 404's</li>
+</ul>
+<p>So, after checking (many times) the object path for the PURGE was right,
+Varnish would return a MISS and produce a 404 (DEBUG &quot;VCL_error(404,
+Not in cache)&quot; as the Varnish message).</p>
+<p>Much searching/etc later, I found that using:</p>
+<pre class="code bash literal-block">
+curl -X PURGE http://localhost:8000/object/path
+</pre>
+<p>straight on the machine running Varnish would work and give a <em>200 Purged
+response</em>. But, running the same command (replacing localhost with a FQDN) from
+the Zope machine produced the 404. So, essentially, Varnish knows where to look
+for the first command but not for the second.</p>
+<div class="section" id="solution">
+<h2>Solution</h2>
+<p>Where you set the backend for your Plone/Zope in the Varnish
+configuration, add set req.http.host accordingly:</p>
+<pre class="code cpp literal-block">
+<span class="p">}</span> <span class="n">elseif</span> <span class="p">(</span><span class="n">req</span><span class="p">.</span><span class="n">url</span> <span class="o">~</span> <span class="s">&quot;^/VirtualHostBase/https?/my.plone.site.com:(80\|443)/plone/VirtualHostRoot&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="n">set</span> <span class="n">req</span><span class="p">.</span><span class="n">backend</span> <span class="o">=</span> <span class="n">zope1</span><span class="p">;</span>
+<span class="n">set</span> <span class="n">req</span><span class="p">.</span><span class="n">http</span><span class="p">.</span><span class="n">host</span> <span class="o">=</span> <span class="s">&quot;my.plone.site.com&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">...</span>
+</pre>
+<p>In short, the URL is processed from Apache (in my situation) to result
+in the <em>req.url</em>, and then Varnish needs to know what host anything
+being cached relates to. Without it, hello 404 heaven.</p>
+</div>
+<p>There are <a href="../blog/2009/01/plone-varnish-configuration-cache-hits-purge-fails/#disqus_thread">comments</a>.</p>                </article>
+                                    <p class="paginator">
+        Page 1 / 1
+    </p>
+                            </aside><!-- /#featured -->
+                                                </ol><!-- /#posts-list -->
+                        </section><!-- /#content -->
+                    <section id="extras" class="body">
+                        <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                                                    <li><a href="http://planet.plone.org">Planet Plone</a></li>
+                                                    <li><a href=""></a></li>
+                                                    <li><a href=""></a></li>
+                                                </ul>
+                </div><!-- /.blogroll -->
+                                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            
+                                                    <li><a href="http://git.io/djb">GitHub</a></li>
+                                                    <li><a href="http://twitter.com/davidjb_">Twitter</a></li>
+                                                    <li><a href="http://linkedin.com/in/davidbeitey">LinkedIn</a></li>
+                                                    <li><a href="http://facebook.com/david.beitey">Facebook</a></li>
+                                                    <li><a href="https://plus.google.com/u/0/106527454335411502430">Google+</a></li>
+                                                </ul>
+                </div><!-- /.social -->
+                </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24253455-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'davidjb';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

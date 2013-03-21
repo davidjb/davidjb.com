@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>DavidJB.com - nasa</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../theme/css/main.css" type="text/css" />
+                <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
+                
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../css/ie.css"/>
+                <script src="../js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../css/ie6.css"/><![endif]-->
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
+                <nav><ul>
+                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                    <li><a href="../pages/blog.html">Blog</a></li>
+                                    <li><a href="../pages/projects.html">Projects</a></li>
+                                                                </ul></nav>
+        </header><!-- /#banner -->
+                
+            
+
+                            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="../blog/2011/05/putting-a-nasa-human-space-flight-sightings-rss-feed-into-your-calendar-program/">Putting a NASA Human Space Flight Sightings RSS feed into your calendar program</a></h1> 
+                    <footer class="post-info">
+        <abbr class="published" title="2011-05-14T07:34:00">
+                Sat 14 May 2011
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/davidjb.html">davidjb</a>
+        </address>
+        <p>In <a href="../category/programming.html">Programming</a>. </p>
+<p>tags: <a href="../tag/nasa.html">nasa</a><a href="../tag/pipes.html">pipes</a><a href="../tag/sightings.html">sightings</a><a href="../tag/space.html">space</a><a href="../tag/yahoo.html">yahoo</a><a href="../tag/yahoo-pipes.html">yahoo pipes</a></p>
+</footer><!-- /.post-info --><p>I stumbled upon <a class="reference external" href="http://spaceflight.nasa.gov/realdata/sightings/index.html">NASA's space sightings page</a> a little while ago. For
+those of you that don't know, it's a great site that lists opportunities
+to view satellites that will be visible in your location and when/where
+to look to see them. Amongst the fact this service exists and is free, I
+was amazed (and thankful!) that it actually lists lots of different
+locations, one of which is where I like in regional Australia.</p>
+<p>It's a great setup and they offer an RSS feed for each location which
+keeps you updated. That's great, but if I'm trying to manage my time, I
+don't really want to have be porting information between my Google
+Reader and my Google Calendar manually. This wasn't a problem when I
+wanted to insert one or two records into my calendar, but since this
+feed always gets updated, it's clogging my Reader and less useful this
+way.</p>
+<p>Never to let a good thing go, I decided to resolve this issue by using
+my new favourite tool, <a class="reference external" href="http://pipes.yahoo.com/pipes/">Yahoo Pipes</a>. Read on for how to access.</p>
+<p>If you've not heard of Yahoo Pipes, I encourage you to go and take a
+look. It's not exactly the easiest tool to use, granted, but it is
+extremely powerful for as they say &quot;rewiring the web&quot; (oh, it's FREE so
+you don't need to use your own computing resources!). There are a number
+of oddities in how it does business, but the end result is extremely
+useful.</p>
+<p>So back to what I've built, check out
+<a class="reference external" href="http://pipes.yahoo.com/pipes/pipe.info?_id=853d413076c16a20cc0c219188158033">http://pipes.yahoo.com/pipes/pipe.info?_id=853d413076c16a20cc0c219188158033</a>
+for the Pipe. Here's the instructions:</p>
+<ol class="arabic simple">
+<li>Go to <a class="reference external" href="http://spaceflight.nasa.gov/realdata/sightings/">http://spaceflight.nasa.gov/realdata/sightings/</a> and locate
+the RSS feed for your location</li>
+<li>Make note of your location's time offset, plus or minus hour many
+hours GMT.</li>
+<li>Once you have these, go to my Pipe at
+<a class="reference external" href="http://pipes.yahoo.com/pipes/pipe.info?_id=853d413076c16a20cc0c219188158033">http://pipes.yahoo.com/pipes/pipe.info?_id=853d413076c16a20cc0c219188158033</a>
+and input the URL and time offset in the relevant boxes</li>
+<li>Click 'Run Pipe'. If successful, you should see a list of sightings
+(assuming they exist for your location and time!).</li>
+<li>Click onto 'More options' on the left-hand side and choose 'Get as
+iCal'. Copy this URL into your calendaring product, like Google
+Calendar, and enjoy!</li>
+</ol>
+<p>Note that you'll need to update your time offset when/if you change into
+or out of daylight saving time - you can just go back to my Pipe and do
+that to get your new calendar URL. I might see what I can do in the
+future about this, but since my location doesn't have daylight saving,
+you can understand why auto-changing isn't a feature :)</p>
+<p>Enjoy this creation! As long as I stay interested, I'll keep it running
+as best I can. However, given the nature of people's websites to change
+formatting, I can't guarantee that NASA won't break my Pipe. Also, I
+give no guarantees that this will work for anything but the one location
+I live in because I don't test anything but this one RSS feed as an
+input.</p>
+<p>There are <a href="../blog/2011/05/putting-a-nasa-human-space-flight-sightings-rss-feed-into-your-calendar-program/#disqus_thread">comments</a>.</p>                </article>
+                                    <p class="paginator">
+        Page 1 / 1
+    </p>
+                            </aside><!-- /#featured -->
+                                                </ol><!-- /#posts-list -->
+                        </section><!-- /#content -->
+                    <section id="extras" class="body">
+                        <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                                                    <li><a href="http://planet.plone.org">Planet Plone</a></li>
+                                                    <li><a href=""></a></li>
+                                                    <li><a href=""></a></li>
+                                                </ul>
+                </div><!-- /.blogroll -->
+                                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            
+                                                    <li><a href="http://git.io/djb">GitHub</a></li>
+                                                    <li><a href="http://twitter.com/davidjb_">Twitter</a></li>
+                                                    <li><a href="http://linkedin.com/in/davidbeitey">LinkedIn</a></li>
+                                                    <li><a href="http://facebook.com/david.beitey">Facebook</a></li>
+                                                    <li><a href="https://plus.google.com/u/0/106527454335411502430">Google+</a></li>
+                                                </ul>
+                </div><!-- /.social -->
+                </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24253455-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'davidjb';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

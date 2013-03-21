@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DavidJB.com</title><link href="http://davidjb.com/" rel="alternate"></link><link href="http://davidjb.com/feeds/github.atom.xml" rel="self"></link><id>http://davidjb.com/</id><updated>2012-06-19T09:11:00+10:00</updated><entry><title>Jenkins CI and GitHub post-receive hooks ceasing to work (+ potential solution)</title><link href="http://davidjb.com/blog/2012/06/jenkins-ci-and-github-post-receive-hooks-ceasing-to-work-potential-solution/" rel="alternate"></link><updated>2012-06-19T09:11:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2012-06-19:blog/2012/06/jenkins-ci-and-github-post-receive-hooks-ceasing-to-work-potential-solution/</id><summary type="html">&lt;div class="section" id="all-projects-fail"&gt;
+&lt;h2&gt;All projects fail&lt;/h2&gt;
+&lt;p&gt;Recently our Jenkins CI system began having issues with failing to
+correctly accept post-receive hook POST requests from GitHub, even
+though it was working fine. Without thorough testing, I can only really
+see that the issue was related to upgrading Jenkins and/or the relevant
+Git and GitHub plugins. Thankfully, with even newer versions of the
+above, it has started working again. So, to those with issues, I offer
+this KGS (Known Good Set) of versions for your help:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Jenkins 1.470&lt;/li&gt;
+&lt;li&gt;Jenkins GIT plugin 1.1.19&lt;/li&gt;
+&lt;li&gt;github-api 1.28&lt;/li&gt;
+&lt;li&gt;GitHub plugin 1.4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="some-projects-work"&gt;
+&lt;h2&gt;Some projects work&lt;/h2&gt;
+&lt;p&gt;On a separate note, if you're having trouble with just one of your
+Jenkins projects not accepting post-receive hooks when others are
+working fine, then check the your repository URL. I found that one of my
+projects had the URL:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+git&amp;#64;github.com:davidjb/my.project
+&lt;/pre&gt;
+&lt;p&gt;which is notably missing the the &amp;quot;.git&amp;quot; from the end. Whilst Git accepts this
+as a valid URL for cloning a repo, the Jenkins integration doesn't match the
+hooks when coming in. This one is worthwhile checking too if you're just having
+issues with individual projects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="debugging"&gt;
+&lt;h2&gt;Debugging&lt;/h2&gt;
+&lt;p&gt;For both of the above issues, debugging can help a bit -- &lt;a class="reference external" href="https://wiki.jenkins-ci.org/display/JENKINS/Github+Plugin#GithubPlugin-Troubleshootinghooks"&gt;follow
+instructions&lt;/a&gt; for adding a logger and examine the output. In my case
+for when some projects were working and some weren't, the one that
+wasn't working didn't get 'poked' in the logs. If you don't see this,
+but you do see the POST request coming into Jenkins, then check your
+project/job configuration.&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="ci"></category><category term="git"></category><category term="github"></category><category term="jenkins"></category></entry><entry><title>Notes about Redmine and GitHub Post-commit Hooks</title><link href="http://davidjb.com/blog/2011/12/notes-about-redmine-and-github-post-commit-hooks/" rel="alternate"></link><updated>2011-12-14T10:50:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2011-12-14:blog/2011/12/notes-about-redmine-and-github-post-commit-hooks/</id><summary type="html">&lt;p&gt;We're currently using Redmine for our project tracking and recently have
+wanted to have our GitHub projects automatically get updated within
+Redmine. A post-commit hook to the rescue!&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;Download and install this super plugin:
+&lt;a class="reference external" href="https://github.com/koppen/redmine_github_hook"&gt;https://github.com/koppen/redmine_github_hook&lt;/a&gt; and restart your
+Redmine instance.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Set up your local Git instance for your repository.&amp;nbsp; This is simple,
+but you need to follow these steps or else pulling your changes down
+won't work:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+git clone --bare git://github.com/davidjb/123.git
+&lt;span class="nb"&gt;cd &lt;/span&gt;123.git
+git remote add origin git://github.com/davidjb/123.git
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Configure your Redmine project's Repository to be this Git directory.
+(This is a given, but just so you know.)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Configure your GitHub repository to have a 'Post-Receive URL' service
+hook and point that at your Redmine URL like so:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+https://davidjb.com/redmine/github_hook?project_id&lt;span class="o"&gt;=&lt;/span&gt;myproject
+&lt;/pre&gt;
+&lt;p&gt;where &lt;tt class="docutils literal"&gt;myproject&lt;/tt&gt; is your Redmine project ID. You can ignore the
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;?project_id=myproject&lt;/span&gt;&lt;/tt&gt; if your GitHub repository name is the same
+as your Redmine project ID.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Beware the pre-existing Redmine service hook in the current iteration of
+GitHub (circa 2011) - it effectively doesn't do anything. This may
+change in the future, but until then, this works fantastically.&lt;/p&gt;
+</summary><category term="code"></category><category term="commit"></category><category term="dvcs"></category><category term="git"></category><category term="github"></category><category term="redmine"></category><category term="vcs"></category></entry></feed>

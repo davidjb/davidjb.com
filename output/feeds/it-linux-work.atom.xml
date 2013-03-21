@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DavidJB.com</title><link href="http://davidjb.com/" rel="alternate"></link><link href="http://davidjb.com/feeds/it-linux-work.atom.xml" rel="self"></link><id>http://davidjb.com/</id><updated>2009-01-27T08:44:00+10:00</updated><entry><title>Linux: Graphics Card Woes &amp; BIOS Issues</title><link href="http://davidjb.com/blog/2009/01/linux-graphics-card-woes-bios-issues/" rel="alternate"></link><updated>2009-01-27T08:44:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2009-01-27:blog/2009/01/linux-graphics-card-woes-bios-issues/</id><summary type="html">&lt;p&gt;…and I had thought that installing a graphics card in a computer was as
+easy as opening the case, inserting the card, and booting the machine
+(then Xorg config etc). Well, to tell the truth, I just moved my HDD,
+peripherals (gfx card included) to a new box - now a Dell OptiPlex 755.
+But, it's not that easy if you can't boot your Ubuntu 8.10 OS!&lt;/p&gt;
+&lt;p&gt;The computer kept spitting this message out, even though it just worked
+a few days ago:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+15.848000 NVRM: This PCI I/O region assigned to your NVIDIA device is invalid:
+15.848000 NVRM: BAR1 is 0M &amp;#64; 0x00000000 (PCI:0001:00.0)
+15.848000 NVRM: The system BIOS may have misconfigured your graphics card.
+15.848000 NVRM: The NVIDIA probe routine failed for 1 device(s)
+15.848000 NVRM: None of the NVIDIA graphics adapters were initialized!
+15.848000 NVRM: This PCI I/O region assigned to your NVIDIA device is invalid:
+&lt;/pre&gt;
+&lt;p&gt;After much pain, I managed to get into the computer and have the network
+loaded up (yay). Some hours of searching, I'd stumbled onto Dell's
+Official solution to driver updates (biosdisk); no luck because the boot
+disk wouldn't load the EXE. Tried the official method from Ubuntu's
+wiki; no luck since my BIOS couldn't be found in the package repo.&lt;/p&gt;
+&lt;p&gt;Final ditch effort to do it manually led me to this:
+&lt;a class="reference external" href="http://bigbrovar.wordpress.com/2008/12/07/upgrade-downgrade-your-dell-bios-on-ubuntu/"&gt;http://bigbrovar.wordpress.com/2008/12/07/upgrade-downgrade-your-dell-bios-on-ubuntu/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;And, it works! Turns out on my system I didn't even need to edit the
+/boot/grub/menu.lst file (BIOS just updates itself upon reboot).&lt;/p&gt;
+&lt;p&gt;And then, like magic, everything's fine. My whole system is back working
+again after just that one (major) fix.&lt;/p&gt;
+&lt;p&gt;Back to work for me…&lt;/p&gt;
+</summary><category term="bios"></category><category term="driver"></category><category term="graphics"></category><category term="linux"></category><category term="problem"></category><category term="ubuntu"></category></entry></feed>

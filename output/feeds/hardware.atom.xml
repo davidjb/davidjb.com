@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DavidJB.com</title><link href="http://davidjb.com/" rel="alternate"></link><link href="http://davidjb.com/feeds/hardware.atom.xml" rel="self"></link><id>http://davidjb.com/</id><updated>2011-10-20T18:04:00+10:00</updated><entry><title>RSS Feed for OCZ Vertex 3 SSD firmware updates</title><link href="http://davidjb.com/blog/2011/10/rss-feed-for-ocz-vertex-3-ssd-firmware-updates/" rel="alternate"></link><updated>2011-10-20T18:04:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2011-10-20:blog/2011/10/rss-feed-for-ocz-vertex-3-ssd-firmware-updates/</id><summary type="html">&lt;p&gt;Here's a quick and dirty solution to me not being able to keep updated
+with OCZ firmware updates for my Vertex 3 SSD.&amp;nbsp; For whatever reason, OCZ
+doesn't provide a news feed of firmware updates (that I know of, correct
+me if I'm wrong!) so I've sorted a screen scraping Yahoo Pipes pipe to
+do it for me:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://pipes.yahoo.com/pipes/pipe.run?_id=a1f15d7ead0122567ad6537b2de484a3&amp;amp;_render=rss"&gt;http://pipes.yahoo.com/pipes/pipe.run?_id=a1f15d7ead0122567ad6537b2de484a3&amp;amp;_render=rss&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This RSS feed will (or should) only ever feature just 1 item - the
+latest version information for the firmware.&amp;nbsp; So, it won't handle
+keeping track of history, but if you (or I) add the feed to something
+like Google Reader, that will keep track of changes to the RSS feed for
+us/me.&amp;nbsp; So, when the target page on &lt;a class="reference external" href="http://www.ocztechnology.com/ssd_tools/OCZ_Vertex_3,_Vertex_3_Max_IOPS,_Agility_3,_Solid_3,_RevoDrive_3_and_RevoDrive_3_X2/"&gt;OCZ's site&lt;/a&gt;changes its version
+information, the feed will update, and Google Reader knows
+automagically.&lt;/p&gt;
+&lt;p&gt;Yahoo Pipes and Google Reader strike again.&lt;/p&gt;
+&lt;p&gt;Oh and apparently this firmware isn't just for the Vertex 3, but also
+for the OCZ Vertex 3, Vertex 3 Max IOPS, Agility 3, Solid 3, RevoDrive 3
+and RevoDrive 3 X2, so anyone using those other drives should be good
+too.&lt;/p&gt;
+</summary><category term="hack"></category><category term="ocz"></category><category term="pipes"></category><category term="regex"></category><category term="ssd"></category><category term="version"></category><category term="yahoo"></category></entry><entry><title>Dell SK-8135 keyboard not working during boot (POST, BIOS, GRUB) on OptiPlex 990</title><link href="http://davidjb.com/blog/2011/10/dell-sk-8135-keyboard-not-working-during-boot-post-bios-grub-on-optiplex-990/" rel="alternate"></link><updated>2011-10-20T15:19:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2011-10-20:blog/2011/10/dell-sk-8135-keyboard-not-working-during-boot-post-bios-grub-on-optiplex-990/</id><summary type="html">&lt;div class="note"&gt;
+&lt;p class="first admonition-title"&gt;Note&lt;/p&gt;
+&lt;p class="last"&gt;&lt;strong&gt;Update&lt;/strong&gt;: Since this was written, Dell has released version A10 of
+their &lt;a class="reference external" href="http://www.dell.com/support/drivers/us/en/04/DriverDetails/DriverFileFormats?DriverId=N31V7&amp;amp;FileId=2775891360"&gt;OptiPlex 990 BIOS&lt;/a&gt;!&amp;nbsp; I've tested this on my 990 and my
+keyboard now works!&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Just a quick note to anyone out there confused out of their mind if
+their Dell keyboard isn't working with their computer during boot: there
+is some incompatibility between the OptiPlex 990 and the Dell SK-8135
+keyboard.&amp;nbsp; I'm using the A06 BIOS, which is latest at the time of
+writing.&lt;/p&gt;
+&lt;p&gt;The result of this is that you cannot use the keyboard during boot, so
+not within POST, not to enter the boot menu or BIOS, and the keyboard
+does not work in my GRUB until I unplug it and plug it in again.&amp;nbsp; I've
+tried two of these specific keyboards, revision P and revision S, and
+both show the same issue.&amp;nbsp; I've also tried the keyboard on two different
+OptiPlex 990 machines, and the result is the same.&amp;nbsp; All sorts of other
+keyboards work fine though, and the SK-8135 works fine once you load an
+OS -- so through this detective work, there must be something wrong with
+the computer (aka with the BIOS).&lt;/p&gt;
+&lt;p&gt;So, just in case you hit the same issue, this is what I've found.&amp;nbsp; If
+you find this too, please contact Dell and hopefully we can get a
+resolution.&lt;/p&gt;
+&lt;p&gt;Cheers!&lt;/p&gt;
+</summary><category term="bios"></category><category term="dell"></category><category term="keyboard"></category><category term="post"></category></entry><entry><title>How to: Updating OCZ Vertex 3 SSD Firmware (on a Dell M1530 laptop)</title><link href="http://davidjb.com/blog/2011/05/how-to-updating-ocz-vertex-3-ssd-firmware-on-a-dell-m1530-laptop/" rel="alternate"></link><updated>2011-05-21T23:45:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2011-05-21:blog/2011/05/how-to-updating-ocz-vertex-3-ssd-firmware-on-a-dell-m1530-laptop/</id><summary type="html">&lt;div class="note"&gt;
+&lt;p class="first admonition-title"&gt;Note&lt;/p&gt;
+&lt;p class="last"&gt;&lt;strong&gt;Update 3:&lt;/strong&gt; This guide is effectively now entirely outdated
+with regards to the available tools.  I've gone back to simply using
+a Windows boot disk to handle the firmware upgrades, although they've
+gotten less frequent as of late.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;I've just shelled out a good chunk of money in buying an OCZ Vertex 3
+240GB solid state drive (SSD) and it's amazingly quick. So amazingly
+quick that I thought I may just have fallen into a coma when I had to
+temporarily switch back to my old mechanical hard drive and boot from it
+again. And this is only using the Vertex 3 on a SATA II interface - not
+even the SATA III it's designed for. I actually just bought a new laptop
+with the intention (at least one of ;)) of being able to utilise the
+drive's full potential on SATA III, but I digress.&lt;/p&gt;
+&lt;p&gt;After having only had this drive for a week, I've noticed that there are
+firmware upgrades available from the OCZ website, and the Vertex 3's
+firmware stands at 2.06 at time of writing. Now, you can upgrade this
+firmware (and upgrading did &lt;strong&gt;not&lt;/strong&gt; erase my drive!) but it's not the
+easiest if you're like me and only have a laptop with the SSD as your
+only drive. Thankfully, a bit of trial and error on my part got this
+licked. Here's a guide to how I did it.&lt;/p&gt;
+&lt;p&gt;Now, as the OCZ site mentions, you can't upgrade a disk that you've
+booted off. I've also learned that you need to have your SSD connected
+in via a dedicated SATA controller (NOT a USB-to-SATA converter or any
+such thing) and in my case of my M1530 laptop, is the internal drive
+bay. This means we need to be booting off a USB stick or optical disc -
+something Windows essentially won't do easily. Thankfully, this is
+something that Linux shines at. And the good news here is that OCZ have
+a Linux-based updater tool available. Hurray!&lt;/p&gt;
+&lt;p&gt;Here's what you can do. Warning: your mileage &lt;strong&gt;will&lt;/strong&gt; likely vary for
+you if using a different laptop, different model version, different
+firmware to A12, different SSD firmware, etc, so be very careful
+following my words verbatim.&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;Download and install a Linux distribution to a USB stick or burn an
+optical disc.&amp;nbsp; In my case, I chose Ubuntu 11.04, because that's what
+I'm comfortable with.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Head to the OCZ forums and download the linked &lt;a class="reference external" href="http://www.ocztechnologyforum.com/forum/showthread.php?82289-OCZ-SandForce-Linux-based-firmware-update-tool"&gt;Linux OCZ Firmware
+Update Tool&lt;/a&gt;. At time of writing, the version is 1.15.&amp;nbsp; Put the zip
+or tar file close to hand (eg on the USB stick is a good idea).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Shut down your computer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Potentially optional step:&amp;nbsp; change the SATA mode on your drive to
+'ATA' (away from 'AHCI') within the BIOS.&amp;nbsp; As far as I had read, this
+is necessary.&amp;nbsp; That said,&amp;nbsp; I haven't tried it without doing this as
+of yet.&amp;nbsp; When changed, shut down your computer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Disconnect all power from the computer - in the case of my laptop,
+this was the AC and the battery.&amp;nbsp; Wait for a minute before
+reconnecting.&amp;nbsp; Apparently this is enough time for the AHCI security
+'freeze' to be cleared from the SSD.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Connect power again and boot from your USB stick.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;When your Linux distro is loaded, inspect your SSD's parameters with
+this command, replacing /dev/sda with your drive's device:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+sudo hdparm -I /dev/sda
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;If all is well, then you should see 'not frozen' and 'not locked' in
+the output, near the very bottom.&amp;nbsp; If you only see 'frozen' (for
+instance) as one of the lines, then your device needs to be unfrozen
+before continuing&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;In my case, I had to turn off the swap partition on the drive
+(done easily with gparted) and&lt;/li&gt;
+&lt;li&gt;I had to suspend and resume my computer whilst on running off the
+USB stick.&amp;nbsp; This last point clinched it for me and the security
+freeze was lifted.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Once you're ready, make sure your computer is connected to the
+Internet as the firmware updater downloads the latest version from
+OCZ on the fly.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Locate your zip/tar of the firmware tool and extract it somewhere
+convenient.&amp;nbsp; For argument's sake, I've put mine in my home directory.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Run the appropriate command from the following to update the firmware
+(linux32 is for if you are presently booted into a 32 bit OS and
+linux64 is for 64 bit; replacing /dev/sda with your drive's device):&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+sudo ~/fwupd\_v115/linux32/fwupd -log /dev/sda
+sudo ~/fwupd\_v115/linux64/fwupd -log /dev/sda
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;You should be greeted with a message of success, if it all worked. If
+it didn't, then check to make sure your drive isn't reported as
+locked or frozen - this is what it was for me 99% of the time.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;So that's about it. This guide and how-to is mostly posted for my own
+information for later, but hopefully it might help someone else. Like
+always, make sure you've backed up your data before beginning anything
+like this.&lt;/p&gt;
+</summary><category term="boot"></category><category term="drive"></category><category term="firmware"></category><category term="guide"></category><category term="linux"></category><category term="live"></category><category term="ssd"></category><category term="update"></category><category term="usb"></category></entry><entry><title>DIY - Replace your Logitech Premium Notebook Headset foam ear pads</title><link href="http://davidjb.com/blog/2010/12/replace-your-logitech-premium-notebook-headset-foam-ear-pads/" rel="alternate"></link><updated>2010-12-04T00:56:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2010-12-04:blog/2010/12/replace-your-logitech-premium-notebook-headset-foam-ear-pads/</id><summary type="html">&lt;p&gt;So, I'm the proud owner of a set of a &lt;a class="reference external" href="http://www.logitech.com/en-gb/speakers-audio/headphones/devices/223"&gt;Logitech Premium Notebook
+Headset&lt;/a&gt;. I purchased these headphones a fair while ago - around 2
+years - and just like any set of headphones, the foam ear pads
+deteriorated away when I took them out to use them after a long spell in
+storage. Usually, this wouldn't be a problem if it were a set of
+headphones that used a standard shaped ear pad -- just buy some
+replacement foam pages and put them on. These headphones aren't so, with
+the shape being more like a D shape rather than an oval or circle.&lt;/p&gt;
+&lt;p&gt;Now, Googling around lead me to find posts like &lt;a class="reference external" href="http://forums.logitech.com/t5/Headphones-Headsets-Microphones/Premium-Notebook-Headset-Foam-Earpad-Replacements/td-p/87499"&gt;this&lt;/a&gt; discussing that
+Logitech don't sell replacement pads. That post's pretty old but it's
+still relevant, since I can't find anywhere that mentions a solution.
+People might want to give up and buy another set, but I for one am not
+going to settle for letting a $60 pair of headphones go to waste for
+such a trivial reason. In addition, looking around on eBay for &lt;strong&gt;cheap&lt;/strong&gt;
+replacement foam pads meant it was circular pads or bust. Hmm.&amp;nbsp; This
+post covers how to quickly and cheaply &lt;em&gt;replace your pads&lt;/em&gt;!&lt;/p&gt;
+&lt;p&gt;The short answer is to buy this or similar:
+&lt;a class="reference external" href="http://cgi.ebay.com.au/ws/eBayISAPI.dll?ViewItem&amp;amp;item=160508622179"&gt;http://cgi.ebay.com.au/ws/eBayISAPI.dll?ViewItem&amp;amp;item=160508622179&lt;/a&gt;--
+it's a 4.5cm-diameter (45mm) black foam pad, with a good amount of depth
+to it (for stretching). Buy this, and replace your pads. Problem solved
+for a mere &lt;strong&gt;$2&lt;/strong&gt; including shipping (give or take)..and I got 4 pairs
+of pads.&amp;nbsp; For a more detailed outline, read on.&lt;/p&gt;
+&lt;p&gt;So, my solution is simply buy a suitably sized set of circular pads, and
+I have a very good feeling this is what Logitech use. Measuring up my
+ear speaker housing on the headphones, I approximated the shape to be an
+oval. Thanks to the fact foam has a bit of flexibility and give, I
+figured that you can &amp;quot;squish&amp;quot; a circular pad, and have it almost form
+the right shape. Using some maths, I calculated what sort of circle size
+could be squashed to result in a correctly-sized oval (eg reduce height
+to increase width) and the answer is a &lt;strong&gt;4.5cm (45mm) foam pad&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;I've since discarded my actual working out, but my working depended on
+the axiom that the foam pad's area (in a 2D plane) remains constant when
+being squished.&amp;nbsp; Whether my theory and calculations were perfect, I
+don't know, but I do know that I bought that given item from eBay, and
+with the tiniest amount of manipulation, the pads slipped on and my
+headphones are perfect.&amp;nbsp; The fit is nice and snug; seemingly, I won't
+need glue to keep them on.&amp;nbsp; Yay for maths in the real world!&lt;/p&gt;
+&lt;p&gt;The item mentioned above has sold and I'm not sure if the seller has any
+more (or will have in 2 years when I need more pads!).&amp;nbsp; In any case, as
+long as the pads are that diameter, and have a decent depth/height to
+them (eg will fit around the earphones and be held in place), then you
+should be fine.&lt;/p&gt;
+&lt;p&gt;Good luck fixing your headsets.&lt;/p&gt;
+</summary><category term="foam"></category><category term="headphones"></category><category term="logitech"></category><category term="maths"></category><category term="pads"></category><category term="problem"></category><category term="solution"></category></entry></feed>

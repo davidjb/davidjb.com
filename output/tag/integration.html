@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>DavidJB.com - integration</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../theme/css/main.css" type="text/css" />
+                <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
+                
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../css/ie.css"/>
+                <script src="../js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../css/ie6.css"/><![endif]-->
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
+                <nav><ul>
+                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                    <li><a href="../pages/blog.html">Blog</a></li>
+                                    <li><a href="../pages/projects.html">Projects</a></li>
+                                                                </ul></nav>
+        </header><!-- /#banner -->
+                
+            
+
+                            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="../blog/2009/02/plone-google-calendar-integration/">Plone: Google Calendar Integration</a></h1> 
+                    <footer class="post-info">
+        <abbr class="published" title="2009-02-19T08:55:00">
+                Thu 19 February 2009
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/davidjb.html">davidjb</a>
+        </address>
+        <p>In <a href="../category/plone.html">Plone</a>. </p>
+<p>tags: <a href="../tag/add-to.html">add to</a><a href="../tag/calendar.html">calendar</a><a href="../tag/event.html">event</a><a href="../tag/google.html">google</a><a href="../tag/integration.html">integration</a><a href="../tag/plone.html">plone</a></p>
+</footer><!-- /.post-info --><p>Wouldn't it be great if you could somehow add your Event content item
+within the Plone CMS onto your Google Calendar with just a click? (it'd
+be better with fewer, but 1 click is pretty good - give me a break!)</p>
+<p>Try this placed inside the <tt class="docutils literal">event_view</tt> page template (customise it in
+the ZMI) after the vCal and iCal links:</p>
+<pre class="code html literal-block">
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span>
+<span class="na">tal:attributes=</span><span class="s">&quot;href python:'http://www.google.com/calendar/event?action=TEMPLATE'
++'&amp;text='+here.title
++'&amp;dates='+here.start().toZone('UTC').ISO8601().replace('-','').replace(':','').split('+')[0]+'Z/'
++here.end().toZone('UTC').ISO8601().replace('-','').replace(':','').split('+')[0]+'Z'
++'&amp;location='+here.location
++'&amp;details='+here.getRawDescription()+'&lt;br /&gt;'+here.getRawText()
++'&amp;trp=true'
++'&amp;sprop=website:'+here.event_url()
++'&amp;sprop=name:'+here.contact_name();&quot;</span>
+<span class="na">title=</span><span class="s">&quot;Add this event to Google Calendar&quot;</span>
+<span class="na">target=</span><span class="s">&quot;_blank&quot;</span>
+<span class="na">style=</span><span class="s">&quot;background-image: none; padding: 0px;&quot;</span>
+<span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;https://www.google.com/calendar/images/ext/gc_button1.gif&quot;</span> <span class="na">alt=</span><span class="s">&quot;Add to Google Calendar&quot;</span> <span class="na">width=</span><span class="s">&quot;50&quot;</span> <span class="na">height=</span><span class="s">&quot;13&quot;</span>  <span class="nt">/&gt;</span>
+<span class="nt">&lt;/a&gt;</span>
+</pre>
+<p>So, it's clear as mud, right? It does some magic and completes a link
+for you to use to add your given event and it's details into Google
+Calendar from Plone.</p>
+<p>For those of you really paying attention, the date conversion is nasty
+(why doesn't Google accept an immediately accessible format?) and this
+<em>won't</em> work unless all fields are filled out. I'm still working on a
+field-friendly solution.</p>
+<p>Either way, I didn't find anything on the web about doing this, so here
+it is. Use as you will.</p>
+<p>There are <a href="../blog/2009/02/plone-google-calendar-integration/#disqus_thread">comments</a>.</p>                </article>
+                                    <p class="paginator">
+        Page 1 / 1
+    </p>
+                            </aside><!-- /#featured -->
+                                                </ol><!-- /#posts-list -->
+                        </section><!-- /#content -->
+                    <section id="extras" class="body">
+                        <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                                                    <li><a href="http://planet.plone.org">Planet Plone</a></li>
+                                                    <li><a href=""></a></li>
+                                                    <li><a href=""></a></li>
+                                                </ul>
+                </div><!-- /.blogroll -->
+                                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            
+                                                    <li><a href="http://git.io/djb">GitHub</a></li>
+                                                    <li><a href="http://twitter.com/davidjb_">Twitter</a></li>
+                                                    <li><a href="http://linkedin.com/in/davidbeitey">LinkedIn</a></li>
+                                                    <li><a href="http://facebook.com/david.beitey">Facebook</a></li>
+                                                    <li><a href="https://plus.google.com/u/0/106527454335411502430">Google+</a></li>
+                                                </ul>
+                </div><!-- /.social -->
+                </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24253455-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'davidjb';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

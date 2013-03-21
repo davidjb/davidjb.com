@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>DavidJB.com - Python</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../theme/css/main.css" type="text/css" />
+                <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
+                
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../css/ie.css"/>
+                <script src="../js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../css/ie6.css"/><![endif]-->
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
+                <nav><ul>
+                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                    <li><a href="../pages/blog.html">Blog</a></li>
+                                    <li><a href="../pages/projects.html">Projects</a></li>
+                                                                </ul></nav>
+        </header><!-- /#banner -->
+                
+            
+
+                 
+                            <section id="content" class="body">
+                    <ol id="posts-list" class="hfeed" start="9">
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../blog/2009/02/buildout-best-thing-ever/" rel="bookmark"
+                           title="Permalink to Buildout: Best Thing Ever?">Buildout: Best Thing Ever?</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2009-02-20T08:58:00">
+                Fri 20 February 2009
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/davidjb.html">davidjb</a>
+        </address>
+        <p>In <a href="../category/python.html">Python</a>. </p>
+<p>tags: <a href="../tag/best-thing.html">best thing</a><a href="../tag/buildout.html">buildout</a><a href="../tag/excellent.html">excellent</a></p>
+</footer><!-- /.post-info -->                <p>Taking a little bit of a time-out, I just have to ask the question: is
+Buildout not the best thing ever? (and the people who are so very kind
+to make the recipes?)</p>
+<p>It's made my work of managing our Plone infrastructure about 1000 times
+simpler since moving from ...</p>
+                <a class="readmore" href="../blog/2009/02/buildout-best-thing-ever/">read more</a>
+                <p>There are <a href="../blog/2009/02/buildout-best-thing-ever/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../blog/2009/02/buildout-trying-to-create-a-plonezope-instance/" rel="bookmark"
+                           title="Permalink to Buildout: Trying to create a Plone/Zope instance">Buildout: Trying to create a Plone/Zope instance</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2009-02-11T08:51:00">
+                Wed 11 February 2009
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/davidjb.html">davidjb</a>
+        </address>
+        <p>In <a href="../category/python.html">Python</a>. </p>
+<p>tags: <a href="../tag/bootstrap.html">bootstrap</a><a href="../tag/buildout.html">buildout</a><a href="../tag/error.html">error</a><a href="../tag/plone.html">plone</a><a href="../tag/script.html">script</a><a href="../tag/zope.html">zope</a></p>
+</footer><!-- /.post-info -->                <p>Eeek...what's this mean?</p>
+<pre class="code pytb literal-block">
+<span class="x">install() got an unexpected keyword argument 'allow_hosts'</span>
+</pre>
+<p>after trying to build zope2zeoserver from my buildout configuration.</p>
+<p>After some searching, I found that it was due to my bootstrap.py script
+(the one the gets buildout in the first place and creates the relevant
+scripts) was ...</p>
+                <a class="readmore" href="../blog/2009/02/buildout-trying-to-create-a-plonezope-instance/">read more</a>
+                <p>There are <a href="../blog/2009/02/buildout-trying-to-create-a-plonezope-instance/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../blog/2009/02/buildout-trying-to-build-pound/" rel="bookmark"
+                           title="Permalink to Buildout: Trying to build Pound">Buildout: Trying to build Pound</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2009-02-11T08:49:00">
+                Wed 11 February 2009
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/davidjb.html">davidjb</a>
+        </address>
+        <p>In <a href="../category/python.html">Python</a>. </p>
+<p>tags: <a href="../tag/buildout.html">buildout</a><a href="../tag/pound.html">pound</a><a href="../tag/recipe.html">recipe</a></p>
+</footer><!-- /.post-info -->                <p>So, trying to build <tt class="docutils literal">pound</tt> through a Buildout recipe was failing part of
+the way through.</p>
+<p>Two problems and their solutions (not necessarily in that order):</p>
+<ul class="simple">
+<li>Needed to install <strong>libssl-dev</strong> because <strong>lcrypto</strong> was missing
+(ambiguity anyone?) - Synaptic says that the package provides &quot;libssl
+and libcrypto development libraries, header files and ...</li></ul>
+                <a class="readmore" href="../blog/2009/02/buildout-trying-to-build-pound/">read more</a>
+                <p>There are <a href="../blog/2009/02/buildout-trying-to-build-pound/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="../blog/2009/01/buildout-and-version-problems/" rel="bookmark"
+                           title="Permalink to Buildout and Version Problems">Buildout and Version Problems</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2009-01-06T16:35:00">
+                Tue 06 January 2009
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/davidjb.html">davidjb</a>
+        </address>
+        <p>In <a href="../category/python.html">Python</a>. </p>
+<p>tags: <a href="../tag/buildout.html">buildout</a><a href="../tag/easy_install.html">easy_install</a><a href="../tag/python.html">python</a></p>
+</footer><!-- /.post-info -->                <p>Two blog entries in one day - wow it's been a good work day.</p>
+<p>Just a quick chronicle of my thoughts: version conflicts in buildout
+aren't always pretty. My latest escapade into trying to load up Varnish
+through zc.buildout resulted in a hair-tearing out message:</p>
+<pre class="code pytb literal-block">
+<span class="x">An internal error ...</span></pre>
+                <a class="readmore" href="../blog/2009/01/buildout-and-version-problems/">read more</a>
+                <p>There are <a href="../blog/2009/01/buildout-and-version-problems/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
+                            </ol><!-- /#posts-list -->
+                            <p class="paginator">
+                        <a href="../category/python.html">&laquo;</a>
+                Page 2 / 2
+    </p>
+                        </section><!-- /#content -->
+                    <section id="extras" class="body">
+                        <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                                                    <li><a href="http://planet.plone.org">Planet Plone</a></li>
+                                                    <li><a href=""></a></li>
+                                                    <li><a href=""></a></li>
+                                                </ul>
+                </div><!-- /.blogroll -->
+                                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            
+                                                    <li><a href="http://git.io/djb">GitHub</a></li>
+                                                    <li><a href="http://twitter.com/davidjb_">Twitter</a></li>
+                                                    <li><a href="http://linkedin.com/in/davidbeitey">LinkedIn</a></li>
+                                                    <li><a href="http://facebook.com/david.beitey">Facebook</a></li>
+                                                    <li><a href="https://plus.google.com/u/0/106527454335411502430">Google+</a></li>
+                                                </ul>
+                </div><!-- /.social -->
+                </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24253455-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'davidjb';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

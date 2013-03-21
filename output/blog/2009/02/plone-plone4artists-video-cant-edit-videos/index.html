@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Plone: Plone4Artists Video - Can't Edit Videos</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
+                <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
+                
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../../../../css/ie.css"/>
+                <script src="../../../../js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../../../../css/ie6.css"/><![endif]-->
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
+                <nav><ul>
+                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                    <li><a href="../../../../pages/blog.html">Blog</a></li>
+                                    <li><a href="../../../../pages/projects.html">Projects</a></li>
+                                                                </ul></nav>
+        </header><!-- /#banner -->
+        <section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="../../../../blog/2009/02/plone-plone4artists-video-cant-edit-videos/" rel="bookmark"
+           title="Permalink to Plone: Plone4Artists Video - Can't Edit Videos">Plone: Plone4Artists Video - Can't Edit Videos</a></h1>
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    </header>
+
+    <div class="entry-content">
+      <footer class="post-info">
+        <abbr class="published" title="2009-02-25T09:01:00">
+                Wed 25 February 2009
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../../../../author/davidjb.html">davidjb</a>
+        </address>
+        <p>In <a href="../../../../category/plone.html">Plone</a>. </p>
+<p>tags: <a href="../../../../tag/p4a.html">p4a</a><a href="../../../../tag/plone.html">plone</a><a href="../../../../tag/plone4artists.html">plone4artists</a><a href="../../../../tag/problem.html">problem</a><a href="../../../../tag/subtyped.html">subtyped</a><a href="../../../../tag/video.html">video</a></p>
+</footer><!-- /.post-info -->      <p>Wow..I just keep hitting these problems. The latest issue is chronicled
+here: <a class="reference external" href="http://dev.plone4artists.org/pm/p/plone4artists/ticket/160">http://dev.plone4artists.org/pm/p/plone4artists/ticket/160</a></p>
+<p>which essentially boils down to this problem when you try and edit a
+video subtyped File from p4a.plonevideo (or p4a.video or whatever it's
+called now):</p>
+<pre class="code pytb literal-block">
+<span class="x">Traceback (innermost last):
+* Module ZPublisher.Publish, line 119, in publish
+* Module ZPublisher.mapply, line 88, in mapply
+* Module ZPublisher.Publish, line 42, in call_object
+* Module zope.formlib.form, line 769, in __call__
+* Module p4a.video.browser.video, line 362, in update
+* Module Products.Five.formlib.formbase, line 55, in update
+* Module zope.formlib.form, line 732, in update
+* Module p4a.video.browser.video, line 367, in setUpWidgets
+* Module zope.formlib.form, line 393, in setUpEditWidgets
+* Module zope.formlib.form, line 323, in _createWidget
+* Module zope.component._api, line 103, in getMultiAdapter
+ComponentLookupError: ((&lt;p4a .fileimage.file._field.FileField object at 0x15ce2610&gt;, &lt;httprequest , URL=[snip].mp4/atct_edit&gt;), &lt;interfaceclass zope.app.form.interfaces.IInputWidget&gt;, u'')</span>
+</pre>
+<p>And so, after much painful searching and confusion, it's just simply an
+issue of including <tt class="docutils literal">p4a.fileimage</tt> in the ZCML section of your
+instance in your buildout.</p>
+<p>Wow..back to work (finally).</p>
+
+    </div><!-- /.entry-content -->
+        <div class="comments">
+      <h2>Comments !</h2>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_identifier = "blog/2009/02/plone-plone4artists-video-cant-edit-videos/";
+        var disqus_url = "../../../../blog/2009/02/plone-plone4artists-video-cant-edit-videos/";
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://davidjb.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+    </div>
+    
+  </article>
+</section>
+        <section id="extras" class="body">
+                        <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                                                    <li><a href="http://planet.plone.org">Planet Plone</a></li>
+                                                    <li><a href=""></a></li>
+                                                    <li><a href=""></a></li>
+                                                </ul>
+                </div><!-- /.blogroll -->
+                                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            
+                                                    <li><a href="http://git.io/djb">GitHub</a></li>
+                                                    <li><a href="http://twitter.com/davidjb_">Twitter</a></li>
+                                                    <li><a href="http://linkedin.com/in/davidbeitey">LinkedIn</a></li>
+                                                    <li><a href="http://facebook.com/david.beitey">Facebook</a></li>
+                                                    <li><a href="https://plus.google.com/u/0/106527454335411502430">Google+</a></li>
+                                                </ul>
+                </div><!-- /.social -->
+                </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24253455-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'davidjb';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

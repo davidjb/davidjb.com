@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>DavidJB.com - extension</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../theme/css/main.css" type="text/css" />
+                <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
+                
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../css/ie.css"/>
+                <script src="../js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../css/ie6.css"/><![endif]-->
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
+                <nav><ul>
+                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                    <li><a href="../pages/blog.html">Blog</a></li>
+                                    <li><a href="../pages/projects.html">Projects</a></li>
+                                                                </ul></nav>
+        </header><!-- /#banner -->
+                
+            
+
+                            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="../blog/2010/04/plone-and-dexterity-working-with-computed-fields/">Plone and Dexterity: Working with computed fields</a></h1> 
+                    <footer class="post-info">
+        <abbr class="published" title="2010-04-19T14:03:00">
+                Mon 19 April 2010
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/davidjb.html">davidjb</a>
+        </address>
+        <p>In <a href="../category/plon.html">Plon</a>. </p>
+<p>tags: <a href="../tag/computation.html">computation</a><a href="../tag/content.html">content</a><a href="../tag/dexterity.html">dexterity</a><a href="../tag/extension.html">extension</a><a href="../tag/function.html">function</a><a href="../tag/plone.html">plone</a><a href="../tag/product.html">product</a><a href="../tag/python.html">python</a></p>
+</footer><!-- /.post-info --><p>Today, we're looking at how to utilise computed fields within a
+Dexterity-based content type. The specific use-case is that of having
+two separate fields (first name and surname, for a Person type, for
+example) generate the complete object title. The first part of this --
+having the title of the content displayed correctly -- is pretty
+straight forward once you know what documentation to read and understand
+how things happen. The second part -- having the ID of the content
+correctly generated to be first name/surname is slightly more
+complicated.</p>
+<div class="section" id="title-computation-and-display">
+<h2>Title computation and display</h2>
+<p>Let's look at the first part.&nbsp; What we need is a custom content class,
+and this is documented in the <a class="reference external" href="http://plone.org/products/dexterity/documentation/manual/developer-manual/advanced/classes">Dexterity Developer Manual</a>.&nbsp; As per the
+documentation, you need to create a class and derive it off from either
+Item or Container, depending on what your content originally is.&nbsp; Then,
+specify your new class as the 'klass' in your relevant type XML file in
+your GenericSetup profile.</p>
+<p>Now, with an empty class definition, like in the manual page, you can
+start to add your computed fields. Your class might look something like
+this (don't worry, I'll explain):</p>
+<pre class="code python literal-block">
+<span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="n">Item</span><span class="p">):</span>
+<span class="sd">&quot;&quot;&quot;Customised Person content class&quot;&quot;&quot;</span>
+    <span class="nd">&#64;property</span>
+    <span class="k">def</span> <span class="nf">title</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">'first_names'</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s">'surname'</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">first_names</span> <span class="o">+</span> <span class="s">' '</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">surname</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s">''</span>
+
+    <span class="k">def</span> <span class="nf">setTitle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">return</span>
+</pre>
+<p>So, we have our relevant function defined and decorated to be a
+property. I've found that in at least this specific use-case (setting
+the title from other fields), that this method is getting called before
+the object's fields are instantiated. Hence the presence of the hasattr
+checks.</p>
+<p>Now, having a setTitle function seems a bit odd yes? Especially so since
+it doesn't do anything meaningful at all. Odds are that you probably
+won't need this type of function <em>unless</em> you're like me and needing to
+set the <strong>title</strong> specifically. The reason you need it for the title
+attribute is because you've got &quot;def title(self)&quot; as a function and your
+default DublinCore functionality (called by Dexterity &#64;
+plone.dexterity.content, line 221, in __init__) attempts to
+initialise the title, amongst other DC metadata. Interesting!</p>
+<p>So, without a setTitle function, attempting to create a new instance of
+your content fails with a &quot;AttributeError: can't set attribute&quot; error
+because DC (Module Products.CMFDefault.DublinCore, line 369, in
+setTitle) wants to set the title. Sorry, it can't do this (we don't want
+it to, and it physically can't), so we override what would be the
+default setTitle function to do nothing at all.</p>
+</div>
+<div class="section" id="correct-id-at-creation-time-from-computed-title">
+<h2>Correct ID at creation time from computed title</h2>
+<p>Now, this one's a little trickier. Unfortunately, there's no
+documentation that I could find on the web about doing this, save a
+<a class="reference external" href="http://n2.nabble.com/Dexterity-computed-fields-td3498400.html">very short thread</a> on Nabble. In that thread, Martin Aspeli provides
+some good pointers to this very use-case, but the example of
+INameFromTitle provides the title as a field, rather than a function
+(and isn't specifically registered as an adapter).</p>
+<p>After a bit of poking and prodding, here's my solution:</p>
+<pre class="code python literal-block">
+<span class="kn">from</span> <span class="nn">plone.app.content.interfaces</span> <span class="kn">import</span> <span class="n">INameFromTitle</span>
+<span class="k">class</span> <span class="nc">INameFromPersonNames</span><span class="p">(</span><span class="n">INameFromTitle</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">title</span><span class="p">():</span>
+        <span class="sd">&quot;&quot;&quot;Return a processed title&quot;&quot;&quot;</span>
+
+<span class="k">class</span> <span class="nc">NameFromPersonNames</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">implements</span><span class="p">(</span><span class="n">INameFromPersonNames</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">context</span> <span class="o">=</span> <span class="n">context</span>
+
+    <span class="nd">&#64;property</span>
+    <span class="k">def</span> <span class="nf">title</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">first_names</span> <span class="o">+</span> <span class="s">' '</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">surname</span>
+</pre>
+<p>So, we extend off from the default functionality, making sure that our
+title function is going to override the title field that's in
+INameFromTitle by default. Then, we create our adapter and return the
+processed title (function decorated as a property). No need for hasattr
+checks here; the object is already initialised.</p>
+<p>Then, register this in some ZCML, where the 'for' is the Dexterity
+interface class and the latter two attributes are the classes we just
+specified:</p>
+<pre class="code xml literal-block">
+<span class="nt">&lt;adapter</span> <span class="na">for=</span><span class="s">&quot;sample.project.person.ISamplePerson&quot;</span>
+    <span class="na">provides=</span><span class="s">&quot;sample.project.person.INameFromPersonNames&quot;</span>
+    <span class="na">factory=</span><span class="s">&quot;sample.project.person.NameFromPersonNames&quot;</span>
+    <span class="nt">/&gt;</span>
+</pre>
+<p>Then, the magic of inheritance takes over and the relevant code that
+would normally generate the ID off from the title field comes from the
+processed title. Tada!</p>
+<div class="section" id="conclusion">
+<h3>Conclusion</h3>
+<p>Put all these things together with Dexterity and that's it. I'm still in
+the process of doing this, but you should be able to apply the same
+processes to other fields. Just watch out for DublinCore initialisation.
+If you see that sort of error message about a setXXX function and
+attribute, then you'll know what to do.</p>
+<p><strong>Note to self:</strong> the reason I didn't use a behaviour here is because
+things like INameFromTitle give us a field (see source file). We don't
+want this, but rather just programmatic generation of the title.</p>
+</div>
+</div>
+<p>There are <a href="../blog/2010/04/plone-and-dexterity-working-with-computed-fields/#disqus_thread">comments</a>.</p>                </article>
+                                    <p class="paginator">
+        Page 1 / 1
+    </p>
+                            </aside><!-- /#featured -->
+                                                </ol><!-- /#posts-list -->
+                        </section><!-- /#content -->
+                    <section id="extras" class="body">
+                        <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                                                    <li><a href="http://planet.plone.org">Planet Plone</a></li>
+                                                    <li><a href=""></a></li>
+                                                    <li><a href=""></a></li>
+                                                </ul>
+                </div><!-- /.blogroll -->
+                                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            
+                                                    <li><a href="http://git.io/djb">GitHub</a></li>
+                                                    <li><a href="http://twitter.com/davidjb_">Twitter</a></li>
+                                                    <li><a href="http://linkedin.com/in/davidbeitey">LinkedIn</a></li>
+                                                    <li><a href="http://facebook.com/david.beitey">Facebook</a></li>
+                                                    <li><a href="https://plus.google.com/u/0/106527454335411502430">Google+</a></li>
+                                                </ul>
+                </div><!-- /.social -->
+                </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24253455-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'davidjb';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

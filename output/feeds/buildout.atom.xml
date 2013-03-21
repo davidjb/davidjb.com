@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DavidJB.com</title><link href="http://davidjb.com/" rel="alternate"></link><link href="http://davidjb.com/feeds/buildout.atom.xml" rel="self"></link><id>http://davidjb.com/</id><updated>2009-09-03T15:57:00+10:00</updated><entry><title>Buildout: the biggest problems have the simplest answers...</title><link href="http://davidjb.com/blog/2009/09/the-biggest-problems-have-the-simplest-answers/" rel="alternate"></link><updated>2009-09-03T15:57:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2009-09-03:blog/2009/09/the-biggest-problems-have-the-simplest-answers/</id><summary type="html">&lt;p&gt;..and how true that is.&amp;nbsp; Today's time consumer is directly related to
+just 1 misplaced line of a buildout configuration (and presumably
+something that's changed somewhere else).&lt;/p&gt;
+&lt;div class="section" id="the-result"&gt;
+&lt;h2&gt;The result&lt;/h2&gt;
+&lt;p&gt;After much hunting and hunting, it turns out my Zope2 Fake Eggs weren't
+being generated.&lt;/p&gt;
+&lt;p&gt;On my long quest I had to go through downloading new packages and trying
+to find something that had changed and even trying to establish new
+virtual environments on different VMs.&amp;nbsp; Nothing would fix the problem.
+To rub salt in the wound, my desktop Ubuntu ran the buildout fine, so
+methinks the underlying reason for the pain is something OS-related.&lt;/p&gt;
+&lt;p&gt;After many hours of debugging buildout output and trying to go through
+the packages that seemed to be the cause (poor things, they were merely
+bystanders, asking for dependencies), a few carefully-placed print
+messages in the plone.recipe.zope2install package helped.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="the-cause"&gt;
+&lt;h2&gt;The cause&lt;/h2&gt;
+&lt;p&gt;&amp;quot;Oh? what do you mean the install() function isn't being run?&amp;quot;, I found
+myself saying after the print messages showed what was happening.&amp;nbsp; The
+fake eggs didn't exist because the Zope2 recipe, whilst being initiated,
+hadn't yet actually been run.&lt;/p&gt;
+&lt;p&gt;So, thanks to the 'zope2' entry in the parts section of my buildout
+being run after a whole lot of other sections, the other products never
+had a chance.&amp;nbsp; Result: lesson learned -- put the zope2 section first,
+and order matters!&lt;/p&gt;
+&lt;p&gt;Oddly enough though, it's never caused trouble before and obviously
+there's a difference between Centos and Ubuntu.&amp;nbsp; Hmmm.&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="buildout"></category><category term="centos"></category><category term="eggs"></category><category term="linux"></category><category term="plone"></category><category term="ubuntu"></category><category term="zope"></category></entry></feed>

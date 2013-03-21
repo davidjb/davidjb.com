@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DavidJB.com</title><link href="http://davidjb.com/" rel="alternate"></link><link href="http://davidjb.com/feeds/general.atom.xml" rel="self"></link><id>http://davidjb.com/</id><updated>2009-08-20T09:23:00+10:00</updated><entry><title>Migration complete (mostly)</title><link href="http://davidjb.com/blog/2009/08/migration-complete-mostly/" rel="alternate"></link><updated>2009-08-20T09:23:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2009-08-20:blog/2009/08/migration-complete-mostly/</id><summary type="html">&lt;p&gt;Well, that's always a good reason to let out a sigh of relief: I've
+managed to migrate most of the content from my previous blog over at
+Wikidot (which wasn't really a blog so much as it was a hacked wiki).
+So, you'll find a lot more content here than before, which is good,
+because it makes me look like I'm actually dedicated to creating content
+;-)&lt;/p&gt;
+&lt;p&gt;I've also relaxed restrictions on comments (and added CAPTCHA security)
+so comment away people, if you're reading this.&amp;nbsp; Just don't expect much
+love if you spam though...&lt;/p&gt;
+</summary><category term="content"></category><category term="migration"></category><category term="wiki"></category><category term="wikidot"></category></entry><entry><title>My new site</title><link href="http://davidjb.com/blog/2009/04/my-new-site/" rel="alternate"></link><updated>2009-04-15T10:40:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2009-04-15:blog/2009/04/my-new-site/</id><summary type="html">&lt;p&gt;Welcome to my new website and in particular, my new blog. My aim is to
+use this site now and slowly (but surely!) move away from the old haunts
+of Wikidot. It's especially intelligent considering that I'm actually
+paying for webspace on a yearly basis (albeit not much money) but I
+figure I should be using it all the same.&lt;/p&gt;
+&lt;p&gt;So, without further ado - I declare my new site open for business. Much
+like Queensland Transport and the local city council around here, the
+road is under construction. So, please don't blame me (to my face ;) )
+for any potholes you might hit.&amp;nbsp; It's a work in progress, so bear with
+me!&lt;/p&gt;
+&lt;p&gt;Lots of fun, games, pain, and Plone are to come.&amp;nbsp; Seems almost ironic
+I'm using WordPress as my CMS whilst I spout the joys (et cetera) of
+Plone all the time.&amp;nbsp; For all those people who are curious (oh, there's
+plenty I'm sure...): my shared webhost here doesn't offer Python, and
+I'm not paying for a dedicated server.&amp;nbsp; Short and simple; it's about the
+money (when is it not).&lt;/p&gt;
+&lt;p&gt;So, stay tuned!&lt;/p&gt;
+</summary><category term="cms"></category><category term="life"></category><category term="plone"></category><category term="website"></category></entry></feed>

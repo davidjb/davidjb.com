@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DavidJB.com</title><link href="http://davidjb.com/" rel="alternate"></link><link href="http://davidjb.com/feeds/plon.atom.xml" rel="self"></link><id>http://davidjb.com/</id><updated>2011-03-08T10:01:00+10:00</updated><entry><title>Increasing Plone's session timeout</title><link href="http://davidjb.com/blog/2011/03/increasing-plones-session-timeout/" rel="alternate"></link><updated>2011-03-08T10:01:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2011-03-08:blog/2011/03/increasing-plones-session-timeout/</id><summary type="html">&lt;p&gt;What you may notice if you're developing with Plone/Zope, is that if
+you're storing small pieces of data within Plone's session variable (the
+session_data_manager tool), data expires after a few minutes.&amp;nbsp; By
+default, this timeout is 20 minutes, but is far too short if you're
+expecting the information stored to last for say the whole time a user
+is logged in.&amp;nbsp; In this situation, you'll need to increase the timeout.&lt;/p&gt;
+&lt;p&gt;Documentation on changing the session timeout is potentially a little
+sketchy (Google &amp;quot;session-timeout-minutes zope&amp;quot;), but it's clear that you
+need to change the &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;session-timeout-minutes&lt;/span&gt;&lt;/tt&gt; directive in your
+&lt;tt class="docutils literal"&gt;zope.conf&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;What's not immediately obvious is how to make a session persist
+indefinitely (until server reboot), but this can be achieved by setting
+the value to 0. Within a buildout environment for Plone, adding this
+under your Plone's instance section will add the configuration to your
+zope.conf.&lt;/p&gt;
+&lt;pre class="code cfg literal-block"&gt;
+&lt;span class="k"&gt;[instance]&lt;/span&gt;
+&lt;span class="err"&gt;...&lt;/span&gt;
+&lt;span class="na"&gt;zope-conf-additional&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;
+    session-timeout-minutes 0&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;There are obviously implications for performance and other issues
+associated with persisting session data like this, but for arguments
+sake, let's say we've considered them.&amp;nbsp; You'll probably also want to
+consider deleting session data stored like this on logout (see &lt;a class="reference external" href="http://collective-docs.plone.org/sessions/session_variables.html"&gt;Session
+Variables&lt;/a&gt; in the Plone collective documentation) but that's dependant
+on your use case.&lt;/p&gt;
+</summary><category term="buildout"></category><category term="plone"></category><category term="session"></category><category term="timeout"></category><category term="zope"></category></entry><entry><title>Plone and Dexterity: Working with computed fields</title><link href="http://davidjb.com/blog/2010/04/plone-and-dexterity-working-with-computed-fields/" rel="alternate"></link><updated>2010-04-19T14:03:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2010-04-19:blog/2010/04/plone-and-dexterity-working-with-computed-fields/</id><summary type="html">&lt;p&gt;Today, we're looking at how to utilise computed fields within a
+Dexterity-based content type. The specific use-case is that of having
+two separate fields (first name and surname, for a Person type, for
+example) generate the complete object title. The first part of this --
+having the title of the content displayed correctly -- is pretty
+straight forward once you know what documentation to read and understand
+how things happen. The second part -- having the ID of the content
+correctly generated to be first name/surname is slightly more
+complicated.&lt;/p&gt;
+&lt;div class="section" id="title-computation-and-display"&gt;
+&lt;h2&gt;Title computation and display&lt;/h2&gt;
+&lt;p&gt;Let's look at the first part.&amp;nbsp; What we need is a custom content class,
+and this is documented in the &lt;a class="reference external" href="http://plone.org/products/dexterity/documentation/manual/developer-manual/advanced/classes"&gt;Dexterity Developer Manual&lt;/a&gt;.&amp;nbsp; As per the
+documentation, you need to create a class and derive it off from either
+Item or Container, depending on what your content originally is.&amp;nbsp; Then,
+specify your new class as the 'klass' in your relevant type XML file in
+your GenericSetup profile.&lt;/p&gt;
+&lt;p&gt;Now, with an empty class definition, like in the manual page, you can
+start to add your computed fields. Your class might look something like
+this (don't worry, I'll explain):&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Person&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Item&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Customised Person content class&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="nd"&gt;&amp;#64;property&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;title&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;hasattr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'first_names'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="nb"&gt;hasattr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'surname'&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;first_names&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;' '&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;surname&lt;/span&gt;
+        &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;''&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;setTitle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;So, we have our relevant function defined and decorated to be a
+property. I've found that in at least this specific use-case (setting
+the title from other fields), that this method is getting called before
+the object's fields are instantiated. Hence the presence of the hasattr
+checks.&lt;/p&gt;
+&lt;p&gt;Now, having a setTitle function seems a bit odd yes? Especially so since
+it doesn't do anything meaningful at all. Odds are that you probably
+won't need this type of function &lt;em&gt;unless&lt;/em&gt; you're like me and needing to
+set the &lt;strong&gt;title&lt;/strong&gt; specifically. The reason you need it for the title
+attribute is because you've got &amp;quot;def title(self)&amp;quot; as a function and your
+default DublinCore functionality (called by Dexterity &amp;#64;
+plone.dexterity.content, line 221, in __init__) attempts to
+initialise the title, amongst other DC metadata. Interesting!&lt;/p&gt;
+&lt;p&gt;So, without a setTitle function, attempting to create a new instance of
+your content fails with a &amp;quot;AttributeError: can't set attribute&amp;quot; error
+because DC (Module Products.CMFDefault.DublinCore, line 369, in
+setTitle) wants to set the title. Sorry, it can't do this (we don't want
+it to, and it physically can't), so we override what would be the
+default setTitle function to do nothing at all.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="correct-id-at-creation-time-from-computed-title"&gt;
+&lt;h2&gt;Correct ID at creation time from computed title&lt;/h2&gt;
+&lt;p&gt;Now, this one's a little trickier. Unfortunately, there's no
+documentation that I could find on the web about doing this, save a
+&lt;a class="reference external" href="http://n2.nabble.com/Dexterity-computed-fields-td3498400.html"&gt;very short thread&lt;/a&gt; on Nabble. In that thread, Martin Aspeli provides
+some good pointers to this very use-case, but the example of
+INameFromTitle provides the title as a field, rather than a function
+(and isn't specifically registered as an adapter).&lt;/p&gt;
+&lt;p&gt;After a bit of poking and prodding, here's my solution:&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;plone.app.content.interfaces&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;INameFromTitle&lt;/span&gt;
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;INameFromPersonNames&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;INameFromTitle&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;title&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+        &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Return a processed title&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;NameFromPersonNames&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;implements&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;INameFromPersonNames&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;context&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;context&lt;/span&gt;
+
+    &lt;span class="nd"&gt;&amp;#64;property&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;title&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;first_names&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;' '&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;surname&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;So, we extend off from the default functionality, making sure that our
+title function is going to override the title field that's in
+INameFromTitle by default. Then, we create our adapter and return the
+processed title (function decorated as a property). No need for hasattr
+checks here; the object is already initialised.&lt;/p&gt;
+&lt;p&gt;Then, register this in some ZCML, where the 'for' is the Dexterity
+interface class and the latter two attributes are the classes we just
+specified:&lt;/p&gt;
+&lt;pre class="code xml literal-block"&gt;
+&lt;span class="nt"&gt;&amp;lt;adapter&lt;/span&gt; &lt;span class="na"&gt;for=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;sample.project.person.ISamplePerson&amp;quot;&lt;/span&gt;
+    &lt;span class="na"&gt;provides=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;sample.project.person.INameFromPersonNames&amp;quot;&lt;/span&gt;
+    &lt;span class="na"&gt;factory=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;sample.project.person.NameFromPersonNames&amp;quot;&lt;/span&gt;
+    &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Then, the magic of inheritance takes over and the relevant code that
+would normally generate the ID off from the title field comes from the
+processed title. Tada!&lt;/p&gt;
+&lt;div class="section" id="conclusion"&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Put all these things together with Dexterity and that's it. I'm still in
+the process of doing this, but you should be able to apply the same
+processes to other fields. Just watch out for DublinCore initialisation.
+If you see that sort of error message about a setXXX function and
+attribute, then you'll know what to do.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note to self:&lt;/strong&gt; the reason I didn't use a behaviour here is because
+things like INameFromTitle give us a field (see source file). We don't
+want this, but rather just programmatic generation of the title.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="computation"></category><category term="content"></category><category term="dexterity"></category><category term="extension"></category><category term="function"></category><category term="plone"></category><category term="product"></category><category term="python"></category></entry><entry><title>Wget a Plone site (and make it actually work)</title><link href="http://davidjb.com/blog/2010/02/wget-a-plone-site-and-make-it-actually-work/" rel="alternate"></link><updated>2010-02-25T15:01:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2010-02-25:blog/2010/02/wget-a-plone-site-and-make-it-actually-work/</id><summary type="html">&lt;p&gt;There's a lot of different resources and posts on the
+web about how to export a Plone site to static html content, but no
+methodology would actually solve all of my problems. Now, Plone is
+inherently a complicated beast, given just how much it does, and that's
+definitely putting it lightly. But here goes at my attempt to provide an
+actual, workable solution.&amp;nbsp; Word for the wise though, this is for more
+than just your front-end administrator to handle.&amp;nbsp; Also, instructions
+are designed for Ubuntu 9.10.&amp;nbsp; Mileage may/will vary on other distros or
+OSes.&lt;/p&gt;
+&lt;div class="section" id="requirements"&gt;
+&lt;h2&gt;Requirements&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Needs to get all pages, including default views of folders, correctly&lt;/li&gt;
+&lt;li&gt;Needs to rewrite all links to be relative, because I want to run the
+site locally on CD/DVD (or move it anywhere)&lt;/li&gt;
+&lt;li&gt;Should get all the CSS from the site, and images from the CSS&lt;/li&gt;
+&lt;li&gt;Doesn't have to be in 1 command (relaxed to make life easy ;-) )&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="how-to"&gt;
+&lt;h2&gt;How to&lt;/h2&gt;
+&lt;p&gt;Issues I've had with other methods (specifically, wget options) either
+don't get the right pages, manage to ignore default folder views, or
+other random problems.&amp;nbsp; Here's my take on the situation -- it's not a
+one-click solution, but it worked for me:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Go into your site and change all portal_css entries' Render Type to
+'Link'.&amp;nbsp; This solves issues with wget and &amp;#64;import for CSS.&lt;/li&gt;
+&lt;li&gt;Make invisible any actions in portal_actions that you don't want
+saved.&amp;nbsp; For example, &amp;quot;Register&amp;quot; and &amp;quot;Contact&amp;quot; might want to be hidden
+as they won't be useful on a static site.&lt;/li&gt;
+&lt;li&gt;When ready, run the following script on your site (thanks to
+&lt;a class="reference external" href="http://kiilerix.blogspot.com/2008/10/mirroring-plone-site.html"&gt;kiilerex&lt;/a&gt; for the wget command):
+&lt;a class="reference external" href="https://github.com/jcu-eresearch/static-plone-wget"&gt;https://github.com/jcu-eresearch/static-plone-wget&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Looking inside the bash script, you'll see uses wget to download the
+site, then gets a list of images referenced within the CSS files, and
+downloads them accordingly to the location where the CSS file(s)
+are.&amp;nbsp; Then, it corrects your CSS files to have relative URLs, rather
+than absolute as does Plone by default.&lt;/li&gt;
+&lt;li&gt;Your site should now be ready for distribution to any web location or
+distribution media!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Please let me know if there's any problems with the script. It's on GitHub
+at &lt;a class="reference external" href="https://github.com/jcu-eresearch/static-plone-wget"&gt;https://github.com/jcu-eresearch/static-plone-wget&lt;/a&gt; so go crazy and
+fork as you'd like.&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="cd"></category><category term="content"></category><category term="download"></category><category term="dvd"></category><category term="export"></category><category term="media"></category><category term="offline"></category><category term="plone"></category><category term="site"></category><category term="static"></category><category term="wget"></category></entry></feed>

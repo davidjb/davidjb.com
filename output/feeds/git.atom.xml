@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DavidJB.com</title><link href="http://davidjb.com/" rel="alternate"></link><link href="http://davidjb.com/feeds/git.atom.xml" rel="self"></link><id>http://davidjb.com/</id><updated>2009-09-07T13:09:00+10:00</updated><entry><title>Git and checkouts by date</title><link href="http://davidjb.com/blog/2009/09/git-and-checkouts-by-date/" rel="alternate"></link><updated>2009-09-07T13:09:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2009-09-07:blog/2009/09/git-and-checkouts-by-date/</id><summary type="html">&lt;p&gt;Cheers to this &lt;a class="reference external" href="http://www.bramschoenmakers.nl/en/node/645"&gt;very handy post&lt;/a&gt; for posting details from Nabble on how
+to check out a git branch based upon the date it was commited.&amp;nbsp; If I
+haven't modified Wordpress to turn off the character replacement, then
+watch out because the double-quotes and double-dash will need to be
+checked before running the command:&lt;/p&gt;
+&lt;pre class="code bash literal-block"&gt;
+git checkout &lt;span class="sb"&gt;`&lt;/span&gt;git rev-list -n 1 --before&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;2009-07-27 13:37&amp;quot;&lt;/span&gt; master&lt;span class="sb"&gt;`&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;A very easy way to flick back to a given revision.&lt;/p&gt;
+</summary><category term="date"></category><category term="git"></category><category term="history"></category><category term="versions"></category></entry></feed>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>DavidJB.com - bleeding edge</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../theme/css/main.css" type="text/css" />
+                <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
+                
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../css/ie.css"/>
+                <script src="../js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../css/ie6.css"/><![endif]-->
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
+                <nav><ul>
+                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                    <li><a href="../pages/blog.html">Blog</a></li>
+                                    <li><a href="../pages/projects.html">Projects</a></li>
+                                                                </ul></nav>
+        </header><!-- /#banner -->
+                
+            
+
+                            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="../blog/2009/09/deliver-me-from-deliverance/">Deliver me from ... Deliverance?</a></h1> 
+                    <footer class="post-info">
+        <abbr class="published" title="2009-09-02T14:26:00">
+                Wed 02 September 2009
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/davidjb.html">davidjb</a>
+        </address>
+        <p>In <a href="../category/themes.html">Themes</a>. </p>
+<p>tags: <a href="../tag/bleeding-edge.html">bleeding edge</a><a href="../tag/deliverance.html">deliverance</a><a href="../tag/plone.html">plone</a><a href="../tag/rules.html">rules</a><a href="../tag/technology.html">technology</a><a href="../tag/theme.html">theme</a><a href="../tag/themeing.html">themeing</a><a href="../tag/xml.html">xml</a></p>
+</footer><!-- /.post-info --><p>Always one for being on and beyond the bleeding edge of new technology,
+I've (with the help of colleagues) been setting up a new technology for
+applying themes to web sites.&nbsp; In particular, I'm applying Deliverance
+to Plone and whilst I'm not the first one to venture out into the
+wilderness this way, I've got to be thinking that I could be one of the
+few people documenting their experience.&nbsp; Ah, but where to begin?</p>
+<div class="section" id="the-proxy">
+<h2>The proxy</h2>
+<p>Ah yes, the proxy.&nbsp; Deliverance is very kind to us in that it operates
+it's own proxy.&nbsp; This, whilst okay, is a royal pain when Apache or
+similar is sitting in front, sending rewritten URLs to Deliverance [I'm
+hosting as a sub-folder on a domain].&nbsp; Maybe I'm just not cluey enough
+to figure it out, but when you spend almost a week and then have to hack
+things about with python code, it's probably not just me.&nbsp; In some
+cases, I think Deliverance is just trying to be 'too' smart, and you'll
+see what I mean shortly.</p>
+<p>At any rate, I've made Apache do a <strong>ProxyPass</strong> to Deliverance and then
+make Deliverance do the &quot;rewriting&quot;, and then the Zope VHM makes magic
+happen like normal.&nbsp; Great!&nbsp; Except no, that's not it, because
+Deliverance has no idea about the fact my site is hosted from both HTTP
+and HTTPS (or hosted from 2 domains)?&nbsp; What I've had to do is thus in
+Apache (and the same for HTTP etc):</p>
+<pre class="code apache literal-block">
+<span class="nb">RequestHeader</span> set X-Forwarded-Scheme https
+<span class="nb">RequestHeader</span> set X-Forwarded-Port <span class="m">443</span>
+<span class="nb">ProxyPass</span> <span class="sx">/mysite</span> http://my.deliverance.host:8000/mysite
+</pre>
+<p>and then this in Deliverance, since we now have what scheme/port/host
+we're serving from.&nbsp; All URLs coming back from Plone/VHM will be okay!
+8-):</p>
+<pre class="code apache literal-block">
+<span class="nt">&lt;proxy</span> <span class="s">path=&quot;/mysite&quot; domain=&quot;my.sites.domain&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;dest</span> <span class="s">href=&quot;http://localhost:8080/VirtualHostBase/{X-Forwarded-Scheme}/{X-Forwarded-Server}%3A{X-Forwarded-Port}/mysite/VirtualHostRoot/_vh_mysite&quot; /</span><span class="nt">&gt;</span>
+<span class="nt">&lt;transform</span> <span class="s">strip-script-name=&quot;1&quot; keep-host=&quot;0&quot; /</span><span class="nt">&gt;</span>
+<span class="nt">&lt;response</span> <span class="s">rewrite-links=&quot;0&quot; /</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/proxy&gt;</span>
+</pre>
+</div>
+<div class="section" id="the-theme">
+<h2>The theme</h2>
+<p>Oh, the theme.&nbsp; Again, Deliverance tries to be too smart for its own
+good if you specify a Deliverance-hosted theme here.&nbsp; If you have
+something relevative (eg <tt class="docutils literal">/_theme/theme.html</tt>), it'll work, but on your
+HTTPS site all theme elements will be unencrypted since HTTP is it.
+Whoops!</p>
+<p>Resolution?&nbsp; Not nice, but you'll need to serve your resources outside
+of Deliverance (probably faster anyway!), and have them accessible for
+both protocols.&nbsp; The good news is that when you specify an <strong>absolute</strong>
+URL, with protocol, then Deliverance pays attention, thus:</p>
+<pre class="code xml literal-block">
+<span class="nt">&lt;theme</span> <span class="na">href=</span><span class="s">&quot;{X-Forwarded-Scheme}://static.web.server/static/mysite/theme.html&quot;</span> <span class="na">domain=</span><span class="s">&quot;my.sites.domain&quot;</span> <span class="nt">/&gt;</span>
+</pre>
+</div>
+<div class="section" id="post-requests">
+<h2>POST requests</h2>
+<p>Ughh.&nbsp; Deliverance feels the need to be smart, <em>again</em>, by applying
+themes to incoming POST requests.&nbsp; Now, I can't think of any time you'd
+<em>actually</em> want this (unless...well, no..never), so make sure you've got
+something like this in your XML file to stop Deliverence:</p>
+<pre class="code xml literal-block">
+<span class="nt">&lt;match</span> <span class="na">environ=</span><span class="s">&quot;REQUEST_METHOD: POST&quot;</span> <span class="na">abort=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+</pre>
+</div>
+<div class="section" id="copying-moving-attributes">
+<h2>Copying/Moving Attributes</h2>
+<p>Okay, now this one's just weird.&nbsp; You need to specify which individual
+or several attributes from your content and then tell Deliverance to
+apply them all to the attributes of the target element.&nbsp; Seems simple
+enough now, but why is there no doco?&nbsp; This works:</p>
+<pre class="code xml literal-block">
+<span class="nt">&lt;replace</span> <span class="na">content=</span><span class="s">&quot;attributes(href):#portal-logo&quot;</span> <span class="na">theme=</span><span class="s">&quot;attributes://*[&#64;id='globalnav']/div/a&quot;</span> <span class="nt">/&gt;</span>
+</pre>
+<p>and this won't (type mismatch error):</p>
+<pre class="code xml literal-block">
+<span class="nt">&lt;replace</span> <span class="na">content=</span><span class="s">&quot;attributes(href):#portal-logo&quot;</span> <span class="na">theme=</span><span class="s">&quot;attributes(href)://*[&#64;id='globalnav']/div/a&quot;</span> <span class="nt">/&gt;</span>
+</pre>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion</h2>
+<p>Don't get me wrong, I like Deliverance.&nbsp; Xpath support is great, CSS
+3-style selectors are awesome, and what it does is magical.&nbsp; However, it
+needs a bit of work before I parachute away from Plone's themes for
+good.</p>
+<p>Fair's fair though, it's only version 0.3.&nbsp; I'm looking very forward to
+the future though.</p>
+</div>
+<p>There are <a href="../blog/2009/09/deliver-me-from-deliverance/#disqus_thread">comments</a>.</p>                </article>
+                                    <p class="paginator">
+        Page 1 / 1
+    </p>
+                            </aside><!-- /#featured -->
+                                                </ol><!-- /#posts-list -->
+                        </section><!-- /#content -->
+                    <section id="extras" class="body">
+                        <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                                                    <li><a href="http://planet.plone.org">Planet Plone</a></li>
+                                                    <li><a href=""></a></li>
+                                                    <li><a href=""></a></li>
+                                                </ul>
+                </div><!-- /.blogroll -->
+                                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            
+                                                    <li><a href="http://git.io/djb">GitHub</a></li>
+                                                    <li><a href="http://twitter.com/davidjb_">Twitter</a></li>
+                                                    <li><a href="http://linkedin.com/in/davidbeitey">LinkedIn</a></li>
+                                                    <li><a href="http://facebook.com/david.beitey">Facebook</a></li>
+                                                    <li><a href="https://plus.google.com/u/0/106527454335411502430">Google+</a></li>
+                                                </ul>
+                </div><!-- /.social -->
+                </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24253455-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'davidjb';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

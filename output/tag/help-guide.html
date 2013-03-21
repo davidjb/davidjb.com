@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>DavidJB.com - help guide</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../theme/css/main.css" type="text/css" />
+                <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
+                
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../css/ie.css"/>
+                <script src="../js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="../css/ie6.css"/><![endif]-->
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
+                <nav><ul>
+                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                    <li><a href="../pages/blog.html">Blog</a></li>
+                                    <li><a href="../pages/projects.html">Projects</a></li>
+                                                                </ul></nav>
+        </header><!-- /#banner -->
+                
+            
+
+                            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="../blog/2010/05/installing-python-2-4-on-ubuntu-10-04-lucid-lynx/">Installing Python 2.4 on Ubuntu 10.04 Lucid Lynx</a></h1> 
+                    <footer class="post-info">
+        <abbr class="published" title="2010-05-04T12:00:00">
+                Tue 04 May 2010
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="../author/davidjb.html">davidjb</a>
+        </address>
+        <p>In <a href="../category/linux.html">Linux</a>. </p>
+<p>tags: <a href="../tag/help-guide.html">help guide</a><a href="../tag/installation.html">installation</a><a href="../tag/linux.html">linux</a><a href="../tag/lucid.html">lucid</a><a href="../tag/packages.html">packages</a><a href="../tag/python.html">python</a><a href="../tag/ubuntu.html">ubuntu</a></p>
+</footer><!-- /.post-info --><p>Whoops.&nbsp; No one sent me the memo that Python
+2.4 support was being removed entirely from the latest version of
+Ubuntu, 10.04 Lucid Lynx.&nbsp; To be fair, I was presented with the message
+that 'these outdated packages will be removed' and in that list was
+python2.4.&nbsp; I made the unfortunate assumption that this just mean the
+package was outdated (which it certainly is) and I'd have the ability to
+install it again in Lucid.&nbsp; There were a number of different packages on
+the list and in order to save time, I let the updater remove them all.
+End result?&nbsp; No more Python 2.4 on Lucid.Now, installing it back again
+isn't too much of a hassle. You just need the old packages again from
+the Jaunty repositories.</p>
+<pre class="code bash literal-block">
+wget http://mirror.aarnet.edu.au/pub/ubuntu/archive/pool/main/p/python2.4/python2.4-minimal_2.4.6-1ubuntu3.2.9.10.1_i386.deb -O python2.4-minimal.deb
+wget http://mirror.aarnet.edu.au/pub/ubuntu/archive/pool/main/p/python2.4/python2.4_2.4.6-1ubuntu3.2.9.10.1_i386.deb -O python2.4.deb
+wget http://mirror.aarnet.edu.au/pub/ubuntu/archive/pool/main/p/python2.4/python2.4-dev_2.4.6-1ubuntu3.2.9.10.1_i386.deb -O python2.4-dev.deb
+sudo dpkg -i python2.4-minimal.deb python2.4.deb python2.4-dev.deb
+rm python2.4-minimal.deb python2.4.deb python2.4-dev.deb
+</pre>
+<p>You can use your own mirror for the Ubuntu repository as required. I've
+selected the AARNet mirror since it's about one of the quickest
+(typically) for me here in Australia on an AARNet-connected educational
+institution. Also, I'm using the i386 packages -- presumably this should
+be fine with the amd64 counterparts as well.</p>
+<p><strong>Note on Python 2.4 packages:</strong> watch out for old Python 2.4
+system-level packages you had installed (like python-virtualenv and
+similar) previously on Jaunty or earlier.&nbsp; These will now likely be
+their Python 2.6 counterparts and installed differently than the old
+ones.&nbsp; So, if you try and <tt class="docutils literal">easy_install</tt> something like virtualenv
+again, expect that you'll have two apps with the same identical name (vs
+virtualenv-2.4 previously) in your system path.</p>
+<p><strong>Note on Virtualenv:</strong> Exercise caution -- especially with the example
+of virtualenv. Its latest incarnation has some deeper emotional issues
+when mixing and matching the python-virtualenv package from the official
+Lucid repos and Python2.4. I get the feeling <a class="reference external" href="https://bugs.launchpad.net/ubuntu/+source/python-virtualenv/+bug/339904">this bug</a> is related.</p>
+<div class="section" id="python-2-4-profiler-reinstallation">
+<h2>Python 2.4 Profiler Reinstallation</h2>
+<p>If you find that some of your code (hello, Plone unit testing and
+functional testing, I'm talking about you) won't run because you can't
+&quot;import profile&quot; (<tt class="docutils literal">ImportError: No module named profile</tt>), then you'll
+need to get a hold of the python2.4-profiler package and install that.
+Now, life is made more fun by the fact that python-profiler (Ubuntu's
+new Python 2.6 version) explicitly conflicts with this package. Soooo...
+do this to install it:</p>
+<pre class="code bash literal-block">
+sudo apt-get remove python-profiler
+wget http://mirror.aarnet.edu.au/pub/ubuntu/archive/pool/multiverse/p/python-profiler/python2.4-profiler_2.4.3-1ubuntu3_all.deb -O python2.4-profiler.deb
+sudo dpkg-deb -x python2.4-profiler.deb /
+rm python2.4-profiler.deb
+sudo apt-get install python-profiler
+</pre>
+<p>and hey presto, you've got your profile module installed for ye olde
+Python 2.4.</p>
+</div>
+<p>There are <a href="../blog/2010/05/installing-python-2-4-on-ubuntu-10-04-lucid-lynx/#disqus_thread">comments</a>.</p>                </article>
+                                    <p class="paginator">
+        Page 1 / 1
+    </p>
+                            </aside><!-- /#featured -->
+                                                </ol><!-- /#posts-list -->
+                        </section><!-- /#content -->
+                    <section id="extras" class="body">
+                        <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                                                    <li><a href="http://planet.plone.org">Planet Plone</a></li>
+                                                    <li><a href=""></a></li>
+                                                    <li><a href=""></a></li>
+                                                </ul>
+                </div><!-- /.blogroll -->
+                                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            
+                                                    <li><a href="http://git.io/djb">GitHub</a></li>
+                                                    <li><a href="http://twitter.com/davidjb_">Twitter</a></li>
+                                                    <li><a href="http://linkedin.com/in/davidbeitey">LinkedIn</a></li>
+                                                    <li><a href="http://facebook.com/david.beitey">Facebook</a></li>
+                                                    <li><a href="https://plus.google.com/u/0/106527454335411502430">Google+</a></li>
+                                                </ul>
+                </div><!-- /.social -->
+                </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24253455-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'davidjb';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>
