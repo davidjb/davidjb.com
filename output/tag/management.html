@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2012/06/easier-github-organisation-repository-and-team-management-with-github-collective/">Easier GitHub organisation, repository and team management with github-collective</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2012/06/easier-github-organisation-repository-and-team-management-with-github-collective/">Easier GitHub organisation, repository and team management with&nbsp;github-collective</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2012-06-22T12:17:00">
                 Fri 22 June 2012
@@ -45,66 +45,63 @@
 <p>tags: <a href="../tag/collective.html">collective</a><a href="../tag/github.html">github</a><a href="../tag/ini.html">ini</a><a href="../tag/jenkins.html">jenkins</a><a href="../tag/management.html">management</a><a href="../tag/organization.html">organization</a><a href="../tag/plone.html">plone</a><a href="../tag/script.html">script</a></p>
 </footer><!-- /.post-info --><p>Have you ever felt that administering your GitHub organisation (or
 organization, depending from where you hail), its repositories, teams,
-and service hooks has become a tedious task and that you'd rather be
-doing something else? &nbsp;Maybe you're of the mindset that there should be
+and service hooks has become a tedious task and that you&#8217;d rather be
+doing something else? &nbsp;Maybe you&#8217;re of the mindset that there should be
 a better way of doing things - a way that involves specific,
 version-controlled configuration and less repetition (less
-clicky-clicky). &nbsp;The good news is that there is -- <a class="reference external" href="http://pypi.python.org/pypi/github-collective">github-collective</a>!</p>
-<p>This is a script, written in Python, that utilises <a class="reference external" href="http://developer.github.com/">GitHub's JSON-based
-API</a> to allow you to construct an ini-style text-based configuration
+clicky-clicky). &nbsp;The good news is that there is &#8212; <a class="reference external" href="http://pypi.python.org/pypi/github-collective">github-collective</a>!</p>
+<p>This is a script, written in Python, that utilises <a class="reference external" href="http://developer.github.com/">GitHub&#8217;s <span class="caps">JSON</span>-based
+<span class="caps">API</span></a> to allow you to construct an ini-style text-based configuration
 representing your GitHub organisation and have this sync to create
 repositories and service hooks for said repositories, teams, and
 configure access rights. &nbsp;At present, this works <em>from</em> your
 configuration <em>to</em> GitHub (not vice versa at present). You may already
-know this as what's powering the <a class="reference external" href="http://git.io/collective">GitHub Collective</a> to manage
-repositories and teams, especially if you're in the Plone community.</p>
+know this as what&#8217;s powering the <a class="reference external" href="http://git.io/collective">GitHub Collective</a> to manage
+repositories and teams, especially if you&#8217;re in the Plone&nbsp;community.</p>
 <p>An <a class="reference external" href="https://github.com/collective/github-collective/blob/master/example.cfg">example configuration</a> lives within its source code repository, and
 similarly, the configuration that <a class="reference external" href="https://github.com/collective/collective.github.com/blob/master/permissions.cfg">powers the Collective</a> is available
 also. Effectively, you define different types of sections ([team],
 [hook], [repo]) and these will correspond to certain things being
-created on GitHub via the API.</p>
+created on GitHub via the&nbsp;<span class="caps">API</span>.</p>
 <div class="section" id="our-implementation">
-<h2>Our implementation</h2>
+<h2>Our&nbsp;implementation</h2>
 <p>We at the James Cook University <a class="reference external" href="http://eresearch.jcu.edu.au">eResearch Centre</a>&nbsp;have deployed this
-for use against our <a class="reference external" href="http://git.io/jcu">GitHub organisation</a>&nbsp;and our workflow looks like
-this:</p>
+for use against our <a class="reference external" href="http://git.io/jcu">GitHub organisation</a>&nbsp;and our workflow looks like&nbsp;this:</p>
 <ol class="arabic simple">
 <li>Users are able to fork a configuration repository and modify
 accordingly. For simplicity, since changes are frequently minor, I
-suggest using GitHub's &quot;Edit this file&quot; feature via the web.</li>
-<li>User creates Pull Request for changes.</li>
-<li>Administrator reviews and merges changes from Pull Request.</li>
-<li>Configuration repository's service hook sends POST to Jenkins CI
-instance</li>
-<li>Jenkins CI instance runs the <em>github-collective</em> script upon
-receiving this hook.</li>
-<li>Changes to configuration get enacted on GitHub.</li>
+suggest using GitHub&#8217;s &#8220;Edit this file&#8221; feature via the&nbsp;web.</li>
+<li>User creates Pull Request for&nbsp;changes.</li>
+<li>Administrator reviews and merges changes from Pull&nbsp;Request.</li>
+<li>Configuration repository&#8217;s service hook sends <span class="caps">POST</span> to Jenkins <span class="caps">CI</span>&nbsp;instance</li>
+<li>Jenkins <span class="caps">CI</span> instance runs the <em>github-collective</em> script upon
+receiving this&nbsp;hook.</li>
+<li>Changes to configuration get enacted on&nbsp;GitHub.</li>
 </ol>
 <p>This process is similar to what happens for the Collective, except that
 our service hook and Jenkins take care of making the changes happen,
-rather than a periodical cron job.</p>
+rather than a periodical cron&nbsp;job.</p>
 <p>Our Jenkins job uses the&nbsp;<a class="reference external" href="https://wiki.jenkins-ci.org/display/JENKINS/Text-finder+Plugin">Jenkins Text Finder</a>&nbsp;plugin to search for
-the regex &quot;Traceback \(most recent call last\)&quot; in the output to
-determine success or failure. &nbsp;This isn't the most elegant solution in
-the world, but it's good enough for now.</p>
-<p>For what it's worth, we have a total of 25 repositories; a similar
+the regex &#8220;Traceback \(most recent call last\)&#8221; in the output to
+determine success or failure. &nbsp;This isn&#8217;t the most elegant solution in
+the world, but it&#8217;s good enough for&nbsp;now.</p>
+<p>For what it&#8217;s worth, we have a total of 25 repositories; a similar
 number of teams; give or take 12 staff members in total; and the end
 result is that running <em>github-collective</em> once cached takes only around
-6 seconds, including Jenkins overhead. &nbsp;Unfortunately I'm unable to
-provide our exact configuration, but for everything we do, I've
-'anonymised' the configuration and included it back in the public
-repository as examples. Happy to answer questions about what we're doing
-too!</p>
+6 seconds, including Jenkins overhead. &nbsp;Unfortunately I&#8217;m unable to
+provide our exact configuration, but for everything we do, I&#8217;ve
+&#8216;anonymised&#8217; the configuration and included it back in the public
+repository as examples. Happy to answer questions about what we&#8217;re doing&nbsp;too!</p>
 </div>
 <div class="section" id="thanks">
 <h2>Thanks</h2>
 <p>All credit to Rok Garbas and Alex Clark for their work on this - it
 works fantastically. I can only take credit for coming in later with a
 few things necessary our deployment. <em>Github-collective</em> now supports
-all GitHub API settings for repositories (thus allowing you to create
+all GitHub <span class="caps">API</span> settings for repositories (thus allowing you to create
 private repos - something critical for us, and set other metadata) and
 post-receive service hooks (so you can easily manage hooks on GitHub).
-That, and a hearty dose of end-user documentation.</p>
+That, and a hearty dose of end-user&nbsp;documentation.</p>
 </div>
 <p>There are <a href="../blog/2012/06/easier-github-organisation-repository-and-team-management-with-github-collective/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">

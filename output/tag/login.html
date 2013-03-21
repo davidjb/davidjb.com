@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2009/09/ldap-authenticated-server-whoami-failures-etc/">LDAP-Authenticated Server &amp; Whoami Failures (etc)</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2009/09/ldap-authenticated-server-whoami-failures-etc/"><span class="caps">LDAP</span>-Authenticated Server <span class="amp">&amp;</span> Whoami Failures&nbsp;(etc)</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2009-09-28T11:53:00">
                 Mon 28 September 2009
@@ -43,16 +43,16 @@
         </address>
         <p>In <a href="../category/linux.html">Linux</a>. </p>
 <p>tags: <a href="../tag/authentication.html">authentication</a><a href="../tag/centos.html">centos</a><a href="../tag/chmod.html">chmod</a><a href="../tag/ldap.html">ldap</a><a href="../tag/login.html">login</a><a href="../tag/permissions.html">permissions</a><a href="../tag/users.html">users</a></p>
-</footer><!-- /.post-info --><p>I'm back again, after a bit of a unscheduled 'break' in my normal work
+</footer><!-- /.post-info --><p>I&#8217;m back again, after a bit of a unscheduled &#8216;break&#8217; in my normal work
 life.&nbsp; After a couple of days away for work on the Gold Coast, then the
 sad passing of my Grandfather and his memorial, then being sick over the
-last weekend from what I can only guess was a nasty 24-hour bug, I'm
-back.&nbsp; And whilst a little worse for wear still today, it's life pretty
-much as normal.</p>
-<p>Today's fun and games was on a server we use that uses LDAP
+last weekend from what I can only guess was a nasty 24-hour bug, I&#8217;m
+back.&nbsp; And whilst a little worse for wear still today, it&#8217;s life pretty
+much as&nbsp;normal.</p>
+<p>Today&#8217;s fun and games was on a server we use that uses <span class="caps">LDAP</span>
 authentication for its users.&nbsp; Nothing special, except that today I
-started getting weird errors when logging in as my LDAP account, and the
-server booting me off with random error messages:</p>
+started getting weird errors when logging in as my <span class="caps">LDAP</span> account, and the
+server booting me off with random error&nbsp;messages:</p>
 <pre class="literal-block">
 whoami: cannot find name for user ID 75966
 -tcsh: ldap-nss.c:1312: do\_init: Assertion \`cfg-&gt;ldc\_uris[\_\_session.ls\_current\_uri] != ((void \*)0)' failed.
@@ -60,14 +60,14 @@ whoami: cannot find name for user ID 75966
 <div class="section" id="solution">
 <h2>Solution</h2>
 <p>The simple solution was to check the permissions on <tt class="docutils literal">/etc/ldap.conf</tt>
-(Centos) and sure enough, the permissions weren't allowing normal users
-to read it (eg not 644).&nbsp; Running this solves the problem:</p>
+(Centos) and sure enough, the permissions weren&#8217;t allowing normal users
+to read it (eg not 644).&nbsp; Running this solves the&nbsp;problem:</p>
 <pre class="code bash literal-block">
 chmod 644 /etc/ldap.conf
 </pre>
 <p>Cheers to the author &#64;
 <a class="reference external" href="http://www.ducea.com/2008/03/07/ldap-troubleshooting-i-have-no-name/">http://www.ducea.com/2008/03/07/ldap-troubleshooting-i-have-no-name/</a> for
-the details.</p>
+the&nbsp;details.</p>
 </div>
 <p>There are <a href="../blog/2009/09/ldap-authenticated-server-whoami-failures-etc/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">

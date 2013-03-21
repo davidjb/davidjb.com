@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2012/06/members-cant-add-folders-to-plone-via-webdav-401-unauthorized/">Members can't add folders to Plone via WebDAV (401 Unauthorized)</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2012/06/members-cant-add-folders-to-plone-via-webdav-401-unauthorized/">Members can&#8217;t add folders to Plone via WebDAV (401&nbsp;Unauthorized)</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2012-06-22T11:20:00">
                 Fri 22 June 2012
@@ -47,22 +47,19 @@
 <a class="reference external" href="http://plone.org/documentation/error/unable-to-create-a-folder-through-webdav/">http://plone.org/documentation/error/unable-to-create-a-folder-through-webdav/</a>,
 but just a short editorial to also highlight that this is still very
 applicable to Plone 4.x. Effectively, the symptom is that users will
-report seeing a &quot;401 Unauthorized&quot; error when trying to create folders
-within areas they have access to as an Owner. &nbsp;Without further ado, the
-documentation:</p>
+report seeing a &#8220;401 Unauthorized&#8221; error when trying to create folders
+within areas they have access to as an Owner. &nbsp;Without further ado, the&nbsp;documentation:</p>
 <p>Using a&nbsp;WebDAV&nbsp;client on a&nbsp;Plone&nbsp;site, site users are unable to create
-newfolders&nbsp;directories where they have Owner role.</p>
+newfolders&nbsp;directories where they have Owner&nbsp;role.</p>
 <div class="section" id="problem">
 <h2>Problem:</h2>
-<p>The&nbsp;WebDAV&nbsp;&quot;make folder&quot; method, MKCOL, requires the &quot;Add&nbsp;Folders&quot;
-permission. This is not normally granted to Members or Owners on the
-site.</p>
+<p>The&nbsp;WebDAV&nbsp;&#8220;make folder&#8221; method, <span class="caps">MKCOL</span>, requires the &#8220;Add&nbsp;Folders&#8221;
+permission. This is not normally granted to Members or Owners on the&nbsp;site.</p>
 </div>
 <div class="section" id="workaround">
 <h2>Workaround:</h2>
-<p>In the Zope Management Interface, under the &quot;Security&quot; tab for
-the&nbsp;Plone&nbsp;root, check the &quot;Owners&quot; box for the &quot;Add&nbsp;Folders&quot; permission
-setting.</p>
+<p>In the Zope Management Interface, under the &#8220;Security&#8221; tab for
+the&nbsp;Plone&nbsp;root, check the &#8220;Owners&#8221; box for the &#8220;Add&nbsp;Folders&#8221; permission&nbsp;setting.</p>
 </div>
 <p>There are <a href="../blog/2012/06/members-cant-add-folders-to-plone-via-webdav-401-unauthorized/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">

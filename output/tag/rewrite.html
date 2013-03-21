@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2009/09/missing-content-menus-in-plone/">Missing content menus in Plone</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2009/09/missing-content-menus-in-plone/">Missing content menus in&nbsp;Plone</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2009-09-30T12:35:00">
                 Wed 30 September 2009
@@ -43,26 +43,25 @@
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/apache.html">apache</a><a href="../tag/hosting.html">hosting</a><a href="../tag/menus.html">menus</a><a href="../tag/plone.html">plone</a><a href="../tag/rewrite.html">rewrite</a><a href="../tag/rules.html">rules</a><a href="../tag/urls.html">urls</a><a href="../tag/vhm.html">VHM</a><a href="../tag/virtual-hosting.html">virtual hosting</a></p>
-</footer><!-- /.post-info --><p>Another dose of insanity please!&nbsp; Coming right up, sir.</p>
-<p>Today's second discussion comes from an issue I was having recently with
+</footer><!-- /.post-info --><p>Another dose of insanity please!&nbsp; Coming right up,&nbsp;sir.</p>
+<p>Today&#8217;s second discussion comes from an issue I was having recently with
 a new Plone site that I was hosting behind Apache and Deliverance.&nbsp; No
-Varnish here yet, because I'd rather the site worked first before I try
-and cache the life out of it.</p>
+Varnish here yet, because I&#8217;d rather the site worked first before I try
+and cache the life out of&nbsp;it.</p>
 <p>Now, the specific problem I was having was that the content menus in
 Plone (eg Add New, Display, State, Actions and for me, Sub-types)
-weren't displaying.&nbsp; I thought it a Deliverance issue - maybe I was
+weren&#8217;t displaying.&nbsp; I thought it a Deliverance issue - maybe I was
 dropping those content items accidentally or not including the
-JavaScript needed to display them.&nbsp; Uh, nope on both accounts.</p>
+JavaScript needed to display them.&nbsp; Uh, nope on both&nbsp;accounts.</p>
 <div class="section" id="solution">
 <h2>Solution</h2>
 <p>After a detailed search of everything I could have been doing wrong, I
-can across my Apache rewrite rules.&nbsp; Amazingly enough, I'd left off the
-<strong>/_vh_mysite</strong> at the end, so the URLs weren't being written
-correctly.&nbsp; Whilst the site was loading (mostly) fine, because I'd
-inserted the URL to point to the site correctly, I'd forgotten that the
-VHM needs the _vh_mysite part.</p>
-<p>Adding it in fixed the problem in a second, along with a throat-clearing
-shift-refresh.</p>
+can across my Apache rewrite rules.&nbsp; Amazingly enough, I&#8217;d left off the
+<strong>/_vh_mysite</strong> at the end, so the URLs weren&#8217;t being written
+correctly.&nbsp; Whilst the site was loading (mostly) fine, because I&#8217;d
+inserted the <span class="caps">URL</span> to point to the site correctly, I&#8217;d forgotten that the
+<span class="caps">VHM</span> needs the _vh_mysite&nbsp;part.</p>
+<p>Adding it in fixed the problem in a second, along with a throat-clearing&nbsp;shift-refresh.</p>
 </div>
 <p>There are <a href="../blog/2009/09/missing-content-menus-in-plone/#disqus_thread">comments</a>.</p>                </article>
                             </aside><!-- /#featured -->
@@ -76,7 +75,7 @@ shift-refresh.</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/01/rewrite-rules-made-easy/" rel="bookmark"
-                           title="Permalink to Rewrite Rules Made Easy">Rewrite Rules Made Easy</a></h1>
+                           title="Permalink to Rewrite Rules Made Easy">Rewrite Rules Made&nbsp;Easy</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -90,10 +89,10 @@ shift-refresh.</p>
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/apache.html">apache</a><a href="../tag/rewrite.html">rewrite</a><a href="../tag/rules.html">rules</a></p>
-</footer><!-- /.post-info -->                <p>I've pretty much got a nice handle on Rewrite rules for Apache. Once
-you've seen a few of them, it's straight forward enough to replicate for
-new Plone sites and so forth.</p>
-<p>However, to make things even easier on my brain I've found this:
+</footer><!-- /.post-info -->                <p>I&#8217;ve pretty much got a nice handle on Rewrite rules for Apache. Once
+you&#8217;ve seen a few of them, it&#8217;s straight forward enough to replicate for
+new Plone sites and so&nbsp;forth.</p>
+<p>However, to make things even easier on my brain I&#8217;ve found this:
 <a class="reference external" href="http://betabug.ch/zope/witch">http://betabug ...</a></p>
                 <a class="readmore" href="../blog/2009/01/rewrite-rules-made-easy/">read more</a>
                 <p>There are <a href="../blog/2009/01/rewrite-rules-made-easy/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->

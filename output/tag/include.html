@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2010/07/plone-overrides-zcml-gets-auto-included-with-z3c-autoinclude/">Plone: Overrides.zcml gets auto-included with z3c.autoinclude</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2010/07/plone-overrides-zcml-gets-auto-included-with-z3c-autoinclude/">Plone: Overrides.zcml gets auto-included with&nbsp;z3c.autoinclude</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2010-07-13T15:01:00">
                 Tue 13 July 2010
@@ -44,34 +44,34 @@
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/auto.html">auto</a><a href="../tag/icons.html">icons</a><a href="../tag/include.html">include</a><a href="../tag/plone.html">plone</a><a href="../tag/plone-3.html">plone 3</a><a href="../tag/problem.html">problem</a><a href="../tag/theme.html">theme</a><a href="../tag/z3c.html">z3c</a><a href="../tag/zcml.html">zcml</a><a href="../tag/zope.html">zope</a></p>
 </footer><!-- /.post-info --><p>Unsurprisingly, specifying a z3c.autoinclude entry point in your Plone
-product egg means your ZCML gets automatically included. That's great
-because it means you don't have to specify your product under the ZCML
-section of your instance in buildout. One thing that isn't so obvious
-(it's not mentioned that I can see on <a class="reference external" href="http://plone.org/products/plone/roadmap/247">plone.org</a>) is that if your
-package is marked for ZCML autoinclude, then Plone will automatically
-load an <tt class="docutils literal">overrides.zcml</tt> file in your product.</p>
+product egg means your <span class="caps">ZCML</span> gets automatically included. That&#8217;s great
+because it means you don&#8217;t have to specify your product under the <span class="caps">ZCML</span>
+section of your instance in buildout. One thing that isn&#8217;t so obvious
+(it&#8217;s not mentioned that I can see on <a class="reference external" href="http://plone.org/products/plone/roadmap/247">plone.org</a>) is that if your
+package is marked for <span class="caps">ZCML</span> autoinclude, then Plone will automatically
+load an <tt class="docutils literal">overrides.zcml</tt> file in your&nbsp;product.</p>
 <p>Nothing hits you like a slippery wet fish in the face more than hitting
 this issue and having it obfuscated through a lot of different layers.
-The first symptom was that my content icons weren't appearing within my
-Plone site. Only some of them though -- the ones in folder listings and
+The first symptom was that my content icons weren&#8217;t appearing within my
+Plone site. Only some of them though &#8212; the ones in folder listings and
 the navigation portlet. I thought nothing much of it initially, just
 thinking the setting for displaying content icons had been changed in
-the Plone control panel.</p>
+the Plone control&nbsp;panel.</p>
 <p>I started digging into this issue a bit more because it was annoying me.
-That, and changing the control panel's options weren't working. Hacking
+That, and changing the control panel&#8217;s options weren&#8217;t working. Hacking
 a few bits into the folder_listing.pt view showed me that icons were
-there, just not outputting any HTML. Weird. Outputting the actual type
-of the icon brain itself showed me:</p>
+there, just not outputting any <span class="caps">HTML</span>. Weird. Outputting the actual type
+of the icon brain itself showed&nbsp;me:</p>
 <pre class="literal-block">
 myorg.theme.layout.icons.CatalogBrainContentIcon
 </pre>
-<p>and didn't think much of it. So what, a class is being generated at run
-time for my theme? It wouldn't surprise me -- Python can do some pretty
-cool things and that's probably just one of them.</p>
-<p>Taking the <tt class="docutils literal">CatalogBrainContentIcon</tt> string and <tt class="docutils literal">grep</tt>'ing for it
+<p>and didn&#8217;t think much of it. So what, a class is being generated at run
+time for my theme? It wouldn&#8217;t surprise me &#8212; Python can do some pretty
+cool things and that&#8217;s probably just one of&nbsp;them.</p>
+<p>Taking the <tt class="docutils literal">CatalogBrainContentIcon</tt> string and <tt class="docutils literal">grep</tt>&#8216;ing for it
 showed me otherwise. My theme package had this class, amongst others,
-hanging around in it's <tt class="docutils literal">layout</tt> module. Moving the module and
-restarting Zope showed me that the ZCML was being loaded.</p>
+hanging around in it&#8217;s <tt class="docutils literal">layout</tt> module. Moving the module and
+restarting Zope showed me that the <span class="caps">ZCML</span> was being&nbsp;loaded.</p>
 <p>But how/why? It was definitely excluded from my main <tt class="docutils literal">configure.zcml</tt>
 files..but not excluded entirely though. Little did I realise that I had
 an <tt class="docutils literal">overrides.zcml</tt> file floating around. Commented out from
@@ -80,9 +80,9 @@ z3c.autoinclude entry point to the theme product makes Plone
 auto-include all <tt class="docutils literal">overrides.zcml</tt> (unless told otherwise).
 <strong>*fish-smack to face*</strong> This behaviour was modified slightly in Plone
 4.0a5, so that you can make your <tt class="docutils literal">overrides.zcml</tt> be excluded, but
-that doesn't mean anything about Plone 3.3.5.</p>
-<p>So, watch out with seemingly innocuous ZCML files floating around. They
-can still be brought into play.</p>
+that doesn&#8217;t mean anything about Plone&nbsp;3.3.5.</p>
+<p>So, watch out with seemingly innocuous <span class="caps">ZCML</span> files floating around. They
+can still be brought into&nbsp;play.</p>
 <p>There are <a href="../blog/2010/07/plone-overrides-zcml-gets-auto-included-with-z3c-autoinclude/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">
         Page 1 / 1

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Extracting a Buildout versions.cfg from a Zope instance script</title>
+        <title>Extracting a Buildout versions.cfg from a Zope instance script</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2011/06/extracting-a-buildout-versions-cfg-from-a-zope-instance-script/" rel="bookmark"
-           title="Permalink to Extracting a Buildout versions.cfg from a Zope instance script">Extracting a Buildout versions.cfg from a Zope instance script</a></h1>
+           title="Permalink to Extracting a Buildout versions.cfg from a Zope instance script">Extracting a Buildout versions.cfg from a Zope instance&nbsp;script</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -49,26 +49,24 @@
 <p>tags: <a href="../../../../tag/buildout.html">buildout</a><a href="../../../../tag/cat.html">cat</a><a href="../../../../tag/cfg.html">cfg</a><a href="../../../../tag/eggs.html">eggs</a><a href="../../../../tag/grep.html">grep</a><a href="../../../../tag/plone.html">plone</a><a href="../../../../tag/sed.html">sed</a><a href="../../../../tag/versions.html">versions</a><a href="../../../../tag/zope.html">zope</a></p>
 </footer><!-- /.post-info -->      <p>Today, I needed to migrate some legacy Plone installs set up using
 Buildout. If I were to simply move the buildout files and re-run
-buildout, I'd end up with the latest versions of add-on products - and
-since I'm using legacy versions of Plone 3, that'd almost certainly
+buildout, I&#8217;d end up with the latest versions of add-on products - and
+since I&#8217;m using legacy versions of Plone 3, that&#8217;d almost certainly
 break the system.&nbsp; I do know about the Buildout extension
 <a class="reference external" href="http://pypi.python.org/pypi/buildout.dumppickedversions">buildout.dumppickedversions</a> (which does what its name suggests and
-exports picked versions of eggs) but I can't re-run buildout to get this
-extension for risk of updating existing products (what I'm trying to
-avoid!).</p>
+exports picked versions of eggs) but I can&#8217;t re-run buildout to get this
+extension for risk of updating existing products (what I&#8217;m trying to&nbsp;avoid!).</p>
 <p>The good news is that with just one line of bash in Linux (and a bunch
 of helper commands :)), you can extract all your current egg versions
 from a Zope instance script (eg bin/instance), like so, running the
-command in your buildout directory:</p>
+command in your buildout&nbsp;directory:</p>
 <pre class="code bash literal-block">
 cat bin/instance1 | grep eggs | sed -r <span class="s1">'s#.*eggs/(.*)-py2.[0-9].*#\1#g'</span> | sed -r <span class="s1">'s#-# = #g'</span> | sed -r <span class="s1">'s#_#-#g'</span> | grep -E <span class="s1">' = [0-9\.]'</span> | xargs -0 <span class="nb">echo</span> -e <span class="s2">&quot;[versions]\n&quot;</span> | sed -r <span class="s1">'s#^\s+##g'</span> &gt; versions.cfg; cat versions.cfg
 </pre>
 <p>Copy the <tt class="docutils literal">versions.cfg</tt> to the new buildout location and make buildout
-extend off it.</p>
+extend off&nbsp;it.</p>
 <p>Hopefully having <a class="reference external" href="http://pypi.python.org/pypi/buildout.dumppickedversions">buildout.dumppickedversions</a> in place now should
-resolve doing this again if/when I'm migrating any of my new Plone
-installs. (Interesting to note my current dev install uses over 320
-eggs).</p>
+resolve doing this again if/when I&#8217;m migrating any of my new Plone
+installs. (Interesting to note my current dev install uses over 320&nbsp;eggs).</p>
 
     </div><!-- /.entry-content -->
         <div class="comments">

@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2009/09/the-biggest-problems-have-the-simplest-answers/">Buildout: the biggest problems have the simplest answers...</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2009/09/the-biggest-problems-have-the-simplest-answers/">Buildout: the biggest problems have the simplest&nbsp;answers&#8230;</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2009-09-03T15:57:00">
                 Thu 03 September 2009
@@ -43,35 +43,35 @@
         </address>
         <p>In <a href="../category/buildout.html">Buildout</a>. </p>
 <p>tags: <a href="../tag/buildout.html">buildout</a><a href="../tag/centos.html">centos</a><a href="../tag/eggs.html">eggs</a><a href="../tag/linux.html">linux</a><a href="../tag/plone.html">plone</a><a href="../tag/ubuntu.html">ubuntu</a><a href="../tag/zope.html">zope</a></p>
-</footer><!-- /.post-info --><p>..and how true that is.&nbsp; Today's time consumer is directly related to
+</footer><!-- /.post-info --><p>..and how true that is.&nbsp; Today&#8217;s time consumer is directly related to
 just 1 misplaced line of a buildout configuration (and presumably
-something that's changed somewhere else).</p>
+something that&#8217;s changed somewhere&nbsp;else).</p>
 <div class="section" id="the-result">
-<h2>The result</h2>
-<p>After much hunting and hunting, it turns out my Zope2 Fake Eggs weren't
-being generated.</p>
+<h2>The&nbsp;result</h2>
+<p>After much hunting and hunting, it turns out my Zope2 Fake Eggs weren&#8217;t
+being&nbsp;generated.</p>
 <p>On my long quest I had to go through downloading new packages and trying
 to find something that had changed and even trying to establish new
 virtual environments on different VMs.&nbsp; Nothing would fix the problem.
 To rub salt in the wound, my desktop Ubuntu ran the buildout fine, so
-methinks the underlying reason for the pain is something OS-related.</p>
+methinks the underlying reason for the pain is something&nbsp;<span class="caps">OS</span>-related.</p>
 <p>After many hours of debugging buildout output and trying to go through
 the packages that seemed to be the cause (poor things, they were merely
 bystanders, asking for dependencies), a few carefully-placed print
-messages in the plone.recipe.zope2install package helped.</p>
+messages in the plone.recipe.zope2install package&nbsp;helped.</p>
 </div>
 <div class="section" id="the-cause">
-<h2>The cause</h2>
-<p>&quot;Oh? what do you mean the install() function isn't being run?&quot;, I found
+<h2>The&nbsp;cause</h2>
+<p><span class="dquo">&#8220;</span>Oh? what do you mean the install() function isn&#8217;t being run?&#8221;, I found
 myself saying after the print messages showed what was happening.&nbsp; The
-fake eggs didn't exist because the Zope2 recipe, whilst being initiated,
-hadn't yet actually been run.</p>
-<p>So, thanks to the 'zope2' entry in the parts section of my buildout
+fake eggs didn&#8217;t exist because the Zope2 recipe, whilst being initiated,
+hadn&#8217;t yet actually been&nbsp;run.</p>
+<p>So, thanks to the &#8216;zope2&#8217; entry in the parts section of my buildout
 being run after a whole lot of other sections, the other products never
-had a chance.&nbsp; Result: lesson learned -- put the zope2 section first,
-and order matters!</p>
-<p>Oddly enough though, it's never caused trouble before and obviously
-there's a difference between Centos and Ubuntu.&nbsp; Hmmm.</p>
+had a chance.&nbsp; Result: lesson learned &#8212; put the zope2 section first,
+and order&nbsp;matters!</p>
+<p>Oddly enough though, it&#8217;s never caused trouble before and obviously
+there&#8217;s a difference between Centos and Ubuntu.&nbsp;&nbsp;Hmmm.</p>
 </div>
 <p>There are <a href="../blog/2009/09/the-biggest-problems-have-the-simplest-answers/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">

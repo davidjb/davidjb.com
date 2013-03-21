@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2010/06/plone-dexterity-and-incorrect-widgets/">Plone, Dexterity, and Incorrect Widgets</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2010/06/plone-dexterity-and-incorrect-widgets/">Plone, Dexterity, and Incorrect&nbsp;Widgets</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2010-06-21T15:09:00">
                 Mon 21 June 2010
@@ -43,24 +43,23 @@
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/content-type.html">content type</a><a href="../tag/datetime.html">datetime</a><a href="../tag/dexterity.html">dexterity</a><a href="../tag/fields.html">fields</a><a href="../tag/form.html">form</a><a href="../tag/plone.html">plone</a><a href="../tag/problem.html">problem</a><a href="../tag/product.html">product</a><a href="../tag/zope.html">zope</a></p>
-</footer><!-- /.post-info --><p>A nice 'gotcha' is the distinction between Zope's schema.Date and
+</footer><!-- /.post-info --><p>A nice &#8216;gotcha&#8217; is the distinction between Zope&#8217;s schema.Date and
 schema.Datetime. The difference is obvious and straightforward when the
 two terms are laid out side-by-side: one is for dates only and the other
 adds a time component. Where things fell down for me in my usage of
 these fields with a Dexterity-based content type in Plone is the human
 component. When these fields are mashed in together within a lot of
-other text/Python/names, it's easy to miss those 4 little letters of
-'time'. This lead me trying to use a DatetimeFieldWidget when I really
-could only use a DateFieldWidget. <strong>Wrong widget for the wrong type =
-unpredictable.</strong></p>
-<p>When it's all laid out like that, things are clear and simple. When the
+other text/Python/names, it&#8217;s easy to miss those 4 little letters of
+&#8216;time&#8217;. This lead me trying to use a DatetimeFieldWidget when I really
+could only use a DateFieldWidget. <strong>Wrong widget for the wrong type =&nbsp;unpredictable.</strong></p>
+<p>When it&#8217;s all laid out like that, things are clear and simple. When the
 small typo has been made, however, things are far less forgiving and
-informative. Thankfully, the typo wasn't my fault, but was caused by a
-ZopeSkel template for Dexterity (<a class="reference external" href="http://pypi.python.org/pypi/zopeskel.dexterity">zopeskel.dexterity</a>) so I'm not
+informative. Thankfully, the typo wasn&#8217;t my fault, but was caused by a
+ZopeSkel template for Dexterity (<a class="reference external" href="http://pypi.python.org/pypi/zopeskel.dexterity">zopeskel.dexterity</a>) so I&#8217;m not
 kicking myself over it. Essentially, the error message (for those of you
-possibly experiencing something similar) is like this:</p>
+possibly experiencing something similar) is like&nbsp;this:</p>
 <pre class="code pytb literal-block">
-<span class="x">2010-06-18 16:32:03 ERROR Zope.SiteErrorLog 1276842723.120.730292360531 http://localhost:8080/test/kss_z3cform_inline_validation/validate_input
+<span class="x">2010-06-18 16:32:03 <span class="caps">ERROR</span> Zope.SiteErrorLog 1276842723.120.730292360531 http://localhost:8080/test/kss_z3cform_inline_validation/validate_input
     Traceback (innermost last):
     Module ZPublisher.Publish, line 119, in publish
     Module ZPublisher.mapply, line 88, in mapply
@@ -76,22 +75,21 @@ possibly experiencing something similar) is like this:</p>
     Module sre, line 129, in match
     TypeError: expected string or buffer</span>
 </pre>
-<p>And the end result of this is that you can't validate fields in your
+<p>And the end result of this is that you can&#8217;t validate fields in your
 Dexterity content Add form (eg the above traceback is echoed whenever
 you click in/out of a field), nor can you actually save your content.
 Unfortunately, even if you were to go hunting through the traceback,
-you'd probably end up like me and find that the code is trying to
-validate a completely different field than the problematic one. No help
-whatsoever.</p>
+you&#8217;d probably end up like me and find that the code is trying to
+validate a completely different field than the problematic one. No help&nbsp;whatsoever.</p>
 <p>After going through each of the different fields I had on my content
-type, I figured out the cause. If you're hitting a similar issue, check
-your widgets. If you're using <a class="reference external" href="http://pypi.python.org/pypi/zopeskel.dexterity">zopeskel.dexterity</a>, don't worry though.
+type, I figured out the cause. If you&#8217;re hitting a similar issue, check
+your widgets. If you&#8217;re using <a class="reference external" href="http://pypi.python.org/pypi/zopeskel.dexterity">zopeskel.dexterity</a>, don&#8217;t worry though.
 I checked in a fix for this issue this morning, correcting the widget to
-be used. You'll need to use the latest version from the Plone Collective
-SVN to make the templates work correctly.</p>
+be used. You&#8217;ll need to use the latest version from the Plone Collective
+<span class="caps">SVN</span> to make the templates work&nbsp;correctly.</p>
 <p>On the other hand, you could look at <a class="reference external" href="http://pypi.python.org/pypi/collective.z3cform.datepicker">collective.z3cform.datepicker</a>,
 which implements a much more user-friendly Date and DateTime widgets
-(using jQuery UI etc).</p>
+(using jQuery <span class="caps">UI</span>&nbsp;etc).</p>
 <p>There are <a href="../blog/2010/06/plone-dexterity-and-incorrect-widgets/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">
         Page 1 / 1

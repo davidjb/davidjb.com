@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>GenericSetup and "mismatched" tags in ZCML</title>
+        <title>GenericSetup and “mismatched” tags in ZCML</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2010/03/genericsetup-and-mismatched-tags-in-zcml/" rel="bookmark"
-           title="Permalink to GenericSetup and "mismatched" tags in ZCML">GenericSetup and &quot;mismatched&quot; tags in ZCML</a></h1>
+           title="Permalink to GenericSetup and “mismatched” tags in ZCML">GenericSetup and &#8220;mismatched&#8221; tags in&nbsp;<span class="caps">ZCML</span></a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -47,13 +47,13 @@
         </address>
         <p>In <a href="../../../../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../../../../tag/configuration.html">configuration</a><a href="../../../../tag/error.html">error</a><a href="../../../../tag/mismatched.html">mismatched</a><a href="../../../../tag/plone.html">plone</a><a href="../../../../tag/tags.html">tags</a><a href="../../../../tag/xml.html">xml</a><a href="../../../../tag/zcml.html">zcml</a><a href="../../../../tag/zope.html">zope</a></p>
-</footer><!-- /.post-info -->      <p>Ever the issue-magnet, I've spent the better part of my morning trying
-to debug a mistmatched tag error from within some ZCML (aka XML for the
+</footer><!-- /.post-info -->      <p>Ever the issue-magnet, I&#8217;ve spent the better part of my morning trying
+to debug a mistmatched tag error from within some <span class="caps">ZCML</span> (aka <span class="caps">XML</span> for the
 non-initiated).&nbsp; Essentially, the issue boiled down to the system
 telling me that it was certain that I had a mistmatched tag within my
-configuration, and presented me with the problematic XML tag (complete
-with line numbers).&nbsp; However, life's not always that simple.</p>
-<p>The traceback looked like this:</p>
+configuration, and presented me with the problematic <span class="caps">XML</span> tag (complete
+with line numbers).&nbsp; However, life&#8217;s not always that&nbsp;simple.</p>
+<p>The traceback looked like&nbsp;this:</p>
 <pre class="code pytb literal-block">
 <span class="gt">Traceback (most recent call last):
 </span><span class="gr">zope.configuration.config.ConfigurationExecutionError</span>: <span class="n">xml.parsers.expat.ExpatError: mismatched tag: line 6, column 70</span>
@@ -64,14 +64,14 @@ File &quot;/home/david/buildout/src/aaa.project/aaa/project/profiles.zcml&quot;,
 was problematic. After much poking and prodding and thinking that there
 must be some random character hidden in my configuration file (and
 checking other files that call this one), no dice. Even copying and
-pasting some new code that I knew worked just simply didn't when I put
-it here.</p>
-<p>So, I just happened to actually think about what I'm calling with this
-ZCML: a Plone product generic setup profile. And, yes, now it seems so
-clear that the issue was in fact in that GS profile. My vim editor had
-kindly re-auto-closed a tag that it shouldn't have (because it was
+pasting some new code that I knew worked just simply didn&#8217;t when I put
+it&nbsp;here.</p>
+<p>So, I just happened to actually think about what I&#8217;m calling with this
+<span class="caps">ZCML</span>: a Plone product generic setup profile. And, yes, now it seems so
+clear that the issue was in fact in that <span class="caps">GS</span> profile. My vim editor had
+kindly re-auto-closed a tag that it shouldn&#8217;t have (because it was
 already closed) in my metadata.xml. Fixing that solved the issue and let
-my Zope instance start up again.</p>
+my Zope instance start up&nbsp;again.</p>
 
     </div><!-- /.entry-content -->
         <div class="comments">

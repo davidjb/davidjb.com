@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Virtualenv, Plone, and Centos 5.x</title>
+        <title>Virtualenv, Plone, and Centos 5.x</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2009/07/virtualenv-plone-and-centos-5/" rel="bookmark"
-           title="Permalink to Virtualenv, Plone, and Centos 5.x">Virtualenv, Plone, and Centos 5.x</a></h1>
+           title="Permalink to Virtualenv, Plone, and Centos 5.x">Virtualenv, Plone, and Centos&nbsp;5.x</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -47,26 +47,25 @@
         </address>
         <p>In <a href="../../../../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../../../../tag/centos.html">centos</a><a href="../../../../tag/easy_install.html">easy_install</a><a href="../../../../tag/plone.html">plone</a><a href="../../../../tag/python.html">python</a><a href="../../../../tag/rpm.html">rpm</a><a href="../../../../tag/virtualenv.html">virtualenv</a></p>
-</footer><!-- /.post-info -->      <p><strong>EDIT:</strong> Watch out for python-ldap 2.3.10, the latest version at time
-of writing. Seems like there's an issue with it and Centos 5.4. Forcing
-python-ldap to be version 2.3.8 works, though. (easy_install
-python-ldap==2.3.8)</p>
+</footer><!-- /.post-info -->      <p><strong><span class="caps">EDIT</span>:</strong> Watch out for python-ldap 2.3.10, the latest version at time
+of writing. Seems like there&#8217;s an issue with it and Centos 5.4. Forcing
+python-ldap to be version 2.3.8 works, though. (easy_install&nbsp;python-ldap==2.3.8)</p>
 <p>Previously, you might have read about setting up a Virtualenv on Ubuntu
 Jaunty. Now, that was reasonably painless since python-virtualenv and
-python-setuptools is in the Ubuntu repo. Whether it's my Centos servers
+python-setuptools is in the Ubuntu repo. Whether it&#8217;s my Centos servers
 and their misguided repos or me just not being able to find such a
 related rpm packages, Centos just needs little more love to get it to
-the same setup. (<strong>Note:</strong> actually, there was a setuptools RPM that I
-installed, but no idea why it didn't give me easy_install...)</p>
-<p>Here's what we're looking at for this time around.</p>
+the same setup. (<strong>Note:</strong> actually, there was a setuptools <span class="caps">RPM</span> that I
+installed, but no idea why it didn&#8217;t give me&nbsp;easy_install&#8230;)</p>
+<p>Here&#8217;s what we&#8217;re looking at for this time&nbsp;around.</p>
 <ul>
 <li><p class="first">Install the dependencies and various development libraries needed for
-PIL etc:</p>
+<span class="caps">PIL</span>&nbsp;etc:</p>
 <pre class="code bash literal-block">
 yum install gcc gdbm-devel readline-devel ncurses-devel zlib-devel bzip2-devel sqlite-devel db4-devel openssl-devel tk-devel bluez-libs-devel libjpeg-devel zlib-devel freetype-devel
 </pre>
 </li>
-<li><p class="first">Install setuptools and virtualenv:</p>
+<li><p class="first">Install setuptools and&nbsp;virtualenv:</p>
 <pre class="code bash literal-block">
 wget http://pypi.python.org/packages/2.4/s/setuptools/setuptools-0.6c9-py2.4.egg#md5<span class="o">=</span>260a2be2e5388d66bdaee06abec6342a
 sh setuptools-0.6c9-py2.4.egg
@@ -75,14 +74,14 @@ easy_install-2.4 -U setuptools
 easy_install-2.4 virtualenv
 </pre>
 </li>
-<li><p class="first">Create a virtual environment and activate it:</p>
+<li><p class="first">Create a virtual environment and activate&nbsp;it:</p>
 <pre class="code bash literal-block">
 virtualenv -p /usr/bin/python2.4 .
 <span class="nb">source</span> ./bin/activate
 </pre>
 </li>
-<li><p class="first">Easy install the dependencies of Plone. Not sure if they're needed
-for Centos, but it did all work nicely after doing this:</p>
+<li><p class="first">Easy install the dependencies of Plone. Not sure if they&#8217;re needed
+for Centos, but it did all work nicely after doing&nbsp;this:</p>
 <blockquote>
 <pre class="code literal-block">
 easy_install --find-links http://www.pythonware.com/products/pil/ Imaging
@@ -96,8 +95,8 @@ easy_install lxml
 <p>Clear as mud? I thought so. Essentially the only difference is actually
 getting the right development libraries and then getting setuptools
 itself working correctly. As I mentioned, for whatever reason my
-python-setuptools rpm doesn't have easy install. Maybe it's because it's
-an old version? Who knows. This is an easy enough workaround.</p>
+python-setuptools rpm doesn&#8217;t have easy install. Maybe it&#8217;s because it&#8217;s
+an old version? Who knows. This is an easy enough&nbsp;workaround.</p>
 
     </div><!-- /.entry-content -->
         <div class="comments">

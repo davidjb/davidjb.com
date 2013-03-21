@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2009/01/plone-varnish-configuration-cache-hits-purge-fails/">Plone: Varnish Configuration (Cache Hits, Purge Fails)</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2009/01/plone-varnish-configuration-cache-hits-purge-fails/">Plone: Varnish Configuration (Cache Hits, Purge&nbsp;Fails)</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2009-01-21T08:40:00">
                 Wed 21 January 2009
@@ -43,35 +43,34 @@
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/cache.html">cache</a><a href="../tag/plone.html">plone</a><a href="../tag/problem.html">problem</a><a href="../tag/purge.html">purge</a><a href="../tag/varnish.html">varnish</a></p>
-</footer><!-- /.post-info --><p>What a painful, painful day. It's taken about the entire day, but I've
+</footer><!-- /.post-info --><p>What a painful, painful day. It&#8217;s taken about the entire day, but I&#8217;ve
 finally figured out why our Varnish configuration around here for
-Plone/Zope hasn't been accepting PURGE requests. Thus, without accepting
-purge requests correctly, any content that gets changed in Plone doesn't
+Plone/Zope hasn&#8217;t been accepting <span class="caps">PURGE</span> requests. Thus, without accepting
+purge requests correctly, any content that gets changed in Plone doesn&#8217;t
 get updated in the cache until it times out (or we restart it). Ouch -
 especially because it affects all sites under virtual hosting, and a lot
-of these sites have publicly visible content that needs to be available
-immediately.</p>
-<p>So, the problem manifested itself as thus:</p>
+of these sites have publicly visible content that needs to be available&nbsp;immediately.</p>
+<p>So, the problem manifested itself as&nbsp;thus:</p>
 <ul class="simple">
-<li>Cache hits happen</li>
-<li>Performance was good on the Plone sites</li>
-<li>PURGE requests sent to Varnish would produce 404's</li>
+<li>Cache hits&nbsp;happen</li>
+<li>Performance was good on the Plone&nbsp;sites</li>
+<li><span class="caps">PURGE</span> requests sent to Varnish would produce&nbsp;404&#8217;s</li>
 </ul>
-<p>So, after checking (many times) the object path for the PURGE was right,
-Varnish would return a MISS and produce a 404 (DEBUG &quot;VCL_error(404,
-Not in cache)&quot; as the Varnish message).</p>
-<p>Much searching/etc later, I found that using:</p>
+<p>So, after checking (many times) the object path for the <span class="caps">PURGE</span> was right,
+Varnish would return a <span class="caps">MISS</span> and produce a 404 (<span class="caps">DEBUG</span> &#8220;VCL_error(404,
+Not in cache)&#8221; as the Varnish&nbsp;message).</p>
+<p>Much searching/etc later, I found that&nbsp;using:</p>
 <pre class="code bash literal-block">
 curl -X PURGE http://localhost:8000/object/path
 </pre>
 <p>straight on the machine running Varnish would work and give a <em>200 Purged
-response</em>. But, running the same command (replacing localhost with a FQDN) from
+response</em>. But, running the same command (replacing localhost with a <span class="caps">FQDN</span>) from
 the Zope machine produced the 404. So, essentially, Varnish knows where to look
-for the first command but not for the second.</p>
+for the first command but not for the&nbsp;second.</p>
 <div class="section" id="solution">
 <h2>Solution</h2>
 <p>Where you set the backend for your Plone/Zope in the Varnish
-configuration, add set req.http.host accordingly:</p>
+configuration, add set req.http.host&nbsp;accordingly:</p>
 <pre class="code cpp literal-block">
 <span class="p">}</span> <span class="n">elseif</span> <span class="p">(</span><span class="n">req</span><span class="p">.</span><span class="n">url</span> <span class="o">~</span> <span class="s">&quot;^/VirtualHostBase/https?/my.plone.site.com:(80\|443)/plone/VirtualHostRoot&quot;</span><span class="p">)</span>
 <span class="p">{</span>
@@ -80,9 +79,9 @@ configuration, add set req.http.host accordingly:</p>
 <span class="p">}</span>
 <span class="p">...</span>
 </pre>
-<p>In short, the URL is processed from Apache (in my situation) to result
+<p>In short, the <span class="caps">URL</span> is processed from Apache (in my situation) to result
 in the <em>req.url</em>, and then Varnish needs to know what host anything
-being cached relates to. Without it, hello 404 heaven.</p>
+being cached relates to. Without it, hello 404&nbsp;heaven.</p>
 </div>
 <p>There are <a href="../blog/2009/01/plone-varnish-configuration-cache-hits-purge-fails/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">

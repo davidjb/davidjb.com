@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Buildout and Version Problems</title>
+        <title>Buildout and Version Problems</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2009/01/buildout-and-version-problems/" rel="bookmark"
-           title="Permalink to Buildout and Version Problems">Buildout and Version Problems</a></h1>
+           title="Permalink to Buildout and Version Problems">Buildout and Version&nbsp;Problems</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -47,10 +47,10 @@
         </address>
         <p>In <a href="../../../../category/python.html">Python</a>. </p>
 <p>tags: <a href="../../../../tag/buildout.html">buildout</a><a href="../../../../tag/easy_install.html">easy_install</a><a href="../../../../tag/python.html">python</a></p>
-</footer><!-- /.post-info -->      <p>Two blog entries in one day - wow it's been a good work day.</p>
+</footer><!-- /.post-info -->      <p>Two blog entries in one day - wow it&#8217;s been a good work&nbsp;day.</p>
 <p>Just a quick chronicle of my thoughts: version conflicts in buildout
-aren't always pretty. My latest escapade into trying to load up Varnish
-through zc.buildout resulted in a hair-tearing out message:</p>
+aren&#8217;t always pretty. My latest escapade into trying to load up Varnish
+through zc.buildout resulted in a hair-tearing out&nbsp;message:</p>
 <pre class="code pytb literal-block">
 <span class="x">An internal error occured due to a bug in either zc.buildout or in a
 recipe being used:
@@ -66,16 +66,16 @@ File &quot;/usr/lib/python2.4/site-packages/setuptools-0.6c9-py2.4.egg/pkg_resou
 raise ImportError(&quot;Entry point %r not found&quot; % ((group,name),))
 ImportError</span>: <span class="n">Entry point ('zc.buildout', 'default') not found</span>
 </pre>
-<p>What??? What's that supposed to mean?</p>
+<p>What??? What&#8217;s that supposed to&nbsp;mean?</p>
 <p>Turns out I managed to stumble upon the cause: our local PyPi repository
 had actually already had an old version of the plone.recipe.varnish
-source on it and my buildout needed the latest version. Even though I'd
+source on it and my buildout needed the latest version. Even though I&#8217;d
 directed buildout to seek out such version, my cache folder already
-thought it was satisfied.</p>
+thought it was&nbsp;satisfied.</p>
 <div class="section" id="solution">
 <h2>Solution</h2>
 <p>Remove the old version from the cache and stick the new version into the
-local PyPi.</p>
+local&nbsp;PyPi.</p>
 </div>
 
     </div><!-- /.entry-content -->

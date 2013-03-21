@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2010/07/linux-make-time-with-faketime/">Linux: Make time with faketime</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2010/07/linux-make-time-with-faketime/">Linux: Make time with&nbsp;faketime</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2010-07-12T12:02:00">
                 Mon 12 July 2010
@@ -43,37 +43,36 @@
         </address>
         <p>In <a href="../category/linux.html">Linux</a>. </p>
 <p>tags: <a href="../tag/faketime.html">faketime</a><a href="../tag/fix.html">fix</a><a href="../tag/linux.html">linux</a><a href="../tag/shp2svg.html">shp2svg</a><a href="../tag/time.html">time</a><a href="../tag/wine.html">wine</a></p>
-</footer><!-- /.post-info --><p>So you, like me, have hit a situation where you've got a time-sensitive
-application that won't run? Maybe you've downloaded one of those apps
-(like a demo) that won't run after a certain date and time because it's
-&quot;expired&quot;. Or else, maybe some other arbitrary time constraint is
+</footer><!-- /.post-info --><p>So you, like me, have hit a situation where you&#8217;ve got a time-sensitive
+application that won&#8217;t run? Maybe you&#8217;ve downloaded one of those apps
+(like a demo) that won&#8217;t run after a certain date and time because it&#8217;s
+&#8220;expired&#8221;. Or else, maybe some other arbitrary time constraint is
 keeping you from running a Linux (or even Windows) program. On Linux
-(Ubuntu for me), there's <tt class="docutils literal">faketime</tt> to the rescue - a very handy tool
-that does what it says on the box, changes the system time for given
-command.</p>
-<p>After installing faketime by something like:</p>
+(Ubuntu for me), there&#8217;s <tt class="docutils literal">faketime</tt> to the rescue - a very handy tool
+that does what it says on the box, changes the system time for given&nbsp;command.</p>
+<p>After installing faketime by something&nbsp;like:</p>
 <pre class="code bash literal-block">
 sudo apt-get install faketime
 </pre>
-<p>you can run your program like this, and see the results:</p>
+<p>you can run your program like this, and see the&nbsp;results:</p>
 <pre class="code bash literal-block">
 faketime <span class="s1">'last Friday 5 pm'</span> /bin/date
 faketime <span class="s1">'2008-12-24 08:15:42'</span> /bin/date
 </pre>
-<p>Sweet as. Now, if you're running a Windows app in Wine (or any other app
+<p>Sweet as. Now, if you&#8217;re running a Windows app in Wine (or any other app
 with arguments), you can do that too. In my specific use-case, I was
 trying to use <a class="reference external" href="http://www.zonums.com/shp2kml.html">shp2kml</a>. Ignoring the fact their website fails at
 actually letting me download the file (I had to get my version
 elsewhere; copied here for posterity: <a class="reference external" href="../static/files/Shp2kml.zip">Shp2kml.zip</a>), their program fails
-at running due to it being &quot;expired&quot;. Noting other posts about people
+at running due to it being &#8220;expired&#8221;. Noting other posts about people
 turning back their clocks to 2006, I did the same thing with faketime,
-so as not to stuff around with my system clock.</p>
+so as not to stuff around with my system&nbsp;clock.</p>
 <pre class="code bash literal-block">
 faketime <span class="s1">'2006-09-20'</span> wine Shp2kml.exe
 </pre>
-<p>and voila, it works. Seems like the change affects Wine's start-up a
+<p>and voila, it works. Seems like the change affects Wine&#8217;s start-up a
 little when first starting with the new date, but it does work just
-fine. Yay for Linux!</p>
+fine. Yay for&nbsp;Linux!</p>
 <p>There are <a href="../blog/2010/07/linux-make-time-with-faketime/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">
         Page 1 / 1

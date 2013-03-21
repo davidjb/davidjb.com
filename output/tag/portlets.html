@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2008/11/plone-relative-recent-changes-portlets/">Plone: Relative 'Recent Changes' Portlets</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2008/11/plone-relative-recent-changes-portlets/">Plone: Relative &#8216;Recent Changes&#8217;&nbsp;Portlets</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2008-11-20T11:33:00">
                 Thu 20 November 2008
@@ -43,39 +43,39 @@
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/features.html">features</a><a href="../tag/plone.html">plone</a><a href="../tag/portlets.html">portlets</a><a href="../tag/product.html">product</a><a href="../tag/python.html">python</a></p>
-</footer><!-- /.post-info --><p>The problem I've been faced with today on our Plone systems is that I
-need to created a 'Recent Changes' portlet that's relative to where the
-user is on the site.</p>
-<p>Now, the standard portlet doesn't do anything for me, so that's pretty
-useless. I had a look at the standard code for the portlet too and it's
-not really feasible to try and mess with:</p>
+</footer><!-- /.post-info --><p>The problem I&#8217;ve been faced with today on our Plone systems is that I
+need to created a &#8216;Recent Changes&#8217; portlet that&#8217;s relative to where the
+user is on the&nbsp;site.</p>
+<p>Now, the standard portlet doesn&#8217;t do anything for me, so that&#8217;s pretty
+useless. I had a look at the standard code for the portlet too and it&#8217;s
+not really feasible to try and mess&nbsp;with:</p>
 <pre class="code xml literal-block">
 <span class="nt">&lt;tal:recentlist</span> <span class="na">define=</span><span class="s">&quot;view here/&#64;&#64;recent_view; results here/results;&quot;</span><span class="nt">&gt;</span>
 </pre>
 <p>However, using a (nasty?) workaround, if we put the classic Recent
-Changes portlet into play, we can change that above code in the ZMI to
-something like:</p>
+Changes portlet into play, we can change that above code in the <span class="caps">ZMI</span> to
+something&nbsp;like:</p>
 <pre class="code xml literal-block">
 <span class="nt">&lt;tal:recentlist</span> <span class="na">define=</span><span class="s">&quot;view here/&#64;&#64;recent_view;
                         theseResults python:container.portal_catalog(path='/'.join(context.getPhysicalPath()),sort_on='modified',sort_order='reverse');
                         results python:theseResults[:5];&quot;</span><span class="nt">&gt;</span>
 </pre>
 <p>So, we handle the problem by asking the portal catalog this time, and
-only wanting stuff that's under our current physical path. By using the
+only wanting stuff that&#8217;s under our current physical path. By using the
 <em>path</em> parameter for the catalog, this works its magic for us. The
-sub-selection of the array handles cutting back the results.</p>
+sub-selection of the array handles cutting back the&nbsp;results.</p>
 <p>I noticed that the portlet also has links in its header and footer to
-'/recently_modified'. This would, typically, just give us the
+&#8216;/recently_modified&#8217;. This would, typically, just give us the
 everything on the portal, but by making a new page template with a
-slightly different name, copying the code in from 'recently_modified',
-modifying its <em>results</em> as above, and pointing the portlet's links at
-this new page template under our current page:</p>
+slightly different name, copying the code in from &#8216;recently_modified&#8217;,
+modifying its <em>results</em> as above, and pointing the portlet&#8217;s links at
+this new page template under our current&nbsp;page:</p>
 <pre class="code python literal-block">
 <span class="n">python</span><span class="p">:</span><span class="n">here</span><span class="o">.</span><span class="n">absolute_url</span><span class="p">()</span><span class="o">+</span><span class="s">'/relative_recently_modified'</span>
 </pre>
-<p>we end up with a nice, relative, recent changes full listing.</p>
-<p>It's a brutal hack, but you could apply the same idea to an actual
-product and make a real Plone 3 portlet out of this.</p>
+<p>we end up with a nice, relative, recent changes full&nbsp;listing.</p>
+<p>It&#8217;s a brutal hack, but you could apply the same idea to an actual
+product and make a real Plone 3 portlet out of&nbsp;this.</p>
 <p>There are <a href="../blog/2008/11/plone-relative-recent-changes-portlets/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">
         Page 1 / 1

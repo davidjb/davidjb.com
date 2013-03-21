@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2012/06/jenkins-ci-and-github-post-receive-hooks-ceasing-to-work-potential-solution/">Jenkins CI and GitHub post-receive hooks ceasing to work (+ potential solution)</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2012/06/jenkins-ci-and-github-post-receive-hooks-ceasing-to-work-potential-solution/">Jenkins <span class="caps">CI</span> and GitHub post-receive hooks ceasing to work (+ potential&nbsp;solution)</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2012-06-19T09:11:00">
                 Tue 19 June 2012
@@ -44,43 +44,43 @@
         <p>In <a href="../category/github.html">GitHub</a>. </p>
 <p>tags: <a href="../tag/ci.html">ci</a><a href="../tag/git.html">git</a><a href="../tag/github.html">github</a><a href="../tag/jenkins.html">jenkins</a></p>
 </footer><!-- /.post-info --><div class="section" id="all-projects-fail">
-<h2>All projects fail</h2>
-<p>Recently our Jenkins CI system began having issues with failing to
-correctly accept post-receive hook POST requests from GitHub, even
+<h2>All projects&nbsp;fail</h2>
+<p>Recently our Jenkins <span class="caps">CI</span> system began having issues with failing to
+correctly accept post-receive hook <span class="caps">POST</span> requests from GitHub, even
 though it was working fine. Without thorough testing, I can only really
 see that the issue was related to upgrading Jenkins and/or the relevant
 Git and GitHub plugins. Thankfully, with even newer versions of the
 above, it has started working again. So, to those with issues, I offer
-this KGS (Known Good Set) of versions for your help:</p>
+this <span class="caps">KGS</span> (Known Good Set) of versions for your&nbsp;help:</p>
 <ul class="simple">
-<li>Jenkins 1.470</li>
-<li>Jenkins GIT plugin 1.1.19</li>
-<li>github-api 1.28</li>
-<li>GitHub plugin 1.4</li>
+<li>Jenkins&nbsp;1.470</li>
+<li>Jenkins <span class="caps">GIT</span> plugin&nbsp;1.1.19</li>
+<li>github-api&nbsp;1.28</li>
+<li>GitHub plugin&nbsp;1.4</li>
 </ul>
 </div>
 <div class="section" id="some-projects-work">
-<h2>Some projects work</h2>
-<p>On a separate note, if you're having trouble with just one of your
+<h2>Some projects&nbsp;work</h2>
+<p>On a separate note, if you&#8217;re having trouble with just one of your
 Jenkins projects not accepting post-receive hooks when others are
-working fine, then check the your repository URL. I found that one of my
-projects had the URL:</p>
+working fine, then check the your repository <span class="caps">URL</span>. I found that one of my
+projects had the&nbsp;<span class="caps">URL</span>:</p>
 <pre class="literal-block">
 git&#64;github.com:davidjb/my.project
 </pre>
-<p>which is notably missing the the &quot;.git&quot; from the end. Whilst Git accepts this
-as a valid URL for cloning a repo, the Jenkins integration doesn't match the
-hooks when coming in. This one is worthwhile checking too if you're just having
-issues with individual projects.</p>
+<p>which is notably missing the the &#8220;.git&#8221; from the end. Whilst Git accepts this
+as a valid <span class="caps">URL</span> for cloning a repo, the Jenkins integration doesn&#8217;t match the
+hooks when coming in. This one is worthwhile checking too if you&#8217;re just having
+issues with individual&nbsp;projects.</p>
 </div>
 <div class="section" id="debugging">
 <h2>Debugging</h2>
-<p>For both of the above issues, debugging can help a bit -- <a class="reference external" href="https://wiki.jenkins-ci.org/display/JENKINS/Github+Plugin#GithubPlugin-Troubleshootinghooks">follow
+<p>For both of the above issues, debugging can help a bit &#8212; <a class="reference external" href="https://wiki.jenkins-ci.org/display/JENKINS/Github+Plugin#GithubPlugin-Troubleshootinghooks">follow
 instructions</a> for adding a logger and examine the output. In my case
-for when some projects were working and some weren't, the one that
-wasn't working didn't get 'poked' in the logs. If you don't see this,
-but you do see the POST request coming into Jenkins, then check your
-project/job configuration.</p>
+for when some projects were working and some weren&#8217;t, the one that
+wasn&#8217;t working didn&#8217;t get &#8216;poked&#8217; in the logs. If you don&#8217;t see this,
+but you do see the <span class="caps">POST</span> request coming into Jenkins, then check your
+project/job&nbsp;configuration.</p>
 </div>
 <p>There are <a href="../blog/2012/06/jenkins-ci-and-github-post-receive-hooks-ceasing-to-work-potential-solution/#disqus_thread">comments</a>.</p>                </article>
                             </aside><!-- /#featured -->
@@ -94,7 +94,7 @@ project/job configuration.</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2011/12/notes-about-redmine-and-github-post-commit-hooks/" rel="bookmark"
-                           title="Permalink to Notes about Redmine and GitHub Post-commit Hooks">Notes about Redmine and GitHub Post-commit Hooks</a></h1>
+                           title="Permalink to Notes about Redmine and GitHub Post-commit Hooks">Notes about Redmine and GitHub Post-commit&nbsp;Hooks</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -108,13 +108,13 @@ project/job configuration.</p>
         </address>
         <p>In <a href="../category/github.html">GitHub</a>. </p>
 <p>tags: <a href="../tag/code.html">code</a><a href="../tag/commit.html">commit</a><a href="../tag/dvcs.html">dvcs</a><a href="../tag/git.html">git</a><a href="../tag/github.html">github</a><a href="../tag/redmine.html">redmine</a><a href="../tag/vcs.html">vcs</a></p>
-</footer><!-- /.post-info -->                <p>We're currently using Redmine for our project tracking and recently have
+</footer><!-- /.post-info -->                <p>We&#8217;re currently using Redmine for our project tracking and recently have
 wanted to have our GitHub projects automatically get updated within
-Redmine. A post-commit hook to the rescue!</p>
+Redmine. A post-commit hook to the&nbsp;rescue!</p>
 <ol class="arabic">
 <li><p class="first">Download and install this super plugin:
 <a class="reference external" href="https://github.com/koppen/redmine_github_hook">https://github.com/koppen/redmine_github_hook</a> and restart your
-Redmine instance.</p>
+Redmine&nbsp;instance.</p>
 </li>
 <li><p class="first">Set up your local Git ...</p></li></ol>
                 <a class="readmore" href="../blog/2011/12/notes-about-redmine-and-github-post-commit-hooks/">read more</a>
@@ -126,7 +126,7 @@ Redmine instance.</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/09/git-and-checkouts-by-date/" rel="bookmark"
-                           title="Permalink to Git and checkouts by date">Git and checkouts by date</a></h1>
+                           title="Permalink to Git and checkouts by date">Git and checkouts by&nbsp;date</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -142,7 +142,7 @@ Redmine instance.</p>
 <p>tags: <a href="../tag/date.html">date</a><a href="../tag/git.html">git</a><a href="../tag/history.html">history</a><a href="../tag/versions.html">versions</a></p>
 </footer><!-- /.post-info -->                <p>Cheers to this <a class="reference external" href="http://www.bramschoenmakers.nl/en/node/645">very handy post</a> for posting details from Nabble on how
 to check out a git branch based upon the date it was commited.&nbsp; If I
-haven't modified Wordpress to turn off the character replacement, then
+haven&#8217;t modified Wordpress to turn off the character replacement, then
 watch out because the double-quotes and double-dash will need to be ...</p>
                 <a class="readmore" href="../blog/2009/09/git-and-checkouts-by-date/">read more</a>
                 <p>There are <a href="../blog/2009/09/git-and-checkouts-by-date/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->

@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="./">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="./pages/about-me.html">About me</a></li>
+                                                    <li><a href="./pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="./pages/blog.html">Blog</a></li>
                                     <li><a href="./pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,50 +32,61 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="./blog/2012/10/configuring-gtkgnome-toolbar-icon-sizes-and-labels-ubuntu-12-10-and-more/">Configuring GTK/Gnome toolbar icon sizes and labels (Ubuntu 12.10+ and more)</a></h1> 
+                    <h1 class="entry-title"><a href="./blog/2013/03/new-blog-goodbye-wordpress/">New Blog, Goodbye&nbsp;Wordpress</a></h1> 
                     <footer class="post-info">
-        <abbr class="published" title="2012-10-24T16:28:00">
-                Wed 24 October 2012
+        <abbr class="published" title="2013-03-21T00:00:00">
+                Thu 21 March 2013
         </abbr>
 
                 <address class="vcard author">
                 By <a class="url fn" href="./author/davidjb.html">davidjb</a>
         </address>
-        <p>In <a href="./category/ubuntu.html">Ubuntu</a>. </p>
-<p>tags: <a href="./tag/buttons.html">buttons</a><a href="./tag/gnome.html">gnome</a><a href="./tag/gtk.html">gtk</a><a href="./tag/icons.html">icons</a><a href="./tag/toolbar.html">toolbar</a><a href="./tag/ubuntu.html">ubuntu</a></p>
-</footer><!-- /.post-info --><p>One major annoyance (first-world, clearly) for me having upgraded to
-Ubuntu 12.10 is that my GTK toolbar icons are very large (32x32 pixels)
-and have labels on them. This takes up a decent amount of screen real
-estate in applications like gedit, Rhythmbox, and many others --
-effectively anything that's using GTK. What's worse, it looks like the
-latest Ubuntu (Quantal Quetzal) now is adding visual padding/spacing
-around the buttons. I don't like this at all and prefer my buttons to be
-tiny and without labels.</p>
-<p>As per the post at <a class="reference external" href="http://ubuntuforums.org/showthread.php?t=1859526">http://ubuntuforums.org/showthread.php?t=1859526</a>,
-the issue was previously solved by configuring the setting within a
-dconf setting, however this hasn't applied since 11.10.</p>
-<p>However, it is possible to include the following in your
-<tt class="docutils literal"><span class="pre">/etc/gtk-3.0/settings.ini</span></tt> file to make your icons small and
-beautiful again:</p>
-<pre class="code ini literal-block">
-<span class="k">[Settings]</span>
-<span class="na">gtk-icon-sizes</span> <span class="o">=</span> <span class="s">panel-menu=16,16:gtk-large-toolbar=16,16</span>
-</pre>
-<p>Start a GTK application like gedit and notice the difference.</p>
-<p>To change the 'style' of the buttons on the toolbars (labels and icons
-appearance), you'll need to launch (and install, if necessary)
-<tt class="docutils literal"><span class="pre">dconf-editor</span></tt> and modify the <tt class="docutils literal"><span class="pre">org.gnome.desktop.interface.toolbar-style</span></tt>
-setting.</p>
-<p>Once the editor is open, then traverse the settings schema tree on the
-left-hand side until you find the setting. Once you've found it, click onto its
-value and choose another option -- if you've left your GTK application open,
-the style will change immediately. Pick the best one that suits you. I prefer
-'icons' to just have the icons themselves, without labels (note that text
-appears in a tooltip anyway).</p>
-<p>Note that not all GTK applications will adhere to these options -- it is
-possible for them to override the global settings (sigh, yes Rhythmbox,
-that's seemingly you).</p>
-<p>There are <a href="./blog/2012/10/configuring-gtkgnome-toolbar-icon-sizes-and-labels-ubuntu-12-10-and-more/#disqus_thread">comments</a>.</p>                </article>
+        <p>In <a href="./category/general.html">general</a>. </p>
+
+</footer><!-- /.post-info --><p>Yes, I&#8217;m a little ashamed that I did used to run Wordpress as my blog and my
+website.  Being a Python developer that I am, it&#8217;s not exactly good form, nor
+is it good for one&#8217;s sanity to have to keep updating something every few days
+with security updates.  Maybe I&#8217;m giving <span class="caps">PHP</span> applications and Wordpress a hard time
+given their prevalence out in the wild, but the fact remains that it just wasn&#8217;t
+working for me.  It might also have a little to do with the fact that my existing
+web host has decided to increase my costs by about 1000% per year (yes, that&#8217;s a
+10-fold increase).  Either way, I&#8217;ll pass on&nbsp;both.</p>
+<div class="section" id="new-path">
+<h2>New&nbsp;path</h2>
+<p>So, I decided a chane of scenery was the way to go and since <a class="reference external" href="http://getpelican.com">Pelican</a>, a static blog generator was one of the most popular
+Python-based solutions, I thought it was a nice choice.  After reading many,
+many articles about which static site generator to use (some articles listed
+50+ options), it&#8217;s any wonder anyone can make any sort of informed decision.
+The reason behind mine is that popularity is a good thing - something that
+keeps bug fixes and features rolling in for time to&nbsp;come.</p>
+<p>After a few days here and there over the last few months, I&#8217;ve been slowly improving
+Pelican to suit my requirements and it&#8217;s shaping up well.  The good news for everyone
+else is that all my fixes have been merged into the main code base &#8212; including
+some Wordpress importer improvements and other fixes.  So far, it&#8217;s doing everything
+I need it to, although there&#8217;s still some more things I&#8217;d like to investigate&nbsp;like:</p>
+<ul class="simple">
+<li>Adding a custom <span class="caps">CSS</span> file as part of an existing theme.  So far it seems
+1 theme == 1 <span class="caps">CSS</span> file, but I could be&nbsp;wrong.</li>
+<li>Clean up some <span class="caps">CSS</span> in the default theme.  Some things just look plain&nbsp;off.</li>
+<li>Extending existing themes or just being able to use a theme but override one
+or two bits (eg one template).  I&#8217;m unsure if this can happen&nbsp;yet.</li>
+</ul>
+</div>
+<div class="section" id="and-now">
+<h2>And&nbsp;now&#8230;</h2>
+<p>Welcome to my new site.  Apologies for some of the really old and outdated
+content around.  Some people still access those links so presumably someone&#8217;s
+getting some use out of it.  During the import, it was funny to see how much
+things (and I) have changed in the last few years.  So, sorry in advance for
+the lack of post content from several years ago.  Maybe it&#8217;ll prove fun to read
+in years to come for&nbsp;someone.</p>
+</div>
+<div class="section" id="issues">
+<h2>Issues?</h2>
+<p>This site is open-source!  Report issues you see at
+<a class="reference external" href="https://github.com/davidjb/davidjb.github.com">https://github.com/davidjb/davidjb.github.com</a>.</p>
+</div>
+<p>There are <a href="./blog/2013/03/new-blog-goodbye-wordpress/#disqus_thread">comments</a>.</p>                </article>
                             </aside><!-- /#featured -->
                             <section id="content" class="body">
                     <h1>Other articles</h1>
@@ -86,8 +97,36 @@ that's seemingly you).</p>
                  
                         <li><article class="hentry">    
                 <header>
+                    <h1><a href="./blog/2012/10/configuring-gtkgnome-toolbar-icon-sizes-and-labels-ubuntu-12-10-and-more/" rel="bookmark"
+                           title="Permalink to Configuring GTK/Gnome toolbar icon sizes and labels (Ubuntu 12.10+ and more)">Configuring <span class="caps">GTK</span>/Gnome toolbar icon sizes and labels (Ubuntu 12.10+ and&nbsp;more)</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-10-24T16:28:00">
+                Wed 24 October 2012
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="./author/davidjb.html">davidjb</a>
+        </address>
+        <p>In <a href="./category/ubuntu.html">Ubuntu</a>. </p>
+<p>tags: <a href="./tag/buttons.html">buttons</a><a href="./tag/gnome.html">gnome</a><a href="./tag/gtk.html">gtk</a><a href="./tag/icons.html">icons</a><a href="./tag/toolbar.html">toolbar</a><a href="./tag/ubuntu.html">ubuntu</a></p>
+</footer><!-- /.post-info -->                <p>One major annoyance (first-world, clearly) for me having upgraded to
+Ubuntu 12.10 is that my <span class="caps">GTK</span> toolbar icons are very large (32x32 pixels)
+and have labels on them. This takes up a decent amount of screen real
+estate in applications like gedit, Rhythmbox, and many others &#8212;
+effectively anything that ...</p>
+                <a class="readmore" href="./blog/2012/10/configuring-gtkgnome-toolbar-icon-sizes-and-labels-ubuntu-12-10-and-more/">read more</a>
+                <p>There are <a href="./blog/2012/10/configuring-gtkgnome-toolbar-icon-sizes-and-labels-ubuntu-12-10-and-more/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
                     <h1><a href="./blog/2012/08/virtualenv-being-ignored-by-setuptoolsdistributeeasy_install/" rel="bookmark"
-                           title="Permalink to Virtualenv being ignored by setuptools/Distribute/easy_install">Virtualenv being ignored by setuptools/Distribute/easy_install</a></h1>
+                           title="Permalink to Virtualenv being ignored by setuptools/Distribute/easy_install">Virtualenv being ignored by&nbsp;setuptools/Distribute/easy_install</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -101,7 +140,7 @@ that's seemingly you).</p>
         </address>
         <p>In <a href="./category/python.html">Python</a>. </p>
 <p>tags: <a href="./tag/distribute.html">distribute</a><a href="./tag/easy_install.html">easy_install</a><a href="./tag/virtualenv.html">virtualenv</a></p>
-</footer><!-- /.post-info -->                <p>This one couldn't be simpler, but it's worth noting all the same. &nbsp;I've just
+</footer><!-- /.post-info -->                <p>This one couldn&#8217;t be simpler, but it&#8217;s worth noting all the same. &nbsp;I&#8217;ve just
 experienced a situation where a <a class="reference external" href="http://www.virtualenv.org/en/latest/index.html">virtualenv</a>&nbsp; was being completely ignored by
 all tools even though it was absolutely activated via <tt class="docutils literal">source bin/activate</tt>.</p>
 <p>The answer was to blow away the <tt class="docutils literal">lib</tt> directory within ...</p>
@@ -114,7 +153,7 @@ all tools even though it was absolutely activated via <tt class="docutils litera
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="./blog/2012/06/restartreset-usb-in-ubuntu-12-04-without-rebooting/" rel="bookmark"
-                           title="Permalink to Restart/reset USB in Ubuntu 12.04 without rebooting">Restart/reset USB in Ubuntu 12.04 without rebooting</a></h1>
+                           title="Permalink to Restart/reset USB in Ubuntu 12.04 without rebooting">Restart/reset <span class="caps">USB</span> in Ubuntu 12.04 without&nbsp;rebooting</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -129,8 +168,8 @@ all tools even though it was absolutely activated via <tt class="docutils litera
         <p>In <a href="./category/it.html">IT</a>. </p>
 <p>tags: <a href="./tag/linux.html">linux</a><a href="./tag/power.html">power</a><a href="./tag/reset.html">reset</a><a href="./tag/restart.html">restart</a><a href="./tag/ubuntu.html">ubuntu</a><a href="./tag/usb.html">usb</a></p>
 </footer><!-- /.post-info -->                <p>Either my Dell Optiplex 990 computer or my Linux install has an issue:
-occasionally, when I re-plug a USB device into the system, it'll cause a
-fault in the USB module in the kernel and USB goes dark. I'm unsure as
+occasionally, when I re-plug a <span class="caps">USB</span> device into the system, it&#8217;ll cause a
+fault in the <span class="caps">USB</span> module in the kernel and <span class="caps">USB</span> goes dark. I&#8217;m unsure as
 to whether this is a hardware or ...</p>
                 <a class="readmore" href="./blog/2012/06/restartreset-usb-in-ubuntu-12-04-without-rebooting/">read more</a>
                 <p>There are <a href="./blog/2012/06/restartreset-usb-in-ubuntu-12-04-without-rebooting/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
@@ -141,7 +180,7 @@ to whether this is a hardware or ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="./blog/2012/06/easier-github-organisation-repository-and-team-management-with-github-collective/" rel="bookmark"
-                           title="Permalink to Easier GitHub organisation, repository and team management with github-collective">Easier GitHub organisation, repository and team management with github-collective</a></h1>
+                           title="Permalink to Easier GitHub organisation, repository and team management with github-collective">Easier GitHub organisation, repository and team management with&nbsp;github-collective</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -157,8 +196,8 @@ to whether this is a hardware or ...</p>
 <p>tags: <a href="./tag/collective.html">collective</a><a href="./tag/github.html">github</a><a href="./tag/ini.html">ini</a><a href="./tag/jenkins.html">jenkins</a><a href="./tag/management.html">management</a><a href="./tag/organization.html">organization</a><a href="./tag/plone.html">plone</a><a href="./tag/script.html">script</a></p>
 </footer><!-- /.post-info -->                <p>Have you ever felt that administering your GitHub organisation (or
 organization, depending from where you hail), its repositories, teams,
-and service hooks has become a tedious task and that you'd rather be
-doing something else? &nbsp;Maybe you're of the mindset that there should be
+and service hooks has become a tedious task and that you&#8217;d rather be
+doing something else? &nbsp;Maybe you&#8217;re of the mindset that there should be
 a better way of ...</p>
                 <a class="readmore" href="./blog/2012/06/easier-github-organisation-repository-and-team-management-with-github-collective/">read more</a>
                 <p>There are <a href="./blog/2012/06/easier-github-organisation-repository-and-team-management-with-github-collective/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
@@ -169,7 +208,7 @@ a better way of ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="./blog/2012/06/members-cant-add-folders-to-plone-via-webdav-401-unauthorized/" rel="bookmark"
-                           title="Permalink to Members can't add folders to Plone via WebDAV (401 Unauthorized)">Members can't add folders to Plone via WebDAV (401 Unauthorized)</a></h1>
+                           title="Permalink to Members can’t add folders to Plone via WebDAV (401 Unauthorized)">Members can&#8217;t add folders to Plone via WebDAV (401&nbsp;Unauthorized)</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -187,7 +226,7 @@ a better way of ...</p>
 <a class="reference external" href="http://plone.org/documentation/error/unable-to-create-a-folder-through-webdav/">http://plone.org/documentation/error/unable-to-create-a-folder-through-webdav/</a>,
 but just a short editorial to also highlight that this is still very
 applicable to Plone 4.x. Effectively, the symptom is that users will
-report seeing a &quot;401 Unauthorized&quot; error when trying to create ...</p>
+report seeing a &#8220;401 Unauthorized&#8221; error when trying to create ...</p>
                 <a class="readmore" href="./blog/2012/06/members-cant-add-folders-to-plone-via-webdav-401-unauthorized/">read more</a>
                 <p>There are <a href="./blog/2012/06/members-cant-add-folders-to-plone-via-webdav-401-unauthorized/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
@@ -197,7 +236,7 @@ report seeing a &quot;401 Unauthorized&quot; error when trying to create ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="./blog/2012/06/jenkins-ci-and-github-post-receive-hooks-ceasing-to-work-potential-solution/" rel="bookmark"
-                           title="Permalink to Jenkins CI and GitHub post-receive hooks ceasing to work (+ potential solution)">Jenkins CI and GitHub post-receive hooks ceasing to work (+ potential solution)</a></h1>
+                           title="Permalink to Jenkins CI and GitHub post-receive hooks ceasing to work (+ potential solution)">Jenkins <span class="caps">CI</span> and GitHub post-receive hooks ceasing to work (+ potential&nbsp;solution)</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -212,9 +251,9 @@ report seeing a &quot;401 Unauthorized&quot; error when trying to create ...</p>
         <p>In <a href="./category/github.html">GitHub</a>. </p>
 <p>tags: <a href="./tag/ci.html">ci</a><a href="./tag/git.html">git</a><a href="./tag/github.html">github</a><a href="./tag/jenkins.html">jenkins</a></p>
 </footer><!-- /.post-info -->                <div class="section" id="all-projects-fail">
-<h2>All projects fail</h2>
-<p>Recently our Jenkins CI system began having issues with failing to
-correctly accept post-receive hook POST requests from GitHub, even
+<h2>All projects&nbsp;fail</h2>
+<p>Recently our Jenkins <span class="caps">CI</span> system began having issues with failing to
+correctly accept post-receive hook <span class="caps">POST</span> requests from GitHub, even
 though it was working fine. Without thorough testing, I can only really
 see that the issue was related to upgrading Jenkins and/or the relevant
 Git and ...</p></div>
@@ -227,7 +266,7 @@ Git and ...</p></div>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="./blog/2012/06/serving-tilestache-or-another-app-using-uwsgi-against-a-web-sub-directory/" rel="bookmark"
-                           title="Permalink to Serving TileStache (or another app) using uWSGI against a web sub-directory">Serving TileStache (or another app) using uWSGI against a web sub-directory</a></h1>
+                           title="Permalink to Serving TileStache (or another app) using uWSGI against a web sub-directory">Serving TileStache (or another app) using uWSGI against a web&nbsp;sub-directory</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -244,7 +283,7 @@ Git and ...</p></div>
 </footer><!-- /.post-info -->                <p><a class="reference external" href="http://projects.unbit.it/uwsgi/">uWSGI</a> is extremely promising as an application server given its huge
 range of options and supported platforms. &nbsp;For me, however, just getting
 something seemingly simple up and running successfully was relatively
-confusing. I'd like to contribute to the documentation when I can, but
+confusing. I&#8217;d like to contribute to the documentation when I can, but
 thought a dedicated page about <a class="reference external" href="http://tilestache.org">TileStache ...</a></p>
                 <a class="readmore" href="./blog/2012/06/serving-tilestache-or-another-app-using-uwsgi-against-a-web-sub-directory/">read more</a>
                 <p>There are <a href="./blog/2012/06/serving-tilestache-or-another-app-using-uwsgi-against-a-web-sub-directory/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
@@ -255,7 +294,7 @@ thought a dedicated page about <a class="reference external" href="http://tilest
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="./blog/2012/02/mr-scripty-my-new-best-friend/" rel="bookmark"
-                           title="Permalink to mr.scripty - my new best friend">mr.scripty - my new best friend</a></h1>
+                           title="Permalink to mr.scripty - my new best friend">mr.scripty - my new best&nbsp;friend</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -269,11 +308,10 @@ thought a dedicated page about <a class="reference external" href="http://tilest
         </address>
         <p>In <a href="./category/python.html">Python</a>. </p>
 <p>tags: <a href="./tag/awesome.html">awesome</a><a href="./tag/buildout.html">buildout</a><a href="./tag/python.html">python</a><a href="./tag/recipe.html">recipe</a></p>
-</footer><!-- /.post-info -->                <p>If you're working with Buildout, then check out <a class="reference external" href="http://github.com/collective/mr.scripty">mr.scripty</a>, a
+</footer><!-- /.post-info -->                <p>If you&#8217;re working with Buildout, then check out <a class="reference external" href="http://github.com/collective/mr.scripty">mr.scripty</a>, a
 fantastic Buildout recipe that allows you to use Python code in
 functions within its options. &nbsp;This means that - in the few instances
-I've used it so far - have conditional statements regarding effectively
-anything.</p>
+I&#8217;ve used it so far - have conditional statements regarding effectively&nbsp;anything.</p>
 <p>In the two examples ...</p>
                 <a class="readmore" href="./blog/2012/02/mr-scripty-my-new-best-friend/">read more</a>
                 <p>There are <a href="./blog/2012/02/mr-scripty-my-new-best-friend/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
@@ -284,7 +322,7 @@ anything.</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="./blog/2012/02/java-http-request-fails-with-javax-net-ssl-sslpeerunverifiedexception-peer-not-authenticated/" rel="bookmark"
-                           title="Permalink to Java HTTP request fails with "javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated"">Java HTTP request fails with &quot;javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated&quot;</a></h1>
+                           title="Permalink to Java HTTP request fails with “javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated”">Java <span class="caps">HTTP</span> request fails with &#8220;javax.net.ssl.SSLPeerUnverifiedException: peer not&nbsp;authenticated&#8221;</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -300,39 +338,11 @@ anything.</p>
 <p>tags: <a href="./tag/certificate.html">certificate</a><a href="./tag/java.html">java</a><a href="./tag/key.html">key</a><a href="./tag/linux.html">linux</a><a href="./tag/ssl.html">ssl</a><a href="./tag/store.html">store</a></p>
 </footer><!-- /.post-info -->                <p>Searching the above-mentioned stack trace reveals lots and lots of
 results, unsurprisingly. &nbsp;Most results are workarounds where you modify
-the code, but what about if an application (like Jenkins/Hudson CI, in
+the code, but what about if an application (like Jenkins/Hudson <span class="caps">CI</span>, in
 my case) throws this error at you? The reason the error is occurring is
-because the SSL certificate ...</p>
+because the <span class="caps">SSL</span> certificate ...</p>
                 <a class="readmore" href="./blog/2012/02/java-http-request-fails-with-javax-net-ssl-sslpeerunverifiedexception-peer-not-authenticated/">read more</a>
                 <p>There are <a href="./blog/2012/02/java-http-request-fails-with-javax-net-ssl-sslpeerunverifiedexception-peer-not-authenticated/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-                            
-
-                 
-                        <li><article class="hentry">    
-                <header>
-                    <h1><a href="./blog/2012/01/adding-a-return-url-during-logout-with-cas/" rel="bookmark"
-                           title="Permalink to Adding a return URL during logout with CAS">Adding a return URL during logout with CAS</a></h1>
-                </header>
-                
-                <div class="entry-content">
-                <footer class="post-info">
-        <abbr class="published" title="2012-01-11T11:38:00">
-                Wed 11 January 2012
-        </abbr>
-
-                <address class="vcard author">
-                By <a class="url fn" href="./author/davidjb.html">davidjb</a>
-        </address>
-        <p>In <a href="./category/web-programming.html">web programming</a>. </p>
-<p>tags: <a href="./tag/auth.html">auth</a><a href="./tag/cas.html">cas</a><a href="./tag/http.html">http</a><a href="./tag/url.html">url</a><a href="./tag/web.html">web</a></p>
-</footer><!-- /.post-info -->                <p>CAS (Central Authentication Service) is a single-sign-on service (say
-that several times quickly) and through accessing a CAS <tt class="docutils literal">/logout</tt> URL,
-as an application, you're able to log the given user out. &nbsp;What wasn't
-clear (by Googling) was whether there's a possibility to redirect the
-user back to ...</p>
-                <a class="readmore" href="./blog/2012/01/adding-a-return-url-during-logout-with-cas/">read more</a>
-                <p>There are <a href="./blog/2012/01/adding-a-return-url-during-logout-with-cas/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
                             </ol><!-- /#posts-list -->
                             <p class="paginator">

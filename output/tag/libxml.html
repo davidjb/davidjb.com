@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2008/12/plone-buildout-wont-install-products-openxml/">Plone: Buildout Won't Install Products.OpenXml</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2008/12/plone-buildout-wont-install-products-openxml/">Plone: Buildout Won&#8217;t Install&nbsp;Products.OpenXml</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2008-12-22T14:59:00">
                 Mon 22 December 2008
@@ -43,13 +43,13 @@
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/buildout.html">buildout</a><a href="../tag/libxml.html">libxml</a><a href="../tag/openxml.html">openxml</a><a href="../tag/plone.html">plone</a><a href="../tag/problem.html">problem</a><a href="../tag/products.html">products</a><a href="../tag/xml.html">xml</a></p>
-</footer><!-- /.post-info --><p><strong>UPDATE:</strong> Installation of Products.OpenXml appears to work happily
-with buildout when I'm using z3c.recipe.staticlxml to build lxml
-separately from having to easy_install or install system-wide packages.</p>
-<p>So it's almost Christmas time and I'm still slaving away working. It's
-all about commitment.</p>
-<p>Today in my life I've been trying to install the OpenXml product for
-Plone (using buildout, of course):</p>
+</footer><!-- /.post-info --><p><strong><span class="caps">UPDATE</span>:</strong> Installation of Products.OpenXml appears to work happily
+with buildout when I&#8217;m using z3c.recipe.staticlxml to build lxml
+separately from having to easy_install or install system-wide&nbsp;packages.</p>
+<p>So it&#8217;s almost Christmas time and I&#8217;m still slaving away working. It&#8217;s
+all about&nbsp;commitment.</p>
+<p>Today in my life I&#8217;ve been trying to install the OpenXml product for
+Plone (using buildout, of&nbsp;course):</p>
 <pre class="literal-block">
 david&#64;computer:~/buildout/instance$ ./bin/buildout
 Uninstalling zopepy.
@@ -71,16 +71,15 @@ ERROR: /bin/sh: xslt-config: not found
 **ERROR: /bin/sh: xslt-config: not found
 </pre>
 <p>And then 50,000 errors follow, making this message hard to find. Either
-way, the end result was that lxml wasn't able to install.</p>
+way, the end result was that lxml wasn&#8217;t able to&nbsp;install.</p>
 <p><strong>Solution:</strong> install libxslt and its dev counterpart plus the relevant
-Python bindings on your system. In Ubuntu 8.10, that's libxslt1.1,
-libxslt1-dev, and python-libxslt1.</p>
-<p>All good now.</p>
+Python bindings on your system. In Ubuntu 8.10, that&#8217;s libxslt1.1,
+libxslt1-dev, and&nbsp;python-libxslt1.</p>
+<p>All good&nbsp;now.</p>
 <p><strong>Update:</strong> Turns out Centos 5 (Red Hat) is has different package names.
-Try <tt class="docutils literal">yum install libxslt <span class="pre">libxslt-devel</span> <span class="pre">libxslt-python</span></tt> as root for
-Centos.</p>
+Try <tt class="docutils literal">yum install libxslt <span class="pre">libxslt-devel</span> <span class="pre">libxslt-python</span></tt> as root for&nbsp;Centos.</p>
 <p><strong>Future response:</strong> Just use <a class="reference external" href="https://pypi.python.org/pypi/z3c.recipe.staticlxml">z3c.recipe.staticlxml</a> and be done with it all.
-No need for system level packages and it all just works.</p>
+No need for system level packages and it all just&nbsp;works.</p>
 <p>There are <a href="../blog/2008/12/plone-buildout-wont-install-products-openxml/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">
         Page 1 / 1

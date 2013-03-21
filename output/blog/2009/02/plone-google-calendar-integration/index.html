@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Plone: Google Calendar Integration</title>
+        <title>Plone: Google Calendar Integration</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2009/02/plone-google-calendar-integration/" rel="bookmark"
-           title="Permalink to Plone: Google Calendar Integration">Plone: Google Calendar Integration</a></h1>
+           title="Permalink to Plone: Google Calendar Integration">Plone: Google Calendar&nbsp;Integration</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -47,17 +47,17 @@
         </address>
         <p>In <a href="../../../../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../../../../tag/add-to.html">add to</a><a href="../../../../tag/calendar.html">calendar</a><a href="../../../../tag/event.html">event</a><a href="../../../../tag/google.html">google</a><a href="../../../../tag/integration.html">integration</a><a href="../../../../tag/plone.html">plone</a></p>
-</footer><!-- /.post-info -->      <p>Wouldn't it be great if you could somehow add your Event content item
-within the Plone CMS onto your Google Calendar with just a click? (it'd
-be better with fewer, but 1 click is pretty good - give me a break!)</p>
+</footer><!-- /.post-info -->      <p>Wouldn&#8217;t it be great if you could somehow add your Event content item
+within the Plone <span class="caps">CMS</span> onto your Google Calendar with just a click? (it&#8217;d
+be better with fewer, but 1 click is pretty good - give me a&nbsp;break!)</p>
 <p>Try this placed inside the <tt class="docutils literal">event_view</tt> page template (customise it in
-the ZMI) after the vCal and iCal links:</p>
+the <span class="caps">ZMI</span>) after the vCal and iCal&nbsp;links:</p>
 <pre class="code html literal-block">
 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span>
-<span class="na">tal:attributes=</span><span class="s">&quot;href python:'http://www.google.com/calendar/event?action=TEMPLATE'
+<span class="na">tal:attributes=</span><span class="s">&quot;href python:'http://www.google.com/calendar/event?action=<span class="caps">TEMPLATE</span>'
 +'&amp;text='+here.title
-+'&amp;dates='+here.start().toZone('UTC').ISO8601().replace('-','').replace(':','').split('+')[0]+'Z/'
-+here.end().toZone('UTC').ISO8601().replace('-','').replace(':','').split('+')[0]+'Z'
++'&amp;dates='+here.start().toZone('<span class="caps">UTC</span>').<span class="caps">ISO8601</span>().replace('-','').replace(':','').split('+')[0]+'Z/'
++here.end().toZone('<span class="caps">UTC</span>').<span class="caps">ISO8601</span>().replace('-','').replace(':','').split('+')[0]+'Z'
 +'&amp;location='+here.location
 +'&amp;details='+here.getRawDescription()+'&lt;br /&gt;'+here.getRawText()
 +'&amp;trp=true'
@@ -70,15 +70,15 @@ the ZMI) after the vCal and iCal links:</p>
     <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;https://www.google.com/calendar/images/ext/gc_button1.gif&quot;</span> <span class="na">alt=</span><span class="s">&quot;Add to Google Calendar&quot;</span> <span class="na">width=</span><span class="s">&quot;50&quot;</span> <span class="na">height=</span><span class="s">&quot;13&quot;</span>  <span class="nt">/&gt;</span>
 <span class="nt">&lt;/a&gt;</span>
 </pre>
-<p>So, it's clear as mud, right? It does some magic and completes a link
-for you to use to add your given event and it's details into Google
-Calendar from Plone.</p>
+<p>So, it&#8217;s clear as mud, right? It does some magic and completes a link
+for you to use to add your given event and it&#8217;s details into Google
+Calendar from&nbsp;Plone.</p>
 <p>For those of you really paying attention, the date conversion is nasty
-(why doesn't Google accept an immediately accessible format?) and this
-<em>won't</em> work unless all fields are filled out. I'm still working on a
-field-friendly solution.</p>
-<p>Either way, I didn't find anything on the web about doing this, so here
-it is. Use as you will.</p>
+(why doesn&#8217;t Google accept an immediately accessible format?) and this
+<em>won&#8217;t</em> work unless all fields are filled out. I&#8217;m still working on a
+field-friendly&nbsp;solution.</p>
+<p>Either way, I didn&#8217;t find anything on the web about doing this, so here
+it is. Use as you&nbsp;will.</p>
 
     </div><!-- /.entry-content -->
         <div class="comments">

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Adding a return URL during logout with CAS</title>
+        <title>Adding a return URL during logout with CAS</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2012/01/adding-a-return-url-during-logout-with-cas/" rel="bookmark"
-           title="Permalink to Adding a return URL during logout with CAS">Adding a return URL during logout with CAS</a></h1>
+           title="Permalink to Adding a return URL during logout with CAS">Adding a return <span class="caps">URL</span> during logout with&nbsp;<span class="caps">CAS</span></a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -47,18 +47,18 @@
         </address>
         <p>In <a href="../../../../category/web-programming.html">web programming</a>. </p>
 <p>tags: <a href="../../../../tag/auth.html">auth</a><a href="../../../../tag/cas.html">cas</a><a href="../../../../tag/http.html">http</a><a href="../../../../tag/url.html">url</a><a href="../../../../tag/web.html">web</a></p>
-</footer><!-- /.post-info -->      <p>CAS (Central Authentication Service) is a single-sign-on service (say
-that several times quickly) and through accessing a CAS <tt class="docutils literal">/logout</tt> URL,
-as an application, you're able to log the given user out. &nbsp;What wasn't
-clear (by Googling) was whether there's a possibility to redirect the
-user back to the original application (or a given URL). &nbsp;I now know,
-thanks to the <a class="reference external" href="http://www.jasig.org/cas/protocol">CAS Protocol Documentation</a> (section 2.3), that any
+</footer><!-- /.post-info -->      <p><span class="caps">CAS</span> (Central Authentication Service) is a single-sign-on service (say
+that several times quickly) and through accessing a <span class="caps">CAS</span> <tt class="docutils literal">/logout</tt> <span class="caps">URL</span>,
+as an application, you&#8217;re able to log the given user out. &nbsp;What wasn&#8217;t
+clear (by Googling) was whether there&#8217;s a possibility to redirect the
+user back to the original application (or a given <span class="caps">URL</span>). &nbsp;I now know,
+thanks to the <a class="reference external" href="http://www.jasig.org/cas/protocol"><span class="caps">CAS</span> Protocol Documentation</a> (section 2.3), that any
 posts that mention adding <tt class="docutils literal"><span class="pre">?service=http://my.url/</span></tt> to the <tt class="docutils literal">/logout</tt>
-URL are incorrect, as this isn't a valid parameter (at least not at time
-of writing).</p>
-<p>However, you can add a <tt class="docutils literal"><span class="pre">?url=http://my.url/</span></tt> to the logout URL and get
-this (likely, depends on your CAS settings) displayed as a link on the
-logout page. So, a full URL like this is good to go:</p>
+<span class="caps">URL</span> are incorrect, as this isn&#8217;t a valid parameter (at least not at time
+of&nbsp;writing).</p>
+<p>However, you can add a <tt class="docutils literal"><span class="pre">?url=http://my.url/</span></tt> to the logout <span class="caps">URL</span> and get
+this (likely, depends on your <span class="caps">CAS</span> settings) displayed as a link on the
+logout page. So, a full <span class="caps">URL</span> like this is good to&nbsp;go:</p>
 <pre class="literal-block">
 https://cas.foo.edu/cas/logout?url=http://davidjb.com/
 </pre>

@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2010/01/apache-directories-and-trailing-slashes/">Apache: Directories and trailing slashes</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2010/01/apache-directories-and-trailing-slashes/">Apache: Directories and trailing&nbsp;slashes</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2010-01-18T11:51:00">
                 Mon 18 January 2010
@@ -44,34 +44,33 @@
         <p>In <a href="../category/it.html">IT</a>. </p>
 <p>tags: <a href="../tag/apache.html">apache</a><a href="../tag/directories.html">directories</a><a href="../tag/folder.html">folder</a><a href="../tag/http.html">http</a><a href="../tag/httpd.html">httpd</a><a href="../tag/problem.html">problem</a><a href="../tag/web.html">web</a><a href="../tag/web-server.html">web server</a></p>
 </footer><!-- /.post-info --><p>Apache does something interesting (yes, I still
-think it's logical) when you're accessing a directory that it's serving:
-if you access it without a trailing slash, it'll add one by default.
-This makes sense if you're going after some static content or a folder
-index (or pretty much any sane usage) but it didn't fit my use case of
-serving Plone using rewrite rules in a .htaccess file.</p>
+think it&#8217;s logical) when you&#8217;re accessing a directory that it&#8217;s serving:
+if you access it without a trailing slash, it&#8217;ll add one by default.
+This makes sense if you&#8217;re going after some static content or a folder
+index (or pretty much any sane usage) but it didn&#8217;t fit my use case of
+serving Plone using rewrite rules in a .htaccess&nbsp;file.</p>
 <p>The issue that arises for myself with Plone is that my sites need to
-have their access customised through that .htaccess file and that's been
-placed within a <tt class="docutils literal">public_html</tt> directory thus:</p>
+have their access customised through that .htaccess file and that&#8217;s been
+placed within a <tt class="docutils literal">public_html</tt> directory&nbsp;thus:</p>
 <pre class="literal-block">
 /home/user/public_html/
 </pre>
 <p>Because this is a directory, Apache adds that trailing slash by default
-when accessing an aliased URL like:</p>
+when accessing an aliased <span class="caps">URL</span>&nbsp;like:</p>
 <pre class="literal-block">
 http://mysite.org/user
 </pre>
-<p>because it's actually pointing to <tt class="docutils literal">/home/user/public_html/</tt>.</p>
-<p>I wasn't aware, but you can disable this functionality with just one
-line:</p>
+<p>because it&#8217;s actually pointing to <tt class="docutils literal">/home/user/public_html/</tt>.</p>
+<p>I wasn&#8217;t aware, but you can disable this functionality with just one&nbsp;line:</p>
 <pre class="literal-block">
 DirectorySlash Off
 </pre>
-<p>Pages like <a class="reference external" href="http://httpd.apache.org/docs/1.3/mod/mod_dir.html">this</a> don't help since it's outdated doco for Apache httpd;
-they are annoying since it's what came up first in Google. It ended up
+<p>Pages like <a class="reference external" href="http://httpd.apache.org/docs/1.3/mod/mod_dir.html">this</a> don&#8217;t help since it&#8217;s outdated doco for Apache httpd;
+they are annoying since it&#8217;s what came up first in Google. It ended up
 being the <a class="reference external" href="http://httpd.apache.org/docs/2.2/mod/mod_dir.html">latest version</a> of that same doco page that solved it for me
-by chance.</p>
+by&nbsp;chance.</p>
 <p>As a side note, you apparently need Apache 2.0.51 or later to make this
-happen for you.</p>
+happen for&nbsp;you.</p>
 <p>There are <a href="../blog/2010/01/apache-directories-and-trailing-slashes/#disqus_thread">comments</a>.</p>                </article>
                             </aside><!-- /#featured -->
                             <section id="content" class="body">
@@ -84,7 +83,7 @@ happen for you.</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/09/missing-content-menus-in-plone/" rel="bookmark"
-                           title="Permalink to Missing content menus in Plone">Missing content menus in Plone</a></h1>
+                           title="Permalink to Missing content menus in Plone">Missing content menus in&nbsp;Plone</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -98,10 +97,10 @@ happen for you.</p>
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/apache.html">apache</a><a href="../tag/hosting.html">hosting</a><a href="../tag/menus.html">menus</a><a href="../tag/plone.html">plone</a><a href="../tag/rewrite.html">rewrite</a><a href="../tag/rules.html">rules</a><a href="../tag/urls.html">urls</a><a href="../tag/vhm.html">VHM</a><a href="../tag/virtual-hosting.html">virtual hosting</a></p>
-</footer><!-- /.post-info -->                <p>Another dose of insanity please!&nbsp; Coming right up, sir.</p>
-<p>Today's second discussion comes from an issue I was having recently with
+</footer><!-- /.post-info -->                <p>Another dose of insanity please!&nbsp; Coming right up,&nbsp;sir.</p>
+<p>Today&#8217;s second discussion comes from an issue I was having recently with
 a new Plone site that I was hosting behind Apache and Deliverance.&nbsp; No
-Varnish here yet, because I'd rather the site worked first before I try
+Varnish here yet, because I&#8217;d rather the site worked first before I try
 and ...</p>
                 <a class="readmore" href="../blog/2009/09/missing-content-menus-in-plone/">read more</a>
                 <p>There are <a href="../blog/2009/09/missing-content-menus-in-plone/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
@@ -112,7 +111,7 @@ and ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/01/rewrite-rules-made-easy/" rel="bookmark"
-                           title="Permalink to Rewrite Rules Made Easy">Rewrite Rules Made Easy</a></h1>
+                           title="Permalink to Rewrite Rules Made Easy">Rewrite Rules Made&nbsp;Easy</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -126,10 +125,10 @@ and ...</p>
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/apache.html">apache</a><a href="../tag/rewrite.html">rewrite</a><a href="../tag/rules.html">rules</a></p>
-</footer><!-- /.post-info -->                <p>I've pretty much got a nice handle on Rewrite rules for Apache. Once
-you've seen a few of them, it's straight forward enough to replicate for
-new Plone sites and so forth.</p>
-<p>However, to make things even easier on my brain I've found this:
+</footer><!-- /.post-info -->                <p>I&#8217;ve pretty much got a nice handle on Rewrite rules for Apache. Once
+you&#8217;ve seen a few of them, it&#8217;s straight forward enough to replicate for
+new Plone sites and so&nbsp;forth.</p>
+<p>However, to make things even easier on my brain I&#8217;ve found this:
 <a class="reference external" href="http://betabug.ch/zope/witch">http://betabug ...</a></p>
                 <a class="readmore" href="../blog/2009/01/rewrite-rules-made-easy/">read more</a>
                 <p>There are <a href="../blog/2009/01/rewrite-rules-made-easy/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->

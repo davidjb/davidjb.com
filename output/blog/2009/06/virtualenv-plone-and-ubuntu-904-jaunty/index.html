@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Virtualenv, Plone, and Ubuntu 9.04 Jaunty</title>
+        <title>Virtualenv, Plone, and Ubuntu 9.04 Jaunty</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2009/06/virtualenv-plone-and-ubuntu-904-jaunty/" rel="bookmark"
-           title="Permalink to Virtualenv, Plone, and Ubuntu 9.04 Jaunty">Virtualenv, Plone, and Ubuntu 9.04 Jaunty</a></h1>
+           title="Permalink to Virtualenv, Plone, and Ubuntu 9.04 Jaunty">Virtualenv, Plone, and Ubuntu 9.04&nbsp;Jaunty</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -50,13 +50,13 @@
 </footer><!-- /.post-info -->      <p>What a complicated situation it is trying to use all of the
 above-mentioned pieces of software together. In all seriousness,
 Virtualenv is now appearing to be the best thing since sliced bread for
-me to help out with making Plone/Zope usable under Jaunty.</p>
+me to help out with making Plone/Zope usable under&nbsp;Jaunty.</p>
 <p>By default, as everyone should know by now, a whole bunch of old Python
 2.4 packages got removed from Jaunty, throwing us Plone developers into
-peril.&nbsp; Well, those of us who hadn't discovered the joys of virtualenv
-yet, that is.</p>
-<p>Here's how to convert an existing buildout folder over to Virtualenv
-without too much hassle:</p>
+peril.&nbsp; Well, those of us who hadn&#8217;t discovered the joys of virtualenv
+yet, that&nbsp;is.</p>
+<p>Here&#8217;s how to convert an existing buildout folder over to Virtualenv
+without too much&nbsp;hassle:</p>
 <pre class="code bash literal-block">
 sudo apt-get install python-virtualenv
 virtualenv -p /usr/bin/python2.4 .
@@ -70,24 +70,23 @@ easy_install python-ldap
 <p>And that should handle the issues of, in order of command: installing
 virtualenv, setting up our current folder, activating virtualenv,
 installing useful/necessary python packages, and reworking everything
-via buildout.</p>
+via&nbsp;buildout.</p>
 <p>The instance of Plone/Zope can be started up with/without
-`<strong>activate</strong>` being `<strong>source</strong>`'d, as virtualenv has now
-got its own local python interpreter here.</p>
+`<strong>activate</strong>` being `<strong>source</strong>`&#8217;d, as virtualenv has now
+got its own local python interpreter&nbsp;here.</p>
 <p>Cheers to Athena Geek &#64;
 <a class="reference external" href="http://athenageek.wordpress.com/2009/05/22/virtualenv-in-plone/">http://athenageek.wordpress.com/2009/05/22/virtualenv-in-plone/</a> for the
-details to get me started.</p>
-<p><strong>EDIT:</strong> You might need to install some of the following packages to
-make all the imaging (and rest of Plone) be happy:</p>
+details to get me&nbsp;started.</p>
+<p><strong><span class="caps">EDIT</span>:</strong> You might need to install some of the following packages to
+make all the imaging (and rest of Plone) be&nbsp;happy:</p>
 <pre class="code bash literal-block">
 sudo apt-get install python2.4-dev libtk-img-dev libfreeimage-dev libjpeg62-dev libfreetype6-dev libtk-img-dev tcl8.5-dev tk8.5-dev lynx poppler-utils xpdf wv xlhtml ppthtml
 </pre>
-<p><strong>EDIT2:</strong> If you get weird messages about &quot;Undefined symbol:
-PyUnicodeUCS2_*&quot; then you should probably wipe your virtualenv clean
+<p><strong><span class="caps">EDIT2</span>:</strong> If you get weird messages about &#8220;Undefined symbol:
+PyUnicodeUCS2_*&#8221; then you should probably wipe your virtualenv clean
 and go again. Essentially, dump your lib, include, and content of your
-eggs folder, and re-do your virtualenv. If pain persists, see your
-Google.</p>
-<p><strong>EDIT3:</strong> This also works on Karmic (9.10)! :)</p>
+eggs folder, and re-do your virtualenv. If pain persists, see your&nbsp;Google.</p>
+<p><strong><span class="caps">EDIT3</span>:</strong> This also works on Karmic (9.10)!&nbsp;:)</p>
 
     </div><!-- /.entry-content -->
         <div class="comments">

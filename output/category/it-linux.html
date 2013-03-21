@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2009/10/ubuntu-9-10-install-hiccough/">Ubuntu 9.10 install hiccough</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2009/10/ubuntu-9-10-install-hiccough/">Ubuntu 9.10 install&nbsp;hiccough</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2009-10-30T13:21:00">
                 Fri 30 October 2009
@@ -45,35 +45,34 @@
 <p>tags: <a href="../tag/jaunty.html">jaunty</a><a href="../tag/karmic.html">karmic</a><a href="../tag/koala.html">koala</a><a href="../tag/linux.html">linux</a><a href="../tag/problem.html">problem</a><a href="../tag/python.html">python</a><a href="../tag/ubuntu.html">ubuntu</a><a href="../tag/upgrade.html">upgrade</a></p>
 </footer><!-- /.post-info --><p>Yay, the new version of Ubuntu is out. &nbsp;With it comes plenty of cool new
 features (how awesome does the start up and login screen look now?) and
-also plenty of opportunities for things to break when I've become so
-accustomed to having them working. &nbsp;At least it's not Windows though --
+also plenty of opportunities for things to break when I&#8217;ve become so
+accustomed to having them working. &nbsp;At least it&#8217;s not Windows though &#8212;
 I think I may just gnaw my own limbs off before I have to get forced to
-upgrade to Windows 7 for gaming reasons.</p>
+upgrade to Windows 7 for gaming&nbsp;reasons.</p>
 <p>But I digress, there was one reasonably small problem with the upgrade
 that I saw on both of my Ubuntu machines (laptop and desktop):
-&nbsp;python-wxversion has a problem and won't upgrade. &nbsp;Looking back in the
-terminal it appeared that either it was an &quot;IOError: bad file
-descriptor&quot; or otherwise a certain file (well, it did change when I
-tried to reinstall) like wxversion.py can't be found in
-/usr/lib/python2.6. &nbsp;All very confusing.</p>
-<p>It was especially worrying when the installer came up and said &quot;Sorry,
-your upgrade failed. &nbsp;Your system could be in an unstable state.&quot; &nbsp;That
+&nbsp;python-wxversion has a problem and won&#8217;t upgrade. &nbsp;Looking back in the
+terminal it appeared that either it was an &#8220;IOError: bad file
+descriptor&#8221; or otherwise a certain file (well, it did change when I
+tried to reinstall) like wxversion.py can&#8217;t be found in
+/usr/lib/python2.6. &nbsp;All very&nbsp;confusing.</p>
+<p>It was especially worrying when the installer came up and said &#8220;Sorry,
+your upgrade failed. &nbsp;Your system could be in an unstable state.&#8221; &nbsp;That
 sent alarm bells ringing and possibly with good reason (eg broken apps)
--- at least I had good reason to fix the problem rather than just ignore
-it.</p>
-<p>The solution was simple for both machines:</p>
+&#8212; at least I had good reason to fix the problem rather than just ignore&nbsp;it.</p>
+<p>The solution was simple for both&nbsp;machines:</p>
 <pre class="code bash literal-block">
 sudo apt-get remove python-wxgtk2.8
 sudo apt-get install python-wxgtk2.8
 </pre>
 <p>Not painful at all. &nbsp;Except it was a case of finding which package to
-reinstall. &nbsp;Don't try and reinstall python-wxversion like I did because
-you won't get far. &nbsp;It'll still die. &nbsp;python-wxversion is, however, a
-dependency of the above package so all's well once you get that sorted.</p>
+reinstall. &nbsp;Don&#8217;t try and reinstall python-wxversion like I did because
+you won&#8217;t get far. &nbsp;It&#8217;ll still die. &nbsp;python-wxversion is, however, a
+dependency of the above package so all&#8217;s well once you get that&nbsp;sorted.</p>
 <p>From Googling, it looks like this problem was common and thankfully
 fixed in the repos. &nbsp;Although, it was still present on Karmic upgrade so
-who knows.</p>
-<p>Maybe it's bad Karma? &nbsp;I bet 1000 people have made that joke already...</p>
+who&nbsp;knows.</p>
+<p>Maybe it&#8217;s bad Karma? &nbsp;I bet 1000 people have made that joke&nbsp;already&#8230;</p>
 <p>There are <a href="../blog/2009/10/ubuntu-9-10-install-hiccough/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">
         Page 1 / 1

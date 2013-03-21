@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2011/01/python-eggs-and-missing-files-like-docs/">Python eggs and missing files (like 'docs')</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2011/01/python-eggs-and-missing-files-like-docs/">Python eggs and missing files (like&nbsp;&#8216;docs&#8217;)</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2011-01-06T11:57:00">
                 Thu 06 January 2011
@@ -43,27 +43,27 @@
         </address>
         <p>In <a href="../category/python.html">Python</a>. </p>
 <p>tags: <a href="../tag/build.html">build</a><a href="../tag/docs.html">docs</a><a href="../tag/egg.html">egg</a><a href="../tag/file.html">file</a><a href="../tag/install.html">install</a><a href="../tag/missing.html">missing</a><a href="../tag/problem.html">problem</a><a href="../tag/python.html">python</a></p>
-</footer><!-- /.post-info --><p>This is pretty trivial (and trivial to fix), but I'm chronicling it for
-my knowledge as much as anyone else's.&nbsp; The issue is that a given Python
-egg is missing some form of files, most commonly the 'docs' directory in
-my experience, because the build wasn't configured correctly.</p>
-<p>The error goes somewhat like this:</p>
+</footer><!-- /.post-info --><p>This is pretty trivial (and trivial to fix), but I&#8217;m chronicling it for
+my knowledge as much as anyone else&#8217;s.&nbsp; The issue is that a given Python
+egg is missing some form of files, most commonly the &#8216;docs&#8217; directory in
+my experience, because the build wasn&#8217;t configured&nbsp;correctly.</p>
+<p>The error goes somewhat like&nbsp;this:</p>
 <pre class="code pytb literal-block">
 <span class="x">Getting distribution for 'my.theme'.
-error: docs/HISTORY.txt: No such file or directory
+error: docs/<span class="caps">HISTORY</span>.txt: No such file or directory
 An error occured when trying to install my.theme 1.5.0. Look above this message for any errors that were output by easy_install.</span>
 </pre>
 <p>The solution is simple: just add the relevant missing directories or
-similar into your <tt class="docutils literal">my.theme/MANIFEST.in</tt> file, so the end results
-looks like so:</p>
+similar into your <tt class="docutils literal">my.theme/<span class="caps">MANIFEST</span>.in</tt> file, so the end results
+looks like&nbsp;so:</p>
 <pre class="code ini literal-block">
 <span class="err">recursive-include</span> <span class="err">docs</span> <span class="err">*</span>
 <span class="err">recursive-include</span> <span class="err">my</span> <span class="err">*</span>
 <span class="err">global-exclude</span> <span class="err">*py[co],</span> <span class="err">*mo</span>
 </pre>
-<p>where <tt class="docutils literal">my</tt> and <tt class="docutils literal">docs</tt> are the top-level packages I need.</p>
+<p>where <tt class="docutils literal">my</tt> and <tt class="docutils literal">docs</tt> are the top-level packages I&nbsp;need.</p>
 <p>Just rebuild the Python egg and away we go. As I said, simple fix. Now
-just have to get it stuck in my head to remember.</p>
+just have to get it stuck in my head to&nbsp;remember.</p>
 <p>There are <a href="../blog/2011/01/python-eggs-and-missing-files-like-docs/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">
         Page 1 / 1

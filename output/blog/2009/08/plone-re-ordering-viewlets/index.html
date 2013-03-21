@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Plone: Re-ordering Viewlets</title>
+        <title>Plone: Re-ordering Viewlets</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2009/08/plone-re-ordering-viewlets/" rel="bookmark"
-           title="Permalink to Plone: Re-ordering Viewlets">Plone: Re-ordering Viewlets</a></h1>
+           title="Permalink to Plone: Re-ordering Viewlets">Plone: Re-ordering&nbsp;Viewlets</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -53,19 +53,19 @@ not terribly so) because the original poster wanted to put the
 breadcrumbs above the global sections (global tabs in Plone).&nbsp; Normally,
 this is straight forward because you just use a Generic Setup profile
 (viewlets.xml) and use an order manager to move your viewlet.&nbsp; This,
-however, is a teeny bit more complicated because you've got one viewlet
-that's outside of another viewlet manager.</p>
-<p>Without further ado, my post from the forums:</p>
+however, is a teeny bit more complicated because you&#8217;ve got one viewlet
+that&#8217;s outside of another viewlet&nbsp;manager.</p>
+<p>Without further ado, my post from the&nbsp;forums:</p>
 <blockquote>
 <p>Check out
 <a class="reference external" href="http://plone.org/documentation/tutorial/customizing-main-template-viewlets/reordering-and-hiding-viewlets">http://plone.org/documentation/tutorial/customizing-main-template-viewlets/reordering-and-hiding-viewlets</a>
-for a pretty useful idea of manipulating viewlets.</p>
+for a pretty useful idea of manipulating&nbsp;viewlets.</p>
 <p>As it mentions there, you need a viewlets.xml in your theme
-product's generic setup profile. &nbsp;In this case, there's a bit more
-complexity because the path_bar isn't registered in the same order
-manager. &nbsp;So, in your case, you'll want something like this in your
+product&#8217;s generic setup profile. &nbsp;In this case, there&#8217;s a bit more
+complexity because the path_bar isn&#8217;t registered in the same order
+manager. &nbsp;So, in your case, you&#8217;ll want something like this in your
 <strong>viewlets.xml</strong> (hides the old path bar, and inserts it now before
-the global sections [tabs]):</p>
+the global sections&nbsp;[tabs]):</p>
 <pre class="code xml literal-block">
 <span class="nt">&lt;hidden</span> <span class="na">manager=</span><span class="s">&quot;plone.portaltop&quot;</span> <span class="na">skinname=</span><span class="s">&quot;My Theme&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;viewlet</span> <span class="na">name=</span><span class="s">&quot;plone.path_bar&quot;</span> <span class="nt">/&gt;</span>
@@ -74,9 +74,9 @@ the global sections [tabs]):</p>
     <span class="nt">&lt;viewlet</span> <span class="na">name=</span><span class="s">&quot;plone.path_bar&quot;</span> <span class="na">insert-before=</span><span class="s">&quot;plone.global_sections&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/order&gt;</span>
 </pre>
-<p>and you'll need to have something like this in a <strong>configure.zcml</strong>
+<p>and you&#8217;ll need to have something like this in a <strong>configure.zcml</strong>
 file (eg browser/configure.zcml) in order to get it into the
-PortalHeader manager:</p>
+PortalHeader&nbsp;manager:</p>
 <pre class="code xml literal-block">
 <span class="nt">&lt;browser</span> <span class="err">:viewlet</span>
     <span class="na">name=</span><span class="s">&quot;plone.path_bar&quot;</span>
@@ -85,11 +85,11 @@ PortalHeader manager:</p>
     <span class="nt">/&gt;</span>
 </pre>
 <p>So, make these updates to your theme product, reinstall, and it
-should be good.</p>
+should be&nbsp;good.</p>
 <p>Also, depending on ordering and what else you have in your theme,
 you might just want to re-order plone.path_bar to the top of the
-plone.portaltop viewlet. &nbsp;That'll put it before the PortalHeader
-manager (as you can see in &#64;&#64;manage-viewlets).</p>
+plone.portaltop viewlet. &nbsp;That&#8217;ll put it before the PortalHeader
+manager (as you can see in&nbsp;&#64;&#64;manage-viewlets).</p>
 </blockquote>
 
     </div><!-- /.entry-content -->

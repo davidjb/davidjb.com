@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2010/07/oh-microsoft-we-do-tire-of-thy-bugs-in-ie/">Oh Microsoft, we do tire of thy bugs in IE</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2010/07/oh-microsoft-we-do-tire-of-thy-bugs-in-ie/">Oh Microsoft, we do tire of thy bugs in&nbsp;<span class="caps">IE</span></a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2010-07-22T17:20:00">
                 Thu 22 July 2010
@@ -43,43 +43,42 @@
         </address>
         <p>In <a href="../category/web.html">Web</a>. </p>
 <p>tags: <a href="../tag/bug.html">bug</a><a href="../tag/css.html">css</a><a href="../tag/html.html">html</a><a href="../tag/ie.html">IE</a><a href="../tag/ie8.html">ie8</a><a href="../tag/internet-explorer.html">internet explorer</a><a href="../tag/rendering.html">rendering</a><a href="../tag/tag.html">tag</a><a href="../tag/tags.html">tags</a></p>
-</footer><!-- /.post-info --><p>Yes, it's another post about Microsoft and its poor implementation of
-Internet Explorer. This time it's version 8 and its rendering of lists,
-and in specific, links within list items. Most humorously, Microsoft's
+</footer><!-- /.post-info --><p>Yes, it&#8217;s another post about Microsoft and its poor implementation of
+Internet Explorer. This time it&#8217;s version 8 and its rendering of lists,
+and in specific, links within list items. Most humorously, Microsoft&#8217;s
 own documentation (separate issue; about <a class="reference external" href="http://msdn.microsoft.com/en-us/library/bb250413%28VS.85%29.aspx">rounded corners</a>) gave me a
-laugh when it said:</p>
+laugh when it&nbsp;said:</p>
 <blockquote>
-&quot;Microsoft is committed to providing a browser that
-accurately supports Web standards.&quot;</blockquote>
-<p>Maybe it's just me, but I've given up waiting for the day that IE actually
-supports anything correctly.</p>
+&#8220;Microsoft is committed to providing a browser that
+accurately supports Web standards.&#8221;</blockquote>
+<p>Maybe it&#8217;s just me, but I&#8217;ve given up waiting for the day that <span class="caps">IE</span> actually
+supports anything&nbsp;correctly.</p>
 <p>So, the issue I found was that with a <tt class="docutils literal">&lt;ul&gt;</tt> with a number of <tt class="docutils literal">&lt;li&gt;</tt>
-tags inside wouldn't stop displaying the list bullets, despite a very
-explicit CSS definition on the <tt class="docutils literal">&lt;li&gt;</tt> tags.&nbsp; Why this was the case,
-I'm not sure, and am happy to chalk it up to IE being IE, like it always
-is.</p>
+tags inside wouldn&#8217;t stop displaying the list bullets, despite a very
+explicit <span class="caps">CSS</span> definition on the <tt class="docutils literal">&lt;li&gt;</tt> tags.&nbsp; Why this was the case,
+I&#8217;m not sure, and am happy to chalk it up to <span class="caps">IE</span> being <span class="caps">IE</span>, like it always&nbsp;is.</p>
 <p>In order to fix the issue, however, I just started poking and prodding
-IE in its Developer Toolbar with extra styles until it did what I wanted
+<span class="caps">IE</span> in its Developer Toolbar with extra styles until it did what I wanted
 it to.&nbsp; Turns out that at least in my case, that in order to remove all
 trace of bullets, I needed to have the <tt class="docutils literal"><span class="pre">list-style:none</span> outside none;</tt>
-CSS declaration attached to the <tt class="docutils literal">&lt;ul&gt;</tt>, each <tt class="docutils literal">&lt;li&gt;</tt>, and the top
+<span class="caps">CSS</span> declaration attached to the <tt class="docutils literal">&lt;ul&gt;</tt>, each <tt class="docutils literal">&lt;li&gt;</tt>, and the top
 level <tt class="docutils literal">&lt;a&gt;</tt> tags that were inside the <tt class="docutils literal">&lt;li&gt;</tt> tags.&nbsp; Talk about
-repeating myself.&nbsp; You'd think that the CSS would be applied to the
+repeating myself.&nbsp; You&#8217;d think that the <span class="caps">CSS</span> would be applied to the
 <tt class="docutils literal">&lt;ul&gt;</tt> and <tt class="docutils literal">&lt;li&gt;</tt>, which are list elements, and not be needed for
-the <tt class="docutils literal">&lt;a&gt;</tt> tag, which shouldn't matter despite it being in an <tt class="docutils literal">&lt;li&gt;</tt>.</p>
-<p>I guess the good news is that you can bash the crap out of IE until it
+the <tt class="docutils literal">&lt;a&gt;</tt> tag, which shouldn&#8217;t matter despite it being in an <tt class="docutils literal">&lt;li&gt;</tt>.</p>
+<p>I guess the good news is that you can bash the crap out of <span class="caps">IE</span> until it
 works and Microsoft has provided the Developer Toolbar.&nbsp; The bad news is
-that &quot;fixes&quot; aren't always so obvious because you can never trust where
-the bug could be.</p>
-<p>As a final aside about IE 8, here's another snippet from that <a class="reference external" href="http://msdn.microsoft.com/en-us/library/bb250413%28VS.85%29.aspx">same
-documentation</a> about IE8:</p>
+that &#8220;fixes&#8221; aren&#8217;t always so obvious because you can never trust where
+the bug could&nbsp;be.</p>
+<p>As a final aside about <span class="caps">IE</span> 8, here&#8217;s another snippet from that <a class="reference external" href="http://msdn.microsoft.com/en-us/library/bb250413%28VS.85%29.aspx">same
+documentation</a> about&nbsp;<span class="caps">IE8</span>:</p>
 <blockquote>
-In Internet Explorer 8, we shipped several features from HTML5 and
-CSS3. Our primary goal was implementing CSS 2.1 (a specification
+In Internet Explorer 8, we shipped several features from <span class="caps">HTML5</span> and
+<span class="caps">CSS3</span>. Our primary goal was implementing <span class="caps">CSS</span> 2.1 (a specification
 that has reached final candidate stage) <em>completely and correctly</em>
 before moving on to specifications that are still in development and
 may change.</blockquote>
-<p>Completely and correctly implemented?&nbsp; Again, I'm still waiting.</p>
+<p>Completely and correctly implemented?&nbsp; Again, I&#8217;m still&nbsp;waiting.</p>
 <p>There are <a href="../blog/2010/07/oh-microsoft-we-do-tire-of-thy-bugs-in-ie/#disqus_thread">comments</a>.</p>                </article>
                             </aside><!-- /#featured -->
                             <section id="content" class="body">
@@ -92,7 +91,7 @@ may change.</blockquote>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/10/html-formatting-made-easy/" rel="bookmark"
-                           title="Permalink to HTML formatting made easy">HTML formatting made easy</a></h1>
+                           title="Permalink to HTML formatting made easy"><span class="caps">HTML</span> formatting made&nbsp;easy</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -106,11 +105,11 @@ may change.</blockquote>
         </address>
         <p>In <a href="../category/web.html">Web</a>. </p>
 <p>tags: <a href="../tag/code.html">code</a><a href="../tag/formatter.html">formatter</a><a href="../tag/html.html">html</a><a href="../tag/indentation.html">indentation</a><a href="../tag/tool.html">tool</a><a href="../tag/web.html">web</a></p>
-</footer><!-- /.post-info -->                <p>There's a tool for everything somewhere on the web.</p>
-<p>Whilst about 99.5% perfect (some indentation issues remain), I've found
-a pretty nice, easy to use, and very feature-rich HTML code formatter.
-See <a class="reference external" href="http://www.mycoolform.com/index.php?lang=en">http://www.mycoolform.com/index.php?lang=en</a> for the formatter.</p>
-<p>It's something I ...</p>
+</footer><!-- /.post-info -->                <p>There&#8217;s a tool for everything somewhere on the&nbsp;web.</p>
+<p>Whilst about 99.5% perfect (some indentation issues remain), I&#8217;ve found
+a pretty nice, easy to use, and very feature-rich <span class="caps">HTML</span> code formatter.
+See <a class="reference external" href="http://www.mycoolform.com/index.php?lang=en">http://www.mycoolform.com/index.php?lang=en</a> for the&nbsp;formatter.</p>
+<p>It&#8217;s something I ...</p>
                 <a class="readmore" href="../blog/2009/10/html-formatting-made-easy/">read more</a>
                 <p>There are <a href="../blog/2009/10/html-formatting-made-easy/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
@@ -120,7 +119,7 @@ See <a class="reference external" href="http://www.mycoolform.com/index.php?lang
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/06/webpage-content-underneath-flash-content/" rel="bookmark"
-                           title="Permalink to Webpage content underneath Flash content">Webpage content underneath Flash content</a></h1>
+                           title="Permalink to Webpage content underneath Flash content">Webpage content underneath Flash&nbsp;content</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -134,10 +133,10 @@ See <a class="reference external" href="http://www.mycoolform.com/index.php?lang
         </address>
         <p>In <a href="../category/web.html">Web</a>. </p>
 <p>tags: <a href="../tag/content.html">content</a><a href="../tag/flash.html">flash</a><a href="../tag/html.html">html</a><a href="../tag/problem.html">problem</a><a href="../tag/web.html">web</a><a href="../tag/xhtml.html">xhtml</a></p>
-</footer><!-- /.post-info -->                <p>So, you've got a website that you've made and you've used a Flash movie
+</footer><!-- /.post-info -->                <p>So, you&#8217;ve got a website that you&#8217;ve made and you&#8217;ve used a Flash movie
 on it.&nbsp; Okay, no worries.&nbsp; Now, what if you tried to add a
-(non-form-element) drop-down menu or some AJAX-ed content into the site,
-and found the Flash movie actually acted as an overlay ...</p>
+(non-form-element) drop-down menu or some <span class="caps">AJAX</span>-ed content into the site,
+and found the Flash movie actually acted as an ...</p>
                 <a class="readmore" href="../blog/2009/06/webpage-content-underneath-flash-content/">read more</a>
                 <p>There are <a href="../blog/2009/06/webpage-content-underneath-flash-content/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>

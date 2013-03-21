@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2011/12/notes-about-redmine-and-github-post-commit-hooks/">Notes about Redmine and GitHub Post-commit Hooks</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2011/12/notes-about-redmine-and-github-post-commit-hooks/">Notes about Redmine and GitHub Post-commit&nbsp;Hooks</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2011-12-14T10:50:00">
                 Wed 14 December 2011
@@ -43,39 +43,39 @@
         </address>
         <p>In <a href="../category/github.html">GitHub</a>. </p>
 <p>tags: <a href="../tag/code.html">code</a><a href="../tag/commit.html">commit</a><a href="../tag/dvcs.html">dvcs</a><a href="../tag/git.html">git</a><a href="../tag/github.html">github</a><a href="../tag/redmine.html">redmine</a><a href="../tag/vcs.html">vcs</a></p>
-</footer><!-- /.post-info --><p>We're currently using Redmine for our project tracking and recently have
+</footer><!-- /.post-info --><p>We&#8217;re currently using Redmine for our project tracking and recently have
 wanted to have our GitHub projects automatically get updated within
-Redmine. A post-commit hook to the rescue!</p>
+Redmine. A post-commit hook to the&nbsp;rescue!</p>
 <ol class="arabic">
 <li><p class="first">Download and install this super plugin:
 <a class="reference external" href="https://github.com/koppen/redmine_github_hook">https://github.com/koppen/redmine_github_hook</a> and restart your
-Redmine instance.</p>
+Redmine&nbsp;instance.</p>
 </li>
 <li><p class="first">Set up your local Git instance for your repository.&nbsp; This is simple,
 but you need to follow these steps or else pulling your changes down
-won't work:</p>
+won&#8217;t&nbsp;work:</p>
 <pre class="code bash literal-block">
 git clone --bare git://github.com/davidjb/123.git
 <span class="nb">cd </span>123.git
 git remote add origin git://github.com/davidjb/123.git
 </pre>
 </li>
-<li><p class="first">Configure your Redmine project's Repository to be this Git directory.
-(This is a given, but just so you know.)</p>
+<li><p class="first">Configure your Redmine project&#8217;s Repository to be this Git directory.
+(This is a given, but just so you&nbsp;know.)</p>
 </li>
-<li><p class="first">Configure your GitHub repository to have a 'Post-Receive URL' service
-hook and point that at your Redmine URL like so:</p>
+<li><p class="first">Configure your GitHub repository to have a &#8216;Post-Receive <span class="caps">URL</span>&#8217; service
+hook and point that at your Redmine <span class="caps">URL</span> like&nbsp;so:</p>
 <pre class="code bash literal-block">
 https://davidjb.com/redmine/github_hook?project_id<span class="o">=</span>myproject
 </pre>
-<p>where <tt class="docutils literal">myproject</tt> is your Redmine project ID. You can ignore the
+<p>where <tt class="docutils literal">myproject</tt> is your Redmine project <span class="caps">ID</span>. You can ignore the
 <tt class="docutils literal"><span class="pre">?project_id=myproject</span></tt> if your GitHub repository name is the same
-as your Redmine project ID.</p>
+as your Redmine project&nbsp;<span class="caps">ID</span>.</p>
 </li>
 </ol>
 <p>Beware the pre-existing Redmine service hook in the current iteration of
-GitHub (circa 2011) - it effectively doesn't do anything. This may
-change in the future, but until then, this works fantastically.</p>
+GitHub (circa 2011) - it effectively doesn&#8217;t do anything. This may
+change in the future, but until then, this works&nbsp;fantastically.</p>
 <p>There are <a href="../blog/2011/12/notes-about-redmine-and-github-post-commit-hooks/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">
         Page 1 / 1

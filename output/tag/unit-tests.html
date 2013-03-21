@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2010/03/plonezope-utilising-zope-testrecorder-for-unit-testing/">Plone/Zope:  Utilising zope.testrecorder for unit testing</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2010/03/plonezope-utilising-zope-testrecorder-for-unit-testing/">Plone/Zope:  Utilising zope.testrecorder for unit&nbsp;testing</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2010-03-25T09:40:00">
                 Thu 25 March 2010
@@ -47,53 +47,52 @@
 reasonably time consuming. For us developers, having tested code is
 absolutely essential. This is especially true when clients are beating
 down your door looking for a fully functional product and you need to
-know what you've written works and isn't going to fall over (just yet,
+know what you&#8217;ve written works and isn&#8217;t going to fall over (just yet,
 anyway). Web apps are able to be tested using a multitude of frameworks,
 and whilst not the most fully featured (eg lacking Javascript support),
-Zope's doctest machinery is right there within your Plone product. In
+Zope&#8217;s doctest machinery is right there within your Plone product. In
 order to write these, enter zope.testrecorder to more-or-less automate
-replicating your actions into tests.</p>
+replicating your actions into&nbsp;tests.</p>
 <p>zope.testrecorder is simple to install: just add it to your eggs list
-under your buildout's relevant instance section, and also the
+under your buildout&#8217;s relevant instance section, and also the
 corresponding zcml list too. Re-run your buildout and you will now have
-the latest version of the package installed.</p>
-<p>There's some good documentation out there about this, such as <a class="reference external" href="http://plone.org/documentation/kb/testing/zope-testrecorder">Martin
-Aspeli's article</a> on plone.org, but it's slightly dated given latest
+the latest version of the package&nbsp;installed.</p>
+<p>There&#8217;s some good documentation out there about this, such as <a class="reference external" href="http://plone.org/documentation/kb/testing/zope-testrecorder">Martin
+Aspeli&#8217;s article</a> on plone.org, but it&#8217;s slightly dated given latest
 updates with the package. Essentially, everything is relevant with the
 exception of how to actually access the test recorder now. Enter
-<a class="reference external" href="http://pyyou.wordpress.com/2008/04/11/how-to-install-zopetestrecorder-with-buildout/">PyYou's post</a> about this same topic. Thanks to that article I now know
+<a class="reference external" href="http://pyyou.wordpress.com/2008/04/11/how-to-install-zopetestrecorder-with-buildout/">PyYou&#8217;s post</a> about this same topic. Thanks to that article I now know
 you should go to
 <strong>http://zopehost:port/++resource++recorder/index.html</strong> to access the
-test recorder, and not try and add an object in the root of Zope (or
-elsewhere).</p>
+test recorder, and not try and add an object in the root of Zope (or&nbsp;elsewhere).</p>
 <p>Aside from that, the recorder works like a charm. You input the address
 of what site (it can be anything or anywhere) you want to test and click
-the 'Go' button. Everything you do (mostly) gets monitored and recorded.
-A few words to the wise though:</p>
+the &#8216;Go&#8217; button. Everything you do (mostly) gets monitored and recorded.
+A few words to the wise&nbsp;though:</p>
 <ul class="simple">
 <li>No testing or recording Javascript-based or centric actions.&nbsp; So
-don't expect that product you wrote with the Google Maps API to work
-so well with recording tests.&nbsp; Or, don't expect the test recorder to
-understand correctly that you clicking on the 'Add New...' menu in
-Plone isn't actually a real link.</li>
+don&#8217;t expect that product you wrote with the Google Maps <span class="caps">API</span> to work
+so well with recording tests.&nbsp; Or, don&#8217;t expect the test recorder to
+understand correctly that you clicking on the &#8216;Add New&#8230;&#8217; menu in
+Plone isn&#8217;t actually a real&nbsp;link.</li>
 <li>No ability to just browse with Javascript turned off.&nbsp; Essentially,
-as the zope.testrecorder itself needs Javascript to run, you can't
-turn it off, thinking you'll record things correctly, or at all.
-Maybe there's a way around this issue, but it's likely more
-complicated than I care to concern myself with.</li>
+as the zope.testrecorder itself needs Javascript to run, you can&#8217;t
+turn it off, thinking you&#8217;ll record things correctly, or at all.
+Maybe there&#8217;s a way around this issue, but it&#8217;s likely more
+complicated than I care to concern myself&nbsp;with.</li>
 <li>Specialised form widgets are problematic.&nbsp; The Plone visual editor is
 one (Javascript, again), but does work if you switch the editor to be
-HTML before saving a form.&nbsp; Another example that will require some
-fancy work around is z3c.relationfield -- there's no non-Javascript
-fall back here (that I can see).</li>
-<li>You'll need to manually intervene with the rendered tests and fix
+<span class="caps">HTML</span> before saving a form.&nbsp; Another example that will require some
+fancy work around is z3c.relationfield &#8212; there&#8217;s no non-Javascript
+fall back here (that I can&nbsp;see).</li>
+<li>You&#8217;ll need to manually intervene with the rendered tests and fix
 some things up.&nbsp; For example, testing the default title of a Plone
-site doesn't work because there's a hyphen in the title.&nbsp; It's a
-special character and thus saved &quot;incorrectly&quot; within the doctests.</li>
+site doesn&#8217;t work because there&#8217;s a hyphen in the title.&nbsp; It&#8217;s a
+special character and thus saved &#8220;incorrectly&#8221; within the&nbsp;doctests.</li>
 </ul>
 <p>Aside from all that, most of the heavy lifting is done for you, so
 cheers to the creators of zope.testrecorder for making my life just that
-bit easier.</p>
+bit&nbsp;easier.</p>
 <p>There are <a href="../blog/2010/03/plonezope-utilising-zope-testrecorder-for-unit-testing/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">
         Page 1 / 1

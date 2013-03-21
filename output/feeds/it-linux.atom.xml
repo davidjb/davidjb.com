@@ -1,33 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>DavidJB.com</title><link href="http://davidjb.com/" rel="alternate"></link><link href="http://davidjb.com/feeds/it-linux.atom.xml" rel="self"></link><id>http://davidjb.com/</id><updated>2009-10-30T13:21:00+10:00</updated><entry><title>Ubuntu 9.10 install hiccough</title><link href="http://davidjb.com/blog/2009/10/ubuntu-9-10-install-hiccough/" rel="alternate"></link><updated>2009-10-30T13:21:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2009-10-30:blog/2009/10/ubuntu-9-10-install-hiccough/</id><summary type="html">&lt;p&gt;Yay, the new version of Ubuntu is out. &amp;nbsp;With it comes plenty of cool new
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DavidJB.com</title><link href="http://davidjb.com/" rel="alternate"></link><link href="http://davidjb.com/feeds/it-linux.atom.xml" rel="self"></link><id>http://davidjb.com/</id><updated>2009-10-30T13:21:00+10:00</updated><entry><title>Ubuntu 9.10 install hiccough</title><link href="http://davidjb.com/blog/2009/10/ubuntu-9-10-install-hiccough/" rel="alternate"></link><updated>2009-10-30T13:21:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2009-10-30:blog/2009/10/ubuntu-9-10-install-hiccough/</id><summary type="html">&lt;p&gt;Yay, the new version of Ubuntu is out. &amp;nbsp;With it comes plenty of cool new
 features (how awesome does the start up and login screen look now?) and
-also plenty of opportunities for things to break when I've become so
-accustomed to having them working. &amp;nbsp;At least it's not Windows though --
+also plenty of opportunities for things to break when I&amp;#8217;ve become so
+accustomed to having them working. &amp;nbsp;At least it&amp;#8217;s not Windows though &amp;#8212;
 I think I may just gnaw my own limbs off before I have to get forced to
-upgrade to Windows 7 for gaming reasons.&lt;/p&gt;
+upgrade to Windows 7 for gaming&amp;nbsp;reasons.&lt;/p&gt;
 &lt;p&gt;But I digress, there was one reasonably small problem with the upgrade
 that I saw on both of my Ubuntu machines (laptop and desktop):
-&amp;nbsp;python-wxversion has a problem and won't upgrade. &amp;nbsp;Looking back in the
-terminal it appeared that either it was an &amp;quot;IOError: bad file
-descriptor&amp;quot; or otherwise a certain file (well, it did change when I
-tried to reinstall) like wxversion.py can't be found in
-/usr/lib/python2.6. &amp;nbsp;All very confusing.&lt;/p&gt;
-&lt;p&gt;It was especially worrying when the installer came up and said &amp;quot;Sorry,
-your upgrade failed. &amp;nbsp;Your system could be in an unstable state.&amp;quot; &amp;nbsp;That
+&amp;nbsp;python-wxversion has a problem and won&amp;#8217;t upgrade. &amp;nbsp;Looking back in the
+terminal it appeared that either it was an &amp;#8220;IOError: bad file
+descriptor&amp;#8221; or otherwise a certain file (well, it did change when I
+tried to reinstall) like wxversion.py can&amp;#8217;t be found in
+/usr/lib/python2.6. &amp;nbsp;All very&amp;nbsp;confusing.&lt;/p&gt;
+&lt;p&gt;It was especially worrying when the installer came up and said &amp;#8220;Sorry,
+your upgrade failed. &amp;nbsp;Your system could be in an unstable state.&amp;#8221; &amp;nbsp;That
 sent alarm bells ringing and possibly with good reason (eg broken apps)
--- at least I had good reason to fix the problem rather than just ignore
-it.&lt;/p&gt;
-&lt;p&gt;The solution was simple for both machines:&lt;/p&gt;
+&amp;#8212; at least I had good reason to fix the problem rather than just ignore&amp;nbsp;it.&lt;/p&gt;
+&lt;p&gt;The solution was simple for both&amp;nbsp;machines:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 sudo apt-get remove python-wxgtk2.8
 sudo apt-get install python-wxgtk2.8
 &lt;/pre&gt;
 &lt;p&gt;Not painful at all. &amp;nbsp;Except it was a case of finding which package to
-reinstall. &amp;nbsp;Don't try and reinstall python-wxversion like I did because
-you won't get far. &amp;nbsp;It'll still die. &amp;nbsp;python-wxversion is, however, a
-dependency of the above package so all's well once you get that sorted.&lt;/p&gt;
+reinstall. &amp;nbsp;Don&amp;#8217;t try and reinstall python-wxversion like I did because
+you won&amp;#8217;t get far. &amp;nbsp;It&amp;#8217;ll still die. &amp;nbsp;python-wxversion is, however, a
+dependency of the above package so all&amp;#8217;s well once you get that&amp;nbsp;sorted.&lt;/p&gt;
 &lt;p&gt;From Googling, it looks like this problem was common and thankfully
 fixed in the repos. &amp;nbsp;Although, it was still present on Karmic upgrade so
-who knows.&lt;/p&gt;
-&lt;p&gt;Maybe it's bad Karma? &amp;nbsp;I bet 1000 people have made that joke already...&lt;/p&gt;
+who&amp;nbsp;knows.&lt;/p&gt;
+&lt;p&gt;Maybe it&amp;#8217;s bad Karma? &amp;nbsp;I bet 1000 people have made that joke&amp;nbsp;already&amp;#8230;&lt;/p&gt;
 </summary><category term="jaunty"></category><category term="karmic"></category><category term="koala"></category><category term="linux"></category><category term="problem"></category><category term="python"></category><category term="ubuntu"></category><category term="upgrade"></category></entry></feed>

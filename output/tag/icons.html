@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2012/10/configuring-gtkgnome-toolbar-icon-sizes-and-labels-ubuntu-12-10-and-more/">Configuring GTK/Gnome toolbar icon sizes and labels (Ubuntu 12.10+ and more)</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2012/10/configuring-gtkgnome-toolbar-icon-sizes-and-labels-ubuntu-12-10-and-more/">Configuring <span class="caps">GTK</span>/Gnome toolbar icon sizes and labels (Ubuntu 12.10+ and&nbsp;more)</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2012-10-24T16:28:00">
                 Wed 24 October 2012
@@ -44,37 +44,37 @@
         <p>In <a href="../category/ubuntu.html">Ubuntu</a>. </p>
 <p>tags: <a href="../tag/buttons.html">buttons</a><a href="../tag/gnome.html">gnome</a><a href="../tag/gtk.html">gtk</a><a href="../tag/icons.html">icons</a><a href="../tag/toolbar.html">toolbar</a><a href="../tag/ubuntu.html">ubuntu</a></p>
 </footer><!-- /.post-info --><p>One major annoyance (first-world, clearly) for me having upgraded to
-Ubuntu 12.10 is that my GTK toolbar icons are very large (32x32 pixels)
+Ubuntu 12.10 is that my <span class="caps">GTK</span> toolbar icons are very large (32x32 pixels)
 and have labels on them. This takes up a decent amount of screen real
-estate in applications like gedit, Rhythmbox, and many others --
-effectively anything that's using GTK. What's worse, it looks like the
+estate in applications like gedit, Rhythmbox, and many others &#8212;
+effectively anything that&#8217;s using <span class="caps">GTK</span>. What&#8217;s worse, it looks like the
 latest Ubuntu (Quantal Quetzal) now is adding visual padding/spacing
-around the buttons. I don't like this at all and prefer my buttons to be
-tiny and without labels.</p>
+around the buttons. I don&#8217;t like this at all and prefer my buttons to be
+tiny and without&nbsp;labels.</p>
 <p>As per the post at <a class="reference external" href="http://ubuntuforums.org/showthread.php?t=1859526">http://ubuntuforums.org/showthread.php?t=1859526</a>,
 the issue was previously solved by configuring the setting within a
-dconf setting, however this hasn't applied since 11.10.</p>
+dconf setting, however this hasn&#8217;t applied since&nbsp;11.10.</p>
 <p>However, it is possible to include the following in your
 <tt class="docutils literal"><span class="pre">/etc/gtk-3.0/settings.ini</span></tt> file to make your icons small and
-beautiful again:</p>
+beautiful&nbsp;again:</p>
 <pre class="code ini literal-block">
 <span class="k">[Settings]</span>
 <span class="na">gtk-icon-sizes</span> <span class="o">=</span> <span class="s">panel-menu=16,16:gtk-large-toolbar=16,16</span>
 </pre>
-<p>Start a GTK application like gedit and notice the difference.</p>
-<p>To change the 'style' of the buttons on the toolbars (labels and icons
-appearance), you'll need to launch (and install, if necessary)
+<p>Start a <span class="caps">GTK</span> application like gedit and notice the&nbsp;difference.</p>
+<p>To change the &#8216;style&#8217; of the buttons on the toolbars (labels and icons
+appearance), you&#8217;ll need to launch (and install, if necessary)
 <tt class="docutils literal"><span class="pre">dconf-editor</span></tt> and modify the <tt class="docutils literal"><span class="pre">org.gnome.desktop.interface.toolbar-style</span></tt>
 setting.</p>
 <p>Once the editor is open, then traverse the settings schema tree on the
-left-hand side until you find the setting. Once you've found it, click onto its
-value and choose another option -- if you've left your GTK application open,
+left-hand side until you find the setting. Once you&#8217;ve found it, click onto its
+value and choose another option &#8212; if you&#8217;ve left your <span class="caps">GTK</span> application open,
 the style will change immediately. Pick the best one that suits you. I prefer
-'icons' to just have the icons themselves, without labels (note that text
-appears in a tooltip anyway).</p>
-<p>Note that not all GTK applications will adhere to these options -- it is
+&#8216;icons&#8217; to just have the icons themselves, without labels (note that text
+appears in a tooltip&nbsp;anyway).</p>
+<p>Note that not all <span class="caps">GTK</span> applications will adhere to these options &#8212; it is
 possible for them to override the global settings (sigh, yes Rhythmbox,
-that's seemingly you).</p>
+that&#8217;s seemingly&nbsp;you).</p>
 <p>There are <a href="../blog/2012/10/configuring-gtkgnome-toolbar-icon-sizes-and-labels-ubuntu-12-10-and-more/#disqus_thread">comments</a>.</p>                </article>
                             </aside><!-- /#featured -->
                             <section id="content" class="body">
@@ -87,7 +87,7 @@ that's seemingly you).</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2010/07/plone-overrides-zcml-gets-auto-included-with-z3c-autoinclude/" rel="bookmark"
-                           title="Permalink to Plone: Overrides.zcml gets auto-included with z3c.autoinclude">Plone: Overrides.zcml gets auto-included with z3c.autoinclude</a></h1>
+                           title="Permalink to Plone: Overrides.zcml gets auto-included with z3c.autoinclude">Plone: Overrides.zcml gets auto-included with&nbsp;z3c.autoinclude</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -102,10 +102,10 @@ that's seemingly you).</p>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/auto.html">auto</a><a href="../tag/icons.html">icons</a><a href="../tag/include.html">include</a><a href="../tag/plone.html">plone</a><a href="../tag/plone-3.html">plone 3</a><a href="../tag/problem.html">problem</a><a href="../tag/theme.html">theme</a><a href="../tag/z3c.html">z3c</a><a href="../tag/zcml.html">zcml</a><a href="../tag/zope.html">zope</a></p>
 </footer><!-- /.post-info -->                <p>Unsurprisingly, specifying a z3c.autoinclude entry point in your Plone
-product egg means your ZCML gets automatically included. That's great
-because it means you don't have to specify your product under the ZCML
-section of your instance in buildout. One thing that isn't so obvious
-(it's ...</p>
+product egg means your <span class="caps">ZCML</span> gets automatically included. That&#8217;s great
+because it means you don&#8217;t have to specify your product under the <span class="caps">ZCML</span>
+section of your instance in buildout. One thing that isn&#8217;t so obvious
+(it&#8217;s ...</p>
                 <a class="readmore" href="../blog/2010/07/plone-overrides-zcml-gets-auto-included-with-z3c-autoinclude/">read more</a>
                 <p>There are <a href="../blog/2010/07/plone-overrides-zcml-gets-auto-included-with-z3c-autoinclude/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>

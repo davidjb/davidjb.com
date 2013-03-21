@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Restart/reset USB in Ubuntu 12.04 without rebooting</title>
+        <title>Restart/reset USB in Ubuntu 12.04 without rebooting</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2012/06/restartreset-usb-in-ubuntu-12-04-without-rebooting/" rel="bookmark"
-           title="Permalink to Restart/reset USB in Ubuntu 12.04 without rebooting">Restart/reset USB in Ubuntu 12.04 without rebooting</a></h1>
+           title="Permalink to Restart/reset USB in Ubuntu 12.04 without rebooting">Restart/reset <span class="caps">USB</span> in Ubuntu 12.04 without&nbsp;rebooting</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -48,21 +48,21 @@
         <p>In <a href="../../../../category/it.html">IT</a>. </p>
 <p>tags: <a href="../../../../tag/linux.html">linux</a><a href="../../../../tag/power.html">power</a><a href="../../../../tag/reset.html">reset</a><a href="../../../../tag/restart.html">restart</a><a href="../../../../tag/ubuntu.html">ubuntu</a><a href="../../../../tag/usb.html">usb</a></p>
 </footer><!-- /.post-info -->      <p>Either my Dell Optiplex 990 computer or my Linux install has an issue:
-occasionally, when I re-plug a USB device into the system, it'll cause a
-fault in the USB module in the kernel and USB goes dark. I'm unsure as
-to whether this is a hardware or software issue, but I'd simply like to
-restart my USB subsystem and continue working. When searching the web
-for 'restart USB in Linux' and 'reload USB kernel module', you get a
+occasionally, when I re-plug a <span class="caps">USB</span> device into the system, it&#8217;ll cause a
+fault in the <span class="caps">USB</span> module in the kernel and <span class="caps">USB</span> goes dark. I&#8217;m unsure as
+to whether this is a hardware or software issue, but I&#8217;d simply like to
+restart my <span class="caps">USB</span> subsystem and continue working. When searching the web
+for &#8216;restart <span class="caps">USB</span> in Linux&#8217; and &#8216;reload <span class="caps">USB</span> kernel module&#8217;, you get a
 plethora of results and none of which will work (seemingly due to how
 the Ubuntu standard kernel is compiled), at least for me within Ubuntu
-12.04, Precise Pangolin. Until now, I've had no success and had to hard
-reset. No longer.</p>
-<p>You'll need root/sudo access to the machine to be able to run commands.
-In my case, without USB available, then I've either got to sprint for a
-PS/2 keyboard and mouse or login via SSH. You can do what I've done and
+12.04, Precise Pangolin. Until now, I&#8217;ve had no success and had to hard
+reset. No&nbsp;longer.</p>
+<p>You&#8217;ll need root/sudo access to the machine to be able to run commands.
+In my case, without <span class="caps">USB</span> available, then I&#8217;ve either got to sprint for a
+<span class="caps">PS</span>/2 keyboard and mouse or login via <span class="caps">SSH</span>. You can do what I&#8217;ve done and
 prepared things into a suitable script I can run with just a Gnome
 launcher. &nbsp;Thanks to this <a class="reference external" href="http://ubuntuforums.org/showpost.php?p=9162799&amp;postcount=1">fantastic post</a> for the help. Either place
-the following into a script or run the commands directly:</p>
+the following into a script or run the commands&nbsp;directly:</p>
 <pre class="code bash literal-block">
 <span class="nb">echo</span> -n <span class="s2">&quot;0000:00:1a.0&quot;</span> | tee /sys/bus/pci/drivers/ehci_hcd/unbind
 <span class="nb">echo</span> -n <span class="s2">&quot;0000:00:1d.0&quot;</span> | tee /sys/bus/pci/drivers/ehci_hcd/unbind
@@ -70,12 +70,12 @@ the following into a script or run the commands directly:</p>
 <span class="nb">echo</span> -n <span class="s2">&quot;0000:00:1d.0&quot;</span> | tee /sys/bus/pci/drivers/ehci_hcd/bind
 </pre>
 <p>The hardware identifiers being passed around here can be revealed using
-a command like <tt class="docutils literal">lspci | grep USB</tt>. In my case, the identifiers in the
-original post were exactly what I have in my system.</p>
-<p>I'm yet to see if my USB will correctly come back online after freezing
-up as it hasn't happened yet, but I'll try this when it does and report
-back. That said, the commands above definitely reload all USB devices
-attached to the system; that much I've tried.</p>
+a command like <tt class="docutils literal">lspci | grep <span class="caps">USB</span></tt>. In my case, the identifiers in the
+original post were exactly what I have in my&nbsp;system.</p>
+<p>I&#8217;m yet to see if my <span class="caps">USB</span> will correctly come back online after freezing
+up as it hasn&#8217;t happened yet, but I&#8217;ll try this when it does and report
+back. That said, the commands above definitely reload all <span class="caps">USB</span> devices
+attached to the system; that much I&#8217;ve&nbsp;tried.</p>
 
     </div><!-- /.entry-content -->
         <div class="comments">

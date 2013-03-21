@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2012/06/serving-tilestache-or-another-app-using-uwsgi-against-a-web-sub-directory/">Serving TileStache (or another app) using uWSGI against a web sub-directory</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2012/06/serving-tilestache-or-another-app-using-uwsgi-against-a-web-sub-directory/">Serving TileStache (or another app) using uWSGI against a web&nbsp;sub-directory</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2012-06-01T12:41:00">
                 Fri 01 June 2012
@@ -46,14 +46,14 @@
 </footer><!-- /.post-info --><p><a class="reference external" href="http://projects.unbit.it/uwsgi/">uWSGI</a> is extremely promising as an application server given its huge
 range of options and supported platforms. &nbsp;For me, however, just getting
 something seemingly simple up and running successfully was relatively
-confusing. I'd like to contribute to the documentation when I can, but
+confusing. I&#8217;d like to contribute to the documentation when I can, but
 thought a dedicated page about <a class="reference external" href="http://tilestache.org">TileStache</a> as a specific application
 (and associated configuration) was warranted. It does make more sense
-now, thankfully.</p>
+now,&nbsp;thankfully.</p>
 <p>I want to serve my TileStache application at <a class="reference external" href="http://mydomain.com/tiles">http://mydomain.com/tiles</a>
-(taking careful note of the sub-directory present). I've chosen an
-INI-style configuration for my instance and here's what the final result
-looks like (loads using <tt class="docutils literal">uwsgi <span class="pre">--ini</span> my_uwsgi.ini</tt>):</p>
+(taking careful note of the sub-directory present). I&#8217;ve chosen an
+<span class="caps">INI</span>-style configuration for my instance and here&#8217;s what the final result
+looks like (loads using <tt class="docutils literal">uwsgi <span class="pre">&#8212;ini</span> my_uwsgi.ini</tt>):</p>
 <pre class="code ini literal-block">
 <span class="k">[uwsgi]</span>
 <span class="na">processes</span> <span class="o">=</span> <span class="s">8</span>
@@ -66,32 +66,30 @@ looks like (loads using <tt class="docutils literal">uwsgi <span class="pre">--i
 </pre>
 <p>The available options for uWSGI are extremely comprehensive and fairly
 bewildering for someone just starting off. The main issue I faced was
-the fact the <em>--module</em> option doesn't support argument passing. This
+the fact the <em>&#8212;module</em> option doesn&#8217;t support argument passing. This
 was a big one because documentation like <a class="reference external" href="http://projects.unbit.it/uwsgi/wiki/Quickstart">this</a> shows empty rounded
 brackets and the programmer in me instinctively thought of this as an
 Python object call. Not so. In order to pass arguments, you either need
-<em>--eval</em> or to do what I did and create a separate file and mount that.
-Where I have <em>app.py</em> specified above, this is the definition for said
-file:</p>
+<em>&#8212;eval</em> or to do what I did and create a separate file and mount that.
+Where I have <em>app.py</em> specified above, this is the definition for said&nbsp;file:</p>
 <pre class="code python literal-block">
 <span class="kn">import</span> <span class="nn">TileStache</span>
 <span class="n">application</span> <span class="o">=</span> <span class="n">TileStache</span><span class="o">.</span><span class="n">WSGITileServer</span><span class="p">(</span><span class="s">'tilestache.cfg'</span><span class="p">)</span>
 </pre>
-<p>So that's uWSGI serving TileStache. The final issue to solve is that of
+<p>So that&#8217;s uWSGI serving TileStache. The final issue to solve is that of
 serving against a sub-directory. Once you have your application mounted
-against the relevant mount point (in my case <em>/tiles</em>), then it's just a
-case of telling uWSGI to use this as its <strong>SCRIPT_NAME</strong> environment
-variable.</p>
+against the relevant mount point (in my case <em>/tiles</em>), then it&#8217;s just a
+case of telling uWSGI to use this as its <strong>SCRIPT_NAME</strong> environment&nbsp;variable.</p>
 <p>For me, this was telling our webserver (Cherokee) to provide the
 <strong>UWSGI_SCRIPT_NAME</strong>, ensuring the <strong>UWSGI_</strong> is prepended, as a custom
 environment variable against the relevant Directory behaviour. Once
 Cherokee was pointed at the relevant socket and restarted, everything
-'just worked'. In the case of other web servers like Nginx, it would be
-a case of configuring a location with:</p>
+&#8216;just worked&#8217;. In the case of other web servers like Nginx, it would be
+a case of configuring a location&nbsp;with:</p>
 <pre class="code ini literal-block">
 <span class="err">uwsgi_param</span> <span class="err">SCRIPT_NAME</span> <span class="err">/tiles</span><span class="c1">;</span>
 </pre>
-<p>And there you have it.</p>
+<p>And there you have&nbsp;it.</p>
 <p>There are <a href="../blog/2012/06/serving-tilestache-or-another-app-using-uwsgi-against-a-web-sub-directory/#disqus_thread">comments</a>.</p>                </article>
                             </aside><!-- /#featured -->
                             <section id="content" class="body">
@@ -104,7 +102,7 @@ a case of configuring a location with:</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2012/02/mr-scripty-my-new-best-friend/" rel="bookmark"
-                           title="Permalink to mr.scripty - my new best friend">mr.scripty - my new best friend</a></h1>
+                           title="Permalink to mr.scripty - my new best friend">mr.scripty - my new best&nbsp;friend</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -118,11 +116,10 @@ a case of configuring a location with:</p>
         </address>
         <p>In <a href="../category/python.html">Python</a>. </p>
 <p>tags: <a href="../tag/awesome.html">awesome</a><a href="../tag/buildout.html">buildout</a><a href="../tag/python.html">python</a><a href="../tag/recipe.html">recipe</a></p>
-</footer><!-- /.post-info -->                <p>If you're working with Buildout, then check out <a class="reference external" href="http://github.com/collective/mr.scripty">mr.scripty</a>, a
+</footer><!-- /.post-info -->                <p>If you&#8217;re working with Buildout, then check out <a class="reference external" href="http://github.com/collective/mr.scripty">mr.scripty</a>, a
 fantastic Buildout recipe that allows you to use Python code in
 functions within its options. &nbsp;This means that - in the few instances
-I've used it so far - have conditional statements regarding effectively
-anything.</p>
+I&#8217;ve used it so far - have conditional statements regarding effectively&nbsp;anything.</p>
 <p>In the two examples ...</p>
                 <a class="readmore" href="../blog/2012/02/mr-scripty-my-new-best-friend/">read more</a>
                 <p>There are <a href="../blog/2012/02/mr-scripty-my-new-best-friend/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
@@ -133,7 +130,7 @@ anything.</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2011/08/importerror-no-module-named-beautifulsoup/" rel="bookmark"
-                           title="Permalink to ImportError: No module named BeautifulSoup">ImportError: No module named BeautifulSoup</a></h1>
+                           title="Permalink to ImportError: No module named BeautifulSoup">ImportError: No module named&nbsp;BeautifulSoup</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -147,10 +144,10 @@ anything.</p>
         </address>
         <p>In <a href="../category/python.html">Python</a>. </p>
 <p>tags: <a href="../tag/egg.html">egg</a><a href="../tag/error.html">error</a><a href="../tag/import.html">import</a><a href="../tag/packages.html">packages</a><a href="../tag/python.html">python</a></p>
-</footer><!-- /.post-info -->                <p>Had this issue when you've been trying to run something like
-<a class="reference external" href="http://pypi.python.org/pypi/funnelweb">Funnelweb</a>, and you hit an ImportError for BeautifulSoup?&nbsp; You're
+</footer><!-- /.post-info -->                <p>Had this issue when you&#8217;ve been trying to run something like
+<a class="reference external" href="http://pypi.python.org/pypi/funnelweb">Funnelweb</a>, and you hit an ImportError for BeautifulSoup?&nbsp; You&#8217;re
 definitely not alone, because I just hit the same issue.&nbsp; The answer is
-simple -- just ensure that you don't use BeautifulSoup 4 or above (this
+simple &#8212; just ensure that you don&#8217;t use BeautifulSoup 4 or above (this
 is still ...</p>
                 <a class="readmore" href="../blog/2011/08/importerror-no-module-named-beautifulsoup/">read more</a>
                 <p>There are <a href="../blog/2011/08/importerror-no-module-named-beautifulsoup/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
@@ -161,7 +158,7 @@ is still ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2011/05/cant-run-plonezope-buildout-on-ubuntu-11-04-after-upgrade-from-10-10/" rel="bookmark"
-                           title="Permalink to Can't run Plone/Zope buildout on Ubuntu 11.04 after upgrade from 10.10">Can't run Plone/Zope buildout on Ubuntu 11.04 after upgrade from 10.10</a></h1>
+                           title="Permalink to Can’t run Plone/Zope buildout on Ubuntu 11.04 after upgrade from 10.10">Can&#8217;t run Plone/Zope buildout on Ubuntu 11.04 after upgrade from&nbsp;10.10</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -176,9 +173,9 @@ is still ...</p>
         <p>In <a href="../category/it-linux-software.html">IT, Linux, Software</a>. </p>
 <p>tags: <a href="../tag/buildout.html">buildout</a><a href="../tag/plone.html">plone</a><a href="../tag/python.html">python</a><a href="../tag/zope.html">zope</a></p>
 </footer><!-- /.post-info -->                <p>After upgrading from Ubuntu 10.10 (Maverick Meerkat) to Ubuntu 11.04
-(Natty Narwhal), you'll probably find that if you're running a Plone 4
+(Natty Narwhal), you&#8217;ll probably find that if you&#8217;re running a Plone 4
 buildout where you need to upgrade the Plone version, that compilation
-of Zope will fail. The output will look something like this:</p>
+of Zope will fail. The output will look something like&nbsp;this:</p>
 <pre class="code pytb literal-block">
 <span class="x">Getting distribution ...</span></pre>
                 <a class="readmore" href="../blog/2011/05/cant-run-plonezope-buildout-on-ubuntu-11-04-after-upgrade-from-10-10/">read more</a>
@@ -190,7 +187,7 @@ of Zope will fail. The output will look something like this:</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2011/01/python-eggs-and-missing-files-like-docs/" rel="bookmark"
-                           title="Permalink to Python eggs and missing files (like 'docs')">Python eggs and missing files (like 'docs')</a></h1>
+                           title="Permalink to Python eggs and missing files (like ‘docs’)">Python eggs and missing files (like&nbsp;&#8216;docs&#8217;)</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -204,10 +201,10 @@ of Zope will fail. The output will look something like this:</p>
         </address>
         <p>In <a href="../category/python.html">Python</a>. </p>
 <p>tags: <a href="../tag/build.html">build</a><a href="../tag/docs.html">docs</a><a href="../tag/egg.html">egg</a><a href="../tag/file.html">file</a><a href="../tag/install.html">install</a><a href="../tag/missing.html">missing</a><a href="../tag/problem.html">problem</a><a href="../tag/python.html">python</a></p>
-</footer><!-- /.post-info -->                <p>This is pretty trivial (and trivial to fix), but I'm chronicling it for
-my knowledge as much as anyone else's.&nbsp; The issue is that a given Python
-egg is missing some form of files, most commonly the 'docs' directory in
-my experience, because the build wasn't configured ...</p>
+</footer><!-- /.post-info -->                <p>This is pretty trivial (and trivial to fix), but I&#8217;m chronicling it for
+my knowledge as much as anyone else&#8217;s.&nbsp; The issue is that a given Python
+egg is missing some form of files, most commonly the &#8216;docs&#8217; directory in
+my experience, because the build wasn&#8217;t configured ...</p>
                 <a class="readmore" href="../blog/2011/01/python-eggs-and-missing-files-like-docs/">read more</a>
                 <p>There are <a href="../blog/2011/01/python-eggs-and-missing-files-like-docs/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
@@ -217,7 +214,7 @@ my experience, because the build wasn't configured ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2010/07/plonezope-truncating-a-data-fs-back-to-a-certain-datetime/" rel="bookmark"
-                           title="Permalink to Plone/Zope: Truncating a Data.fs back to a certain date/time">Plone/Zope: Truncating a Data.fs back to a certain date/time</a></h1>
+                           title="Permalink to Plone/Zope: Truncating a Data.fs back to a certain date/time">Plone/Zope: Truncating a Data.fs back to a certain&nbsp;date/time</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -231,9 +228,9 @@ my experience, because the build wasn't configured ...</p>
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/datafs.html">data.fs</a><a href="../tag/database.html">database</a><a href="../tag/date.html">date</a><a href="../tag/fix.html">fix</a><a href="../tag/linux.html">linux</a><a href="../tag/plone.html">plone</a><a href="../tag/python.html">python</a><a href="../tag/time.html">time</a><a href="../tag/truncate.html">truncate</a><a href="../tag/zeo.html">zeo</a><a href="../tag/zodb.html">zodb</a><a href="../tag/zodb3.html">zodb3</a><a href="../tag/zope.html">zope</a></p>
-</footer><!-- /.post-info -->                <p>Okay. So, anyone out here who's listening -- particularly those
-overly-enthusiastic users -- don't try to recursively <tt class="docutils literal">wget</tt> your
-Plone site (or other CMS, for that matter) whilst you're logged in with
+</footer><!-- /.post-info -->                <p>Okay. So, anyone out here who&#8217;s listening &#8212; particularly those
+overly-enthusiastic users &#8212; don&#8217;t try to recursively <tt class="docutils literal">wget</tt> your
+Plone site (or other <span class="caps">CMS</span>, for that matter) whilst you&#8217;re logged in with
 an account that can make edits. It <strong>will</strong> lead to a very bad situation
 where your site ...</p>
                 <a class="readmore" href="../blog/2010/07/plonezope-truncating-a-data-fs-back-to-a-certain-datetime/">read more</a>
@@ -245,7 +242,7 @@ where your site ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2010/07/plone-running-plone-without-copies-of-blobs/" rel="bookmark"
-                           title="Permalink to Plone: running Plone without copies of blobs">Plone: running Plone without copies of blobs</a></h1>
+                           title="Permalink to Plone: running Plone without copies of blobs">Plone: running Plone without copies of&nbsp;blobs</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -259,7 +256,7 @@ where your site ...</p>
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/blob.html">blob</a><a href="../tag/blobs.html">blobs</a><a href="../tag/files.html">files</a><a href="../tag/patch.html">patch</a><a href="../tag/plone.html">plone</a><a href="../tag/problem.html">problem</a><a href="../tag/python.html">python</a></p>
-</footer><!-- /.post-info -->                <p>Having a bad day? Just bombed your only copies of some files that you'd
+</footer><!-- /.post-info -->                <p>Having a bad day? Just bombed your only copies of some files that you&#8217;d
 been storing as blobs together with your Plone database? Maybe you had
 the blobs stored incorrectly on your Zeo client, rather than the server,
 and then in a hasty effort to free some space (due ...</p>
@@ -272,7 +269,7 @@ and then in a hasty effort to free some space (due ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2010/06/plonezope-using-ldapuserfolder-with-posixgroups/" rel="bookmark"
-                           title="Permalink to Plone/Zope: Using LDAPUserFolder with posixGroups">Plone/Zope: Using LDAPUserFolder with posixGroups</a></h1>
+                           title="Permalink to Plone/Zope: Using LDAPUserFolder with posixGroups">Plone/Zope: Using LDAPUserFolder with&nbsp;posixGroups</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -287,8 +284,8 @@ and then in a hasty effort to free some space (due ...</p>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/groups.html">groups</a><a href="../tag/ldap.html">ldap</a><a href="../tag/ldapuserfolder.html">ldapuserfolder</a><a href="../tag/openldap.html">openldap</a><a href="../tag/patch.html">patch</a><a href="../tag/plone.html">plone</a><a href="../tag/python.html">python</a><a href="../tag/zope.html">zope</a></p>
 </footer><!-- /.post-info -->                <p>Due to various reasons, the Products.LDAPUserFolder package available
-for Plone and Zope doesn't support POSIX groups.&nbsp; The 'official' (ish)
-reason for this is because of the fact that these groups don't store
+for Plone and Zope doesn&#8217;t support <span class="caps">POSIX</span> groups.&nbsp; The &#8216;official&#8217; (ish)
+reason for this is because of the fact that these groups don&#8217;t store
 full distinguished names (DNs) for members.&nbsp; It makes some degree of
 sense, because a user ...</p>
                 <a class="readmore" href="../blog/2010/06/plonezope-using-ldapuserfolder-with-posixgroups/">read more</a>
@@ -300,7 +297,7 @@ sense, because a user ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2010/05/virtualenv-python-2-4-plone-3-x-and-lucid-lynx-ubuntu-10-04/" rel="bookmark"
-                           title="Permalink to Virtualenv, Python 2.4, Plone 3.x and Lucid Lynx (Ubuntu 10.04)">Virtualenv, Python 2.4, Plone 3.x and Lucid Lynx (Ubuntu 10.04)</a></h1>
+                           title="Permalink to Virtualenv, Python 2.4, Plone 3.x and Lucid Lynx (Ubuntu 10.04)">Virtualenv, Python 2.4, Plone 3.x and Lucid Lynx (Ubuntu&nbsp;10.04)</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -327,7 +324,7 @@ Previously, it was Centos 5.x, Jaunty (9.04), Karmic (9.10) and ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2010/05/installing-python-2-4-on-ubuntu-10-04-lucid-lynx/" rel="bookmark"
-                           title="Permalink to Installing Python 2.4 on Ubuntu 10.04 Lucid Lynx">Installing Python 2.4 on Ubuntu 10.04 Lucid Lynx</a></h1>
+                           title="Permalink to Installing Python 2.4 on Ubuntu 10.04 Lucid Lynx">Installing Python 2.4 on Ubuntu 10.04 Lucid&nbsp;Lynx</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -344,7 +341,7 @@ Previously, it was Centos 5.x, Jaunty (9.04), Karmic (9.10) and ...</p>
 </footer><!-- /.post-info -->                <p>Whoops.&nbsp; No one sent me the memo that Python
 2.4 support was being removed entirely from the latest version of
 Ubuntu, 10.04 Lucid Lynx.&nbsp; To be fair, I was presented with the message
-that 'these outdated packages will be removed' and in that list was
+that &#8216;these outdated packages will be removed&#8217; and in that list was
 python2.4.&nbsp; I ...</p>
                 <a class="readmore" href="../blog/2010/05/installing-python-2-4-on-ubuntu-10-04-lucid-lynx/">read more</a>
                 <p>There are <a href="../blog/2010/05/installing-python-2-4-on-ubuntu-10-04-lucid-lynx/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->

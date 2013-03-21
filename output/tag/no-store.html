@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2011/03/disabling-caching-for-sensitive-web-pages-aka-how-to-prevent-logged-out-users-going-back/">Disabling caching for sensitive web pages (aka how to prevent logged out users going 'back')</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2011/03/disabling-caching-for-sensitive-web-pages-aka-how-to-prevent-logged-out-users-going-back/">Disabling caching for sensitive web pages (aka how to prevent logged out users going&nbsp;&#8216;back&#8217;)</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2011-03-24T12:50:00">
                 Thu 24 March 2011
@@ -43,43 +43,43 @@
         </address>
         <p>In <a href="../category/web.html">Web</a>. </p>
 <p>tags: <a href="../tag/caching.html">caching</a><a href="../tag/http.html">http</a><a href="../tag/no-store.html">no-store</a><a href="../tag/rfc.html">rfc</a><a href="../tag/web.html">web</a></p>
-</footer><!-- /.post-info --><p>We all see web pages like Internet banking, HR systems, email, and more
+</footer><!-- /.post-info --><p>We all see web pages like Internet banking, <span class="caps">HR</span> systems, email, and more
 that allow you to log in, do something and load pages, log out, and then
-prevent you from using your browser's history to see that sensitive
-information.&nbsp; I'm amazed that in my searches I couldn't quickly find a
+prevent you from using your browser&#8217;s history to see that sensitive
+information.&nbsp; I&#8217;m amazed that in my searches I couldn&#8217;t quickly find a
 definitive source of information on how to achieve this.&nbsp; Pages across
-the web in a search for 'stop caching' range from blog posts, to forum
+the web in a search for &#8216;stop caching&#8217; range from blog posts, to forum
 posts, to other pages, and people asking the question (try it: <a class="reference external" href="http://www.google.com/search?q=stop+caching">here</a>,
 or <a class="reference external" href="http://www.google.com/search?q=stop+caching+firefox">maybe here</a>).</p>
 <p>Maybe I got unlucky, but finding a definitive answer to the questions of
-&quot;how to prevent the use of the back button&quot; or &quot;how to stop browsers
-caching&quot; etc wasn't a piece of cake. Hence this post.</p>
-<p>The answer isn't concrete in itself either due to differing browser
-support, but the most useful information comes from RFC2616, the RFC for
-HTTP/1.1. In <a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9.2">section 14.9.2</a>, we learn about <tt class="docutils literal"><span class="pre">no-store</span></tt>. This cache
+&#8220;how to prevent the use of the back button&#8221; or &#8220;how to stop browsers
+caching&#8221; etc wasn&#8217;t a piece of cake. Hence this&nbsp;post.</p>
+<p>The answer isn&#8217;t concrete in itself either due to differing browser
+support, but the most useful information comes from <span class="caps">RFC2616</span>, the <span class="caps">RFC</span> for
+<span class="caps">HTTP</span>/1.1. In <a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9.2">section 14.9.2</a>, we learn about <tt class="docutils literal"><span class="pre">no-store</span></tt>. This cache
 directive should see a correctly-implemented browser not storing a
 request/response on disk (non-volatile storage) and deleting the info as
-quick as possible from RAM (volatile storage).</p>
-<p>I've found that combining this, with an Expires header, and other
+quick as possible from <span class="caps">RAM</span> (volatile&nbsp;storage).</p>
+<p>I&#8217;ve found that combining this, with an Expires header, and other
 Cache-Control directives, has worked across Firefox 4, Chrome 10,
 Internet Explorer 6, 7, 8, and 9 to keep relevant pages entirely out of
-the cache. Here's a snippet from some Python code:</p>
+the cache. Here&#8217;s a snippet from some Python&nbsp;code:</p>
 <pre class="code python literal-block">
 <span class="n">response</span><span class="o">.</span><span class="n">setHeader</span><span class="p">(</span><span class="s">'Expires'</span><span class="p">,</span> <span class="n">formatDateTime</span><span class="p">(</span><span class="n">getExpiration</span><span class="p">(</span><span class="mi">0</span><span class="p">)))</span>
 <span class="n">response</span><span class="o">.</span><span class="n">setHeader</span><span class="p">(</span><span class="s">'Cache-Control'</span><span class="p">,</span> <span class="s">'no-store, no-cache, max-age=0, must-revalidate, private'</span><span class="p">)</span>
 </pre>
-<p>You could likely use this in the &lt;meta&gt; tags in your page too.</p>
-<p>This, by all means, isn't a guaranteed solution as the RFC may not be
-followed by all browsers.&nbsp; I've also noted that the RFC isn't exactly
-clear with regards to a browser's history this sort of thing.&nbsp; <a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html#sec13.13">Section
-13.13</a> mentions that &quot;a history mechanism is meant to show exactly what
-the user saw at the time when the resource was retrieved&quot;, and using the
-RFC-specified <tt class="docutils literal"><span class="pre">no-store</span></tt> on a logged in page (or anything dynamic)
-would seemingly break this implication.</p>
+<p>You could likely use this in the &lt;meta&gt; tags in your page&nbsp;too.</p>
+<p>This, by all means, isn&#8217;t a guaranteed solution as the <span class="caps">RFC</span> may not be
+followed by all browsers.&nbsp; I&#8217;ve also noted that the <span class="caps">RFC</span> isn&#8217;t exactly
+clear with regards to a browser&#8217;s history this sort of thing.&nbsp; <a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html#sec13.13">Section
+13.13</a> mentions that &#8220;a history mechanism is meant to show exactly what
+the user saw at the time when the resource was retrieved&#8221;, and using the
+<span class="caps">RFC</span>-specified <tt class="docutils literal"><span class="pre">no-store</span></tt> on a logged in page (or anything dynamic)
+would seemingly break this&nbsp;implication.</p>
 <p>At any rate, seems like this implementation works successfully on the
-browsers I've tested. Apparently IE doesn't like the <tt class="docutils literal"><span class="pre">no-store</span></tt> or
-<tt class="docutils literal"><span class="pre">no-cache</span></tt> settings in certain circumstances but it's been fine for me
-thus far.</p>
+browsers I&#8217;ve tested. Apparently <span class="caps">IE</span> doesn&#8217;t like the <tt class="docutils literal"><span class="pre">no-store</span></tt> or
+<tt class="docutils literal"><span class="pre">no-cache</span></tt> settings in certain circumstances but it&#8217;s been fine for me
+thus&nbsp;far.</p>
 <p>There are <a href="../blog/2011/03/disabling-caching-for-sensitive-web-pages-aka-how-to-prevent-logged-out-users-going-back/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">
         Page 1 / 1

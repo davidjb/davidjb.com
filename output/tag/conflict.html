@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2010/07/plone-4-local-zeo-blobs-conflict-with-plone-instance/">Plone 4: Local Zeo blobs conflict with Plone instance</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2010/07/plone-4-local-zeo-blobs-conflict-with-plone-instance/">Plone 4: Local Zeo blobs conflict with Plone&nbsp;instance</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2010-07-06T16:04:00">
                 Tue 06 July 2010
@@ -43,62 +43,62 @@
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/blob.html">blob</a><a href="../tag/conflict.html">conflict</a><a href="../tag/database.html">database</a><a href="../tag/db.html">db</a><a href="../tag/files.html">files</a><a href="../tag/plone.html">plone</a><a href="../tag/plone-4.html">plone 4</a><a href="../tag/problem.html">problem</a><a href="../tag/upgrade.html">upgrade</a><a href="../tag/zeo.html">zeo</a></p>
-</footer><!-- /.post-info --><p>As the title suggests, there's a conflict between a Zeo database
+</footer><!-- /.post-info --><p>As the title suggests, there&#8217;s a conflict between a Zeo database
 instance being run together with a Plone 4/Zope instance, and them
 trying to share the same blob storage folder.&nbsp; But, this only happens if
 you misunderstand or incorrectly set the option of&nbsp; <em>shared-blob = off</em>,
 and <em>blob-storage</em> to be the same location as for Zeo in your buildout.
-If that previous set of (seemingly jumbled) thoughts doesn't make any
-sense to you, then move along, nothing to see here.</p>
+If that previous set of (seemingly jumbled) thoughts doesn&#8217;t make any
+sense to you, then move along, nothing to see&nbsp;here.</p>
 <p>By default, at the time of writing, blob support within Zeo runs with
 the <em>bushy</em>layout, and creates this format by default when starting up
 for the first time. Plone 4, however, when trying to stream blobs from
 your Zeo database, uses a customised <em>zeocache</em> blob layout. See where
-I'm going with this? You try and inadvertently use these aspects
-together and you've got a conflict.</p>
-<p>If you're having this problem, then you'll get weird errors concerning
+I&#8217;m going with this? You try and inadvertently use these aspects
+together and you&#8217;ve got a&nbsp;conflict.</p>
+<p>If you&#8217;re having this problem, then you&#8217;ll get weird errors concerning
 the <em>layout</em> of your blobs. Starting the Zope instance before the Zeo
 server results in Zope setting the <strong>.layout</strong> file for the blob storage
 to <em>zeocache</em>. Once your Zope instance errors out and you realise that
-your Zeo instance isn't running, you'll inevitably try and start Zeo up.
-When you do, you get an error about the layout type not existing:</p>
+your Zeo instance isn&#8217;t running, you&#8217;ll inevitably try and start Zeo up.
+When you do, you get an error about the layout type not&nbsp;existing:</p>
 <pre class="code pytb literal-block">
 <span class="x">/home/david/buildout/parts/zeo/bin/runzeo
 </span><span class="gt">Traceback (most recent call last):
 </span>  <span class="c">...</span>
-  File <span class="nb">&quot;/home/david/buildout/eggs/ZODB3-3.9.5-py2.6-linux-i686.egg/ZODB/blob.py&quot;</span>, line <span class="m">714</span>, in <span class="n">__init__</span>
+  File <span class="nb">&quot;/home/david/buildout/eggs/<span class="caps">ZODB3</span>-3.9.5-py2.6-linux-i686.egg/<span class="caps">ZODB</span>/blob.py&quot;</span>, line <span class="m">714</span>, in <span class="n">__init__</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">_blob_init</span><span class="p">(</span><span class="n">base_directory</span><span class="p">,</span> <span class="n">layout</span><span class="p">)</span>
-  File <span class="nb">&quot;/home/david/buildout/eggs/ZODB3-3.9.5-py2.6-linux-i686.egg/ZODB/blob.py&quot;</span>, line <span class="m">600</span>, in <span class="n">_blob_init</span>
+  File <span class="nb">&quot;/home/david/buildout/eggs/<span class="caps">ZODB3</span>-3.9.5-py2.6-linux-i686.egg/<span class="caps">ZODB</span>/blob.py&quot;</span>, line <span class="m">600</span>, in <span class="n">_blob_init</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">fshelper</span> <span class="o">=</span> <span class="n">FilesystemHelper</span><span class="p">(</span><span class="n">blob_dir</span><span class="p">,</span> <span class="n">layout</span><span class="p">)</span>
-  File <span class="nb">&quot;/home/david/buildout/eggs/ZODB3-3.9.5-py2.6-linux-i686.egg/ZODB/blob.py&quot;</span>, line <span class="m">339</span>, in <span class="n">__init__</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">LAYOUTS</span><span class="p">[</span><span class="n">layout_name</span><span class="p">]</span>
+  File <span class="nb">&quot;/home/david/buildout/eggs/<span class="caps">ZODB3</span>-3.9.5-py2.6-linux-i686.egg/<span class="caps">ZODB</span>/blob.py&quot;</span>, line <span class="m">339</span>, in <span class="n">__init__</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n"><span class="caps">LAYOUTS</span></span><span class="p">[</span><span class="n">layout_name</span><span class="p">]</span>
 <span class="gr">KeyError</span>: <span class="n">'zeocache'</span>
 </pre>
 <p>Now, if you try to fix this by dumping your now-existing blob storage
 folder (a method mentioned to work elsewhere on the web) and starting
-your Zeo server first, you'll still get problems. The blob storage gets
-created correctly with the 'bushy' layout by Zeo, but trying to start
-the Zope instance fails, because Zeo's created its storage accordingly
-in the same spot. This is part of the error:</p>
+your Zeo server first, you&#8217;ll still get problems. The blob storage gets
+created correctly with the &#8216;bushy&#8217; layout by Zeo, but trying to start
+the Zope instance fails, because Zeo&#8217;s created its storage accordingly
+in the same spot. This is part of the&nbsp;error:</p>
 <pre class="code pytb literal-block">
 <span class="gt">Traceback (most recent call last):
 </span>  <span class="c">...</span>
-  File <span class="nb">&quot;/home/david/buildout/eggs/ZODB3-3.9.5-py2.6-linux-i686.egg/ZODB/blob.py&quot;</span>, line <span class="m">362</span>, in <span class="n">create</span>
+  File <span class="nb">&quot;/home/david/buildout/eggs/<span class="caps">ZODB3</span>-3.9.5-py2.6-linux-i686.egg/<span class="caps">ZODB</span>/blob.py&quot;</span>, line <span class="m">362</span>, in <span class="n">create</span>
     <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_dir</span><span class="p">,</span> <span class="n">layout</span><span class="p">))</span>
 <span class="gr">ValueError</span>: <span class="n">Directory layout `zeocache` selected for blob directory /home/david/buildout/var/blobstorage/, but marker found for layout `bushy`</span>
 </pre>
-<p>The two ways of solving this are to:</p>
+<p>The two ways of solving this are&nbsp;to:</p>
 <ol class="arabic simple">
 <li>Change the <em>shared-blob</em> option to be <strong>on</strong>. Both Zeo and Zope will
-exist in harmony again, both using the <em>bushy</em> layout.</li>
+exist in harmony again, both using the <em>bushy</em>&nbsp;layout.</li>
 <li>Changing the <em>blob-storage</em> location for either the Zeo server or the
 Zope instance. This will result in two separate folders and likely
-duplicate files and HDD wastage, but hey, it'll work, right? This is
-probably a useful option for testing.</li>
+duplicate files and <span class="caps">HDD</span> wastage, but hey, it&#8217;ll work, right? This is
+probably a useful option for&nbsp;testing.</li>
 </ol>
-<p>The <em>zeocache</em> layout is new with Plone 4 (aka, I haven't seen it before
-so it probably is), so watch out for this when upgrading.</p>
-<p>Stay tuned for more in this series of Plone 4 upgrade notes.</p>
+<p>The <em>zeocache</em> layout is new with Plone 4 (aka, I haven&#8217;t seen it before
+so it probably is), so watch out for this when&nbsp;upgrading.</p>
+<p>Stay tuned for more in this series of Plone 4 upgrade&nbsp;notes.</p>
 <p>There are <a href="../blog/2010/07/plone-4-local-zeo-blobs-conflict-with-plone-instance/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">
         Page 1 / 1

@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2010/02/wget-a-plone-site-and-make-it-actually-work/">Wget a Plone site (and make it actually work)</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2010/02/wget-a-plone-site-and-make-it-actually-work/">Wget a Plone site (and make it actually&nbsp;work)</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2010-02-25T15:01:00">
                 Thu 25 February 2010
@@ -43,51 +43,50 @@
         </address>
         <p>In <a href="../category/plon.html">Plon</a>. </p>
 <p>tags: <a href="../tag/cd.html">cd</a><a href="../tag/content.html">content</a><a href="../tag/download.html">download</a><a href="../tag/dvd.html">dvd</a><a href="../tag/export.html">export</a><a href="../tag/media.html">media</a><a href="../tag/offline.html">offline</a><a href="../tag/plone.html">plone</a><a href="../tag/site.html">site</a><a href="../tag/static.html">static</a><a href="../tag/wget.html">wget</a></p>
-</footer><!-- /.post-info --><p>There's a lot of different resources and posts on the
+</footer><!-- /.post-info --><p>There&#8217;s a lot of different resources and posts on the
 web about how to export a Plone site to static html content, but no
 methodology would actually solve all of my problems. Now, Plone is
-inherently a complicated beast, given just how much it does, and that's
+inherently a complicated beast, given just how much it does, and that&#8217;s
 definitely putting it lightly. But here goes at my attempt to provide an
 actual, workable solution.&nbsp; Word for the wise though, this is for more
 than just your front-end administrator to handle.&nbsp; Also, instructions
-are designed for Ubuntu 9.10.&nbsp; Mileage may/will vary on other distros or
-OSes.</p>
+are designed for Ubuntu 9.10.&nbsp; Mileage may/will vary on other distros or&nbsp;OSes.</p>
 <div class="section" id="requirements">
 <h2>Requirements</h2>
 <ul class="simple">
-<li>Needs to get all pages, including default views of folders, correctly</li>
+<li>Needs to get all pages, including default views of folders,&nbsp;correctly</li>
 <li>Needs to rewrite all links to be relative, because I want to run the
-site locally on CD/DVD (or move it anywhere)</li>
-<li>Should get all the CSS from the site, and images from the CSS</li>
-<li>Doesn't have to be in 1 command (relaxed to make life easy ;-) )</li>
+site locally on <span class="caps">CD</span>/<span class="caps">DVD</span> (or move it&nbsp;anywhere)</li>
+<li>Should get all the <span class="caps">CSS</span> from the site, and images from the&nbsp;<span class="caps">CSS</span></li>
+<li>Doesn&#8217;t have to be in 1 command (relaxed to make life easy ;-)&nbsp;)</li>
 </ul>
 </div>
 <div class="section" id="how-to">
-<h2>How to</h2>
-<p>Issues I've had with other methods (specifically, wget options) either
-don't get the right pages, manage to ignore default folder views, or
-other random problems.&nbsp; Here's my take on the situation -- it's not a
-one-click solution, but it worked for me:</p>
+<h2>How&nbsp;to</h2>
+<p>Issues I&#8217;ve had with other methods (specifically, wget options) either
+don&#8217;t get the right pages, manage to ignore default folder views, or
+other random problems.&nbsp; Here&#8217;s my take on the situation &#8212; it&#8217;s not a
+one-click solution, but it worked for&nbsp;me:</p>
 <ol class="arabic simple">
-<li>Go into your site and change all portal_css entries' Render Type to
-'Link'.&nbsp; This solves issues with wget and &#64;import for CSS.</li>
-<li>Make invisible any actions in portal_actions that you don't want
-saved.&nbsp; For example, &quot;Register&quot; and &quot;Contact&quot; might want to be hidden
-as they won't be useful on a static site.</li>
+<li>Go into your site and change all portal_css entries&#8217; Render Type to
+&#8216;Link&#8217;.&nbsp; This solves issues with wget and &#64;import for&nbsp;<span class="caps">CSS</span>.</li>
+<li>Make invisible any actions in portal_actions that you don&#8217;t want
+saved.&nbsp; For example, &#8220;Register&#8221; and &#8220;Contact&#8221; might want to be hidden
+as they won&#8217;t be useful on a static&nbsp;site.</li>
 <li>When ready, run the following script on your site (thanks to
 <a class="reference external" href="http://kiilerix.blogspot.com/2008/10/mirroring-plone-site.html">kiilerex</a> for the wget command):
 <a class="reference external" href="https://github.com/jcu-eresearch/static-plone-wget">https://github.com/jcu-eresearch/static-plone-wget</a></li>
-<li>Looking inside the bash script, you'll see uses wget to download the
-site, then gets a list of images referenced within the CSS files, and
-downloads them accordingly to the location where the CSS file(s)
-are.&nbsp; Then, it corrects your CSS files to have relative URLs, rather
-than absolute as does Plone by default.</li>
+<li>Looking inside the bash script, you&#8217;ll see uses wget to download the
+site, then gets a list of images referenced within the <span class="caps">CSS</span> files, and
+downloads them accordingly to the location where the <span class="caps">CSS</span> file(s)
+are.&nbsp; Then, it corrects your <span class="caps">CSS</span> files to have relative URLs, rather
+than absolute as does Plone by&nbsp;default.</li>
 <li>Your site should now be ready for distribution to any web location or
-distribution media!</li>
+distribution&nbsp;media!</li>
 </ol>
-<p>Please let me know if there's any problems with the script. It's on GitHub
+<p>Please let me know if there&#8217;s any problems with the script. It&#8217;s on GitHub
 at <a class="reference external" href="https://github.com/jcu-eresearch/static-plone-wget">https://github.com/jcu-eresearch/static-plone-wget</a> so go crazy and
-fork as you'd like.</p>
+fork as you&#8217;d&nbsp;like.</p>
 </div>
 <p>There are <a href="../blog/2010/02/wget-a-plone-site-and-make-it-actually-work/#disqus_thread">comments</a>.</p>                </article>
                             </aside><!-- /#featured -->
@@ -101,7 +100,7 @@ fork as you'd like.</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/09/migrating-a-plone-site-off-to-another-database-zeo/" rel="bookmark"
-                           title="Permalink to Migrating a Plone site off to another database (Zeo)">Migrating a Plone site off to another database (Zeo)</a></h1>
+                           title="Permalink to Migrating a Plone site off to another database (Zeo)">Migrating a Plone site off to another database&nbsp;(Zeo)</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -118,7 +117,7 @@ fork as you'd like.</p>
 </footer><!-- /.post-info -->                <p>Another of the interesting things in my professional life has been
 migrating a Plone site from one database (where it lived as a dev site,
 along with many others) onto a nice, clean database of its own.&nbsp; Now,
-yes, I'm aware that the export/import feature of Zope <strong>isn ...</strong></p>
+yes, I&#8217;m aware that the export/import feature of Zope <strong>isn ...</strong></p>
                 <a class="readmore" href="../blog/2009/09/migrating-a-plone-site-off-to-another-database-zeo/">read more</a>
                 <p>There are <a href="../blog/2009/09/migrating-a-plone-site-off-to-another-database-zeo/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>

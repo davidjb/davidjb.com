@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2010/01/ubuntu-crackling-audio-noises-on-a-dell-m1530-or-hda-cards/">Ubuntu: Crackling audio noises on a Dell M1530 (or HDA cards)</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2010/01/ubuntu-crackling-audio-noises-on-a-dell-m1530-or-hda-cards/">Ubuntu: Crackling audio noises on a Dell M1530 (or <span class="caps">HDA</span>&nbsp;cards)</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2010-01-16T12:18:00">
                 Sat 16 January 2010
@@ -45,14 +45,14 @@
 <p>tags: <a href="../tag/910.html">9.10</a><a href="../tag/audio.html">audio</a><a href="../tag/computer.html">computer</a><a href="../tag/crackling.html">crackling</a><a href="../tag/dell.html">dell</a><a href="../tag/intel.html">intel</a><a href="../tag/karmic.html">karmic</a><a href="../tag/laptop.html">laptop</a><a href="../tag/m1530.html">m1530</a><a href="../tag/popping.html">popping</a><a href="../tag/sound.html">sound</a><a href="../tag/ubuntu.html">ubuntu</a></p>
 </footer><!-- /.post-info --><p>The problem I found (so did everyone else) when updating to Ubuntu 9.10
 Karmic was static/popping noises when your sound card is silent (aka
-goes into power-save mode). It applies to my Dell XPS M1530 laptop's
-on-board sound and probably to the same chipset elsewhere.</p>
-<p>The fix couldn't be simpler! Simply edit this file (as root):</p>
+goes into power-save mode). It applies to my Dell <span class="caps">XPS</span> M1530 laptop&#8217;s
+on-board sound and probably to the same chipset&nbsp;elsewhere.</p>
+<p>The fix couldn&#8217;t be simpler! Simply edit this file (as&nbsp;root):</p>
 <pre class="literal-block">
 /etc/modprobe.d/alsa-base.conf
 </pre>
-<p>and comment out the last line. Then, restart ALSA to save you having to
-do a reboot to check it worked:</p>
+<p>and comment out the last line. Then, restart <span class="caps">ALSA</span> to save you having to
+do a reboot to check it&nbsp;worked:</p>
 <blockquote>
 sudo /etc/init.d/alsa-utils stop
 sudo alsa force-reload

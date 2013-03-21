@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2011/08/importerror-no-module-named-beautifulsoup/">ImportError: No module named BeautifulSoup</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2011/08/importerror-no-module-named-beautifulsoup/">ImportError: No module named&nbsp;BeautifulSoup</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2011-08-26T12:02:00">
                 Fri 26 August 2011
@@ -43,15 +43,14 @@
         </address>
         <p>In <a href="../category/python.html">Python</a>. </p>
 <p>tags: <a href="../tag/egg.html">egg</a><a href="../tag/error.html">error</a><a href="../tag/import.html">import</a><a href="../tag/packages.html">packages</a><a href="../tag/python.html">python</a></p>
-</footer><!-- /.post-info --><p>Had this issue when you've been trying to run something like
-<a class="reference external" href="http://pypi.python.org/pypi/funnelweb">Funnelweb</a>, and you hit an ImportError for BeautifulSoup?&nbsp; You're
+</footer><!-- /.post-info --><p>Had this issue when you&#8217;ve been trying to run something like
+<a class="reference external" href="http://pypi.python.org/pypi/funnelweb">Funnelweb</a>, and you hit an ImportError for BeautifulSoup?&nbsp; You&#8217;re
 definitely not alone, because I just hit the same issue.&nbsp; The answer is
-simple -- just ensure that you don't use BeautifulSoup 4 or above (this
-is still beta) -- it uses a different namespace, specifically bs4.
+simple &#8212; just ensure that you don&#8217;t use BeautifulSoup 4 or above (this
+is still beta) &#8212; it uses a different namespace, specifically bs4.
 Thus, whilst you might have the BeautifulSoup egg satisfying your
-dependencies, any imports of this package are going to fail.</p>
-<p>For me, I'm using buildout, so I just pinned my version of BeautifulSoup
-thusly:</p>
+dependencies, any imports of this package are going to&nbsp;fail.</p>
+<p>For me, I&#8217;m using buildout, so I just pinned my version of BeautifulSoup&nbsp;thusly:</p>
 <pre class="code cfg literal-block">
 <span class="k">[buildout]</span>
 <span class="err">...</span>
@@ -60,7 +59,7 @@ thusly:</p>
 <span class="k">[versions]</span>
 <span class="na">BeautifulSoup</span> <span class="o">=</span> <span class="s">3.2.0</span>
 </pre>
-<p>Now, we stop using BeautifulSoup 4.0 and everything works again.</p>
+<p>Now, we stop using BeautifulSoup 4.0 and everything works&nbsp;again.</p>
 <p>There are <a href="../blog/2011/08/importerror-no-module-named-beautifulsoup/#disqus_thread">comments</a>.</p>                </article>
                             </aside><!-- /#featured -->
                             <section id="content" class="body">
@@ -73,7 +72,7 @@ thusly:</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2011/01/python-eggs-and-missing-files-like-docs/" rel="bookmark"
-                           title="Permalink to Python eggs and missing files (like 'docs')">Python eggs and missing files (like 'docs')</a></h1>
+                           title="Permalink to Python eggs and missing files (like ‘docs’)">Python eggs and missing files (like&nbsp;&#8216;docs&#8217;)</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -87,10 +86,10 @@ thusly:</p>
         </address>
         <p>In <a href="../category/python.html">Python</a>. </p>
 <p>tags: <a href="../tag/build.html">build</a><a href="../tag/docs.html">docs</a><a href="../tag/egg.html">egg</a><a href="../tag/file.html">file</a><a href="../tag/install.html">install</a><a href="../tag/missing.html">missing</a><a href="../tag/problem.html">problem</a><a href="../tag/python.html">python</a></p>
-</footer><!-- /.post-info -->                <p>This is pretty trivial (and trivial to fix), but I'm chronicling it for
-my knowledge as much as anyone else's.&nbsp; The issue is that a given Python
-egg is missing some form of files, most commonly the 'docs' directory in
-my experience, because the build wasn't configured ...</p>
+</footer><!-- /.post-info -->                <p>This is pretty trivial (and trivial to fix), but I&#8217;m chronicling it for
+my knowledge as much as anyone else&#8217;s.&nbsp; The issue is that a given Python
+egg is missing some form of files, most commonly the &#8216;docs&#8217; directory in
+my experience, because the build wasn&#8217;t configured ...</p>
                 <a class="readmore" href="../blog/2011/01/python-eggs-and-missing-files-like-docs/">read more</a>
                 <p>There are <a href="../blog/2011/01/python-eggs-and-missing-files-like-docs/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
@@ -100,7 +99,7 @@ my experience, because the build wasn't configured ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2010/06/plone-sitemanager-leftovers-not-the-good-kind/" rel="bookmark"
-                           title="Permalink to Plone: SiteManager leftovers; not the good kind">Plone: SiteManager leftovers; not the good kind</a></h1>
+                           title="Permalink to Plone: SiteManager leftovers; not the good kind">Plone: SiteManager leftovers; not the good&nbsp;kind</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -117,7 +116,7 @@ my experience, because the build wasn't configured ...</p>
 </footer><!-- /.post-info -->                <div class="note">
 <p class="first admonition-title">Note</p>
 <p class="last"><strong>Update:</strong> You should check out <a class="reference external" href="http://pypi.python.org/pypi/wildcard.fixpersistentutilities">wildcard.fixpersistentutilities</a>
-- it's a fantastic solution to problems like this. Many thanks to
+- it&#8217;s a fantastic solution to problems like this. Many thanks to
 Nathan Van Gheem, the author of the add on. Check out the link and
 see how to install it (temporarily) on your Plone instance that
 needs its site manager cleaned ...</p></div>
@@ -130,7 +129,7 @@ needs its site manager cleaned ...</p></div>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/11/plonezope-python-and-collective-autoreloadplone-reload/" rel="bookmark"
-                           title="Permalink to Plone/Zope, Python and collective.autoreload / plone.reload">Plone/Zope, Python and collective.autoreload / plone.reload</a></h1>
+                           title="Permalink to Plone/Zope, Python and collective.autoreload / plone.reload">Plone/Zope, Python and collective.autoreload /&nbsp;plone.reload</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -144,10 +143,10 @@ needs its site manager cleaned ...</p></div>
         </address>
         <p>In <a href="../category/python.html">Python</a>. </p>
 <p>tags: <a href="../tag/code.html">code</a><a href="../tag/collective.html">collective</a><a href="../tag/egg.html">egg</a><a href="../tag/error.html">error</a><a href="../tag/package.html">package</a><a href="../tag/plone.html">plone</a><a href="../tag/python.html">python</a><a href="../tag/reload.html">reload</a><a href="../tag/restart.html">restart</a></p>
-</footer><!-- /.post-info -->                <p>Here's an interesting error message I got stumped with for a good set of
+</footer><!-- /.post-info -->                <p>Here&#8217;s an interesting error message I got stumped with for a good set of
 hours.&nbsp; The issue started with me using collective.autoreload with Plone
-and it does the trick, mostly.&nbsp; With any such 'operation' and live
-reloading of code for Python, you've got to expect that not ...</p>
+and it does the trick, mostly.&nbsp; With any such &#8216;operation&#8217; and live
+reloading of code for Python, you&#8217;ve got to expect that not ...</p>
                 <a class="readmore" href="../blog/2009/11/plonezope-python-and-collective-autoreloadplone-reload/">read more</a>
                 <p>There are <a href="../blog/2009/11/plonezope-python-and-collective-autoreloadplone-reload/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
@@ -157,7 +156,7 @@ reloading of code for Python, you've got to expect that not ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/01/plone-python-eggs-and-development/" rel="bookmark"
-                           title="Permalink to Plone: Python Eggs And Development">Plone: Python Eggs And Development</a></h1>
+                           title="Permalink to Plone: Python Eggs And Development">Plone: Python Eggs And&nbsp;Development</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -171,12 +170,12 @@ reloading of code for Python, you've got to expect that not ...</p>
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/egg.html">egg</a><a href="../tag/linux.html">linux</a><a href="../tag/python.html">python</a><a href="../tag/setuptools.html">setuptools</a></p>
-</footer><!-- /.post-info -->                <p>Welcome to the new year! It's the start of another journey around the
-sun and the beginning of work for me. Whilst I'm the only one actually
-working around here today, I thought I'd take the chance and update with
-some useful info:</p>
+</footer><!-- /.post-info -->                <p>Welcome to the new year! It&#8217;s the start of another journey around the
+sun and the beginning of work for me. Whilst I&#8217;m the only one actually
+working around here today, I thought I&#8217;d take the chance and update with
+some useful&nbsp;info:</p>
 <div class="section" id="troublesome-python-eggs">
-<h2>Troublesome Python eggs</h2>
+<h2>Troublesome Python&nbsp;eggs</h2>
 <p>Now ...</p></div>
                 <a class="readmore" href="../blog/2009/01/plone-python-eggs-and-development/">read more</a>
                 <p>There are <a href="../blog/2009/01/plone-python-eggs-and-development/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->

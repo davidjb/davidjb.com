@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Java HTTP request fails with "javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated"</title>
+        <title>Java HTTP request fails with “javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated”</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2012/02/java-http-request-fails-with-javax-net-ssl-sslpeerunverifiedexception-peer-not-authenticated/" rel="bookmark"
-           title="Permalink to Java HTTP request fails with "javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated"">Java HTTP request fails with &quot;javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated&quot;</a></h1>
+           title="Permalink to Java HTTP request fails with “javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated”">Java <span class="caps">HTTP</span> request fails with &#8220;javax.net.ssl.SSLPeerUnverifiedException: peer not&nbsp;authenticated&#8221;</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -49,19 +49,19 @@
 <p>tags: <a href="../../../../tag/certificate.html">certificate</a><a href="../../../../tag/java.html">java</a><a href="../../../../tag/key.html">key</a><a href="../../../../tag/linux.html">linux</a><a href="../../../../tag/ssl.html">ssl</a><a href="../../../../tag/store.html">store</a></p>
 </footer><!-- /.post-info -->      <p>Searching the above-mentioned stack trace reveals lots and lots of
 results, unsurprisingly. &nbsp;Most results are workarounds where you modify
-the code, but what about if an application (like Jenkins/Hudson CI, in
+the code, but what about if an application (like Jenkins/Hudson <span class="caps">CI</span>, in
 my case) throws this error at you? The reason the error is occurring is
-because the SSL certificate of the target you're connecting to isn't
-considered valid by your Java instance's keystore. This may be because
-the certificate itself is invalid, or, in my case, the CA chain couldn't
-be validated (my OS is RHEL (Red Hat) 5.7, with OpenJDK 1.6). &nbsp;For
+because the <span class="caps">SSL</span> certificate of the target you&#8217;re connecting to isn&#8217;t
+considered valid by your Java instance&#8217;s keystore. This may be because
+the certificate itself is invalid, or, in my case, the <span class="caps">CA</span> chain couldn&#8217;t
+be validated (my <span class="caps">OS</span> is <span class="caps">RHEL</span> (Red Hat) 5.7, with OpenJDK 1.6). &nbsp;For
 completeness, I should also mention that the issue here arose when I
-asked Jenkins CI to use&nbsp;GitHub OAuth. As GitHub's SSL certificate has
-been signed by DigiCert, and this isn't included within RHEL 5.7, the
-error arises. &nbsp;A solution is, assuming you trust the cert or the CA, to
-add the relevant certificates/root certificates to your Java keystore.</p>
+asked Jenkins <span class="caps">CI</span> to use&nbsp;GitHub OAuth. As GitHub&#8217;s <span class="caps">SSL</span> certificate has
+been signed by DigiCert, and this isn&#8217;t included within <span class="caps">RHEL</span> 5.7, the
+error arises. &nbsp;A solution is, assuming you trust the cert or the <span class="caps">CA</span>, to
+add the relevant certificates/root certificates to your Java&nbsp;keystore.</p>
 <p>To do so, get your relevant certificates/root certificates, locate your
-keystore, and add them accordingly:</p>
+keystore, and add them&nbsp;accordingly:</p>
 <pre class="code bash literal-block">
 wget https://www.digicert.com/CACerts/DigiCertHighAssuranceEVCA-1.crt
 wget https://www.digicert.com/testroot/DigiCertHighAssuranceEVRootCA.crt
@@ -69,10 +69,10 @@ keytool -importcert -storepass changeit -keystore /etc/alternatives/java_sdk/jre
 keytool -importcert -storepass changeit -keystore /etc/alternatives/java_sdk/jre/lib/security/cacerts -alias digicertevca1 -file DigiCertHighAssuranceEVCA-1.crt
 </pre>
 <p>This resolved the issue for me and GitHub OAuth completed successfully.
-If you're having issues with just a single certificate, then just import
-that one certificate.</p>
-<p>For the interested Googlers, here's what the relevant chunk of
-stacktrace looked like:</p>
+If you&#8217;re having issues with just a single certificate, then just import
+that one&nbsp;certificate.</p>
+<p>For the interested Googlers, here&#8217;s what the relevant chunk of
+stacktrace looked&nbsp;like:</p>
 <pre class="code bash literal-block">
 javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated
 at sun.security.ssl.SSLSessionImpl.getPeerCertificates<span class="o">(</span>SSLSessionImpl.java:371<span class="o">)</span>
@@ -88,7 +88,7 @@ at org.apache.http.impl.client.AbstractHttpClient.execute<span class="o">(</span
 at org.apache.http.impl.client.AbstractHttpClient.execute<span class="o">(</span>AbstractHttpClient.java:732<span class="o">)</span>
 at org.jenkinsci.plugins.GithubSecurityRealm.doFinishLogin<span class="o">(</span>GithubSecurityRealm.java:278<span class="o">)</span>
 </pre>
-<p>This <a class="reference external" href="http://my.opera.com/karmazilla/blog/how-to-grab-the-certificate-from-a-website-and-import-it-with-java-keytool">fantastic post</a> set me on the right track.</p>
+<p>This <a class="reference external" href="http://my.opera.com/karmazilla/blog/how-to-grab-the-certificate-from-a-website-and-import-it-with-java-keytool">fantastic post</a> set me on the right&nbsp;track.</p>
 
     </div><!-- /.entry-content -->
         <div class="comments">

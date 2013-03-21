@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2009/09/ldap-authenticated-server-whoami-failures-etc/">LDAP-Authenticated Server &amp; Whoami Failures (etc)</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2009/09/ldap-authenticated-server-whoami-failures-etc/"><span class="caps">LDAP</span>-Authenticated Server <span class="amp">&amp;</span> Whoami Failures&nbsp;(etc)</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2009-09-28T11:53:00">
                 Mon 28 September 2009
@@ -43,16 +43,16 @@
         </address>
         <p>In <a href="../category/linux.html">Linux</a>. </p>
 <p>tags: <a href="../tag/authentication.html">authentication</a><a href="../tag/centos.html">centos</a><a href="../tag/chmod.html">chmod</a><a href="../tag/ldap.html">ldap</a><a href="../tag/login.html">login</a><a href="../tag/permissions.html">permissions</a><a href="../tag/users.html">users</a></p>
-</footer><!-- /.post-info --><p>I'm back again, after a bit of a unscheduled 'break' in my normal work
+</footer><!-- /.post-info --><p>I&#8217;m back again, after a bit of a unscheduled &#8216;break&#8217; in my normal work
 life.&nbsp; After a couple of days away for work on the Gold Coast, then the
 sad passing of my Grandfather and his memorial, then being sick over the
-last weekend from what I can only guess was a nasty 24-hour bug, I'm
-back.&nbsp; And whilst a little worse for wear still today, it's life pretty
-much as normal.</p>
-<p>Today's fun and games was on a server we use that uses LDAP
+last weekend from what I can only guess was a nasty 24-hour bug, I&#8217;m
+back.&nbsp; And whilst a little worse for wear still today, it&#8217;s life pretty
+much as&nbsp;normal.</p>
+<p>Today&#8217;s fun and games was on a server we use that uses <span class="caps">LDAP</span>
 authentication for its users.&nbsp; Nothing special, except that today I
-started getting weird errors when logging in as my LDAP account, and the
-server booting me off with random error messages:</p>
+started getting weird errors when logging in as my <span class="caps">LDAP</span> account, and the
+server booting me off with random error&nbsp;messages:</p>
 <pre class="literal-block">
 whoami: cannot find name for user ID 75966
 -tcsh: ldap-nss.c:1312: do\_init: Assertion \`cfg-&gt;ldc\_uris[\_\_session.ls\_current\_uri] != ((void \*)0)' failed.
@@ -60,14 +60,14 @@ whoami: cannot find name for user ID 75966
 <div class="section" id="solution">
 <h2>Solution</h2>
 <p>The simple solution was to check the permissions on <tt class="docutils literal">/etc/ldap.conf</tt>
-(Centos) and sure enough, the permissions weren't allowing normal users
-to read it (eg not 644).&nbsp; Running this solves the problem:</p>
+(Centos) and sure enough, the permissions weren&#8217;t allowing normal users
+to read it (eg not 644).&nbsp; Running this solves the&nbsp;problem:</p>
 <pre class="code bash literal-block">
 chmod 644 /etc/ldap.conf
 </pre>
 <p>Cheers to the author &#64;
 <a class="reference external" href="http://www.ducea.com/2008/03/07/ldap-troubleshooting-i-have-no-name/">http://www.ducea.com/2008/03/07/ldap-troubleshooting-i-have-no-name/</a> for
-the details.</p>
+the&nbsp;details.</p>
 </div>
 <p>There are <a href="../blog/2009/09/ldap-authenticated-server-whoami-failures-etc/#disqus_thread">comments</a>.</p>                </article>
                             </aside><!-- /#featured -->
@@ -81,7 +81,7 @@ the details.</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/09/the-biggest-problems-have-the-simplest-answers/" rel="bookmark"
-                           title="Permalink to Buildout: the biggest problems have the simplest answers...">Buildout: the biggest problems have the simplest answers...</a></h1>
+                           title="Permalink to Buildout: the biggest problems have the simplest answers…">Buildout: the biggest problems have the simplest&nbsp;answers&#8230;</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -95,13 +95,13 @@ the details.</p>
         </address>
         <p>In <a href="../category/buildout.html">Buildout</a>. </p>
 <p>tags: <a href="../tag/buildout.html">buildout</a><a href="../tag/centos.html">centos</a><a href="../tag/eggs.html">eggs</a><a href="../tag/linux.html">linux</a><a href="../tag/plone.html">plone</a><a href="../tag/ubuntu.html">ubuntu</a><a href="../tag/zope.html">zope</a></p>
-</footer><!-- /.post-info -->                <p>..and how true that is.&nbsp; Today's time consumer is directly related to
+</footer><!-- /.post-info -->                <p>..and how true that is.&nbsp; Today&#8217;s time consumer is directly related to
 just 1 misplaced line of a buildout configuration (and presumably
-something that's changed somewhere else).</p>
+something that&#8217;s changed somewhere&nbsp;else).</p>
 <div class="section" id="the-result">
-<h2>The result</h2>
-<p>After much hunting and hunting, it turns out my Zope2 Fake Eggs weren't
-being generated.</p>
+<h2>The&nbsp;result</h2>
+<p>After much hunting and hunting, it turns out my Zope2 Fake Eggs weren&#8217;t
+being&nbsp;generated.</p>
 <p>On my long ...</p></div>
                 <a class="readmore" href="../blog/2009/09/the-biggest-problems-have-the-simplest-answers/">read more</a>
                 <p>There are <a href="../blog/2009/09/the-biggest-problems-have-the-simplest-answers/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
@@ -112,7 +112,7 @@ being generated.</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/07/virtualenv-plone-and-centos-5/" rel="bookmark"
-                           title="Permalink to Virtualenv, Plone, and Centos 5.x">Virtualenv, Plone, and Centos 5.x</a></h1>
+                           title="Permalink to Virtualenv, Plone, and Centos 5.x">Virtualenv, Plone, and Centos&nbsp;5.x</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -126,10 +126,9 @@ being generated.</p>
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/centos.html">centos</a><a href="../tag/easy_install.html">easy_install</a><a href="../tag/plone.html">plone</a><a href="../tag/python.html">python</a><a href="../tag/rpm.html">rpm</a><a href="../tag/virtualenv.html">virtualenv</a></p>
-</footer><!-- /.post-info -->                <p><strong>EDIT:</strong> Watch out for python-ldap 2.3.10, the latest version at time
-of writing. Seems like there's an issue with it and Centos 5.4. Forcing
-python-ldap to be version 2.3.8 works, though. (easy_install
-python-ldap==2.3.8)</p>
+</footer><!-- /.post-info -->                <p><strong><span class="caps">EDIT</span>:</strong> Watch out for python-ldap 2.3.10, the latest version at time
+of writing. Seems like there&#8217;s an issue with it and Centos 5.4. Forcing
+python-ldap to be version 2.3.8 works, though. (easy_install&nbsp;python-ldap==2.3.8)</p>
 <p>Previously, you might have read about setting up ...</p>
                 <a class="readmore" href="../blog/2009/07/virtualenv-plone-and-centos-5/">read more</a>
                 <p>There are <a href="../blog/2009/07/virtualenv-plone-and-centos-5/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
@@ -140,7 +139,7 @@ python-ldap==2.3.8)</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/05/unix-removing-open-logical-volumes-in-centosrhl/" rel="bookmark"
-                           title="Permalink to Unix: Removing Open Logical Volumes in Centos/RHL">Unix: Removing Open Logical Volumes in Centos/RHL</a></h1>
+                           title="Permalink to Unix: Removing Open Logical Volumes in Centos/RHL">Unix: Removing Open Logical Volumes in&nbsp;Centos/<span class="caps">RHL</span></a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -154,10 +153,10 @@ python-ldap==2.3.8)</p>
         </address>
         <p>In <a href="../category/linux.html">Linux</a>. </p>
 <p>tags: <a href="../tag/centos.html">centos</a><a href="../tag/close.html">close</a><a href="../tag/logical.html">logical</a><a href="../tag/red-hat.html">red hat</a><a href="../tag/remove.html">remove</a><a href="../tag/unix.html">unix</a><a href="../tag/volume.html">volume</a></p>
-</footer><!-- /.post-info -->                <p>Because I still haven't remembered to set myself up with a
-limited-access account for blogging on my new site, I'm back here again.
-(EDIT: Migrated from old site)</p>
-<p>This time is a lot of fun and games with removing an &quot;open&quot; logical
+</footer><!-- /.post-info -->                <p>Because I still haven&#8217;t remembered to set myself up with a
+limited-access account for blogging on my new site, I&#8217;m back here again.
+(<span class="caps">EDIT</span>: Migrated from old&nbsp;site)</p>
+<p>This time is a lot of fun and games with removing an &#8220;open&#8221; logical
 volume from within a CentOS environment ...</p>
                 <a class="readmore" href="../blog/2009/05/unix-removing-open-logical-volumes-in-centosrhl/">read more</a>
                 <p>There are <a href="../blog/2009/05/unix-removing-open-logical-volumes-in-centosrhl/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->

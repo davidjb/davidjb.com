@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2011/05/building-cherokee-rpms-on-rhel-6-x86_64/">Building Cherokee RPMs on RHEL 6 (x86_64)</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2011/05/building-cherokee-rpms-on-rhel-6-x86_64/">Building Cherokee RPMs on <span class="caps">RHEL</span> 6&nbsp;(x86_64)</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2011-05-31T12:27:00">
                 Tue 31 May 2011
@@ -43,27 +43,27 @@
         </address>
         <p>In <a href="../category/it.html">IT</a>. </p>
 <p>tags: <a href="../tag/build.html">build</a><a href="../tag/cherokee.html">cherokee</a><a href="../tag/el.html">el</a><a href="../tag/red-hat.html">red hat</a><a href="../tag/rhel.html">rhel</a><a href="../tag/rpm.html">rpm</a></p>
-</footer><!-- /.post-info --><p><a class="reference external" href="http://www.cherokee-project.com/">Cherokee</a> is a fast web server and something I'm looking
+</footer><!-- /.post-info --><p><a class="reference external" href="http://www.cherokee-project.com/">Cherokee</a> is a fast web server and something I&#8217;m looking
 at using instead of my current Apache installs in order to squeeze a bit
-(lot) more juice out of my web services.</p>
-<p>You can easily install Cherokee via its automated scripting and that's
-really useful.&nbsp; Unfortunately, since I'm within a RedHat environment,
+(lot) more juice out of my web&nbsp;services.</p>
+<p>You can easily install Cherokee via its automated scripting and that&#8217;s
+really useful.&nbsp; Unfortunately, since I&#8217;m within a RedHat environment,
 init scripts and other useful aspects that come packaged with Apache
-don't get installed when installing from source. Now, there's a lot of
+don&#8217;t get installed when installing from source. Now, there&#8217;s a lot of
 activity regarding installing the latest packages for Ubuntu, but not
-much of anything recent for RHEL (current Cherokee is 1.2.98 and latest
-RHEL packages are 1.2.1).&nbsp; Since development of Cherokee appears to be
+much of anything recent for <span class="caps">RHEL</span> (current Cherokee is 1.2.98 and latest
+<span class="caps">RHEL</span> packages are 1.2.1).&nbsp; Since development of Cherokee appears to be
 moving very fast, having the most recent version is always a good choice
-for bug fixes and new features.</p>
-<p>So, how about creating packages for RHEL 6?&nbsp; The good news is that
-Fedora does have a git repo for the RPM spec and relevant scripts, and
-that repo has a branch for EL6.</p>
-<p>That said, there's no guarantee this branch will continue to work for
-future Cherokee or EL versions, so if there's a problem running the
-following RPM build, then someone will have to fix whatever error takes
+for bug fixes and new&nbsp;features.</p>
+<p>So, how about creating packages for <span class="caps">RHEL</span> 6?&nbsp; The good news is that
+Fedora does have a git repo for the <span class="caps">RPM</span> spec and relevant scripts, and
+that repo has a branch for&nbsp;<span class="caps">EL6</span>.</p>
+<p>That said, there&#8217;s no guarantee this branch will continue to work for
+future Cherokee or <span class="caps">EL</span> versions, so if there&#8217;s a problem running the
+following <span class="caps">RPM</span> build, then someone will have to fix whatever error takes
 place. That said, for now, on version 1.2.98 of Cherokee, things work,
-as far as I can tell for Cherokee (also, disclaimer: I'm not an RHEL/RPM
-expert). That said, here's what I did:</p>
+as far as I can tell for Cherokee (also, disclaimer: I&#8217;m not an <span class="caps">RHEL</span>/<span class="caps">RPM</span>
+expert). That said, here&#8217;s what I&nbsp;did:</p>
 <pre class="code bash literal-block">
 yum install rpm-build spectool pam-devel gettext
 cherokee<span class="se">\_</span>version<span class="o">=</span>1.2.98
@@ -90,7 +90,7 @@ yum install cherokee-<span class="se">\*</span>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/07/virtualenv-plone-and-centos-5/" rel="bookmark"
-                           title="Permalink to Virtualenv, Plone, and Centos 5.x">Virtualenv, Plone, and Centos 5.x</a></h1>
+                           title="Permalink to Virtualenv, Plone, and Centos 5.x">Virtualenv, Plone, and Centos&nbsp;5.x</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -104,10 +104,9 @@ yum install cherokee-<span class="se">\*</span>
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/centos.html">centos</a><a href="../tag/easy_install.html">easy_install</a><a href="../tag/plone.html">plone</a><a href="../tag/python.html">python</a><a href="../tag/rpm.html">rpm</a><a href="../tag/virtualenv.html">virtualenv</a></p>
-</footer><!-- /.post-info -->                <p><strong>EDIT:</strong> Watch out for python-ldap 2.3.10, the latest version at time
-of writing. Seems like there's an issue with it and Centos 5.4. Forcing
-python-ldap to be version 2.3.8 works, though. (easy_install
-python-ldap==2.3.8)</p>
+</footer><!-- /.post-info -->                <p><strong><span class="caps">EDIT</span>:</strong> Watch out for python-ldap 2.3.10, the latest version at time
+of writing. Seems like there&#8217;s an issue with it and Centos 5.4. Forcing
+python-ldap to be version 2.3.8 works, though. (easy_install&nbsp;python-ldap==2.3.8)</p>
 <p>Previously, you might have read about setting up ...</p>
                 <a class="readmore" href="../blog/2009/07/virtualenv-plone-and-centos-5/">read more</a>
                 <p>There are <a href="../blog/2009/07/virtualenv-plone-and-centos-5/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->

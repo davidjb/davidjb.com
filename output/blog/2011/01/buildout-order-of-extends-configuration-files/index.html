@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Buildout: order of 'extends' configuration files</title>
+        <title>Buildout: order of ‘extends’ configuration files</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2011/01/buildout-order-of-extends-configuration-files/" rel="bookmark"
-           title="Permalink to Buildout: order of 'extends' configuration files">Buildout: order of 'extends' configuration files</a></h1>
+           title="Permalink to Buildout: order of ‘extends’ configuration files">Buildout: order of &#8216;extends&#8217; configuration&nbsp;files</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -48,11 +48,11 @@
         <p>In <a href="../../../../category/python.html">Python</a>. </p>
 <p>tags: <a href="../../../../tag/buildout.html">buildout</a><a href="../../../../tag/config.html">config</a><a href="../../../../tag/dexterity.html">dexterity</a><a href="../../../../tag/extends.html">extends</a><a href="../../../../tag/ordering.html">ordering</a><a href="../../../../tag/plone.html">plone</a></p>
 </footer><!-- /.post-info -->      <p>Yet another word to the wise: take care of your ordering of the
-'extends' configuration files within your buildout.&nbsp; It makes complete
+&#8216;extends&#8217; configuration files within your buildout.&nbsp; It makes complete
 sense, and especially so with respect to version pinning: the later
-configuration's versions will be the last one applied.</p>
+configuration&#8217;s versions will be the last one&nbsp;applied.</p>
 <p>So, it makes a lot of sense (in hindsight!) that this configuration, and
-the fact I have version pins in my base.cfg, isn't going to end well:</p>
+the fact I have version pins in my base.cfg, isn&#8217;t going to end&nbsp;well:</p>
 <pre class="code ini literal-block">
 <span class="k">[buildout]</span>
 <span class="na">extends</span> <span class="o">=</span><span class="s">
@@ -60,13 +60,13 @@ the fact I have version pins in my base.cfg, isn't going to end well:</p>
     http://good-py.appspot.com/release/dexterity/1.0b2</span>
 </pre>
 <p>The Dexterity version pins are going to override the ones I have in my
-base.cfg.&nbsp; This ends up meaning that Plone 4's version pins get applied
-first (Plone's main cfg is included in my base.cfg), then my 'custom'
-pins in base.cfg, then Dexterity's over the top.&nbsp; Any custom pins I had
-for packages used in Dexterity's KGS just got squashed.</p>
-<p>Essentially, if it looks like Buildout isn't paying attention to your
-package pins, it's not because it's being disobedient, it's likely
-because something's overriding your settings.</p>
+base.cfg.&nbsp; This ends up meaning that Plone 4&#8217;s version pins get applied
+first (Plone&#8217;s main cfg is included in my base.cfg), then my &#8216;custom&#8217;
+pins in base.cfg, then Dexterity&#8217;s over the top.&nbsp; Any custom pins I had
+for packages used in Dexterity&#8217;s <span class="caps">KGS</span> just got&nbsp;squashed.</p>
+<p>Essentially, if it looks like Buildout isn&#8217;t paying attention to your
+package pins, it&#8217;s not because it&#8217;s being disobedient, it&#8217;s likely
+because something&#8217;s overriding your&nbsp;settings.</p>
 
     </div><!-- /.entry-content -->
         <div class="comments">

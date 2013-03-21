@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Linux: Printing at James Cook University</title>
+        <title>Linux: Printing at James Cook University</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2010/10/linux-printing-at-james-cook-university/" rel="bookmark"
-           title="Permalink to Linux: Printing at James Cook University">Linux: Printing at James Cook University</a></h1>
+           title="Permalink to Linux: Printing at James Cook University">Linux: Printing at James Cook&nbsp;University</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -47,37 +47,37 @@
         </address>
         <p>In <a href="../../../../category/linux.html">Linux</a>. </p>
 
-</footer><!-- /.post-info -->      <p>Printing at JCU is difficult on Linux, given JCU exists as a Windows
-environment. The fact that Xerox Postscript drivers for Linux aren't
-exactly straight forward to install doesn't help either - they require
-custom filter applications to be compiled.</p>
+</footer><!-- /.post-info -->      <p>Printing at <span class="caps">JCU</span> is difficult on Linux, given <span class="caps">JCU</span> exists as a Windows
+environment. The fact that Xerox Postscript drivers for Linux aren&#8217;t
+exactly straight forward to install doesn&#8217;t help either - they require
+custom filter applications to be&nbsp;compiled.</p>
 <div class="section" id="setting-up-the-drivers">
-<h2>Setting up the drivers</h2>
+<h2>Setting up the&nbsp;drivers</h2>
 <ol class="arabic">
 <li><p class="first">To make sure you have the right drivers, get this file:
 <a class="reference external" href="http://davidjb.com/wp-content/uploads/2008/12/fxlinuxprint-src-1.0.1.tar.gz">fxlinuxprint-src-1.0.1.tar.gz</a>, which is the drive source kindly
 obtained from the <a class="reference external" href="http://www.fujixerox.co.jp/download/apeosport/download/c4300series/linux_module.html">Japanese Xerox site</a>.</p>
 </li>
-<li><p class="first">Extract the archive somewhere on your hard drive:</p>
+<li><p class="first">Extract the archive somewhere on your hard&nbsp;drive:</p>
 <pre class="code bash literal-block">
 tar -xf fxlinuxprint-src-1.0.1.tar.gz
 </pre>
 </li>
-<li><p class="first">Make sure you've got <strong>build-essential</strong> and <strong>libcups2-dev</strong>
+<li><p class="first">Make sure you&#8217;ve got <strong>build-essential</strong> and <strong>libcups2-dev</strong>
 packages installed (if on Debian/Ubuntu). Other systems (Red Hat,
-CentOS) will require equivalent packages; post if you've done it.</p>
+CentOS) will require equivalent packages; post if you&#8217;ve done&nbsp;it.</p>
 <pre class="code bash literal-block">
 sudo apt-get install build-essential libcups2-dev
 </pre>
 </li>
-<li><p class="first">CMMI:</p>
+<li><p class="first"><span class="caps">CMMI</span>:</p>
 <pre class="code bash literal-block">
 ./configure
 make
 sudo make install
 </pre>
 </li>
-<li><p class="first">Select this as your PPD when adding your printer as this file:</p>
+<li><p class="first">Select this as your <span class="caps">PPD</span> when adding your printer as this&nbsp;file:</p>
 <pre class="code bash literal-block">
 /usr/share/cups/model/FujiXerox/en/fxlinuxprint.ppd<span class="o">[</span>/sourcecode<span class="o">]</span>
 </pre>
@@ -85,24 +85,24 @@ sudo make install
 </ol>
 </div>
 <div class="section" id="setting-up-the-printer">
-<h2>Setting up the printer</h2>
+<h2>Setting up the&nbsp;printer</h2>
 <ol class="arabic simple">
-<li>Add a new <tt class="docutils literal">Windows printer via SAMBA</tt></li>
+<li>Add a new <tt class="docutils literal">Windows printer via <span class="caps">SAMBA</span></tt></li>
 <li>Specify the printer address as
-<tt class="docutils literal"><span class="pre">smb://AD/137.219.9.111/DB017-51-Colour</span></tt>, where 'DB017-51-Colour'
-is your printer name (you'll probably need to ask someone or browse
+<tt class="docutils literal"><span class="pre">smb://<span class="caps">AD</span>/137.219.9.111/<span class="caps">DB017</span>-51-Colour</span></tt>, where &#8216;<span class="caps">DB017</span>-51-Colour&#8217;
+is your printer name (you&#8217;ll probably need to ask someone or browse
 the machine at 137.219.9.111 to find out; on Linux you can use
 <tt class="docutils literal">smbclient <span class="pre">-L</span> [hostname]</tt>)</li>
-<li>Set your authentication details (JC number and password)</li>
-<li>Press Verify to make sure it works, and then click Forward</li>
-<li>Under &quot;Choose Driver&quot; (or when selecting a Make and Model), make sure
-you choose to &quot;Provide PPD file&quot;, and use the one that you've just
+<li>Set your authentication details (<span class="caps">JC</span> number and&nbsp;password)</li>
+<li>Press Verify to make sure it works, and then click&nbsp;Forward</li>
+<li>Under &#8220;Choose Driver&#8221; (or when selecting a Make and Model), make sure
+you choose to &#8220;Provide <span class="caps">PPD</span> file&#8221;, and use the one that you&#8217;ve just
 installed using the instructions above.
 (<tt class="docutils literal">/usr/share/cups/model/FujiXerox/en/fxlinuxprint.ppd</tt>). Click
-'Forward' when done.</li>
-<li>Add the rest of your printer's details and click Apply.</li>
+&#8216;Forward&#8217; when&nbsp;done.</li>
+<li>Add the rest of your printer&#8217;s details and click&nbsp;Apply.</li>
 </ol>
-<p>Try and print something and it should be good now.</p>
+<p>Try and print something and it should be good&nbsp;now.</p>
 </div>
 
     </div><!-- /.entry-content -->

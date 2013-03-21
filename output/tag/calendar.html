@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2009/12/logged-out-users-cant-bring-up-the-plone-popup-calendar/">Logged out users can't bring up the Plone popup calendar</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2009/12/logged-out-users-cant-bring-up-the-plone-popup-calendar/">Logged out users can&#8217;t bring up the Plone popup&nbsp;calendar</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2009-12-18T12:10:00">
                 Fri 18 December 2009
@@ -43,36 +43,36 @@
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/authenticated.html">authenticated</a><a href="../tag/calendar.html">calendar</a><a href="../tag/css.html">css</a><a href="../tag/javascript.html">javascript</a><a href="../tag/members.html">members</a><a href="../tag/plone.html">plone</a><a href="../tag/popup.html">popup</a><a href="../tag/problem.html">problem</a><a href="../tag/testing.html">testing</a><a href="../tag/users.html">users</a></p>
-</footer><!-- /.post-info --><p>It's another one of those 'strange' problems that has cropped up, but by
-default in Plone, users who aren't authenticated aren't actually able to
-bring up a pop-up calendar on a date field.</p>
-<p>It's amazing that I haven't run into this issue before with something
-like PloneFormGen, where you'd think that a simple Date input field
-would be pretty common.&nbsp; Although, I guess it's the case that even
-though I've used these given forms, I've probably never taken much
+</footer><!-- /.post-info --><p>It&#8217;s another one of those &#8216;strange&#8217; problems that has cropped up, but by
+default in Plone, users who aren&#8217;t authenticated aren&#8217;t actually able to
+bring up a pop-up calendar on a date&nbsp;field.</p>
+<p>It&#8217;s amazing that I haven&#8217;t run into this issue before with something
+like PloneFormGen, where you&#8217;d think that a simple Date input field
+would be pretty common.&nbsp; Although, I guess it&#8217;s the case that even
+though I&#8217;ve used these given forms, I&#8217;ve probably never taken much
 notice of the popup calendar icon and just selected a random date from
 the drop-down lists.&nbsp; I suppose entering a random number on they
 keyboard and hitting tab across the fields 3 times is simpler than going
-for the mouse.&nbsp; Who knows.</p>
+for the mouse.&nbsp; Who&nbsp;knows.</p>
 <p>Anyway, the issue presents itself with an error in the Javascript on the
-page, with something like 'plone.jscalendar not defined', if my memory
-serves me correctly.&nbsp; I believe that Firebug/Firefox didn't show up an
+page, with something like &#8216;plone.jscalendar not defined&#8217;, if my memory
+serves me correctly.&nbsp; I believe that Firebug/Firefox didn&#8217;t show up an
 error for me (because I was logged in!) so make sure you test this on
-your site when you're logged out, if you've got such fields.&nbsp; Testing in
-IE revealed the problem since my IE versions in my VM can't actually
+your site when you&#8217;re logged out, if you&#8217;ve got such fields.&nbsp; Testing in
+<span class="caps">IE</span> revealed the problem since my <span class="caps">IE</span> versions in my <span class="caps">VM</span> can&#8217;t actually
 enter details into form fields, thus preventing me <em>from</em> actually
-logging in.</p>
+logging&nbsp;in.</p>
 <div class="section" id="solution">
 <h2>Solution</h2>
 <p>The solution was the only Google result at the time, and that was at:
 <a class="reference external" href="http://plone.org/products/ploneformgen/issues/232">http://plone.org/products/ploneformgen/issues/232</a></p>
 <p>Essentially, head into the portal_css and portal_javascripts areas in
-the ZMI and look search on the page for &quot;calendar&quot;.&nbsp; You should find
-that the 'condition' on these resources isn't right (eg only logged in
-users or &quot;not: portal/portal_membership/isAnonymousUser&quot; is set or
-isn't correct at all).&nbsp; Correct it accordingly to be blank (easiest
+the <span class="caps">ZMI</span> and look search on the page for &#8220;calendar&#8221;.&nbsp; You should find
+that the &#8216;condition&#8217; on these resources isn&#8217;t right (eg only logged in
+users or &#8220;not: portal/portal_membership/isAnonymousUser&#8221; is set or
+isn&#8217;t correct at all).&nbsp; Correct it accordingly to be blank (easiest
 way!) and save.&nbsp; You may need to enable/reload/disable the debugging
-modes for the CSS and JS to see the change immediately.</p>
+modes for the <span class="caps">CSS</span> and <span class="caps">JS</span> to see the change&nbsp;immediately.</p>
 </div>
 <p>There are <a href="../blog/2009/12/logged-out-users-cant-bring-up-the-plone-popup-calendar/#disqus_thread">comments</a>.</p>                </article>
                             </aside><!-- /#featured -->
@@ -86,7 +86,7 @@ modes for the CSS and JS to see the change immediately.</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/09/ploneformgen-plone-google-calendar-integration/" rel="bookmark"
-                           title="Permalink to PloneFormGen (Plone) & Google Calendar Integration">PloneFormGen (Plone) &amp; Google Calendar Integration</a></h1>
+                           title="Permalink to PloneFormGen (Plone) & Google Calendar Integration">PloneFormGen (Plone) <span class="amp">&amp;</span> Google Calendar&nbsp;Integration</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -100,7 +100,7 @@ modes for the CSS and JS to see the change immediately.</p>
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/calendar.html">calendar</a><a href="../tag/form.html">form</a><a href="../tag/gen.html">gen</a><a href="../tag/google.html">google</a><a href="../tag/mash.html">mash</a><a href="../tag/pfg.html">pfg</a><a href="../tag/plone.html">plone</a><a href="../tag/product.html">product</a><a href="../tag/python.html">python</a><a href="../tag/script.html">script</a></p>
-</footer><!-- /.post-info -->                <p>It's a little bit of a different mash-up, but it's still nonetheless
+</footer><!-- /.post-info -->                <p>It&#8217;s a little bit of a different mash-up, but it&#8217;s still nonetheless
 useful to have, given types of booking forms and so forth that could
 utilise it.&nbsp; The easiest way I found (to avoid security issues with
 Python scripts in Plone) was to create an external method and ...</p>
@@ -113,7 +113,7 @@ Python scripts in Plone) was to create an external method and ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/02/plone-google-calendar-integration/" rel="bookmark"
-                           title="Permalink to Plone: Google Calendar Integration">Plone: Google Calendar Integration</a></h1>
+                           title="Permalink to Plone: Google Calendar Integration">Plone: Google Calendar&nbsp;Integration</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -127,9 +127,9 @@ Python scripts in Plone) was to create an external method and ...</p>
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/add-to.html">add to</a><a href="../tag/calendar.html">calendar</a><a href="../tag/event.html">event</a><a href="../tag/google.html">google</a><a href="../tag/integration.html">integration</a><a href="../tag/plone.html">plone</a></p>
-</footer><!-- /.post-info -->                <p>Wouldn't it be great if you could somehow add your Event content item
-within the Plone CMS onto your Google Calendar with just a click? (it'd
-be better with fewer, but 1 click is pretty good - give me a break!)</p>
+</footer><!-- /.post-info -->                <p>Wouldn&#8217;t it be great if you could somehow add your Event content item
+within the Plone <span class="caps">CMS</span> onto your Google Calendar with just a click? (it&#8217;d
+be better with fewer, but 1 click is pretty good - give me a&nbsp;break!)</p>
 <p>Try this placed inside the <tt class="docutils literal">event_view</tt> page template ...</p>
                 <a class="readmore" href="../blog/2009/02/plone-google-calendar-integration/">read more</a>
                 <p>There are <a href="../blog/2009/02/plone-google-calendar-integration/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->

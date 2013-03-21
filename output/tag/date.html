@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2010/07/plonezope-truncating-a-data-fs-back-to-a-certain-datetime/">Plone/Zope: Truncating a Data.fs back to a certain date/time</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2010/07/plonezope-truncating-a-data-fs-back-to-a-certain-datetime/">Plone/Zope: Truncating a Data.fs back to a certain&nbsp;date/time</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2010-07-20T13:39:00">
                 Tue 20 July 2010
@@ -43,74 +43,72 @@
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/datafs.html">data.fs</a><a href="../tag/database.html">database</a><a href="../tag/date.html">date</a><a href="../tag/fix.html">fix</a><a href="../tag/linux.html">linux</a><a href="../tag/plone.html">plone</a><a href="../tag/python.html">python</a><a href="../tag/time.html">time</a><a href="../tag/truncate.html">truncate</a><a href="../tag/zeo.html">zeo</a><a href="../tag/zodb.html">zodb</a><a href="../tag/zodb3.html">zodb3</a><a href="../tag/zope.html">zope</a></p>
-</footer><!-- /.post-info --><p>Okay. So, anyone out here who's listening -- particularly those
-overly-enthusiastic users -- don't try to recursively <tt class="docutils literal">wget</tt> your
-Plone site (or other CMS, for that matter) whilst you're logged in with
+</footer><!-- /.post-info --><p>Okay. So, anyone out here who&#8217;s listening &#8212; particularly those
+overly-enthusiastic users &#8212; don&#8217;t try to recursively <tt class="docutils literal">wget</tt> your
+Plone site (or other <span class="caps">CMS</span>, for that matter) whilst you&#8217;re logged in with
 an account that can make edits. It <strong>will</strong> lead to a very bad situation
 where your site administrator and technical team need to step in and fix
 your mistakes. For the uninitiated, a loose recursive wget (when logged
-in with some degree of Edit rights) will hit every link that's on your
-pages, and I mean in the (X)HTML <em>source</em>. For a Plone site, this means
-hitting every &quot;Edit&quot; link, every &quot;Revert to this version&quot; link, and
+in with some degree of Edit rights) will hit every link that&#8217;s on your
+pages, and I mean in the (X)<span class="caps">HTML</span> <em>source</em>. For a Plone site, this means
+hitting every &#8220;Edit&#8221; link, every &#8220;Revert to this version&#8221; link, and
 every other link that might be dangerous when clicked randomly. Oh, and
-if the account you've got has admin rights, well, it's not getting any
+if the account you&#8217;ve got has admin rights, well, it&#8217;s not getting any
 better and requires the Data.fs to be undone back to before it happened.
-Here's how to do that easily.</p>
-<p>So enough of the backstory. How to fix a suitably bollocks'd Data.fs?
-Well, the easy answer is to recover from a backup. Of course you've got
+Here&#8217;s how to do that&nbsp;easily.</p>
+<p>So enough of the backstory. How to fix a suitably bollocks&#8217;d Data.fs?
+Well, the easy answer is to recover from a backup. Of course you&#8217;ve got
 plenty of those, right? No? Oh dear. Never to stress, you can use your
 existing Data.fs file and strip away any number of transactions, to
-bring your file back to any date, time, or transaction you'd like.</p>
+bring your file back to any date, time, or transaction you&#8217;d&nbsp;like.</p>
 <ol class="arabic">
-<li><p class="first">Realise you'll be losing everything from now back until then, so take
+<li><p class="first">Realise you&#8217;ll be losing everything from now back until then, so take
 a copy of data off your Plone site, back up your Data.fs (twice, if
-need be), and make it crystal clear to your users changes are going
-bye-by.</p>
+need be), and make it crystal clear to your users changes are going&nbsp;bye-by.</p>
 </li>
 <li><p class="first">Figure out when you want to go back to.&nbsp; If you want a particular
 transaction, consider checking your Zope Undo log to locate the
 specific date/time of a given transaction.&nbsp; Otherwise, figure out the
-date and time.&nbsp; Then, convert that date and time to UTC as that what
-date/times are in the Data.fs.&nbsp; In Queensland, Australia, we're +10
-hours.</p>
+date and time.&nbsp; Then, convert that date and time to <span class="caps">UTC</span> as that what
+date/times are in the Data.fs.&nbsp; In Queensland, Australia, we&#8217;re +10&nbsp;hours.</p>
 </li>
-<li><p class="first">Shut down ZEO if it's still running.</p>
+<li><p class="first">Shut down <span class="caps">ZEO</span> if it&#8217;s still&nbsp;running.</p>
 </li>
-<li><p class="first">Edit <tt class="docutils literal">parts/zope2/lib/python/ZODB/FileStorage/fsdump.py</tt>, and add
-this to allow you to run this file:</p>
+<li><p class="first">Edit <tt class="docutils literal">parts/zope2/lib/python/<span class="caps">ZODB</span>/FileStorage/fsdump.py</tt>, and add
+this to allow you to run this&nbsp;file:</p>
 <pre class="code python literal-block">
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </pre>
 </li>
-<li><p class="first">Get your PYTHONPATH sorted for running this file.&nbsp; Consider
-<tt class="docutils literal">./bin/instance1</tt> shell, if you've got a Plone instance, or using
-zopepy.&nbsp; Manually update it if necessary.</p>
+<li><p class="first">Get your <span class="caps">PYTHONPATH</span> sorted for running this file.&nbsp; Consider
+<tt class="docutils literal">./bin/instance1</tt> shell, if you&#8217;ve got a Plone instance, or using
+zopepy.&nbsp; Manually update it if&nbsp;necessary.</p>
 </li>
 <li><p class="first">Run the the <tt class="docutils literal">fsdump.py</tt> script thusly, substituting the date for
-yours (or a date/time):</p>
+yours (or a&nbsp;date/time):</p>
 <pre class="code bash literal-block">
 ./bin/python parts/zope2/lib/python/ZODB/FileStorage/fsdump.py var/filestorage/Data.fs | grep 2010-07-12
 </pre>
 <p>This will tell you exactly the offset you need to truncate the
-Data.fs file.</p>
+Data.fs&nbsp;file.</p>
 </li>
 <li><p class="first">Take that offset amount and truncate your Data.fs file, inserting the
-number after &quot;seek=&quot;:</p>
+number after&nbsp;&#8220;seek=&#8221;:</p>
 <pre class="code bash literal-block">
 dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>var/filestorage/Data.fs <span class="nv">seek</span><span class="o">=</span>199340531 <span class="nv">bs</span><span class="o">=</span>1 <span class="nv">count</span><span class="o">=</span>0
 </pre>
 </li>
-<li><p class="first">Restart your ZEO service and re-connect to it from your Plone/Zope
+<li><p class="first">Restart your <span class="caps">ZEO</span> service and re-connect to it from your Plone/Zope
 instance.&nbsp; Your database should be back to the date and time you
-specified.&nbsp; If it's close, but not quite right, check your times and
-that they're UTC.</p>
+specified.&nbsp; If it&#8217;s close, but not quite right, check your times and
+that they&#8217;re&nbsp;<span class="caps">UTC</span>.</p>
 </li>
 <li><p class="first">Get some backups and politely ask your users to think twice about any
-such consequences next time.</p>
+such consequences next&nbsp;time.</p>
 </li>
 </ol>
-<p>And we're done!</p>
+<p>And we&#8217;re&nbsp;done!</p>
 <p>There are <a href="../blog/2010/07/plonezope-truncating-a-data-fs-back-to-a-certain-datetime/#disqus_thread">comments</a>.</p>                </article>
                             </aside><!-- /#featured -->
                             <section id="content" class="body">
@@ -123,7 +121,7 @@ such consequences next time.</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2010/04/good-morning-world-plone-day/" rel="bookmark"
-                           title="Permalink to Good Morning World Plone Day!">Good Morning World Plone Day!</a></h1>
+                           title="Permalink to Good Morning World Plone Day!">Good Morning World Plone&nbsp;Day!</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -138,9 +136,9 @@ such consequences next time.</p>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/date.html">date</a><a href="../tag/food.html">food</a><a href="../tag/life.html">life</a><a href="../tag/plone.html">plone</a><a href="../tag/sweets.html">sweets</a><a href="../tag/tasty.html">tasty</a><a href="../tag/wpd.html">wpd</a></p>
 </footer><!-- /.post-info -->                <p>Good morning from the land down under and welcome to World Plone Day
-2010! It's right on the hour (well, just after now) and 28 April 2010 --
-and yes, that's World Plone Day to the uninitiated. To celebrate and to
-mark the occasion, I'll be holding a ...</p>
+2010! It&#8217;s right on the hour (well, just after now) and 28 April 2010 &#8212;
+and yes, that&#8217;s World Plone Day to the uninitiated. To celebrate and to
+mark the occasion, I&#8217;ll be holding a ...</p>
                 <a class="readmore" href="../blog/2010/04/good-morning-world-plone-day/">read more</a>
                 <p>There are <a href="../blog/2010/04/good-morning-world-plone-day/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
@@ -150,7 +148,7 @@ mark the occasion, I'll be holding a ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/09/git-and-checkouts-by-date/" rel="bookmark"
-                           title="Permalink to Git and checkouts by date">Git and checkouts by date</a></h1>
+                           title="Permalink to Git and checkouts by date">Git and checkouts by&nbsp;date</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -166,7 +164,7 @@ mark the occasion, I'll be holding a ...</p>
 <p>tags: <a href="../tag/date.html">date</a><a href="../tag/git.html">git</a><a href="../tag/history.html">history</a><a href="../tag/versions.html">versions</a></p>
 </footer><!-- /.post-info -->                <p>Cheers to this <a class="reference external" href="http://www.bramschoenmakers.nl/en/node/645">very handy post</a> for posting details from Nabble on how
 to check out a git branch based upon the date it was commited.&nbsp; If I
-haven't modified Wordpress to turn off the character replacement, then
+haven&#8217;t modified Wordpress to turn off the character replacement, then
 watch out because the double-quotes and double-dash will need to be ...</p>
                 <a class="readmore" href="../blog/2009/09/git-and-checkouts-by-date/">read more</a>
                 <p>There are <a href="../blog/2009/09/git-and-checkouts-by-date/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
@@ -177,7 +175,7 @@ watch out because the double-quotes and double-dash will need to be ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/06/datetime-in-pythonzopeplone-is-painful/" rel="bookmark"
-                           title="Permalink to DateTime in Python/Zope/Plone is painful">DateTime in Python/Zope/Plone is painful</a></h1>
+                           title="Permalink to DateTime in Python/Zope/Plone is painful">DateTime in Python/Zope/Plone is&nbsp;painful</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -191,11 +189,10 @@ watch out because the double-quotes and double-dash will need to be ...</p>
         </address>
         <p>In <a href="../category/python.html">Python</a>. </p>
 <p>tags: <a href="../tag/comparison.html">comparison</a><a href="../tag/date.html">date</a><a href="../tag/plone.html">plone</a><a href="../tag/problem.html">problem</a><a href="../tag/python.html">python</a><a href="../tag/time.html">time</a><a href="../tag/zope.html">zope</a></p>
-</footer><!-- /.post-info -->                <p>Alright, now for today's problem:&nbsp; why do two dates that look different
-when outputted actually end up being the same date?</p>
-<p><strong>Answer:</strong> I'm not sure, but I'm pretty sure it's got something to do
-with the wacky support the above-mentioned 3 products have for
-timezones.</p>
+</footer><!-- /.post-info -->                <p>Alright, now for today&#8217;s problem:&nbsp; why do two dates that look different
+when outputted actually end up being the same&nbsp;date?</p>
+<p><strong>Answer:</strong> I&#8217;m not sure, but I&#8217;m pretty sure it&#8217;s got something to do
+with the wacky support the above-mentioned 3 products have for&nbsp;timezones.</p>
 <p><strong>The ...</strong></p>
                 <a class="readmore" href="../blog/2009/06/datetime-in-pythonzopeplone-is-painful/">read more</a>
                 <p>There are <a href="../blog/2009/06/datetime-in-pythonzopeplone-is-painful/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->

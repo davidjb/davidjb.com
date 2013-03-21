@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2012/06/serving-tilestache-or-another-app-using-uwsgi-against-a-web-sub-directory/">Serving TileStache (or another app) using uWSGI against a web sub-directory</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2012/06/serving-tilestache-or-another-app-using-uwsgi-against-a-web-sub-directory/">Serving TileStache (or another app) using uWSGI against a web&nbsp;sub-directory</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2012-06-01T12:41:00">
                 Fri 01 June 2012
@@ -46,14 +46,14 @@
 </footer><!-- /.post-info --><p><a class="reference external" href="http://projects.unbit.it/uwsgi/">uWSGI</a> is extremely promising as an application server given its huge
 range of options and supported platforms. &nbsp;For me, however, just getting
 something seemingly simple up and running successfully was relatively
-confusing. I'd like to contribute to the documentation when I can, but
+confusing. I&#8217;d like to contribute to the documentation when I can, but
 thought a dedicated page about <a class="reference external" href="http://tilestache.org">TileStache</a> as a specific application
 (and associated configuration) was warranted. It does make more sense
-now, thankfully.</p>
+now,&nbsp;thankfully.</p>
 <p>I want to serve my TileStache application at <a class="reference external" href="http://mydomain.com/tiles">http://mydomain.com/tiles</a>
-(taking careful note of the sub-directory present). I've chosen an
-INI-style configuration for my instance and here's what the final result
-looks like (loads using <tt class="docutils literal">uwsgi <span class="pre">--ini</span> my_uwsgi.ini</tt>):</p>
+(taking careful note of the sub-directory present). I&#8217;ve chosen an
+<span class="caps">INI</span>-style configuration for my instance and here&#8217;s what the final result
+looks like (loads using <tt class="docutils literal">uwsgi <span class="pre">&#8212;ini</span> my_uwsgi.ini</tt>):</p>
 <pre class="code ini literal-block">
 <span class="k">[uwsgi]</span>
 <span class="na">processes</span> <span class="o">=</span> <span class="s">8</span>
@@ -66,32 +66,30 @@ looks like (loads using <tt class="docutils literal">uwsgi <span class="pre">--i
 </pre>
 <p>The available options for uWSGI are extremely comprehensive and fairly
 bewildering for someone just starting off. The main issue I faced was
-the fact the <em>--module</em> option doesn't support argument passing. This
+the fact the <em>&#8212;module</em> option doesn&#8217;t support argument passing. This
 was a big one because documentation like <a class="reference external" href="http://projects.unbit.it/uwsgi/wiki/Quickstart">this</a> shows empty rounded
 brackets and the programmer in me instinctively thought of this as an
 Python object call. Not so. In order to pass arguments, you either need
-<em>--eval</em> or to do what I did and create a separate file and mount that.
-Where I have <em>app.py</em> specified above, this is the definition for said
-file:</p>
+<em>&#8212;eval</em> or to do what I did and create a separate file and mount that.
+Where I have <em>app.py</em> specified above, this is the definition for said&nbsp;file:</p>
 <pre class="code python literal-block">
 <span class="kn">import</span> <span class="nn">TileStache</span>
 <span class="n">application</span> <span class="o">=</span> <span class="n">TileStache</span><span class="o">.</span><span class="n">WSGITileServer</span><span class="p">(</span><span class="s">'tilestache.cfg'</span><span class="p">)</span>
 </pre>
-<p>So that's uWSGI serving TileStache. The final issue to solve is that of
+<p>So that&#8217;s uWSGI serving TileStache. The final issue to solve is that of
 serving against a sub-directory. Once you have your application mounted
-against the relevant mount point (in my case <em>/tiles</em>), then it's just a
-case of telling uWSGI to use this as its <strong>SCRIPT_NAME</strong> environment
-variable.</p>
+against the relevant mount point (in my case <em>/tiles</em>), then it&#8217;s just a
+case of telling uWSGI to use this as its <strong>SCRIPT_NAME</strong> environment&nbsp;variable.</p>
 <p>For me, this was telling our webserver (Cherokee) to provide the
 <strong>UWSGI_SCRIPT_NAME</strong>, ensuring the <strong>UWSGI_</strong> is prepended, as a custom
 environment variable against the relevant Directory behaviour. Once
 Cherokee was pointed at the relevant socket and restarted, everything
-'just worked'. In the case of other web servers like Nginx, it would be
-a case of configuring a location with:</p>
+&#8216;just worked&#8217;. In the case of other web servers like Nginx, it would be
+a case of configuring a location&nbsp;with:</p>
 <pre class="code ini literal-block">
 <span class="err">uwsgi_param</span> <span class="err">SCRIPT_NAME</span> <span class="err">/tiles</span><span class="c1">;</span>
 </pre>
-<p>And there you have it.</p>
+<p>And there you have&nbsp;it.</p>
 <p>There are <a href="../blog/2012/06/serving-tilestache-or-another-app-using-uwsgi-against-a-web-sub-directory/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">
         Page 1 / 1

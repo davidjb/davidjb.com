@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2010/10/bad-relationships-relationchoice-relationcatalog-and-removed-dexterity-content-in-plone/">Bad relationships: RelationChoice, RelationCatalog and removed Dexterity content in Plone</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2010/10/bad-relationships-relationchoice-relationcatalog-and-removed-dexterity-content-in-plone/">Bad relationships: RelationChoice, RelationCatalog and removed Dexterity content in&nbsp;Plone</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2010-10-26T17:38:00">
                 Tue 26 October 2010
@@ -43,30 +43,29 @@
         </address>
         <p>In <a href="../category/it-work.html">IT, Work</a>. </p>
 <p>tags: <a href="../tag/borked.html">borked</a><a href="../tag/dexterity.html">dexterity</a><a href="../tag/plone.html">plone</a><a href="../tag/problem.html">problem</a><a href="../tag/zope.html">zope</a></p>
-</footer><!-- /.post-info --><p><strong>Disclaimer:</strong> this post isn't giving relationship advice (or..it is in
+</footer><!-- /.post-info --><p><strong>Disclaimer:</strong> this post isn&#8217;t giving relationship advice (or..it is in
 some twisted way).&nbsp; Unsurprisingly, removing content in Plone via the
-ZMI when Plone says something can't be deleted is likely to cause
-problems.</p>
-<p>In my case, the fact I removed a Dexterity-based container (&quot;Project&quot;)
+<span class="caps">ZMI</span> when Plone says something can&#8217;t be deleted is likely to cause&nbsp;problems.</p>
+<p>In my case, the fact I removed a Dexterity-based container (&#8220;Project&#8221;)
 caused users to no longer add or edit content of my Project type.&nbsp; The
 reason for this boiled down to my use of RelationChoice fields, in order
 link Projects to Person objects and vice versa.&nbsp; The backend storage for
 the RelationChoice field is an instance of
 <tt class="docutils literal">z3c.relationfield.index.RelationCatalog</tt>, and this keeps records of where
-the relations are going to and going from.</p>
+the relations are going to and going&nbsp;from.</p>
 <p>Now, I created a test Project and some content underneath it.&nbsp; Due to
-some strange KSS errors I was getting on said content, I decided to try
+some strange <span class="caps">KSS</span> errors I was getting on said content, I decided to try
 deleting the parent Project.&nbsp; Plone complained, telling me that the
-content couldn't be deleted, and giving the same KSS traceback errors.
-Needing to get rid of the Project, I decided to traipse into the ZMI and
+content couldn&#8217;t be deleted, and giving the same <span class="caps">KSS</span> traceback errors.
+Needing to get rid of the Project, I decided to traipse into the <span class="caps">ZMI</span> and
 manually delete the Project that way.&nbsp; I thought I was successful.&nbsp; I
 was, but I caused more problems because the Project I made was still
-pointing at a Person object.</p>
+pointing at a Person&nbsp;object.</p>
 <p>Several days later, users began complaining of not being able to add new
 Projects or edit existing Project content either.&nbsp; The traceback looked
-like this:</p>
+like&nbsp;this:</p>
 <pre class="code pytb literal-block">
-<span class="x">2010-10-26 13:30:02 ERROR Zope.SiteErrorLog 1288063802.910.831336088181 http://localhost:8080/plone/programs/sample-project/&#64;&#64;edit
+<span class="x">2010-10-26 13:30:02 <span class="caps">ERROR</span> Zope.SiteErrorLog 1288063802.910.831336088181 http://localhost:8080/plone/programs/sample-project/&#64;&#64;edit
 Traceback (innermost last):
   Module ZPublisher.Publish, line 119, in publish
   Module ZPublisher.mapply, line 88, in mapply
@@ -99,33 +98,33 @@ KeyError: 128268893</span>
 </pre>
 <p>These errors were strange, because the KeyError was different every
 time. After several hours of delving through code, it was clear that the
-ZC relation catalog was expecting a given key but not finding it (as the
-traceback suggests). After poking around in the RelationCatalog's
+<span class="caps">ZC</span> relation catalog was expecting a given key but not finding it (as the
+traceback suggests). After poking around in the RelationCatalog&#8217;s
 storage, there were a variety of references sticking around that
-involved the old Project that I'd deleted. I hacked in a:</p>
+involved the old Project that I&#8217;d deleted. I hacked in&nbsp;a:</p>
 <pre class="code python literal-block">
 <span class="k">print</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">from</span>\<span class="n">_object</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">catalog</span><span class="o">.</span><span class="n">findRelations</span><span class="p">({}))]</span>
 </pre>
 <p>at line 84 of <tt class="docutils literal">z3c/relationfield/event.py</tt>, and it showed references
-to objects that no longer existed.</p>
+to objects that no longer&nbsp;existed.</p>
 <p>Trying to use the <tt class="docutils literal">removeRelations</tt> method of
-<tt class="docutils literal">z3c/relationfield/event.py</tt> isn't useful, because that swallows up
+<tt class="docutils literal">z3c/relationfield/event.py</tt> isn&#8217;t useful, because that swallows up
 the same KeyError, so in order to remove the borked relations, it would
 have to be done manually. That said, the underlying storage for the
-RelationCatalog goes over my head.</p>
-<p>So, due to time constraints, I resolved my issues by using the catalog's
-&quot;clear&quot; method to remove all records. Easily done by inserting:</p>
+RelationCatalog goes over my&nbsp;head.</p>
+<p>So, due to time constraints, I resolved my issues by using the catalog&#8217;s
+&#8220;clear&#8221; method to remove all records. Easily done by&nbsp;inserting:</p>
 <pre class="code python literal-block">
 <span class="n">catalog</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 </pre>
 <p>at line 84 of <tt class="docutils literal">z3c/relationfield/event.py</tt> (and removing
 after I edited a Project and invoked said code). Clearing the catalog
-didn't break any of relations for my content, and everything's now
-re-indexed after each Project was edited and saved again.</p>
-<p><strong>Word to the wise:</strong> if you're working with this sort of tech, figure
-out why you can't delete something and solve that, rather than hacking
-away. It will come back to bite you. Let me know if you've fixed a
-similar issue without needing to clear the catalog.</p>
+didn&#8217;t break any of relations for my content, and everything&#8217;s now
+re-indexed after each Project was edited and saved&nbsp;again.</p>
+<p><strong>Word to the wise:</strong> if you&#8217;re working with this sort of tech, figure
+out why you can&#8217;t delete something and solve that, rather than hacking
+away. It will come back to bite you. Let me know if you&#8217;ve fixed a
+similar issue without needing to clear the&nbsp;catalog.</p>
 <p>There are <a href="../blog/2010/10/bad-relationships-relationchoice-relationcatalog-and-removed-dexterity-content-in-plone/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">
         Page 1 / 1

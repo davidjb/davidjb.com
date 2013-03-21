@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Creating & distributing a new Plone/PyPI product</title>
+        <title>Creating & distributing a new Plone/PyPI product</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2009/08/creating-distributing-a-new-plonepypi-product/" rel="bookmark"
-           title="Permalink to Creating & distributing a new Plone/PyPI product">Creating &amp; distributing a new Plone/PyPI product</a></h1>
+           title="Permalink to Creating & distributing a new Plone/PyPI product">Creating <span class="amp">&amp;</span> distributing a new Plone/PyPI&nbsp;product</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -47,27 +47,27 @@
         </address>
         <p>In <a href="../../../../category/python.html">Python</a>. </p>
 <p>tags: <a href="../../../../tag/easy_install.html">easy_install</a><a href="../../../../tag/open-source.html">open source</a><a href="../../../../tag/plone.html">plone</a><a href="../../../../tag/product.html">product</a><a href="../../../../tag/python.html">python</a><a href="../../../../tag/release.html">release</a><a href="../../../../tag/software.html">Software</a></p>
-</footer><!-- /.post-info -->      <p>It's amazing to see how technologies can be so smoothly integrated these
-days.&nbsp; I'm talking, at least in this instance, about how setuptools
-works with PyPI (and then Plone.org's Products section) and allows you
-to distribute your product(s) to the world.&nbsp; So far, I've just got the
-one -- collective.portlet.googleapps -- but I'm sure time will pass and
-I'll have some more useful things to contribute. Here's a summary of
-what I did:</p>
+</footer><!-- /.post-info -->      <p>It&#8217;s amazing to see how technologies can be so smoothly integrated these
+days.&nbsp; I&#8217;m talking, at least in this instance, about how setuptools
+works with PyPI (and then Plone.org&#8217;s Products section) and allows you
+to distribute your product(s) to the world.&nbsp; So far, I&#8217;ve just got the
+one &#8212; collective.portlet.googleapps &#8212; but I&#8217;m sure time will pass and
+I&#8217;ll have some more useful things to contribute. Here&#8217;s a summary of
+what I&nbsp;did:</p>
 <ol class="arabic">
 <li><p class="first">Create the product.&nbsp; ZopeSkel is a wonderful help here for Plone
 products. [I lie a little bit in my code example, because sadly, the
-plone3_portlet template doesn't have nesting.&nbsp; I cheated by using
-the Archetypes template and copied in my portlet code &amp; repeated to
-create multiple portlets in one product]:</p>
+plone3_portlet template doesn&#8217;t have nesting.&nbsp; I cheated by using
+the Archetypes template and copied in my portlet code <span class="amp">&amp;</span> repeated to
+create multiple portlets in one&nbsp;product]:</p>
 <pre class="code bash literal-block">
 easy_install-2.4 ZopeSkel
 paster2.4 create --list-templates
 paster2.4 create -t plone3_portlet collective.portlet.googleapps
 </pre>
 </li>
-<li><p class="first">Upload it to some relevant code repository.&nbsp; I've used the Plone
-collective SVN (and <a class="reference external" href="http://plone.org/documentation/how-to/create-a-new-project-in-the-plone-collective">this guide</a>):</p>
+<li><p class="first">Upload it to some relevant code repository.&nbsp; I&#8217;ve used the Plone
+collective <span class="caps">SVN</span> (and <a class="reference external" href="http://plone.org/documentation/how-to/create-a-new-project-in-the-plone-collective">this guide</a>):</p>
 <pre class="code bash literal-block">
 svn mkdir https://svn.plone.org/svn/collective/collective.portlet.googleapps -m <span class="s1">'Created new project'</span>
 svn mkdir https://svn.plone.org/svn/collective/collective.portlet.googleapps/<span class="o">{</span>trunk,branches,tags<span class="o">}</span> -m <span class="s1">'Added base files'</span>
@@ -76,55 +76,54 @@ svn co https://svn.plone.org/svn/collective/collective.portlet.googleapps/trunk 
 svn ci
 </pre>
 </li>
-<li><p class="first">Do some work.&nbsp; When you're happy, make a tag for the relevant release
-version:</p>
+<li><p class="first">Do some work.&nbsp; When you&#8217;re happy, make a tag for the relevant release&nbsp;version:</p>
 <pre class="code bash literal-block">
 svn copy https://svn.plone.org/svn/collective/collective.portlet.googleapps/trunk https://svn.plone.org/svn/collective/collective.portlet.googleapps/tags/0.1
 </pre>
 </li>
-<li><p class="first"><a class="reference external" href="http://pypi.python.org/pypi?%3Aaction=register_form">Sign up for PyPI</a> (Python Package Index), <a class="reference external" href="http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto-3.html">generate a GPG
-key</a>, and add the key ID to your account profile page.&nbsp; Your key ID
-can be found on this line after generation:</p>
+<li><p class="first"><a class="reference external" href="http://pypi.python.org/pypi?%3Aaction=register_form">Sign up for PyPI</a> (Python Package Index), <a class="reference external" href="http://www.dewinter.com/gnupg_howto/english/GPGMiniHowto-3.html">generate a <span class="caps">GPG</span>
+key</a>, and add the key <span class="caps">ID</span> to your account profile page.&nbsp; Your key <span class="caps">ID</span>
+can be found on this line after&nbsp;generation:</p>
 <pre class="literal-block">
 gpg: key XXXXXXXX marked as ultimately trusted
 </pre>
-<p>or otherwise through <strong>gpg --list-keys</strong></p>
+<p>or otherwise through <strong>gpg&nbsp;&#8212;list-keys</strong></p>
 </li>
 <li><p class="first"><a class="reference external" href="http://plone.org/join_form?came_from=http%3A//plone.org">Sign up</a> for an account on Plone.org to allow you to upload your
-product here too.&nbsp; Make sure you follow the URL you get emailed and
-change your password.</p>
+product here too.&nbsp; Make sure you follow the <span class="caps">URL</span> you get emailed and
+change your&nbsp;password.</p>
 </li>
 <li><p class="first">Edit your ~/.pypirc file to include the following details from <a class="reference external" href="http://plone.org/documentation/tutorial/how-to-upload-your-package-to-plone.org/tutorial-all-pages">this
 page</a>.&nbsp; My file also needed the <strong>server-login</strong> section (something
-to do with differences between PyPI and Plone.org, I think).:</p>
+to do with differences between PyPI and Plone.org, I&nbsp;think).:</p>
 <pre class="code ini literal-block">
 <span class="k">[server-login]</span>
-<span class="err">username:XXX</span>
-<span class="err">password:YYY</span>
+<span class="err">username:<span class="caps">XXX</span></span>
+<span class="err">password:<span class="caps">YYY</span></span>
 </pre>
 </li>
-<li><p class="first">When ready, you can upload your work to PyPI and Plone.org:</p>
+<li><p class="first">When ready, you can upload your work to PyPI and&nbsp;Plone.org:</p>
 <pre class="code bash literal-block">
 easy_install-2.4 collective.dist
 python2.4 setup.py register sdist bdist_egg upload -s
 python2.4 setup.py mregister sdist mupload -r plone.org
 </pre>
 </li>
-<li><p class="first">If everything goes according to plan, then you should see 'Response
-200' back from the servers.&nbsp; If not, then check the following:</p>
+<li><p class="first">If everything goes according to plan, then you should see &#8216;Response
+200&#8217; back from the servers.&nbsp; If not, then check the&nbsp;following:</p>
 <ol class="arabic simple">
 <li>Your passwords and user names are correct in your <tt class="docutils literal"><span class="pre">~/.pypirc</span></tt> file
-(yes, it's true, they're plaintext...)</li>
+(yes, it&#8217;s true, they&#8217;re&nbsp;plaintext&#8230;)</li>
 <li>Make sure your accounts on both PyPI and Plone.org are active and
-actually exist.</li>
-<li>You've followed any further instructions about troubleshooting on
-the links I've posted.</li>
+actually&nbsp;exist.</li>
+<li>You&#8217;ve followed any further instructions about troubleshooting on
+the links I&#8217;ve&nbsp;posted.</li>
 </ol>
 </li>
 <li><p class="first">Once done, you should be able to see your package on PyPI (and
 administrate it once logged in), and see your product on Plone.org.
-Keep in mind that Plone.org has an approval process that you'll have
-to wait for before your product is fully visible.</p>
+Keep in mind that Plone.org has an approval process that you&#8217;ll have
+to wait for before your product is fully&nbsp;visible.</p>
 </li>
 </ol>
 

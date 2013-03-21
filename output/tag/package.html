@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2009/11/plonezope-python-and-collective-autoreloadplone-reload/">Plone/Zope, Python and collective.autoreload / plone.reload</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2009/11/plonezope-python-and-collective-autoreloadplone-reload/">Plone/Zope, Python and collective.autoreload /&nbsp;plone.reload</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2009-11-20T14:34:00">
                 Fri 20 November 2009
@@ -43,39 +43,39 @@
         </address>
         <p>In <a href="../category/python.html">Python</a>. </p>
 <p>tags: <a href="../tag/code.html">code</a><a href="../tag/collective.html">collective</a><a href="../tag/egg.html">egg</a><a href="../tag/error.html">error</a><a href="../tag/package.html">package</a><a href="../tag/plone.html">plone</a><a href="../tag/python.html">python</a><a href="../tag/reload.html">reload</a><a href="../tag/restart.html">restart</a></p>
-</footer><!-- /.post-info --><p>Here's an interesting error message I got stumped with for a good set of
+</footer><!-- /.post-info --><p>Here&#8217;s an interesting error message I got stumped with for a good set of
 hours.&nbsp; The issue started with me using collective.autoreload with Plone
-and it does the trick, mostly.&nbsp; With any such 'operation' and live
-reloading of code for Python, you've got to expect that not everything
+and it does the trick, mostly.&nbsp; With any such &#8216;operation&#8217; and live
+reloading of code for Python, you&#8217;ve got to expect that not everything
 will go according to plan.&nbsp; Most things do, but one issue I found
-presented with this error message:</p>
+presented with this error&nbsp;message:</p>
 <pre class="code pytb literal-block">
 <span class="x">&lt; ... huge traceback ...&gt;
 TypeError: super(type, obj): obj must be an instance or subtype of type</span>
 </pre>
-<p>The issue arises for me (and you'll probably see it elsewhere) when I go
-ahead and modify a Python class that I've extended off from another, and
-I'm calling a function from the parent class.&nbsp; The browser view class
-I'm extending from needs to use the same methods but extend the
-functionality, so hence me calling super(...).myfunction().&nbsp;&nbsp; In
-hindsight, the error is actually pretty logical -- the &quot;obj&quot; is being
+<p>The issue arises for me (and you&#8217;ll probably see it elsewhere) when I go
+ahead and modify a Python class that I&#8217;ve extended off from another, and
+I&#8217;m calling a function from the parent class.&nbsp; The browser view class
+I&#8217;m extending from needs to use the same methods but extend the
+functionality, so hence me calling super(&#8230;).myfunction().&nbsp;&nbsp; In
+hindsight, the error is actually pretty logical &#8212; the &#8220;obj&#8221; is being
 shown to not be a type or subtype of the specified type.&nbsp; What they
-didn't spell out in bright neon letters is that whilst the type I was
-working with looks the same in code (it IS the same), having it reloaded
-makes it different.</p>
+didn&#8217;t spell out in bright neon letters is that whilst the type I was
+working with looks the same in code (it <span class="caps">IS</span> the same), having it reloaded
+makes it&nbsp;different.</p>
 <p>The solution is to restart Zope and go again.&nbsp; This same thing manifests
 in a number of different ways (Error 500 Internal Server Errors for
-certain views, etc) but if you're seeing something weird, don't always
-assume you've broken something. My favourite thought for the week
-applies directly to this:&nbsp; just because you hear hoofbeats, don't
-immediately think zebras.&nbsp; Being in IT though, it's hard to go straight
-for the simplest solution.&nbsp;&nbsp; Might save you some head-bashing as I've
-done it for you. :)</p>
-<p>As a side note, it's a similar idea as a network problem I saw the other
+certain views, etc) but if you&#8217;re seeing something weird, don&#8217;t always
+assume you&#8217;ve broken something. My favourite thought for the week
+applies directly to this:&nbsp; just because you hear hoofbeats, don&#8217;t
+immediately think zebras.&nbsp; Being in <span class="caps">IT</span> though, it&#8217;s hard to go straight
+for the simplest solution.&nbsp;&nbsp; Might save you some head-bashing as I&#8217;ve
+done it for you.&nbsp;:)</p>
+<p>As a side note, it&#8217;s a similar idea as a network problem I saw the other
 day.&nbsp; The problem could have been solved in 5 seconds by looking at the
-lights on the network port, but the &quot;IT solution&quot; was to restart the
-computer between OSes and check if the OS was the problem.&nbsp; Victims of
-our own knowledge; we sadly know too much.</p>
+lights on the network port, but the &#8220;<span class="caps">IT</span> solution&#8221; was to restart the
+computer between OSes and check if the <span class="caps">OS</span> was the problem.&nbsp; Victims of
+our own knowledge; we sadly know too&nbsp;much.</p>
 <p>There are <a href="../blog/2009/11/plonezope-python-and-collective-autoreloadplone-reload/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">
         Page 1 / 1

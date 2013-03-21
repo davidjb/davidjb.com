@@ -1,34 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>DavidJB.com</title><link href="http://davidjb.com/" rel="alternate"></link><link href="http://davidjb.com/feeds/themes.atom.xml" rel="self"></link><id>http://davidjb.com/</id><updated>2009-09-02T14:26:00+10:00</updated><entry><title>Deliver me from ... Deliverance?</title><link href="http://davidjb.com/blog/2009/09/deliver-me-from-deliverance/" rel="alternate"></link><updated>2009-09-02T14:26:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2009-09-02:blog/2009/09/deliver-me-from-deliverance/</id><summary type="html">&lt;p&gt;Always one for being on and beyond the bleeding edge of new technology,
-I've (with the help of colleagues) been setting up a new technology for
-applying themes to web sites.&amp;nbsp; In particular, I'm applying Deliverance
-to Plone and whilst I'm not the first one to venture out into the
-wilderness this way, I've got to be thinking that I could be one of the
-few people documenting their experience.&amp;nbsp; Ah, but where to begin?&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DavidJB.com</title><link href="http://davidjb.com/" rel="alternate"></link><link href="http://davidjb.com/feeds/themes.atom.xml" rel="self"></link><id>http://davidjb.com/</id><updated>2009-09-02T14:26:00+10:00</updated><entry><title>Deliver me from … Deliverance?</title><link href="http://davidjb.com/blog/2009/09/deliver-me-from-deliverance/" rel="alternate"></link><updated>2009-09-02T14:26:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2009-09-02:blog/2009/09/deliver-me-from-deliverance/</id><summary type="html">&lt;p&gt;Always one for being on and beyond the bleeding edge of new technology,
+I&amp;#8217;ve (with the help of colleagues) been setting up a new technology for
+applying themes to web sites.&amp;nbsp; In particular, I&amp;#8217;m applying Deliverance
+to Plone and whilst I&amp;#8217;m not the first one to venture out into the
+wilderness this way, I&amp;#8217;ve got to be thinking that I could be one of the
+few people documenting their experience.&amp;nbsp; Ah, but where to&amp;nbsp;begin?&lt;/p&gt;
 &lt;div class="section" id="the-proxy"&gt;
-&lt;h2&gt;The proxy&lt;/h2&gt;
+&lt;h2&gt;The&amp;nbsp;proxy&lt;/h2&gt;
 &lt;p&gt;Ah yes, the proxy.&amp;nbsp; Deliverance is very kind to us in that it operates
-it's own proxy.&amp;nbsp; This, whilst okay, is a royal pain when Apache or
-similar is sitting in front, sending rewritten URLs to Deliverance [I'm
-hosting as a sub-folder on a domain].&amp;nbsp; Maybe I'm just not cluey enough
+it&amp;#8217;s own proxy.&amp;nbsp; This, whilst okay, is a royal pain when Apache or
+similar is sitting in front, sending rewritten URLs to Deliverance [I&amp;#8217;m
+hosting as a sub-folder on a domain].&amp;nbsp; Maybe I&amp;#8217;m just not cluey enough
 to figure it out, but when you spend almost a week and then have to hack
-things about with python code, it's probably not just me.&amp;nbsp; In some
-cases, I think Deliverance is just trying to be 'too' smart, and you'll
-see what I mean shortly.&lt;/p&gt;
-&lt;p&gt;At any rate, I've made Apache do a &lt;strong&gt;ProxyPass&lt;/strong&gt; to Deliverance and then
-make Deliverance do the &amp;quot;rewriting&amp;quot;, and then the Zope VHM makes magic
-happen like normal.&amp;nbsp; Great!&amp;nbsp; Except no, that's not it, because
-Deliverance has no idea about the fact my site is hosted from both HTTP
-and HTTPS (or hosted from 2 domains)?&amp;nbsp; What I've had to do is thus in
-Apache (and the same for HTTP etc):&lt;/p&gt;
+things about with python code, it&amp;#8217;s probably not just me.&amp;nbsp; In some
+cases, I think Deliverance is just trying to be &amp;#8216;too&amp;#8217; smart, and you&amp;#8217;ll
+see what I mean&amp;nbsp;shortly.&lt;/p&gt;
+&lt;p&gt;At any rate, I&amp;#8217;ve made Apache do a &lt;strong&gt;ProxyPass&lt;/strong&gt; to Deliverance and then
+make Deliverance do the &amp;#8220;rewriting&amp;#8221;, and then the Zope &lt;span class="caps"&gt;VHM&lt;/span&gt; makes magic
+happen like normal.&amp;nbsp; Great!&amp;nbsp; Except no, that&amp;#8217;s not it, because
+Deliverance has no idea about the fact my site is hosted from both &lt;span class="caps"&gt;HTTP&lt;/span&gt;
+and &lt;span class="caps"&gt;HTTPS&lt;/span&gt; (or hosted from 2 domains)?&amp;nbsp; What I&amp;#8217;ve had to do is thus in
+Apache (and the same for &lt;span class="caps"&gt;HTTP&lt;/span&gt;&amp;nbsp;etc):&lt;/p&gt;
 &lt;pre class="code apache literal-block"&gt;
 &lt;span class="nb"&gt;RequestHeader&lt;/span&gt; set X-Forwarded-Scheme https
 &lt;span class="nb"&gt;RequestHeader&lt;/span&gt; set X-Forwarded-Port &lt;span class="m"&gt;443&lt;/span&gt;
 &lt;span class="nb"&gt;ProxyPass&lt;/span&gt; &lt;span class="sx"&gt;/mysite&lt;/span&gt; http://my.deliverance.host:8000/mysite
 &lt;/pre&gt;
 &lt;p&gt;and then this in Deliverance, since we now have what scheme/port/host
-we're serving from.&amp;nbsp; All URLs coming back from Plone/VHM will be okay!
-8-):&lt;/p&gt;
+we&amp;#8217;re serving from.&amp;nbsp; All URLs coming back from Plone/&lt;span class="caps"&gt;VHM&lt;/span&gt; will be okay!&amp;nbsp;8-):&lt;/p&gt;
 &lt;pre class="code apache literal-block"&gt;
 &lt;span class="nt"&gt;&amp;lt;proxy&lt;/span&gt; &lt;span class="s"&gt;path=&amp;quot;/mysite&amp;quot; domain=&amp;quot;my.sites.domain&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
 &lt;span class="nt"&gt;&amp;lt;dest&lt;/span&gt; &lt;span class="s"&gt;href=&amp;quot;http://localhost:8080/VirtualHostBase/{X-Forwarded-Scheme}/{X-Forwarded-Server}%3A{X-Forwarded-Port}/mysite/VirtualHostRoot/_vh_mysite&amp;quot; /&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
@@ -38,51 +37,49 @@ we're serving from.&amp;nbsp; All URLs coming back from Plone/VHM will be okay!
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="the-theme"&gt;
-&lt;h2&gt;The theme&lt;/h2&gt;
+&lt;h2&gt;The&amp;nbsp;theme&lt;/h2&gt;
 &lt;p&gt;Oh, the theme.&amp;nbsp; Again, Deliverance tries to be too smart for its own
 good if you specify a Deliverance-hosted theme here.&amp;nbsp; If you have
-something relevative (eg &lt;tt class="docutils literal"&gt;/_theme/theme.html&lt;/tt&gt;), it'll work, but on your
-HTTPS site all theme elements will be unencrypted since HTTP is it.
-Whoops!&lt;/p&gt;
-&lt;p&gt;Resolution?&amp;nbsp; Not nice, but you'll need to serve your resources outside
+something relevative (eg &lt;tt class="docutils literal"&gt;/_theme/theme.html&lt;/tt&gt;), it&amp;#8217;ll work, but on your
+&lt;span class="caps"&gt;HTTPS&lt;/span&gt; site all theme elements will be unencrypted since &lt;span class="caps"&gt;HTTP&lt;/span&gt; is it.&amp;nbsp;Whoops!&lt;/p&gt;
+&lt;p&gt;Resolution?&amp;nbsp; Not nice, but you&amp;#8217;ll need to serve your resources outside
 of Deliverance (probably faster anyway!), and have them accessible for
 both protocols.&amp;nbsp; The good news is that when you specify an &lt;strong&gt;absolute&lt;/strong&gt;
-URL, with protocol, then Deliverance pays attention, thus:&lt;/p&gt;
+&lt;span class="caps"&gt;URL&lt;/span&gt;, with protocol, then Deliverance pays attention,&amp;nbsp;thus:&lt;/p&gt;
 &lt;pre class="code xml literal-block"&gt;
 &lt;span class="nt"&gt;&amp;lt;theme&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{X-Forwarded-Scheme}://static.web.server/static/mysite/theme.html&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;domain=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;my.sites.domain&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="post-requests"&gt;
-&lt;h2&gt;POST requests&lt;/h2&gt;
+&lt;h2&gt;&lt;span class="caps"&gt;POST&lt;/span&gt;&amp;nbsp;requests&lt;/h2&gt;
 &lt;p&gt;Ughh.&amp;nbsp; Deliverance feels the need to be smart, &lt;em&gt;again&lt;/em&gt;, by applying
-themes to incoming POST requests.&amp;nbsp; Now, I can't think of any time you'd
-&lt;em&gt;actually&lt;/em&gt; want this (unless...well, no..never), so make sure you've got
-something like this in your XML file to stop Deliverence:&lt;/p&gt;
+themes to incoming &lt;span class="caps"&gt;POST&lt;/span&gt; requests.&amp;nbsp; Now, I can&amp;#8217;t think of any time you&amp;#8217;d
+&lt;em&gt;actually&lt;/em&gt; want this (unless&amp;#8230;well, no..never), so make sure you&amp;#8217;ve got
+something like this in your &lt;span class="caps"&gt;XML&lt;/span&gt; file to stop&amp;nbsp;Deliverence:&lt;/p&gt;
 &lt;pre class="code xml literal-block"&gt;
-&lt;span class="nt"&gt;&amp;lt;match&lt;/span&gt; &lt;span class="na"&gt;environ=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;REQUEST_METHOD: POST&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;abort=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;1&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;match&lt;/span&gt; &lt;span class="na"&gt;environ=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;REQUEST_METHOD: &lt;span class="caps"&gt;POST&lt;/span&gt;&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;abort=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;1&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="copying-moving-attributes"&gt;
-&lt;h2&gt;Copying/Moving Attributes&lt;/h2&gt;
-&lt;p&gt;Okay, now this one's just weird.&amp;nbsp; You need to specify which individual
+&lt;h2&gt;Copying/Moving&amp;nbsp;Attributes&lt;/h2&gt;
+&lt;p&gt;Okay, now this one&amp;#8217;s just weird.&amp;nbsp; You need to specify which individual
 or several attributes from your content and then tell Deliverance to
 apply them all to the attributes of the target element.&amp;nbsp; Seems simple
-enough now, but why is there no doco?&amp;nbsp; This works:&lt;/p&gt;
+enough now, but why is there no doco?&amp;nbsp; This&amp;nbsp;works:&lt;/p&gt;
 &lt;pre class="code xml literal-block"&gt;
 &lt;span class="nt"&gt;&amp;lt;replace&lt;/span&gt; &lt;span class="na"&gt;content=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;attributes(href):#portal-logo&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;theme=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;attributes://*[&amp;#64;id='globalnav']/div/a&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;and this won't (type mismatch error):&lt;/p&gt;
+&lt;p&gt;and this won&amp;#8217;t (type mismatch&amp;nbsp;error):&lt;/p&gt;
 &lt;pre class="code xml literal-block"&gt;
 &lt;span class="nt"&gt;&amp;lt;replace&lt;/span&gt; &lt;span class="na"&gt;content=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;attributes(href):#portal-logo&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;theme=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;attributes(href)://*[&amp;#64;id='globalnav']/div/a&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="conclusion"&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;Don't get me wrong, I like Deliverance.&amp;nbsp; Xpath support is great, CSS
+&lt;p&gt;Don&amp;#8217;t get me wrong, I like Deliverance.&amp;nbsp; Xpath support is great, &lt;span class="caps"&gt;CSS&lt;/span&gt;
 3-style selectors are awesome, and what it does is magical.&amp;nbsp; However, it
-needs a bit of work before I parachute away from Plone's themes for
-good.&lt;/p&gt;
-&lt;p&gt;Fair's fair though, it's only version 0.3.&amp;nbsp; I'm looking very forward to
-the future though.&lt;/p&gt;
+needs a bit of work before I parachute away from Plone&amp;#8217;s themes for&amp;nbsp;good.&lt;/p&gt;
+&lt;p&gt;Fair&amp;#8217;s fair though, it&amp;#8217;s only version 0.3.&amp;nbsp; I&amp;#8217;m looking very forward to
+the future&amp;nbsp;though.&lt;/p&gt;
 &lt;/div&gt;
 </summary><category term="bleeding edge"></category><category term="deliverance"></category><category term="plone"></category><category term="rules"></category><category term="technology"></category><category term="theme"></category><category term="themeing"></category><category term="xml"></category></entry></feed>

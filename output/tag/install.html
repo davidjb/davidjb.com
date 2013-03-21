@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2011/01/python-eggs-and-missing-files-like-docs/">Python eggs and missing files (like 'docs')</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2011/01/python-eggs-and-missing-files-like-docs/">Python eggs and missing files (like&nbsp;&#8216;docs&#8217;)</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2011-01-06T11:57:00">
                 Thu 06 January 2011
@@ -43,27 +43,27 @@
         </address>
         <p>In <a href="../category/python.html">Python</a>. </p>
 <p>tags: <a href="../tag/build.html">build</a><a href="../tag/docs.html">docs</a><a href="../tag/egg.html">egg</a><a href="../tag/file.html">file</a><a href="../tag/install.html">install</a><a href="../tag/missing.html">missing</a><a href="../tag/problem.html">problem</a><a href="../tag/python.html">python</a></p>
-</footer><!-- /.post-info --><p>This is pretty trivial (and trivial to fix), but I'm chronicling it for
-my knowledge as much as anyone else's.&nbsp; The issue is that a given Python
-egg is missing some form of files, most commonly the 'docs' directory in
-my experience, because the build wasn't configured correctly.</p>
-<p>The error goes somewhat like this:</p>
+</footer><!-- /.post-info --><p>This is pretty trivial (and trivial to fix), but I&#8217;m chronicling it for
+my knowledge as much as anyone else&#8217;s.&nbsp; The issue is that a given Python
+egg is missing some form of files, most commonly the &#8216;docs&#8217; directory in
+my experience, because the build wasn&#8217;t configured&nbsp;correctly.</p>
+<p>The error goes somewhat like&nbsp;this:</p>
 <pre class="code pytb literal-block">
 <span class="x">Getting distribution for 'my.theme'.
-error: docs/HISTORY.txt: No such file or directory
+error: docs/<span class="caps">HISTORY</span>.txt: No such file or directory
 An error occured when trying to install my.theme 1.5.0. Look above this message for any errors that were output by easy_install.</span>
 </pre>
 <p>The solution is simple: just add the relevant missing directories or
-similar into your <tt class="docutils literal">my.theme/MANIFEST.in</tt> file, so the end results
-looks like so:</p>
+similar into your <tt class="docutils literal">my.theme/<span class="caps">MANIFEST</span>.in</tt> file, so the end results
+looks like&nbsp;so:</p>
 <pre class="code ini literal-block">
 <span class="err">recursive-include</span> <span class="err">docs</span> <span class="err">*</span>
 <span class="err">recursive-include</span> <span class="err">my</span> <span class="err">*</span>
 <span class="err">global-exclude</span> <span class="err">*py[co],</span> <span class="err">*mo</span>
 </pre>
-<p>where <tt class="docutils literal">my</tt> and <tt class="docutils literal">docs</tt> are the top-level packages I need.</p>
+<p>where <tt class="docutils literal">my</tt> and <tt class="docutils literal">docs</tt> are the top-level packages I&nbsp;need.</p>
 <p>Just rebuild the Python egg and away we go. As I said, simple fix. Now
-just have to get it stuck in my head to remember.</p>
+just have to get it stuck in my head to&nbsp;remember.</p>
 <p>There are <a href="../blog/2011/01/python-eggs-and-missing-files-like-docs/#disqus_thread">comments</a>.</p>                </article>
                             </aside><!-- /#featured -->
                             <section id="content" class="body">
@@ -76,7 +76,7 @@ just have to get it stuck in my head to remember.</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2010/06/plone-sitemanager-leftovers-not-the-good-kind/" rel="bookmark"
-                           title="Permalink to Plone: SiteManager leftovers; not the good kind">Plone: SiteManager leftovers; not the good kind</a></h1>
+                           title="Permalink to Plone: SiteManager leftovers; not the good kind">Plone: SiteManager leftovers; not the good&nbsp;kind</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -93,7 +93,7 @@ just have to get it stuck in my head to remember.</p>
 </footer><!-- /.post-info -->                <div class="note">
 <p class="first admonition-title">Note</p>
 <p class="last"><strong>Update:</strong> You should check out <a class="reference external" href="http://pypi.python.org/pypi/wildcard.fixpersistentutilities">wildcard.fixpersistentutilities</a>
-- it's a fantastic solution to problems like this. Many thanks to
+- it&#8217;s a fantastic solution to problems like this. Many thanks to
 Nathan Van Gheem, the author of the add on. Check out the link and
 see how to install it (temporarily) on your Plone instance that
 needs its site manager cleaned ...</p></div>
@@ -106,7 +106,7 @@ needs its site manager cleaned ...</p></div>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2010/05/virtualenv-python-2-4-plone-3-x-and-lucid-lynx-ubuntu-10-04/" rel="bookmark"
-                           title="Permalink to Virtualenv, Python 2.4, Plone 3.x and Lucid Lynx (Ubuntu 10.04)">Virtualenv, Python 2.4, Plone 3.x and Lucid Lynx (Ubuntu 10.04)</a></h1>
+                           title="Permalink to Virtualenv, Python 2.4, Plone 3.x and Lucid Lynx (Ubuntu 10.04)">Virtualenv, Python 2.4, Plone 3.x and Lucid Lynx (Ubuntu&nbsp;10.04)</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -133,7 +133,7 @@ Previously, it was Centos 5.x, Jaunty (9.04), Karmic (9.10) and ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2010/05/things-to-do-on-ubuntu-10-04-lucid-lynx-after-install/" rel="bookmark"
-                           title="Permalink to Things to do on Ubuntu 10.04 Lucid Lynx after install">Things to do on Ubuntu 10.04 Lucid Lynx after install</a></h1>
+                           title="Permalink to Things to do on Ubuntu 10.04 Lucid Lynx after install">Things to do on Ubuntu 10.04 Lucid Lynx after&nbsp;install</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -147,10 +147,10 @@ Previously, it was Centos 5.x, Jaunty (9.04), Karmic (9.10) and ...</p>
         </address>
         <p>In <a href="../category/linux.html">Linux</a>. </p>
 <p>tags: <a href="../tag/1004.html">10.04</a><a href="../tag/drivers.html">drivers</a><a href="../tag/graphics.html">graphics</a><a href="../tag/install.html">install</a><a href="../tag/lucid.html">lucid</a><a href="../tag/ubuntu.html">ubuntu</a><a href="../tag/update.html">update</a></p>
-</footer><!-- /.post-info -->                <p>I'm skipping actually quantifying the number of things to do because
-this post will undoubtedly get updated as time goes on.&nbsp; I've just
+</footer><!-- /.post-info -->                <p>I&#8217;m skipping actually quantifying the number of things to do because
+this post will undoubtedly get updated as time goes on.&nbsp; I&#8217;ve just
 updated both my computers (personal laptop and work desktop) to Ubuntu
-10.04 from 9.10 and I'm very happy with how things have ...</p>
+10.04 from 9.10 and I&#8217;m very happy with how things have ...</p>
                 <a class="readmore" href="../blog/2010/05/things-to-do-on-ubuntu-10-04-lucid-lynx-after-install/">read more</a>
                 <p>There are <a href="../blog/2010/05/things-to-do-on-ubuntu-10-04-lucid-lynx-after-install/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
@@ -160,7 +160,7 @@ updated both my computers (personal laptop and work desktop) to Ubuntu
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2010/03/plonezope-utilising-zope-testrecorder-for-unit-testing/" rel="bookmark"
-                           title="Permalink to Plone/Zope: Utilising zope.testrecorder for unit testing">Plone/Zope:  Utilising zope.testrecorder for unit testing</a></h1>
+                           title="Permalink to Plone/Zope: Utilising zope.testrecorder for unit testing">Plone/Zope:  Utilising zope.testrecorder for unit&nbsp;testing</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -178,7 +178,7 @@ updated both my computers (personal laptop and work desktop) to Ubuntu
 reasonably time consuming. For us developers, having tested code is
 absolutely essential. This is especially true when clients are beating
 down your door looking for a fully functional product and you need to
-know what you've written works and ...</p>
+know what you&#8217;ve written works and ...</p>
                 <a class="readmore" href="../blog/2010/03/plonezope-utilising-zope-testrecorder-for-unit-testing/">read more</a>
                 <p>There are <a href="../blog/2010/03/plonezope-utilising-zope-testrecorder-for-unit-testing/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
@@ -188,7 +188,7 @@ know what you've written works and ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/12/david-tries-plone-4-alpha-2-part-1/" rel="bookmark"
-                           title="Permalink to David tries Plone 4.0a2 (Part 1)">David tries Plone 4.0a2 (Part 1)</a></h1>
+                           title="Permalink to David tries Plone 4.0a2 (Part 1)">David tries Plone 4.0a2 (Part&nbsp;1)</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -203,8 +203,8 @@ know what you've written works and ...</p>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/alpha.html">alpha</a><a href="../tag/buildout.html">buildout</a><a href="../tag/install.html">install</a><a href="../tag/plone.html">plone</a><a href="../tag/plone-4.html">plone 4</a><a href="../tag/testing.html">testing</a><a href="../tag/zope.html">zope</a></p>
 </footer><!-- /.post-info -->                <p>Plone 4 is approaching!&nbsp; Excellent!&nbsp; Lots of new features to play around
-with and plenty more things to have to fix with the upgrade.&nbsp; I've been
-keeping tabs on the change log of updates and it's looking really good.
+with and plenty more things to have to fix with the upgrade.&nbsp; I&#8217;ve been
+keeping tabs on the change log of updates and it&#8217;s looking really good.
 Lots of little, but significant, changes are afoot.&nbsp; Now ...</p>
                 <a class="readmore" href="../blog/2009/12/david-tries-plone-4-alpha-2-part-1/">read more</a>
                 <p>There are <a href="../blog/2009/12/david-tries-plone-4-alpha-2-part-1/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->

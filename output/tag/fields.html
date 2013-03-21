@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2011/01/checking-plone-request-for-ajaxd-requests-xmlhttprequest/">Checking Plone REQUEST for Ajax'd requests (XMLHttpRequest)</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2011/01/checking-plone-request-for-ajaxd-requests-xmlhttprequest/">Checking Plone <span class="caps">REQUEST</span> for Ajax&#8217;d requests&nbsp;(XMLHttpRequest)</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2011-01-07T10:54:00">
                 Fri 07 January 2011
@@ -43,19 +43,19 @@
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/ajax.html">ajax</a><a href="../tag/fields.html">fields</a><a href="../tag/form.html">form</a><a href="../tag/http.html">http</a><a href="../tag/pfg.html">pfg</a><a href="../tag/plone.html">plone</a><a href="../tag/request.html">request</a></p>
-</footer><!-- /.post-info --><p>Recently, I've needed a PloneFormGen (PFG) form of mine to have certain
-fields excluded when the form is displayed in one of Plone 4's fancy
+</footer><!-- /.post-info --><p>Recently, I&#8217;ve needed a PloneFormGen (<span class="caps">PFG</span>) form of mine to have certain
+fields excluded when the form is displayed in one of Plone 4&#8217;s fancy
 popups.&nbsp; At the same time, I need this field to still persist within the
-'standard' view of the form.&nbsp; It's the request object to the rescue, and
-all I've had to do is insert this TALES expression against the <em>Enabling
-Expression</em> for my PFG field:</p>
+&#8216;standard&#8217; view of the form.&nbsp; It&#8217;s the request object to the rescue, and
+all I&#8217;ve had to do is insert this <span class="caps">TALES</span> expression against the <em>Enabling
+Expression</em> for my <span class="caps">PFG</span>&nbsp;field:</p>
 <pre class="code python literal-block">
 <span class="n">python</span><span class="p">:</span><span class="n">request</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'HTTP_X_REQUESTED_WITH'</span><span class="p">)</span> <span class="o">!=</span> <span class="s">'XMLHttpRequest'</span>
 </pre>
 <p>and the end result is that unless the request is one of XMLHttpRequest,
-then we'll show the field.</p>
-<p>Shouldn't be any reason this same TALES couldn't be applied in a page
-template against XHTML, or elsewhere.</p>
+then we&#8217;ll show the&nbsp;field.</p>
+<p>Shouldn&#8217;t be any reason this same <span class="caps">TALES</span> couldn&#8217;t be applied in a page
+template against <span class="caps">XHTML</span>, or&nbsp;elsewhere.</p>
 <p>There are <a href="../blog/2011/01/checking-plone-request-for-ajaxd-requests-xmlhttprequest/#disqus_thread">comments</a>.</p>                </article>
                             </aside><!-- /#featured -->
                             <section id="content" class="body">
@@ -68,7 +68,7 @@ template against XHTML, or elsewhere.</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2010/06/plone-dexterity-and-incorrect-widgets/" rel="bookmark"
-                           title="Permalink to Plone, Dexterity, and Incorrect Widgets">Plone, Dexterity, and Incorrect Widgets</a></h1>
+                           title="Permalink to Plone, Dexterity, and Incorrect Widgets">Plone, Dexterity, and Incorrect&nbsp;Widgets</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -82,7 +82,7 @@ template against XHTML, or elsewhere.</p>
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/content-type.html">content type</a><a href="../tag/datetime.html">datetime</a><a href="../tag/dexterity.html">dexterity</a><a href="../tag/fields.html">fields</a><a href="../tag/form.html">form</a><a href="../tag/plone.html">plone</a><a href="../tag/problem.html">problem</a><a href="../tag/product.html">product</a><a href="../tag/zope.html">zope</a></p>
-</footer><!-- /.post-info -->                <p>A nice 'gotcha' is the distinction between Zope's schema.Date and
+</footer><!-- /.post-info -->                <p>A nice &#8216;gotcha&#8217; is the distinction between Zope&#8217;s schema.Date and
 schema.Datetime. The difference is obvious and straightforward when the
 two terms are laid out side-by-side: one is for dates only and the other
 adds a time component. Where things fell down for me in my usage of ...</p>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>AttributeError: 'NoneType' object has no attribute 'items': Can't upgrade Plone 3 to 4.x</title>
+        <title>AttributeError: ‘NoneType’ object has no attribute ‘items’: Can’t upgrade Plone 3 to 4.x</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2011/09/attributeerror-nonetype-object-has-no-attribute-items-cant-upgrade-plone-3-to-4-x/" rel="bookmark"
-           title="Permalink to AttributeError: 'NoneType' object has no attribute 'items': Can't upgrade Plone 3 to 4.x">AttributeError: 'NoneType' object has no attribute 'items': Can't upgrade Plone 3 to 4.x</a></h1>
+           title="Permalink to AttributeError: ‘NoneType’ object has no attribute ‘items’: Can’t upgrade Plone 3 to 4.x">AttributeError: &#8216;NoneType&#8217; object has no attribute &#8216;items&#8217;: Can&#8217;t upgrade Plone 3 to&nbsp;4.x</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -47,11 +47,10 @@
         </address>
         <p>In <a href="../../../../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../../../../tag/41.html">4.1</a><a href="../../../../tag/plone.html">plone</a><a href="../../../../tag/plone-4.html">plone 4</a><a href="../../../../tag/traceback.html">traceback</a><a href="../../../../tag/upgrade.html">upgrade</a></p>
-</footer><!-- /.post-info -->      <p>You may have seen an error like the one below when you've gone to
-upgrade your Plone site to something in the Plone 4.x series from Plone
-3:</p>
+</footer><!-- /.post-info -->      <p>You may have seen an error like the one below when you&#8217;ve gone to
+upgrade your Plone site to something in the Plone 4.x series from Plone&nbsp;3:</p>
 <pre class="code pytb literal-block">
-<span class="x">2011-09-14 08:43:32 ERROR plone.app.upgrade Upgrade aborted. Error:
+<span class="x">2011-09-14 08:43:32 <span class="caps">ERROR</span> plone.app.upgrade Upgrade aborted. Error:
 </span><span class="gt">Traceback (most recent call last):
 </span>  File <span class="nb">&quot;/home/david/.buildout/eggs/Products.CMFPlone-4.1-py2.6.egg/Products/CMFPlone/MigrationTool.py&quot;</span>, line <span class="m">175</span>, in <span class="n">upgrade</span>
     <span class="n">step</span><span class="p">[</span><span class="s">'step'</span><span class="p">]</span><span class="o">.</span><span class="n">doStep</span><span class="p">(</span><span class="n">setup</span><span class="p">)</span>
@@ -60,18 +59,18 @@ upgrade your Plone site to something in the Plone 4.x series from Plone
   File <span class="nb">&quot;/home/david/.buildout/eggs/plone.app.upgrade-1.1-py2.6.egg/plone/app/upgrade/v41/alphas.py&quot;</span>, line <span class="m">105</span>, in <span class="n">add_siteadmin_role</span>
     <span class="k">for</span> <span class="n">permission_id</span><span class="p">,</span> <span class="n">roles</span> <span class="ow">in</span> <span class="n">state</span><span class="o">.</span><span class="n">permission_roles</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
 <span class="gr">AttributeError</span>: <span class="n">'NoneType' object has no attribute 'items'</span>
-<span class="x">2011-09-14 08:43:32 INFO plone.app.upgrade End of upgrade path, migration has finished
-2011-09-14 08:43:32 ERROR plone.app.upgrade The upgrade path did NOT reach current version
-2011-09-14 08:43:32 ERROR plone.app.upgrade Migration has failed</span>
+<span class="x">2011-09-14 08:43:32 <span class="caps">INFO</span> plone.app.upgrade End of upgrade path, migration has finished
+2011-09-14 08:43:32 <span class="caps">ERROR</span> plone.app.upgrade The upgrade path did <span class="caps">NOT</span> reach current version
+2011-09-14 08:43:32 <span class="caps">ERROR</span> plone.app.upgrade Migration has failed</span>
 </pre>
-<p>If you've hit this, this means that you have a <strong>workflow state</strong>
+<p>If you&#8217;ve hit this, this means that you have a <strong>workflow state</strong>
 somewhere on your portal that has no specific permissions associated
 with it (or otherwise has all permissions set as <tt class="docutils literal">Acquire</tt>). An easy way
 around this is to go find that workflow state (look in custom
-workflows!) in portal_workflow in the ZMI and temporarily change the
-state or states so they have a permission.</p>
+workflows!) in portal_workflow in the <span class="caps">ZMI</span> and temporarily change the
+state or states so they have a&nbsp;permission.</p>
 <p>Then, go ahead and upgrade your portal to Plone 4.x and you can change
-your permission back.</p>
+your permission&nbsp;back.</p>
 
     </div><!-- /.entry-content -->
         <div class="comments">

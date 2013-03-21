@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Linux: Graphics Card Woes & BIOS Issues</title>
+        <title>Linux: Graphics Card Woes & BIOS Issues</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2009/01/linux-graphics-card-woes-bios-issues/" rel="bookmark"
-           title="Permalink to Linux: Graphics Card Woes & BIOS Issues">Linux: Graphics Card Woes &amp; BIOS Issues</a></h1>
+           title="Permalink to Linux: Graphics Card Woes & BIOS Issues">Linux: Graphics Card Woes <span class="amp">&amp;</span> <span class="caps">BIOS</span>&nbsp;Issues</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -49,11 +49,11 @@
 <p>tags: <a href="../../../../tag/bios.html">bios</a><a href="../../../../tag/driver.html">driver</a><a href="../../../../tag/graphics.html">graphics</a><a href="../../../../tag/linux.html">linux</a><a href="../../../../tag/problem.html">problem</a><a href="../../../../tag/ubuntu.html">ubuntu</a></p>
 </footer><!-- /.post-info -->      <p>…and I had thought that installing a graphics card in a computer was as
 easy as opening the case, inserting the card, and booting the machine
-(then Xorg config etc). Well, to tell the truth, I just moved my HDD,
+(then Xorg config etc). Well, to tell the truth, I just moved my <span class="caps">HDD</span>,
 peripherals (gfx card included) to a new box - now a Dell OptiPlex 755.
-But, it's not that easy if you can't boot your Ubuntu 8.10 OS!</p>
+But, it&#8217;s not that easy if you can&#8217;t boot your Ubuntu 8.10&nbsp;<span class="caps">OS</span>!</p>
 <p>The computer kept spitting this message out, even though it just worked
-a few days ago:</p>
+a few days&nbsp;ago:</p>
 <pre class="literal-block">
 15.848000 NVRM: This PCI I/O region assigned to your NVIDIA device is invalid:
 15.848000 NVRM: BAR1 is 0M &#64; 0x00000000 (PCI:0001:00.0)
@@ -63,17 +63,17 @@ a few days ago:</p>
 15.848000 NVRM: This PCI I/O region assigned to your NVIDIA device is invalid:
 </pre>
 <p>After much pain, I managed to get into the computer and have the network
-loaded up (yay). Some hours of searching, I'd stumbled onto Dell's
+loaded up (yay). Some hours of searching, I&#8217;d stumbled onto Dell&#8217;s
 Official solution to driver updates (biosdisk); no luck because the boot
-disk wouldn't load the EXE. Tried the official method from Ubuntu's
-wiki; no luck since my BIOS couldn't be found in the package repo.</p>
+disk wouldn&#8217;t load the <span class="caps">EXE</span>. Tried the official method from Ubuntu&#8217;s
+wiki; no luck since my <span class="caps">BIOS</span> couldn&#8217;t be found in the package&nbsp;repo.</p>
 <p>Final ditch effort to do it manually led me to this:
 <a class="reference external" href="http://bigbrovar.wordpress.com/2008/12/07/upgrade-downgrade-your-dell-bios-on-ubuntu/">http://bigbrovar.wordpress.com/2008/12/07/upgrade-downgrade-your-dell-bios-on-ubuntu/</a></p>
-<p>And, it works! Turns out on my system I didn't even need to edit the
-/boot/grub/menu.lst file (BIOS just updates itself upon reboot).</p>
-<p>And then, like magic, everything's fine. My whole system is back working
-again after just that one (major) fix.</p>
-<p>Back to work for me…</p>
+<p>And, it works! Turns out on my system I didn&#8217;t even need to edit the
+/boot/grub/menu.lst file (<span class="caps">BIOS</span> just updates itself upon&nbsp;reboot).</p>
+<p>And then, like magic, everything&#8217;s fine. My whole system is back working
+again after just that one (major)&nbsp;fix.</p>
+<p>Back to work for&nbsp;me…</p>
 
     </div><!-- /.entry-content -->
         <div class="comments">

@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2011/11/user-ids-show-as-comment-authors-in-plone-4-x-after-migration-from-plone-app-discussion/">User IDs show as comment authors in Plone 4.x after migration from plone.app.discussion</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2011/11/user-ids-show-as-comment-authors-in-plone-4-x-after-migration-from-plone-app-discussion/">User IDs show as comment authors in Plone 4.x after migration from&nbsp;plone.app.discussion</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2011-11-01T13:18:00">
                 Tue 01 November 2011
@@ -43,30 +43,30 @@
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/collective.html">collective</a><a href="../tag/comments.html">comments</a><a href="../tag/discussion.html">discussion</a><a href="../tag/docs.html">docs</a><a href="../tag/documentation.html">documentation</a><a href="../tag/fix.html">fix</a><a href="../tag/plone.html">plone</a></p>
-</footer><!-- /.post-info --><p>If you've migrated your site from earlier versions of Plone to the
+</footer><!-- /.post-info --><p>If you&#8217;ve migrated your site from earlier versions of Plone to the
 latest ones in the 4.x series, or else have started using
 plone.app.discussion earlier than that, you might have come across a
 situation where comments on your site show user IDs as authors rather
-than a user's full name. If you see this anywhere, chances are your
-comment's migration didn't go according to plan, and that the Creator
-information didn't get recorded correctly on the comment.</p>
-<p>I've just written this on the Collective developer docs:
+than a user&#8217;s full name. If you see this anywhere, chances are your
+comment&#8217;s migration didn&#8217;t go according to plan, and that the Creator
+information didn&#8217;t get recorded correctly on the&nbsp;comment.</p>
+<p>I&#8217;ve just written this on the Collective developer docs:
 <a class="reference external" href="http://readthedocs.org/docs/collective-docs/en/latest/misc/upgrade.html#fixing-creator-details-on-existing-comments">http://readthedocs.org/docs/collective-docs/en/latest/misc/upgrade.html#fixing-creator-details-on-existing-comments</a></p>
 <p>The script there should help by stepping through all comments on your
 site and fixing up the creator details as required. As mentioned in the
 comments beneath the script, the mileage you get may vary depending on
-the state of your comments. I found half my site's comments were fine
-and half weren't. Some of mine had no author name, email, or user ID in
+the state of your comments. I found half my site&#8217;s comments were fine
+and half weren&#8217;t. Some of mine had no author name, email, or user <span class="caps">ID</span> in
 the relevant fields, and the script there checks for these (and the
-actual existence of a user after looking up what's in the Creator
-property), so that should be enough to sanity-check so it won't stomp
-over correct comments.</p>
-<p>That said, if for some reason, you happened to have a user with ID
-<em>david</em> and full name of <em>Administrator</em>, also had a user with the ID of
+actual existence of a user after looking up what&#8217;s in the Creator
+property), so that should be enough to sanity-check so it won&#8217;t stomp
+over correct&nbsp;comments.</p>
+<p>That said, if for some reason, you happened to have a user with <span class="caps">ID</span>
+<em>david</em> and full name of <em>Administrator</em>, also had a user with the <span class="caps">ID</span> of
 <em>Administrator</em>, and had a comment which had an incorrect <em>Creator</em> but
 did have the three fields of <em>author_username</em>, <em>author_name</em>, and
-<em>author_email</em>, then it won't affect those comments and you might just
-have to manually fix them up.</p>
+<em>author_email</em>, then it won&#8217;t affect those comments and you might just
+have to manually fix them&nbsp;up.</p>
 <p>There are <a href="../blog/2011/11/user-ids-show-as-comment-authors-in-plone-4-x-after-migration-from-plone-app-discussion/#disqus_thread">comments</a>.</p>                </article>
                             </aside><!-- /#featured -->
                             <section id="content" class="body">
@@ -79,7 +79,7 @@ have to manually fix them up.</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2011/01/python-eggs-and-missing-files-like-docs/" rel="bookmark"
-                           title="Permalink to Python eggs and missing files (like 'docs')">Python eggs and missing files (like 'docs')</a></h1>
+                           title="Permalink to Python eggs and missing files (like ‘docs’)">Python eggs and missing files (like&nbsp;&#8216;docs&#8217;)</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -93,10 +93,10 @@ have to manually fix them up.</p>
         </address>
         <p>In <a href="../category/python.html">Python</a>. </p>
 <p>tags: <a href="../tag/build.html">build</a><a href="../tag/docs.html">docs</a><a href="../tag/egg.html">egg</a><a href="../tag/file.html">file</a><a href="../tag/install.html">install</a><a href="../tag/missing.html">missing</a><a href="../tag/problem.html">problem</a><a href="../tag/python.html">python</a></p>
-</footer><!-- /.post-info -->                <p>This is pretty trivial (and trivial to fix), but I'm chronicling it for
-my knowledge as much as anyone else's.&nbsp; The issue is that a given Python
-egg is missing some form of files, most commonly the 'docs' directory in
-my experience, because the build wasn't configured ...</p>
+</footer><!-- /.post-info -->                <p>This is pretty trivial (and trivial to fix), but I&#8217;m chronicling it for
+my knowledge as much as anyone else&#8217;s.&nbsp; The issue is that a given Python
+egg is missing some form of files, most commonly the &#8216;docs&#8217; directory in
+my experience, because the build wasn&#8217;t configured ...</p>
                 <a class="readmore" href="../blog/2011/01/python-eggs-and-missing-files-like-docs/">read more</a>
                 <p>There are <a href="../blog/2011/01/python-eggs-and-missing-files-like-docs/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>

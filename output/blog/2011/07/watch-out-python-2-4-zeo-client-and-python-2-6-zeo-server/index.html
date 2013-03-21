@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Watch out: Python 2.4 ZEO client and Python 2.6 ZEO Server</title>
+        <title>Watch out: Python 2.4 ZEO client and Python 2.6 ZEO Server</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2011/07/watch-out-python-2-4-zeo-client-and-python-2-6-zeo-server/" rel="bookmark"
-           title="Permalink to Watch out: Python 2.4 ZEO client and Python 2.6 ZEO Server">Watch out: Python 2.4 ZEO client and Python 2.6 ZEO Server</a></h1>
+           title="Permalink to Watch out: Python 2.4 ZEO client and Python 2.6 ZEO Server">Watch out: Python 2.4 <span class="caps">ZEO</span> client and Python 2.6 <span class="caps">ZEO</span>&nbsp;Server</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -49,48 +49,48 @@
 <p>tags: <a href="../../../../tag/database.html">database</a><a href="../../../../tag/fs.html">fs</a><a href="../../../../tag/plone.html">plone</a><a href="../../../../tag/server.html">server</a><a href="../../../../tag/zeo.html">zeo</a><a href="../../../../tag/zope.html">zope</a></p>
 </footer><!-- /.post-info -->      <p>Today was interesting when an issue with saving content on a Plone 3.3.5
 site got reported to me. The system was producing undecipherable error
-messages about ZEO disconnections and database conflicts whenever
+messages about <span class="caps">ZEO</span> disconnections and database conflicts whenever
 someone would try and create some content within Plone (folders,
-particularly). Errors looked like:</p>
+particularly). Errors looked&nbsp;like:</p>
 <pre class="code pytb literal-block">
-<span class="x">Module ZEO.zrpc.connection, line 796, in wait. DisconnectedError&quot; and &quot;raise ReadConflictError().
+<span class="x">Module <span class="caps">ZEO</span>.zrpc.connection, line 796, in wait. DisconnectedError&quot; and &quot;raise ReadConflictError().
 ReadConflictError: database read conflict error&quot;</span>
 </pre>
-<p>and also:</p>
+<p>and&nbsp;also:</p>
 <pre class="code pytb literal-block">
-<span class="x">ERROR ZEO.zrpc (2515) can't decode message: '(K\x11K\x01U\tserialnos(]((U\x08\x00\x00\x00\x00\x00X\x...'</span>
+<span class="x"><span class="caps">ERROR</span> <span class="caps">ZEO</span>.zrpc (2515) can't decode message: '(K\x11K\x01U\tserialnos(]((U\x08\x00\x00\x00\x00\x00X\x...'</span>
 </pre>
-<p>-- essentially the issue described <a class="reference external" href="https://mail.zope.org/pipermail/zodb-dev/2010-December/013893.html">here</a>. My ZEO server was running
-ZODB3 3.9.5 with Python 2.6, and my client running ZODB3 3.8.3 with
-Python 2.4; almost everything worked.</p>
-<p>The long and the short of this issue appears to be, as the <a class="reference external" href="http://pypi.python.org/pypi/ZODB3/3.9.5#compatibility">ZODB
+<p>&#8212; essentially the issue described <a class="reference external" href="https://mail.zope.org/pipermail/zodb-dev/2010-December/013893.html">here</a>. My <span class="caps">ZEO</span> server was running
+<span class="caps">ZODB3</span> 3.9.5 with Python 2.6, and my client running <span class="caps">ZODB3</span> 3.8.3 with
+Python 2.4; almost everything&nbsp;worked.</p>
+<p>The long and the short of this issue appears to be, as the <a class="reference external" href="http://pypi.python.org/pypi/ZODB3/3.9.5#compatibility"><span class="caps">ZODB</span>
 documentation mentions</a>, is that Python 2.4 servers work with 2.5+
-clients, but not the other way around.&nbsp; It's slightly misleading when
-you read further and see that:</p>
+clients, but not the other way around.&nbsp; It&#8217;s slightly misleading when
+you read further and see&nbsp;that:</p>
 <pre class="literal-block">
 ZODB ZEO clients from ZODB 3.2 on can talk to ZODB 3.9 servers. ZODB
 ZEO Clients can talk to ZODB 3.8 and 3.9 ZEO servers.
 </pre>
-<p>So, despite this seeming interoperability, dang - I can't use my
-pre-existing ZEO server setup (based on the Plone 4 buildout for
-versions, etc) which is currently in place and running.</p>
+<p>So, despite this seeming interoperability, dang - I can&#8217;t use my
+pre-existing <span class="caps">ZEO</span> server setup (based on the Plone 4 buildout for
+versions, etc) which is currently in place and&nbsp;running.</p>
 <p>Thankfully, building being what it is, the solution for me was to simply
 re-use that buildout for any Plone instances that are Python 2.4
 clients.&nbsp; This was as simple as re-cloning my git repository where I
 keep the buildouts, firing up a brand new virtualenv for Python 2.4, and
-moving the data across.</p>
+moving the data&nbsp;across.</p>
 <div class="section" id="one-more-thing">
-<h2>One more thing...</h2>
+<h2>One more&nbsp;thing&#8230;</h2>
 <p>There is one final thing worth mentioning, which I got awfully caught
-out by.&nbsp; I was finding that my ZEO processes, under this new
+out by.&nbsp; I was finding that my <span class="caps">ZEO</span> processes, under this new
 environment, just would not start - essentially, they would keep
 respawning again and again until they stopped (triggered by some
-'quick-respawn' safety mechanism, seemingly).&nbsp; I thought this was some
-issue concerning the fact I'd had my databases and files loaded against
-newer ZEO versions, but this actually not.&nbsp; This was a by-product of not
-having my ZEO authentication database present - because there was no
+&#8216;quick-respawn&#8217; safety mechanism, seemingly).&nbsp; I thought this was some
+issue concerning the fact I&#8217;d had my databases and files loaded against
+newer <span class="caps">ZEO</span> versions, but this actually not.&nbsp; This was a by-product of not
+having my <span class="caps">ZEO</span> authentication database present - because there was no
 file, presumably the processes kept crashing.&nbsp; Sadly, no error message,
-so hence this note.&nbsp; Take care with this one.</p>
+so hence this note.&nbsp; Take care with this&nbsp;one.</p>
 </div>
 
     </div><!-- /.entry-content -->

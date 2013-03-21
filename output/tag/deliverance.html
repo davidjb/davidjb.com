@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2010/01/lack-of-kupu-css-styles-plone-and-deliverance/">(Lack of) Kupu CSS Styles, Plone and Deliverance</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2010/01/lack-of-kupu-css-styles-plone-and-deliverance/">(Lack of) Kupu <span class="caps">CSS</span> Styles, Plone and&nbsp;Deliverance</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2010-01-14T14:13:00">
                 Thu 14 January 2010
@@ -43,23 +43,23 @@
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/css.html">css</a><a href="../tag/deliverance.html">deliverance</a><a href="../tag/editor.html">editor</a><a href="../tag/kupu.html">kupu</a><a href="../tag/plone.html">plone</a><a href="../tag/static.html">static</a><a href="../tag/style.html">style</a><a href="../tag/theme.html">theme</a></p>
-</footer><!-- /.post-info --><p><strong>Note:</strong> see <a class="reference external" href="http://www.coactivate.org/projects/deliverance/lists/deliverance-discussion/archive/2010/01/1263439188459/forum_view">this post</a> for up-to-date details.</p>
-<p>Essentially, the issue is that Deliverance doesn't theme (and rightly
+</footer><!-- /.post-info --><p><strong>Note:</strong> see <a class="reference external" href="http://www.coactivate.org/projects/deliverance/lists/deliverance-discussion/archive/2010/01/1263439188459/forum_view">this post</a> for up-to-date&nbsp;details.</p>
+<p>Essentially, the issue is that Deliverance doesn&#8217;t theme (and rightly
 so) the Kupu editor within Plone and hence any styles applied to normal
-pages by Deliverance don't show up.&nbsp; My workaround, as detailed on that
-post, is to customise the &quot;emptypageresources&quot; page template and include
-a suitable link to the CSS file, like so:</p>
+pages by Deliverance don&#8217;t show up.&nbsp; My workaround, as detailed on that
+post, is to customise the &#8220;emptypageresources&#8221; page template and include
+a suitable link to the <span class="caps">CSS</span> file, like&nbsp;so:</p>
 <pre class="code html literal-block">
 <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;site.css&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">rel=</span><span class="s">&quot;StyleSheet&quot;</span> <span class="na">tal:attributes=</span><span class="s">&quot;href string:${context/&#64;&#64;plone_portal_state/navigation_root_url}/static/theme/site.css;&quot;</span> <span class="nt">/&gt;</span>
 </pre>
 <p>(changing the tal:attributes section accordingly).&nbsp; This should
 introduce perfectly correct styles for your editor from your Deliverance
-(or other) static theme.</p>
-<p>This feels to be a very common use case, but I can't seem to find any
-other suggestions on a workaround/solution. I'd have to think that this
-is likely to be a widespread issue, though. It's definitely not
-something that should happen if we're actually able to have the WYSIWYG
-editor be WYSIWYG (unlike some other CMS products).</p>
+(or other) static&nbsp;theme.</p>
+<p>This feels to be a very common use case, but I can&#8217;t seem to find any
+other suggestions on a workaround/solution. I&#8217;d have to think that this
+is likely to be a widespread issue, though. It&#8217;s definitely not
+something that should happen if we&#8217;re actually able to have the <span class="caps">WYSIWYG</span>
+editor be <span class="caps">WYSIWYG</span> (unlike some other <span class="caps">CMS</span>&nbsp;products).</p>
 <p>There are <a href="../blog/2010/01/lack-of-kupu-css-styles-plone-and-deliverance/#disqus_thread">comments</a>.</p>                </article>
                             </aside><!-- /#featured -->
                             <section id="content" class="body">
@@ -72,7 +72,7 @@ editor be WYSIWYG (unlike some other CMS products).</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/11/deliverance-plone-and-tags/" rel="bookmark"
-                           title="Permalink to Deliverance, Plone, and tags">Deliverance, Plone, and  tags</a></h1>
+                           title="Permalink to Deliverance, Plone, and tags">Deliverance, Plone, and&nbsp;tags</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -86,10 +86,10 @@ editor be WYSIWYG (unlike some other CMS products).</p>
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/deliverance.html">deliverance</a><a href="../tag/element.html">element</a><a href="../tag/plone.html">plone</a><a href="../tag/problem.html">problem</a><a href="../tag/theme.html">theme</a><a href="../tag/themeing.html">themeing</a><a href="../tag/xml.html">xml</a></p>
-</footer><!-- /.post-info -->                <p>It's been a little bit of time since my last post, and who can blame me
+</footer><!-- /.post-info -->                <p>It&#8217;s been a little bit of time since my last post, and who can blame me
 with my site having been down for almost 2 full days over the last
-week!&nbsp; I'm not paying that much for the webspace, thankfully, but if I
-was, I'd be seeing ...</p>
+week!&nbsp; I&#8217;m not paying that much for the webspace, thankfully, but if I
+was, I&#8217;d be seeing ...</p>
                 <a class="readmore" href="../blog/2009/11/deliverance-plone-and-tags/">read more</a>
                 <p>There are <a href="../blog/2009/11/deliverance-plone-and-tags/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
@@ -99,7 +99,7 @@ was, I'd be seeing ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/09/deliver-me-from-deliverance/" rel="bookmark"
-                           title="Permalink to Deliver me from ... Deliverance?">Deliver me from ... Deliverance?</a></h1>
+                           title="Permalink to Deliver me from … Deliverance?">Deliver me from &#8230;&nbsp;Deliverance?</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -114,9 +114,9 @@ was, I'd be seeing ...</p>
         <p>In <a href="../category/themes.html">Themes</a>. </p>
 <p>tags: <a href="../tag/bleeding-edge.html">bleeding edge</a><a href="../tag/deliverance.html">deliverance</a><a href="../tag/plone.html">plone</a><a href="../tag/rules.html">rules</a><a href="../tag/technology.html">technology</a><a href="../tag/theme.html">theme</a><a href="../tag/themeing.html">themeing</a><a href="../tag/xml.html">xml</a></p>
 </footer><!-- /.post-info -->                <p>Always one for being on and beyond the bleeding edge of new technology,
-I've (with the help of colleagues) been setting up a new technology for
-applying themes to web sites.&nbsp; In particular, I'm applying Deliverance
-to Plone and whilst I'm not the first one to venture ...</p>
+I&#8217;ve (with the help of colleagues) been setting up a new technology for
+applying themes to web sites.&nbsp; In particular, I&#8217;m applying Deliverance
+to Plone and whilst I&#8217;m not the first one to venture ...</p>
                 <a class="readmore" href="../blog/2009/09/deliver-me-from-deliverance/">read more</a>
                 <p>There are <a href="../blog/2009/09/deliver-me-from-deliverance/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>

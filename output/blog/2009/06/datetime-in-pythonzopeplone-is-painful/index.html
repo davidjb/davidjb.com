@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>DateTime in Python/Zope/Plone is painful</title>
+        <title>DateTime in Python/Zope/Plone is painful</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2009/06/datetime-in-pythonzopeplone-is-painful/" rel="bookmark"
-           title="Permalink to DateTime in Python/Zope/Plone is painful">DateTime in Python/Zope/Plone is painful</a></h1>
+           title="Permalink to DateTime in Python/Zope/Plone is painful">DateTime in Python/Zope/Plone is&nbsp;painful</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -47,32 +47,30 @@
         </address>
         <p>In <a href="../../../../category/python.html">Python</a>. </p>
 <p>tags: <a href="../../../../tag/comparison.html">comparison</a><a href="../../../../tag/date.html">date</a><a href="../../../../tag/plone.html">plone</a><a href="../../../../tag/problem.html">problem</a><a href="../../../../tag/python.html">python</a><a href="../../../../tag/time.html">time</a><a href="../../../../tag/zope.html">zope</a></p>
-</footer><!-- /.post-info -->      <p>Alright, now for today's problem:&nbsp; why do two dates that look different
-when outputted actually end up being the same date?</p>
-<p><strong>Answer:</strong> I'm not sure, but I'm pretty sure it's got something to do
-with the wacky support the above-mentioned 3 products have for
-timezones.</p>
-<p><strong>The background:</strong> Plone stores a DateTime object to record a user's
-last login time.&nbsp; It doesn't really matter what's purpose is, because
-Plone (this time) isn't at fault.&nbsp; The DateTime gets stored, no
+</footer><!-- /.post-info -->      <p>Alright, now for today&#8217;s problem:&nbsp; why do two dates that look different
+when outputted actually end up being the same&nbsp;date?</p>
+<p><strong>Answer:</strong> I&#8217;m not sure, but I&#8217;m pretty sure it&#8217;s got something to do
+with the wacky support the above-mentioned 3 products have for&nbsp;timezones.</p>
+<p><strong>The background:</strong> Plone stores a DateTime object to record a user&#8217;s
+last login time.&nbsp; It doesn&#8217;t really matter what&#8217;s purpose is, because
+Plone (this time) isn&#8217;t at fault.&nbsp; The DateTime gets stored, no
 worries.&nbsp; The problem arises when you try to put that value back into a
-DateTime object.&nbsp; Now, I'd have thought it'd be as simple as doing this:</p>
+DateTime object.&nbsp; Now, I&#8217;d have thought it&#8217;d be as simple as doing&nbsp;this:</p>
 <pre class="code python literal-block">
 <span class="n">dt</span> <span class="o">=</span> <span class="n">DateTime</span><span class="p">(</span><span class="n">member</span><span class="o">.</span><span class="n">getProperty</span><span class="p">(</span><span class="s">'login_time'</span><span class="p">))[</span><span class="o">/</span><span class="n">sourcecode</span><span class="p">]</span>
 </pre>
 <p>And realistically, it is.&nbsp; Except that printing/using that value - at
-least for me - results in a time that appears as UTC, but is reported as
-being in my timezone (aka a time that's 10 hours behind since I'm
-GMT+10).</p>
+least for me - results in a time that appears as <span class="caps">UTC</span>, but is reported as
+being in my timezone (aka a time that&#8217;s 10 hours behind since I&#8217;m&nbsp;<span class="caps">GMT</span>+10).</p>
 <p><strong>The fix:</strong> the time still knows its timezone correctly, so just give
-it a kick:</p>
+it a&nbsp;kick:</p>
 <pre class="code python literal-block">
 <span class="n">dt</span> <span class="o">=</span> <span class="n">DateTime</span><span class="p">(</span><span class="n">member</span><span class="o">.</span><span class="n">getProperty</span><span class="p">(</span><span class="s">'login_time'</span><span class="p">))</span>
 <span class="n">dt</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">toZone</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">timezone</span><span class="p">())</span>
 </pre>
 <p>Amazingly, doing a comparison (using cmp) between the original DateTime
-object and it's 'corrected' version actually shows that they're the
-same.&nbsp; Uhuh.</p>
+object and it&#8217;s &#8216;corrected&#8217; version actually shows that they&#8217;re the
+same.&nbsp;&nbsp;Uhuh.</p>
 
     </div><!-- /.entry-content -->
         <div class="comments">

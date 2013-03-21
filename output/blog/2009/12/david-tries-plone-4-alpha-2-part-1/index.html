@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>David tries Plone 4.0a2 (Part 1)</title>
+        <title>David tries Plone 4.0a2 (Part 1)</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2009/12/david-tries-plone-4-alpha-2-part-1/" rel="bookmark"
-           title="Permalink to David tries Plone 4.0a2 (Part 1)">David tries Plone 4.0a2 (Part 1)</a></h1>
+           title="Permalink to David tries Plone 4.0a2 (Part 1)">David tries Plone 4.0a2 (Part&nbsp;1)</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -48,28 +48,28 @@
         <p>In <a href="../../../../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../../../../tag/alpha.html">alpha</a><a href="../../../../tag/buildout.html">buildout</a><a href="../../../../tag/install.html">install</a><a href="../../../../tag/plone.html">plone</a><a href="../../../../tag/plone-4.html">plone 4</a><a href="../../../../tag/testing.html">testing</a><a href="../../../../tag/zope.html">zope</a></p>
 </footer><!-- /.post-info -->      <p>Plone 4 is approaching!&nbsp; Excellent!&nbsp; Lots of new features to play around
-with and plenty more things to have to fix with the upgrade.&nbsp; I've been
-keeping tabs on the change log of updates and it's looking really good.
+with and plenty more things to have to fix with the upgrade.&nbsp; I&#8217;ve been
+keeping tabs on the change log of updates and it&#8217;s looking really good.
 Lots of little, but significant, changes are afoot.&nbsp; Now, how about
 actually installing the Alpha 2 version of Plone 4 to see it for real?
-Let's do it!</p>
-<p>My steps are not going to work on your computer.&nbsp; I don't think you'll
+Let&#8217;s do&nbsp;it!</p>
+<p>My steps are not going to work on your computer.&nbsp; I don&#8217;t think you&#8217;ll
 be able to follow my words/commands exactly, but here goes anyway about
 my experience so far.&nbsp; The buildout might/might not work on Windows/Mac;
-I'm on Linux and that's that FYI.</p>
+I&#8217;m on Linux and that&#8217;s that&nbsp;<span class="caps">FYI</span>.</p>
 <ul>
 <li><p class="first">I grabbed the buildout from
 <a class="reference external" href="https://svn.plone.org/svn/plone/buildouts/plone-coredev/branches/">https://svn.plone.org/svn/plone/buildouts/plone-coredev/branches/</a>
 and beat it over the head with a stick.&nbsp; I downloaded the Plone 4.0a2
 versions.cfg from <a class="reference external" href="http://dist.plone.org/release/4.0a2/versions.cfg">http://dist.plone.org/release/4.0a2/versions.cfg</a>
 over the top of the one provided and made the buildout.cfg provided
-only extend off versions.cfg.&nbsp; You'll also need to strip back the
-'parts' section of the buildout (eg no 'test' sections since I don't
-really need to know things aren't 100% right yet ;-) )</p>
+only extend off versions.cfg.&nbsp; You&#8217;ll also need to strip back the
+&#8216;parts&#8217; section of the buildout (eg no &#8216;test&#8217; sections since I don&#8217;t
+really need to know things aren&#8217;t 100% right yet ;-)&nbsp;)</p>
 </li>
 <li><p class="first">Set up your virtualenv in your given folder, making sure you use
-<strong>Python 2.6</strong>.&nbsp; It's not marked in huge text and bold for you as
-much as it is for me.&nbsp; If you see this:</p>
+<strong>Python 2.6</strong>.&nbsp; It&#8217;s not marked in huge text and bold for you as
+much as it is for me.&nbsp; If you see&nbsp;this:</p>
 <pre class="code pytb literal-block">
 <span class="x">While:
 Installing.
@@ -82,11 +82,11 @@ recipe being used:
 ^
 SyntaxError: invalid syntax</span>
 </pre>
-<p>then you need to stop using Python 2.4 and start using 2.6, okay?</p>
+<p>then you need to stop using Python 2.4 and start using 2.6,&nbsp;okay?</p>
 </li>
-<li><p class="first">Make sure you've got the Python 2.6 development libraries installed
-on your machine.&nbsp; Expect pain from Zope 2.12.1 (etc) if you don't.
-If you see this:</p>
+<li><p class="first">Make sure you&#8217;ve got the Python 2.6 development libraries installed
+on your machine.&nbsp; Expect pain from Zope 2.12.1 (etc) if you don&#8217;t.
+If you see&nbsp;this:</p>
 <pre class="code pytb literal-block">
 <span class="x">include/ExtensionClass/ExtensionClass.h:83:20: error: Python.h: No such file or directory
 ....[lots of nasty errors]...
@@ -100,24 +100,24 @@ Installing recipe plone.recipe.zope2instance.
 Getting distribution for 'Zope2==2.12.1'.
 Error: Couldn't install: Zope2 2.12.1</span>
 </pre>
-<p>then go and run this, then run Buildout again:</p>
+<p>then go and run this, then run Buildout&nbsp;again:</p>
 <pre class="code bash literal-block">
 sudo apt-get install python-dev
 </pre>
 </li>
-<li><p class="first">Sort your PIL out.&nbsp; See here: <a class="reference external" href="http://davidjb.com/blog/2009/06/virtualenv-plone-and-ubuntu-904-jaunty">this post</a> for how to handle it.&nbsp; I'm
+<li><p class="first">Sort your <span class="caps">PIL</span> out.&nbsp; See here: <a class="reference external" href="http://davidjb.com/blog/2009/06/virtualenv-plone-and-ubuntu-904-jaunty">this post</a> for how to handle it.&nbsp; I&#8217;m
 sure there are other, possibly easier ways, but the two
-'easy_install' lines in that post work.</p>
+&#8216;easy_install&#8217; lines in that post&nbsp;work.</p>
 </li>
-<li><p class="first">Run your buildout and hope there's no other problems I haven't
-covered.&nbsp; If you get stuck, go say hi to Google and I'll see you back
+<li><p class="first">Run your buildout and hope there&#8217;s no other problems I haven&#8217;t
+covered.&nbsp; If you get stuck, go say hi to Google and I&#8217;ll see you back
 here after class.&nbsp; Other than that, wait a very long amount of time
 whilst the buildout completes, with or without fingers crossed.&nbsp; Your
-choice.&nbsp; My buildout's going well so far, though.</p>
+choice.&nbsp; My buildout&#8217;s going well so far,&nbsp;though.</p>
 </li>
 </ul>
-<p>And we're done buildout-ing!&nbsp; Success!</p>
-<p>See my <a class="reference external" href="http://davidjb.com/blog/2009/12/david-tries-plone-4-0a2-part-2">next post</a> for my thoughts of this new version so far.</p>
+<p>And we&#8217;re done buildout-ing!&nbsp;&nbsp;Success!</p>
+<p>See my <a class="reference external" href="http://davidjb.com/blog/2009/12/david-tries-plone-4-0a2-part-2">next post</a> for my thoughts of this new version so&nbsp;far.</p>
 
     </div><!-- /.entry-content -->
         <div class="comments">

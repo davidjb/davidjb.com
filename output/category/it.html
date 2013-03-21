@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2012/06/restartreset-usb-in-ubuntu-12-04-without-rebooting/">Restart/reset USB in Ubuntu 12.04 without rebooting</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2012/06/restartreset-usb-in-ubuntu-12-04-without-rebooting/">Restart/reset <span class="caps">USB</span> in Ubuntu 12.04 without&nbsp;rebooting</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2012-06-25T10:34:00">
                 Mon 25 June 2012
@@ -44,21 +44,21 @@
         <p>In <a href="../category/it.html">IT</a>. </p>
 <p>tags: <a href="../tag/linux.html">linux</a><a href="../tag/power.html">power</a><a href="../tag/reset.html">reset</a><a href="../tag/restart.html">restart</a><a href="../tag/ubuntu.html">ubuntu</a><a href="../tag/usb.html">usb</a></p>
 </footer><!-- /.post-info --><p>Either my Dell Optiplex 990 computer or my Linux install has an issue:
-occasionally, when I re-plug a USB device into the system, it'll cause a
-fault in the USB module in the kernel and USB goes dark. I'm unsure as
-to whether this is a hardware or software issue, but I'd simply like to
-restart my USB subsystem and continue working. When searching the web
-for 'restart USB in Linux' and 'reload USB kernel module', you get a
+occasionally, when I re-plug a <span class="caps">USB</span> device into the system, it&#8217;ll cause a
+fault in the <span class="caps">USB</span> module in the kernel and <span class="caps">USB</span> goes dark. I&#8217;m unsure as
+to whether this is a hardware or software issue, but I&#8217;d simply like to
+restart my <span class="caps">USB</span> subsystem and continue working. When searching the web
+for &#8216;restart <span class="caps">USB</span> in Linux&#8217; and &#8216;reload <span class="caps">USB</span> kernel module&#8217;, you get a
 plethora of results and none of which will work (seemingly due to how
 the Ubuntu standard kernel is compiled), at least for me within Ubuntu
-12.04, Precise Pangolin. Until now, I've had no success and had to hard
-reset. No longer.</p>
-<p>You'll need root/sudo access to the machine to be able to run commands.
-In my case, without USB available, then I've either got to sprint for a
-PS/2 keyboard and mouse or login via SSH. You can do what I've done and
+12.04, Precise Pangolin. Until now, I&#8217;ve had no success and had to hard
+reset. No&nbsp;longer.</p>
+<p>You&#8217;ll need root/sudo access to the machine to be able to run commands.
+In my case, without <span class="caps">USB</span> available, then I&#8217;ve either got to sprint for a
+<span class="caps">PS</span>/2 keyboard and mouse or login via <span class="caps">SSH</span>. You can do what I&#8217;ve done and
 prepared things into a suitable script I can run with just a Gnome
 launcher. &nbsp;Thanks to this <a class="reference external" href="http://ubuntuforums.org/showpost.php?p=9162799&amp;postcount=1">fantastic post</a> for the help. Either place
-the following into a script or run the commands directly:</p>
+the following into a script or run the commands&nbsp;directly:</p>
 <pre class="code bash literal-block">
 <span class="nb">echo</span> -n <span class="s2">&quot;0000:00:1a.0&quot;</span> | tee /sys/bus/pci/drivers/ehci_hcd/unbind
 <span class="nb">echo</span> -n <span class="s2">&quot;0000:00:1d.0&quot;</span> | tee /sys/bus/pci/drivers/ehci_hcd/unbind
@@ -66,12 +66,12 @@ the following into a script or run the commands directly:</p>
 <span class="nb">echo</span> -n <span class="s2">&quot;0000:00:1d.0&quot;</span> | tee /sys/bus/pci/drivers/ehci_hcd/bind
 </pre>
 <p>The hardware identifiers being passed around here can be revealed using
-a command like <tt class="docutils literal">lspci | grep USB</tt>. In my case, the identifiers in the
-original post were exactly what I have in my system.</p>
-<p>I'm yet to see if my USB will correctly come back online after freezing
-up as it hasn't happened yet, but I'll try this when it does and report
-back. That said, the commands above definitely reload all USB devices
-attached to the system; that much I've tried.</p>
+a command like <tt class="docutils literal">lspci | grep <span class="caps">USB</span></tt>. In my case, the identifiers in the
+original post were exactly what I have in my&nbsp;system.</p>
+<p>I&#8217;m yet to see if my <span class="caps">USB</span> will correctly come back online after freezing
+up as it hasn&#8217;t happened yet, but I&#8217;ll try this when it does and report
+back. That said, the commands above definitely reload all <span class="caps">USB</span> devices
+attached to the system; that much I&#8217;ve&nbsp;tried.</p>
 <p>There are <a href="../blog/2012/06/restartreset-usb-in-ubuntu-12-04-without-rebooting/#disqus_thread">comments</a>.</p>                </article>
                             </aside><!-- /#featured -->
                             <section id="content" class="body">
@@ -84,7 +84,7 @@ attached to the system; that much I've tried.</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2012/06/easier-github-organisation-repository-and-team-management-with-github-collective/" rel="bookmark"
-                           title="Permalink to Easier GitHub organisation, repository and team management with github-collective">Easier GitHub organisation, repository and team management with github-collective</a></h1>
+                           title="Permalink to Easier GitHub organisation, repository and team management with github-collective">Easier GitHub organisation, repository and team management with&nbsp;github-collective</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -100,8 +100,8 @@ attached to the system; that much I've tried.</p>
 <p>tags: <a href="../tag/collective.html">collective</a><a href="../tag/github.html">github</a><a href="../tag/ini.html">ini</a><a href="../tag/jenkins.html">jenkins</a><a href="../tag/management.html">management</a><a href="../tag/organization.html">organization</a><a href="../tag/plone.html">plone</a><a href="../tag/script.html">script</a></p>
 </footer><!-- /.post-info -->                <p>Have you ever felt that administering your GitHub organisation (or
 organization, depending from where you hail), its repositories, teams,
-and service hooks has become a tedious task and that you'd rather be
-doing something else? &nbsp;Maybe you're of the mindset that there should be
+and service hooks has become a tedious task and that you&#8217;d rather be
+doing something else? &nbsp;Maybe you&#8217;re of the mindset that there should be
 a better way of ...</p>
                 <a class="readmore" href="../blog/2012/06/easier-github-organisation-repository-and-team-management-with-github-collective/">read more</a>
                 <p>There are <a href="../blog/2012/06/easier-github-organisation-repository-and-team-management-with-github-collective/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
@@ -112,7 +112,7 @@ a better way of ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2011/05/building-cherokee-rpms-on-rhel-6-x86_64/" rel="bookmark"
-                           title="Permalink to Building Cherokee RPMs on RHEL 6 (x86_64)">Building Cherokee RPMs on RHEL 6 (x86_64)</a></h1>
+                           title="Permalink to Building Cherokee RPMs on RHEL 6 (x86_64)">Building Cherokee RPMs on <span class="caps">RHEL</span> 6&nbsp;(x86_64)</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -126,10 +126,10 @@ a better way of ...</p>
         </address>
         <p>In <a href="../category/it.html">IT</a>. </p>
 <p>tags: <a href="../tag/build.html">build</a><a href="../tag/cherokee.html">cherokee</a><a href="../tag/el.html">el</a><a href="../tag/red-hat.html">red hat</a><a href="../tag/rhel.html">rhel</a><a href="../tag/rpm.html">rpm</a></p>
-</footer><!-- /.post-info -->                <p><a class="reference external" href="http://www.cherokee-project.com/">Cherokee</a> is a fast web server and something I'm looking
+</footer><!-- /.post-info -->                <p><a class="reference external" href="http://www.cherokee-project.com/">Cherokee</a> is a fast web server and something I&#8217;m looking
 at using instead of my current Apache installs in order to squeeze a bit
-(lot) more juice out of my web services.</p>
-<p>You can easily install Cherokee via its automated scripting and that's
+(lot) more juice out of my web&nbsp;services.</p>
+<p>You can easily install Cherokee via its automated scripting and that&#8217;s
 really useful.&nbsp; Unfortunately, since I ...</p>
                 <a class="readmore" href="../blog/2011/05/building-cherokee-rpms-on-rhel-6-x86_64/">read more</a>
                 <p>There are <a href="../blog/2011/05/building-cherokee-rpms-on-rhel-6-x86_64/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
@@ -140,7 +140,7 @@ really useful.&nbsp; Unfortunately, since I ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2011/01/bailing-on-outlook-web-app-windows-live-and-using-gmail-with-popsmtp-instead/" rel="bookmark"
-                           title="Permalink to Bailing on Outlook Web App (Windows Live) and using Gmail with POP/SMTP instead">Bailing on Outlook Web App (Windows Live) and using Gmail with POP/SMTP instead</a></h1>
+                           title="Permalink to Bailing on Outlook Web App (Windows Live) and using Gmail with POP/SMTP instead">Bailing on Outlook Web App (Windows Live) and using Gmail with <span class="caps">POP</span>/<span class="caps">SMTP</span>&nbsp;instead</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -154,8 +154,8 @@ really useful.&nbsp; Unfortunately, since I ...</p>
         </address>
         <p>In <a href="../category/it.html">IT</a>. </p>
 <p>tags: <a href="../tag/email.html">email</a><a href="../tag/freedom.html">freedom</a><a href="../tag/gmail.html">gmail</a><a href="../tag/live.html">live</a><a href="../tag/microsoft.html">microsoft</a><a href="../tag/outlook.html">outlook</a><a href="../tag/pop3.html">pop3</a><a href="../tag/smtp.html">smtp</a></p>
-</footer><!-- /.post-info -->                <p>I'm not a fan of Microsoft's solutions for mail (Exchange, Outlook,
-Outlook Web Access, etc) because they simply aren't as smooth as other
+</footer><!-- /.post-info -->                <p>I&#8217;m not a fan of Microsoft&#8217;s solutions for mail (Exchange, Outlook,
+Outlook Web Access, etc) because they simply aren&#8217;t as smooth as other
 alternatives. In my case, my weapon of choice is Gmail for all my mail.
 Unless you really like the old-school style popup windows and ...</p>
                 <a class="readmore" href="../blog/2011/01/bailing-on-outlook-web-app-windows-live-and-using-gmail-with-popsmtp-instead/">read more</a>
@@ -167,7 +167,7 @@ Unless you really like the old-school style popup windows and ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2010/01/apache-directories-and-trailing-slashes/" rel="bookmark"
-                           title="Permalink to Apache: Directories and trailing slashes">Apache: Directories and trailing slashes</a></h1>
+                           title="Permalink to Apache: Directories and trailing slashes">Apache: Directories and trailing&nbsp;slashes</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -182,9 +182,9 @@ Unless you really like the old-school style popup windows and ...</p>
         <p>In <a href="../category/it.html">IT</a>. </p>
 <p>tags: <a href="../tag/apache.html">apache</a><a href="../tag/directories.html">directories</a><a href="../tag/folder.html">folder</a><a href="../tag/http.html">http</a><a href="../tag/httpd.html">httpd</a><a href="../tag/problem.html">problem</a><a href="../tag/web.html">web</a><a href="../tag/web-server.html">web server</a></p>
 </footer><!-- /.post-info -->                <p>Apache does something interesting (yes, I still
-think it's logical) when you're accessing a directory that it's serving:
-if you access it without a trailing slash, it'll add one by default.
-This makes sense if you're going after some static content or a folder
+think it&#8217;s logical) when you&#8217;re accessing a directory that it&#8217;s serving:
+if you access it without a trailing slash, it&#8217;ll add one by default.
+This makes sense if you&#8217;re going after some static content or a folder
 index ...</p>
                 <a class="readmore" href="../blog/2010/01/apache-directories-and-trailing-slashes/">read more</a>
                 <p>There are <a href="../blog/2010/01/apache-directories-and-trailing-slashes/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->

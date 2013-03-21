@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Ubuntu 11.04 boot freezes with 2.6.38-8-generic-pae kernel</title>
+        <title>Ubuntu 11.04 boot freezes with 2.6.38-8-generic-pae kernel</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2011/05/ubuntu-11-04-boot-freezes-with-2-6-38-8-generic-pae-kernel/" rel="bookmark"
-           title="Permalink to Ubuntu 11.04 boot freezes with 2.6.38-8-generic-pae kernel">Ubuntu 11.04 boot freezes with 2.6.38-8-generic-pae kernel</a></h1>
+           title="Permalink to Ubuntu 11.04 boot freezes with 2.6.38-8-generic-pae kernel">Ubuntu 11.04 boot freezes with 2.6.38-8-generic-pae&nbsp;kernel</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -47,26 +47,25 @@
         </address>
         <p>In <a href="../../../../category/linux.html">Linux</a>. </p>
 <p>tags: <a href="../../../../tag/1104.html">11.04</a><a href="../../../../tag/boot.html">boot</a><a href="../../../../tag/frozen.html">frozen</a><a href="../../../../tag/kernel.html">kernel</a><a href="../../../../tag/natty.html">natty</a><a href="../../../../tag/ubuntu.html">ubuntu</a></p>
-</footer><!-- /.post-info -->      <p>So you've just installed 32-bit Ubuntu 11.04 (Natty Narwhal), and in my
+</footer><!-- /.post-info -->      <p>So you&#8217;ve just installed 32-bit Ubuntu 11.04 (Natty Narwhal), and in my
 case, upgraded from Ubuntu 10.04 (Maverick Meerkat). &nbsp;The upgrade
 process seemingly went fine and then you were asked to restart your
 computer. &nbsp;You diligently do so, only to come back to find that your
-computer has frozen at GRUB2 upon trying to boot the
-2.6.38-8-generic-pae kernel from the GRUB list. &nbsp;Now what? &nbsp;How do you
-fix this?</p>
+computer has frozen at <span class="caps">GRUB2</span> upon trying to boot the
+2.6.38-8-generic-pae kernel from the <span class="caps">GRUB</span> list. &nbsp;Now what? &nbsp;How do you
+fix&nbsp;this?</p>
 <p>The issue appears to stem from some form of installation issue where
-this new kernel isn't set up right. &nbsp;Note: I don't actually know what's
-wrong and can't investigate.</p>
-<p>The good news is that you can use the 'Previous Versions' entry in the
-GRUB listing to boot to one of your older kernels and get your system
-started. &nbsp;Once you're booted, then load up Synaptic Package Manager and
-(re-)install:</p>
+this new kernel isn&#8217;t set up right. &nbsp;Note: I don&#8217;t actually know what&#8217;s
+wrong and can&#8217;t&nbsp;investigate.</p>
+<p>The good news is that you can use the &#8216;Previous Versions&#8217; entry in the
+<span class="caps">GRUB</span> listing to boot to one of your older kernels and get your system
+started. &nbsp;Once you&#8217;re booted, then load up Synaptic Package Manager and&nbsp;(re-)install:</p>
 <pre class="literal-block">
 linux-image-2.6.38-8-generic-pae&nbsp;linux-generic-pae&nbsp;linux-headers-generic-pae&nbsp;linux-image-generic-pae&nbsp;linux-headers-2.6.38-8-generic-pae
 </pre>
-<p>You should now be able to restart your computer and use the PAE-based
+<p>You should now be able to restart your computer and use the <span class="caps">PAE</span>-based
 kernel. Thanks to a post on the Ubuntu forums for pointing me in the
-right direction.</p>
+right&nbsp;direction.</p>
 
     </div><!-- /.entry-content -->
         <div class="comments">

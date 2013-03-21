@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2011/01/bailing-on-outlook-web-app-windows-live-and-using-gmail-with-popsmtp-instead/">Bailing on Outlook Web App (Windows Live) and using Gmail with POP/SMTP instead</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2011/01/bailing-on-outlook-web-app-windows-live-and-using-gmail-with-popsmtp-instead/">Bailing on Outlook Web App (Windows Live) and using Gmail with <span class="caps">POP</span>/<span class="caps">SMTP</span>&nbsp;instead</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2011-01-05T12:33:00">
                 Wed 05 January 2011
@@ -43,85 +43,80 @@
         </address>
         <p>In <a href="../category/it.html">IT</a>. </p>
 <p>tags: <a href="../tag/email.html">email</a><a href="../tag/freedom.html">freedom</a><a href="../tag/gmail.html">gmail</a><a href="../tag/live.html">live</a><a href="../tag/microsoft.html">microsoft</a><a href="../tag/outlook.html">outlook</a><a href="../tag/pop3.html">pop3</a><a href="../tag/smtp.html">smtp</a></p>
-</footer><!-- /.post-info --><p>I'm not a fan of Microsoft's solutions for mail (Exchange, Outlook,
-Outlook Web Access, etc) because they simply aren't as smooth as other
+</footer><!-- /.post-info --><p>I&#8217;m not a fan of Microsoft&#8217;s solutions for mail (Exchange, Outlook,
+Outlook Web Access, etc) because they simply aren&#8217;t as smooth as other
 alternatives. In my case, my weapon of choice is Gmail for all my mail.
 Unless you really like the old-school style popup windows and Web 1.0
-feel of Microsoft's options, you're probably opting for something else,
-too. Now, there's no helping my institutional mail account as they've
-disabled all standards-compliant forms of access (POP, IMAP, SMTP; short
+feel of Microsoft&#8217;s options, you&#8217;re probably opting for something else,
+too. Now, there&#8217;s no helping my institutional mail account as they&#8217;ve
+disabled all standards-compliant forms of access (<span class="caps">POP</span>, <span class="caps">IMAP</span>, <span class="caps">SMTP</span>; short
 of going down the route of <a class="reference external" href="http://davmail.sourceforge.net/">DavMail</a>). But, that said, there <strong>is</strong>
-hope to be had for my personal account, which is using &quot;Outlook Web App&quot;
-or whatever the hosted version of Hotmail is really called. Here's how
-you can connect via POP and SMTP.</p>
-<p>This works for me on my tertiary institution's Microsoft-hosted Outlook
-solution, so it may or may not work on yours (or work if you're not
-using a 'hosted' option). Try it and see!&nbsp; All settings and details I'm
-providing here should work with any mail app, but I'm specifically using
-Gmail.</p>
+hope to be had for my personal account, which is using &#8220;Outlook Web App&#8221;
+or whatever the hosted version of Hotmail is really called. Here&#8217;s how
+you can connect via <span class="caps">POP</span> and&nbsp;<span class="caps">SMTP</span>.</p>
+<p>This works for me on my tertiary institution&#8217;s Microsoft-hosted Outlook
+solution, so it may or may not work on yours (or work if you&#8217;re not
+using a &#8216;hosted&#8217; option). Try it and see!&nbsp; All settings and details I&#8217;m
+providing here should work with any mail app, but I&#8217;m specifically using&nbsp;Gmail.</p>
 <div class="section" id="before-we-begin">
-<h2>Before we begin</h2>
-<p>Find your POP/SMTP server details by first logging into your Outlook Web
+<h2>Before we&nbsp;begin</h2>
+<p>Find your <span class="caps">POP</span>/<span class="caps">SMTP</span> server details by first logging into your Outlook Web
 account as normal, and then clicking the drop-down arrow on the Help
-icon (it's a &quot;?&quot; icon) on the right-hand side.&nbsp; Click &quot;About&quot; and scroll
-down until you find &quot;External POP setting&quot; and &quot;External SMTP setting&quot;.
+icon (it&#8217;s a &#8220;?&#8221; icon) on the right-hand side.&nbsp; Click &#8220;About&#8221; and scroll
+down until you find &#8220;External <span class="caps">POP</span> setting&#8221; and &#8220;External <span class="caps">SMTP</span> setting&#8221;.
 Make a record of these details (or just keep this popup open while you
 configure away).&nbsp; Apparently the addresses can be different for users on
 the same domain, so if your friends are trying this, make sure they
-follow the same process.</p>
-<p>As a side note, if you're using something that supports IMAP (like
-Thunderbird), then you'll find the IMAP settings for Outlook Web under
-the About settings too.&nbsp; Gmail doesn't (yet), hence we're using
-POP/SMTP.</p>
+follow the same&nbsp;process.</p>
+<p>As a side note, if you&#8217;re using something that supports <span class="caps">IMAP</span> (like
+Thunderbird), then you&#8217;ll find the <span class="caps">IMAP</span> settings for Outlook Web under
+the About settings too.&nbsp; Gmail doesn&#8217;t (yet), hence we&#8217;re using&nbsp;<span class="caps">POP</span>/<span class="caps">SMTP</span>.</p>
 </div>
 <div class="section" id="pop3-downloading-your-mail">
-<h2>POP3 - Downloading your mail</h2>
+<h2><span class="caps">POP3</span> - Downloading your&nbsp;mail</h2>
 <ol class="arabic simple">
 <li>Go into Gmail and find your account settings (Settings &gt; Accounts)
-and click on 'Add a mail account you own'.</li>
-<li>Enter your email address, and click 'Next Step'</li>
+and click on &#8216;Add a mail account you&nbsp;own&#8217;.</li>
+<li>Enter your email address, and click &#8216;Next&nbsp;Step&#8217;</li>
 <li>Specify the following details:<ol class="arabic">
-<li>Username: your full email address</li>
-<li>Password: your institutional or other password</li>
-<li>POP Server: [what setting you found before]</li>
-<li>Port: [what setting you found before]</li>
-<li>Check &quot;Always use a secure connection (SSL) when retrieving mail&quot;.</li>
-<li>Other options are up to you.</li>
+<li>Username: your full email&nbsp;address</li>
+<li>Password: your institutional or other&nbsp;password</li>
+<li><span class="caps">POP</span> Server: [what setting you found&nbsp;before]</li>
+<li>Port: [what setting you found&nbsp;before]</li>
+<li>Check &#8220;Always use a secure connection (<span class="caps">SSL</span>) when retrieving&nbsp;mail&#8221;.</li>
+<li>Other options are up to&nbsp;you.</li>
 </ol>
 </li>
-<li>Click 'Save Changes' and Gmail should now start checking your mail
-via POP.&nbsp; Look in the accounts listing to make sure everything is
-working.</li>
+<li>Click &#8216;Save Changes&#8217; and Gmail should now start checking your mail
+via <span class="caps">POP</span>.&nbsp; Look in the accounts listing to make sure everything is&nbsp;working.</li>
 </ol>
 </div>
 <div class="section" id="smtp-sending-your-mail">
-<h2>SMTP - Sending your mail</h2>
+<h2><span class="caps">SMTP</span> - Sending your&nbsp;mail</h2>
 <ol class="arabic simple">
 <li>Go into Gmail and find your account settings (Settings &gt; Accounts)
-and click on 'Add another email address you own'.</li>
-<li>Enter your name and email address you'd like shown on the mail you
-send and click 'Next Step'&nbsp; This should be the same as the email
-above.</li>
-<li>Select &quot;Sent through xxx.com SMTP servers (recommended for
-professional domains)&quot;, and enter these details:<ol class="arabic">
-<li>SMTP Server:&nbsp; [what setting you found before]</li>
-<li>Port: [what setting you found before]</li>
-<li>Username: your full email address</li>
-<li>Password: your institutional or other password</li>
-<li>Check &quot;Always use a secure connection (SSL) when sending mail&quot;.</li>
+and click on &#8216;Add another email address you&nbsp;own&#8217;.</li>
+<li>Enter your name and email address you&#8217;d like shown on the mail you
+send and click &#8216;Next Step&#8217;&nbsp; This should be the same as the email&nbsp;above.</li>
+<li>Select &#8220;Sent through xxx.com <span class="caps">SMTP</span> servers (recommended for
+professional domains)&#8221;, and enter these details:<ol class="arabic">
+<li><span class="caps">SMTP</span> Server:&nbsp; [what setting you found&nbsp;before]</li>
+<li>Port: [what setting you found&nbsp;before]</li>
+<li>Username: your full email&nbsp;address</li>
+<li>Password: your institutional or other&nbsp;password</li>
+<li>Check &#8220;Always use a secure connection (<span class="caps">SSL</span>) when sending&nbsp;mail&#8221;.</li>
 </ol>
 </li>
-<li>Click the 'Add Account' button and Gmail will check your settings.
+<li>Click the &#8216;Add Account&#8217; button and Gmail will check your settings.
 Everything should be fine unless your domain settings disallow you
-from this sort of access.</li>
-<li>Try and send an email!&nbsp; You should be able to do so successfully.</li>
+from this sort of&nbsp;access.</li>
+<li>Try and send an email!&nbsp; You should be able to do so&nbsp;successfully.</li>
 </ol>
 </div>
 <div class="section" id="wrapping-up">
-<h2>Wrapping up</h2>
-<p>Log out of Outlook Web App and forget it even exists.&nbsp; Problem solved.</p>
-<p>Now if only things were this easy for Microsoft's BPOS / Exchange for my
-university...</p>
+<h2>Wrapping&nbsp;up</h2>
+<p>Log out of Outlook Web App and forget it even exists.&nbsp; Problem&nbsp;solved.</p>
+<p>Now if only things were this easy for Microsoft&#8217;s <span class="caps">BPOS</span> / Exchange for my&nbsp;university&#8230;</p>
 </div>
 <p>There are <a href="../blog/2011/01/bailing-on-outlook-web-app-windows-live-and-using-gmail-with-popsmtp-instead/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">

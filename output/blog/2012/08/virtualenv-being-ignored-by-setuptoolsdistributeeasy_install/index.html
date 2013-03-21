@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Virtualenv being ignored by setuptools/Distribute/easy_install</title>
+        <title>Virtualenv being ignored by setuptools/Distribute/easy_install</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2012/08/virtualenv-being-ignored-by-setuptoolsdistributeeasy_install/" rel="bookmark"
-           title="Permalink to Virtualenv being ignored by setuptools/Distribute/easy_install">Virtualenv being ignored by setuptools/Distribute/easy_install</a></h1>
+           title="Permalink to Virtualenv being ignored by setuptools/Distribute/easy_install">Virtualenv being ignored by&nbsp;setuptools/Distribute/easy_install</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -47,15 +47,14 @@
         </address>
         <p>In <a href="../../../../category/python.html">Python</a>. </p>
 <p>tags: <a href="../../../../tag/distribute.html">distribute</a><a href="../../../../tag/easy_install.html">easy_install</a><a href="../../../../tag/virtualenv.html">virtualenv</a></p>
-</footer><!-- /.post-info -->      <p>This one couldn't be simpler, but it's worth noting all the same. &nbsp;I've just
+</footer><!-- /.post-info -->      <p>This one couldn&#8217;t be simpler, but it&#8217;s worth noting all the same. &nbsp;I&#8217;ve just
 experienced a situation where a <a class="reference external" href="http://www.virtualenv.org/en/latest/index.html">virtualenv</a>&nbsp; was being completely ignored by
 all tools even though it was absolutely activated via <tt class="docutils literal">source bin/activate</tt>.</p>
 <p>The answer was to blow away the <tt class="docutils literal">lib</tt> directory within the virtualenv and
 blow away the local Python interpreter at <tt class="docutils literal">bin/python</tt> and re-create the
-virtualenv. After deactivating and re-activating, everything works correctly
-again.</p>
+virtualenv. After deactivating and re-activating, everything works correctly&nbsp;again.</p>
 <p>I guess something in the environment (or env variables) got messed up.
-Who knows; it works now.</p>
+Who knows; it works&nbsp;now.</p>
 
     </div><!-- /.entry-content -->
         <div class="comments">

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Plone: running Plone without copies of blobs</title>
+        <title>Plone: running Plone without copies of blobs</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2010/07/plone-running-plone-without-copies-of-blobs/" rel="bookmark"
-           title="Permalink to Plone: running Plone without copies of blobs">Plone: running Plone without copies of blobs</a></h1>
+           title="Permalink to Plone: running Plone without copies of blobs">Plone: running Plone without copies of&nbsp;blobs</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -47,17 +47,17 @@
         </address>
         <p>In <a href="../../../../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../../../../tag/blob.html">blob</a><a href="../../../../tag/blobs.html">blobs</a><a href="../../../../tag/files.html">files</a><a href="../../../../tag/patch.html">patch</a><a href="../../../../tag/plone.html">plone</a><a href="../../../../tag/problem.html">problem</a><a href="../../../../tag/python.html">python</a></p>
-</footer><!-- /.post-info -->      <p>Having a bad day? Just bombed your only copies of some files that you'd
+</footer><!-- /.post-info -->      <p>Having a bad day? Just bombed your only copies of some files that you&#8217;d
 been storing as blobs together with your Plone database? Maybe you had
 the blobs stored incorrectly on your Zeo client, rather than the server,
 and then in a hasty effort to free some space (due to an on-going issue
-with blobs eating HDD space), deleted them. Whoops..they're gone and
+with blobs eating <span class="caps">HDD</span> space), deleted them. Whoops..they&#8217;re gone and
 their references are still in your Plone database. Or, in a less
 disastrous situation, maybe you just want to be able to run your Plone
 database without needing lost blobs? Read on.The suggestion, as
 mentioned elsewhere on the Interwebs, is to catch the exception that
 gets raised on accessing relevant blobs. The two locations to catch (as
-of plone.app.blob 1.0b18) are:</p>
+of plone.app.blob 1.0b18)&nbsp;are:</p>
 <p><strong>plone/app/blob/mixins.py</strong></p>
 <pre class="code python literal-block">
 <span class="k">def</span> <span class="nf">getScale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -84,11 +84,11 @@ of plone.app.blob 1.0b18) are:</p>
         <span class="n">size</span> <span class="o">=</span> <span class="mi">100</span>
     <span class="k">return</span> <span class="n">size</span>
 </pre>
-<p>If you put these try/catch statements in, you'll stop your site from
+<p>If you put these try/catch statements in, you&#8217;ll stop your site from
 dying when accessing the View and Edit pages for your content. This
 means you can safely replace lost blobs with files again, or otherwise
 just use your site without the files, like if your client sends you only
-the database to save on size. Happy days.</p>
+the database to save on size. Happy&nbsp;days.</p>
 
     </div><!-- /.entry-content -->
         <div class="comments">

@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2011/12/configuring-pulseaudio-equalizer-defaults/">Configuring pulseaudio-equalizer defaults</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2011/12/configuring-pulseaudio-equalizer-defaults/">Configuring pulseaudio-equalizer&nbsp;defaults</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2011-12-16T11:26:00">
                 Fri 16 December 2011
@@ -43,41 +43,41 @@
         </address>
         <p>In <a href="../category/ubuntu.html">Ubuntu</a>. </p>
 <p>tags: <a href="../tag/audio.html">audio</a><a href="../tag/equalizer.html">equalizer</a><a href="../tag/linux.html">linux</a><a href="../tag/pulseaudio.html">pulseaudio</a><a href="../tag/settings.html">settings</a><a href="../tag/tip.html">tip</a><a href="../tag/ubuntu.html">ubuntu</a><a href="../tag/volume.html">volume</a></p>
-</footer><!-- /.post-info --><p>I've recently been using the Logitech G930 headset with my Ubuntu 11.10
-install and I've found that the default configuration offers nothing in
-terms of decent sound (tinny, no bass, etc). Thankfully, I've been able
+</footer><!-- /.post-info --><p>I&#8217;ve recently been using the Logitech G930 headset with my Ubuntu 11.10
+install and I&#8217;ve found that the default configuration offers nothing in
+terms of decent sound (tinny, no bass, etc). Thankfully, I&#8217;ve been able
 to turn to pulseaudio-equalizer for help with turning down the treble
-and up the bass. However, using pulseaudio-equalizer-gtk wasn't an
+and up the bass. However, using pulseaudio-equalizer-gtk wasn&#8217;t an
 entirely satisfying experience as the default volume for my headset kept
 being set to 100% upon restart. Now, if you recall my <a class="reference external" href="http://davidjb.com/blog/2011/10/logitech-g930-headphones-audio-quality-under-ubuntu">previous post on
 this headset</a>, having the volume for the device set at 100% leads to
-static being audible and this is a very bad thing.</p>
+static being audible and this is a very bad&nbsp;thing.</p>
 <p>Thankfully, pulseaudio-equalizer offers configuration in the form of
-<tt class="docutils literal"><span class="pre">~/.pulse/equalizerrc</span></tt>.&nbsp; It's not well documented (read: I had to go
+<tt class="docutils literal"><span class="pre">~/.pulse/equalizerrc</span></tt>.&nbsp; It&#8217;s not well documented (read: I had to go
 dissect the source code) but essentially, you can control the output
-device's volume by changing the 4th item within the configuration file.
-So the start of my config looks like this:</p>
+device&#8217;s volume by changing the 4th item within the configuration file.
+So the start of my config looks like&nbsp;this:</p>
 <pre class="code ini literal-block">
 <span class="err">mbeq\_1197</span>
 <span class="err">mbeq</span>
-<span class="err">Multiband</span> <span class="err">EQ</span>
+<span class="err">Multiband</span> <span class="err"><span class="caps">EQ</span></span>
 <span class="err">1</span>
 <span class="err">Laptop</span>
 <span class="err">&lt;</span> <span class="err">...snip...&gt;</span>
 </pre>
 <p>and that number 1 is the volume percentage (eg 1 = 100%) that will end
 up landing in <tt class="docutils literal"><span class="pre">~/.pulse/default.pa</span></tt> as the default volume for the device
-being equalized. Change this number, then run:</p>
+being equalized. Change this number, then&nbsp;run:</p>
 <pre class="code bash literal-block">
 pulseaudio-equalizer disable-config
 pulseaudio-equalizer <span class="nb">enable</span>-config
 pulseaudio -k
 </pre>
-<p>and wait for PA to be restarted for you. Take notice that the default
-volume is now set correctly.</p>
+<p>and wait for <span class="caps">PA</span> to be restarted for you. Take notice that the default
+volume is now set&nbsp;correctly.</p>
 <p>I should mention that if you want to know what the other options relate
 to, inspect the source of <tt class="docutils literal"><span class="pre">/usr/bin/pulseaudio-equalizer</span></tt>, around line
-54 onwards.</p>
+54&nbsp;onwards.</p>
 <p>There are <a href="../blog/2011/12/configuring-pulseaudio-equalizer-defaults/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">
         Page 1 / 1

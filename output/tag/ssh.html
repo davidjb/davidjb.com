@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2011/09/scp-files-back-home-using-reverse-ssh-in-1-command/">SCP remote files back home using reverse SSH (in 1 command)</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2011/09/scp-files-back-home-using-reverse-ssh-in-1-command/"><span class="caps">SCP</span> remote files back home using reverse <span class="caps">SSH</span> (in 1&nbsp;command)</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2011-09-13T12:55:00">
                 Tue 13 September 2011
@@ -46,33 +46,33 @@
 </footer><!-- /.post-info --><p>My recent work has involved copying files from a remote host, only
 accessible via a hop, back to my local computer. This has been simple in
 the past as the remote host has been able to connect to the local
-computer and SCP files directly, on account of the firewall allowing
+computer and <span class="caps">SCP</span> files directly, on account of the firewall allowing
 this. Recently, the firewall against the local computer has been
 reconfigured for security and direct connection is no longer possible. I
 could pass my files through a 3rd-party that both the remote and local
-machines can get to, but let's say I don't have one.</p>
-<p>What you can do is use SSH to tunnel your local SSH port onto the remote
-machine, with something like:</p>
+machines can get to, but let&#8217;s say I don&#8217;t have&nbsp;one.</p>
+<p>What you can do is use <span class="caps">SSH</span> to tunnel your local <span class="caps">SSH</span> port onto the remote
+machine, with something&nbsp;like:</p>
 <pre class="code bash literal-block">
 ssh -R 9999:localhost:22 hop.example.com
 </pre>
-<p>where <tt class="docutils literal">22</tt> is your local SSH port, and <tt class="docutils literal">9999</tt> is where you can SCP
-files onto your local machine to.</p>
+<p>where <tt class="docutils literal">22</tt> is your local <span class="caps">SSH</span> port, and <tt class="docutils literal">9999</tt> is where you can <span class="caps">SCP</span>
+files onto your local machine&nbsp;to.</p>
 <p>This works great, but my files are beyond the hop on the remote machine.
-So, you can chain SSH commands together like so:</p>
+So, you can chain <span class="caps">SSH</span> commands together like&nbsp;so:</p>
 <pre class="code bash literal-block">
 ssh -A -R 9999:localhost:22 hop.example.com <span class="s1">'ssh -A -R 9999:localhost:9999 remote.example.com scp -P 9999 /path/to/file.tgz david&#64;localhost:/tmp/'</span>
 </pre>
-<p>which maps your SSH port onto the hop and then maps that over to the
+<p>which maps your <span class="caps">SSH</span> port onto the hop and then maps that over to the
 remote host. Using the <tt class="docutils literal">ssh <span class="pre">-A</span></tt> fowards your authentication so the
-<tt class="docutils literal">scp</tt> will work automatically (assuming your own SSH public key is in
+<tt class="docutils literal">scp</tt> will work automatically (assuming your own <span class="caps">SSH</span> public key is in
 your own <tt class="docutils literal">.ssh/authorized_keys</tt> file). Thus, one command to pull
 whatever files you need onto your local machine. The command could be
-extended, if need be, if there were more hops in the middle.</p>
-<p>In my specific case I needed to add <tt class="docutils literal"><span class="pre">-o</span> &quot;StrictHostKeyChecking no&quot;</tt>
-into the second SSH command because, for whatever reason, the hop is not
-allowed to edit the <tt class="docutils literal">.ssh/known_hosts</tt> file. This SSH option disables
-this check, but I would take great care using it.</p>
+extended, if need be, if there were more hops in the&nbsp;middle.</p>
+<p>In my specific case I needed to add <tt class="docutils literal"><span class="pre">-o</span> &#8220;StrictHostKeyChecking no&#8221;</tt>
+into the second <span class="caps">SSH</span> command because, for whatever reason, the hop is not
+allowed to edit the <tt class="docutils literal">.ssh/known_hosts</tt> file. This <span class="caps">SSH</span> option disables
+this check, but I would take great care using&nbsp;it.</p>
 <p>There are <a href="../blog/2011/09/scp-files-back-home-using-reverse-ssh-in-1-command/#disqus_thread">comments</a>.</p>                </article>
                             </aside><!-- /#featured -->
                             <section id="content" class="body">
@@ -85,7 +85,7 @@ this check, but I would take great care using it.</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2008/12/unix-ssh-port-forwarding/" rel="bookmark"
-                           title="Permalink to Unix: SSH Port Forwarding">Unix: SSH Port Forwarding</a></h1>
+                           title="Permalink to Unix: SSH Port Forwarding">Unix: <span class="caps">SSH</span> Port&nbsp;Forwarding</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -99,9 +99,9 @@ this check, but I would take great care using it.</p>
         </address>
         <p>In <a href="../category/linux.html">Linux</a>. </p>
 <p>tags: <a href="../tag/linux.html">linux</a><a href="../tag/port.html">port</a><a href="../tag/port-forwarding.html">port forwarding</a><a href="../tag/ssh.html">ssh</a><a href="../tag/unix.html">unix</a></p>
-</footer><!-- /.post-info -->                <p>So it's not that special and I bet 1000 people have already posted the
-same details. Still, it's cool and I need a place to record my thoughts
-about this:</p>
+</footer><!-- /.post-info -->                <p>So it&#8217;s not that special and I bet 1000 people have already posted the
+same details. Still, it&#8217;s cool and I need a place to record my thoughts
+about&nbsp;this:</p>
 <pre class="code bash literal-block">
 ssh host.name -L YYYY:other.host:ZZZZ
 </pre>

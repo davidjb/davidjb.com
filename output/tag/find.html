@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2009/07/find-and-replace-across-files-linux-command-line/">Find and replace across files - Linux command line</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2009/07/find-and-replace-across-files-linux-command-line/">Find and replace across files - Linux command&nbsp;line</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2009-07-06T11:21:00">
                 Mon 06 July 2009
@@ -43,21 +43,21 @@
         </address>
         <p>In <a href="../category/linux.html">Linux</a>. </p>
 <p>tags: <a href="../tag/command.html">command</a><a href="../tag/find.html">find</a><a href="../tag/linux.html">linux</a><a href="../tag/replace.html">replace</a><a href="../tag/text.html">text</a><a href="../tag/useful.html">useful</a></p>
-</footer><!-- /.post-info --><p>Today's interesting post concerns finding and replacing terms across
+</footer><!-- /.post-info --><p>Today&#8217;s interesting post concerns finding and replacing terms across
 multiple files via a simple command.&nbsp; Thanks to <a class="reference external" href="http://www.64bitjungle.com/ubuntu/recursively-search-and-replace-terms-in-multiple-files-with-grep-xargs-and-sed/">this great blog post</a>,
 it all comes down to one single line.&nbsp; I had found a previously-useful
 line of code, but the problem with that one was the fact that it used
 the <strong>find</strong> command.&nbsp; The problem with that is that if you do a
-wildcard search for * in a directory, it'll give you back '.' as a
-result.&nbsp; Trying to work with that just wasn't happening.</p>
-<p>So, without further ado, the command (replacing 'search' with your
-search term and 'target' with your replacement term'):</p>
+wildcard search for * in a directory, it&#8217;ll give you back &#8216;.&#8217; as a
+result.&nbsp; Trying to work with that just wasn&#8217;t&nbsp;happening.</p>
+<p>So, without further ado, the command (replacing &#8216;search&#8217; with your
+search term and &#8216;target&#8217; with your replacement&nbsp;term&#8217;):</p>
 <pre class="code bash literal-block">
 grep -lr -e <span class="s1">'search'</span> * | xargs sed -i <span class="s1">'s/search/target/g'</span>
 </pre>
 <p>Just remember, the first <strong>grep</strong> command is doing Regex, so escape
-anything Regex-y (dots, slashes, etc) or otherwise &quot;prepare for
-unforseen consequences&quot; when running <strong>sed</strong>.</p>
+anything Regex-y (dots, slashes, etc) or otherwise &#8220;prepare for
+unforseen consequences&#8221; when running <strong>sed</strong>.</p>
 <p>There are <a href="../blog/2009/07/find-and-replace-across-files-linux-command-line/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">
         Page 1 / 1

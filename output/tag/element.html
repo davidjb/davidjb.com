@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2009/11/deliverance-plone-and-tags/">Deliverance, Plone, and  tags</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2009/11/deliverance-plone-and-tags/">Deliverance, Plone, and&nbsp;tags</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2009-11-27T15:17:00">
                 Fri 27 November 2009
@@ -43,42 +43,39 @@
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/deliverance.html">deliverance</a><a href="../tag/element.html">element</a><a href="../tag/plone.html">plone</a><a href="../tag/problem.html">problem</a><a href="../tag/theme.html">theme</a><a href="../tag/themeing.html">themeing</a><a href="../tag/xml.html">xml</a></p>
-</footer><!-- /.post-info --><p>It's been a little bit of time since my last post, and who can blame me
+</footer><!-- /.post-info --><p>It&#8217;s been a little bit of time since my last post, and who can blame me
 with my site having been down for almost 2 full days over the last
-week!&nbsp; I'm not paying that much for the webspace, thankfully, but if I
-was, I'd be seeing red over it.&nbsp; Apparently some patch for MySQL broke
-everything; imagine how it looked to see my site with a '500 internal
-error' plastered all over it and not being able to access my cPanel.
-Ugh.</p>
-<p>Anyway, everything's back again, assuming that you can see this.&nbsp; Okay?
-Great!</p>
-<p>Today's conundrum presented itself very, very strangely.&nbsp; People
-couldn't change their password in Plone (which effectively breaks
+week!&nbsp; I&#8217;m not paying that much for the webspace, thankfully, but if I
+was, I&#8217;d be seeing red over it.&nbsp; Apparently some patch for MySQL broke
+everything; imagine how it looked to see my site with a &#8216;500 internal
+error&#8217; plastered all over it and not being able to access my cPanel.&nbsp;Ugh.</p>
+<p>Anyway, everything&#8217;s back again, assuming that you can see this.&nbsp; Okay?&nbsp;Great!</p>
+<p>Today&#8217;s conundrum presented itself very, very strangely.&nbsp; People
+couldn&#8217;t change their password in Plone (which effectively breaks
 registration if a user has to select a password).&nbsp; The Plone site we
 have was being themed by Deliverance. A colleague and I were taking a
 look at this earlier in the week and from everything that we could see,
 the request traffic and variables were being sent onto Plone correctly
-from Deliverance. That said, the issue persisted.</p>
-<p>The issue ended up being a missing &lt;base&gt; tag in the page's HTML &lt;head&gt;
+from Deliverance. That said, the issue&nbsp;persisted.</p>
+<p>The issue ended up being a missing &lt;base&gt; tag in the page&#8217;s <span class="caps">HTML</span> &lt;head&gt;
 tag. Since this &lt;base&gt; tag controls relative links on any given page, I
 guess that the resulting request/etc for password selection must have
-been affected.&nbsp; I've seen some pretty whacked out things happen without
+been affected.&nbsp; I&#8217;ve seen some pretty whacked out things happen without
 that base tag, including bad relative links (the obvious problem),
-missing menus on content (another issue relating to an old blog post)
-etc.</p>
-<p>Essentially, Deliverance doesn't bring the &lt;base&gt; tag across by default,
-as it doesn't know any better. That said, putting these new elements:</p>
+missing menus on content (another issue relating to an old blog post)&nbsp;etc.</p>
+<p>Essentially, Deliverance doesn&#8217;t bring the &lt;base&gt; tag across by default,
+as it doesn&#8217;t know any better. That said, putting these new&nbsp;elements:</p>
 <pre class="code xml literal-block">
 <span class="nt">&lt;replace</span> <span class="na">content=</span><span class="s">&quot;/html/head/base&quot;</span> <span class="na">theme=</span><span class="s">&quot;/html/head/base&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;append</span> <span class="na">content=</span><span class="s">&quot;/html/head/base&quot;</span> <span class="na">theme=</span><span class="s">&quot;children:/html/head&quot;</span> <span class="nt">/&gt;</span>
 </pre>
 <p>in the deliverance.xml configuration solved the problem.&nbsp; Depending on
-your theme, you might want just one of the lines as it says &quot;replace my
-&lt;base&gt; tag in theme with the one from the page&quot; and falls back to
-&quot;append the base tag into the theme&quot;.&nbsp; Thanks the tag being moved with
-the first command, the 2nd doesn't happen if the base tag is already
-gone from the content.</p>
-<p><em>phew</em> That was confusing; hopefully it helps someone out!</p>
+your theme, you might want just one of the lines as it says &#8220;replace my
+&lt;base&gt; tag in theme with the one from the page&#8221; and falls back to
+&#8220;append the base tag into the theme&#8221;.&nbsp; Thanks the tag being moved with
+the first command, the 2nd doesn&#8217;t happen if the base tag is already
+gone from the&nbsp;content.</p>
+<p><em>phew</em> That was confusing; hopefully it helps someone&nbsp;out!</p>
 <p>There are <a href="../blog/2009/11/deliverance-plone-and-tags/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">
         Page 1 / 1

@@ -1,127 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>DavidJB.com</title><link href="http://davidjb.com/" rel="alternate"></link><link href="http://davidjb.com/feeds/web.atom.xml" rel="self"></link><id>http://davidjb.com/</id><updated>2011-03-24T12:50:00+10:00</updated><entry><title>Disabling caching for sensitive web pages (aka how to prevent logged out users going 'back')</title><link href="http://davidjb.com/blog/2011/03/disabling-caching-for-sensitive-web-pages-aka-how-to-prevent-logged-out-users-going-back/" rel="alternate"></link><updated>2011-03-24T12:50:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2011-03-24:blog/2011/03/disabling-caching-for-sensitive-web-pages-aka-how-to-prevent-logged-out-users-going-back/</id><summary type="html">&lt;p&gt;We all see web pages like Internet banking, HR systems, email, and more
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DavidJB.com</title><link href="http://davidjb.com/" rel="alternate"></link><link href="http://davidjb.com/feeds/web.atom.xml" rel="self"></link><id>http://davidjb.com/</id><updated>2011-03-24T12:50:00+10:00</updated><entry><title>Disabling caching for sensitive web pages (aka how to prevent logged out users going ‘back’)</title><link href="http://davidjb.com/blog/2011/03/disabling-caching-for-sensitive-web-pages-aka-how-to-prevent-logged-out-users-going-back/" rel="alternate"></link><updated>2011-03-24T12:50:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2011-03-24:blog/2011/03/disabling-caching-for-sensitive-web-pages-aka-how-to-prevent-logged-out-users-going-back/</id><summary type="html">&lt;p&gt;We all see web pages like Internet banking, &lt;span class="caps"&gt;HR&lt;/span&gt; systems, email, and more
 that allow you to log in, do something and load pages, log out, and then
-prevent you from using your browser's history to see that sensitive
-information.&amp;nbsp; I'm amazed that in my searches I couldn't quickly find a
+prevent you from using your browser&amp;#8217;s history to see that sensitive
+information.&amp;nbsp; I&amp;#8217;m amazed that in my searches I couldn&amp;#8217;t quickly find a
 definitive source of information on how to achieve this.&amp;nbsp; Pages across
-the web in a search for 'stop caching' range from blog posts, to forum
+the web in a search for &amp;#8216;stop caching&amp;#8217; range from blog posts, to forum
 posts, to other pages, and people asking the question (try it: &lt;a class="reference external" href="http://www.google.com/search?q=stop+caching"&gt;here&lt;/a&gt;,
 or &lt;a class="reference external" href="http://www.google.com/search?q=stop+caching+firefox"&gt;maybe here&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;Maybe I got unlucky, but finding a definitive answer to the questions of
-&amp;quot;how to prevent the use of the back button&amp;quot; or &amp;quot;how to stop browsers
-caching&amp;quot; etc wasn't a piece of cake. Hence this post.&lt;/p&gt;
-&lt;p&gt;The answer isn't concrete in itself either due to differing browser
-support, but the most useful information comes from RFC2616, the RFC for
-HTTP/1.1. In &lt;a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9.2"&gt;section 14.9.2&lt;/a&gt;, we learn about &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;no-store&lt;/span&gt;&lt;/tt&gt;. This cache
+&amp;#8220;how to prevent the use of the back button&amp;#8221; or &amp;#8220;how to stop browsers
+caching&amp;#8221; etc wasn&amp;#8217;t a piece of cake. Hence this&amp;nbsp;post.&lt;/p&gt;
+&lt;p&gt;The answer isn&amp;#8217;t concrete in itself either due to differing browser
+support, but the most useful information comes from &lt;span class="caps"&gt;RFC2616&lt;/span&gt;, the &lt;span class="caps"&gt;RFC&lt;/span&gt; for
+&lt;span class="caps"&gt;HTTP&lt;/span&gt;/1.1. In &lt;a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9.2"&gt;section 14.9.2&lt;/a&gt;, we learn about &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;no-store&lt;/span&gt;&lt;/tt&gt;. This cache
 directive should see a correctly-implemented browser not storing a
 request/response on disk (non-volatile storage) and deleting the info as
-quick as possible from RAM (volatile storage).&lt;/p&gt;
-&lt;p&gt;I've found that combining this, with an Expires header, and other
+quick as possible from &lt;span class="caps"&gt;RAM&lt;/span&gt; (volatile&amp;nbsp;storage).&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ve found that combining this, with an Expires header, and other
 Cache-Control directives, has worked across Firefox 4, Chrome 10,
 Internet Explorer 6, 7, 8, and 9 to keep relevant pages entirely out of
-the cache. Here's a snippet from some Python code:&lt;/p&gt;
+the cache. Here&amp;#8217;s a snippet from some Python&amp;nbsp;code:&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
 &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setHeader&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'Expires'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;formatDateTime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;getExpiration&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
 &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setHeader&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'Cache-Control'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'no-store, no-cache, max-age=0, must-revalidate, private'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;You could likely use this in the &amp;lt;meta&amp;gt; tags in your page too.&lt;/p&gt;
-&lt;p&gt;This, by all means, isn't a guaranteed solution as the RFC may not be
-followed by all browsers.&amp;nbsp; I've also noted that the RFC isn't exactly
-clear with regards to a browser's history this sort of thing.&amp;nbsp; &lt;a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html#sec13.13"&gt;Section
-13.13&lt;/a&gt; mentions that &amp;quot;a history mechanism is meant to show exactly what
-the user saw at the time when the resource was retrieved&amp;quot;, and using the
-RFC-specified &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;no-store&lt;/span&gt;&lt;/tt&gt; on a logged in page (or anything dynamic)
-would seemingly break this implication.&lt;/p&gt;
+&lt;p&gt;You could likely use this in the &amp;lt;meta&amp;gt; tags in your page&amp;nbsp;too.&lt;/p&gt;
+&lt;p&gt;This, by all means, isn&amp;#8217;t a guaranteed solution as the &lt;span class="caps"&gt;RFC&lt;/span&gt; may not be
+followed by all browsers.&amp;nbsp; I&amp;#8217;ve also noted that the &lt;span class="caps"&gt;RFC&lt;/span&gt; isn&amp;#8217;t exactly
+clear with regards to a browser&amp;#8217;s history this sort of thing.&amp;nbsp; &lt;a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html#sec13.13"&gt;Section
+13.13&lt;/a&gt; mentions that &amp;#8220;a history mechanism is meant to show exactly what
+the user saw at the time when the resource was retrieved&amp;#8221;, and using the
+&lt;span class="caps"&gt;RFC&lt;/span&gt;-specified &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;no-store&lt;/span&gt;&lt;/tt&gt; on a logged in page (or anything dynamic)
+would seemingly break this&amp;nbsp;implication.&lt;/p&gt;
 &lt;p&gt;At any rate, seems like this implementation works successfully on the
-browsers I've tested. Apparently IE doesn't like the &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;no-store&lt;/span&gt;&lt;/tt&gt; or
-&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;no-cache&lt;/span&gt;&lt;/tt&gt; settings in certain circumstances but it's been fine for me
-thus far.&lt;/p&gt;
-</summary><category term="caching"></category><category term="http"></category><category term="no-store"></category><category term="rfc"></category><category term="web"></category></entry><entry><title>Oh Microsoft, we do tire of thy bugs in IE</title><link href="http://davidjb.com/blog/2010/07/oh-microsoft-we-do-tire-of-thy-bugs-in-ie/" rel="alternate"></link><updated>2010-07-22T17:20:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2010-07-22:blog/2010/07/oh-microsoft-we-do-tire-of-thy-bugs-in-ie/</id><summary type="html">&lt;p&gt;Yes, it's another post about Microsoft and its poor implementation of
-Internet Explorer. This time it's version 8 and its rendering of lists,
-and in specific, links within list items. Most humorously, Microsoft's
+browsers I&amp;#8217;ve tested. Apparently &lt;span class="caps"&gt;IE&lt;/span&gt; doesn&amp;#8217;t like the &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;no-store&lt;/span&gt;&lt;/tt&gt; or
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;no-cache&lt;/span&gt;&lt;/tt&gt; settings in certain circumstances but it&amp;#8217;s been fine for me
+thus&amp;nbsp;far.&lt;/p&gt;
+</summary><category term="caching"></category><category term="http"></category><category term="no-store"></category><category term="rfc"></category><category term="web"></category></entry><entry><title>Oh Microsoft, we do tire of thy bugs in IE</title><link href="http://davidjb.com/blog/2010/07/oh-microsoft-we-do-tire-of-thy-bugs-in-ie/" rel="alternate"></link><updated>2010-07-22T17:20:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2010-07-22:blog/2010/07/oh-microsoft-we-do-tire-of-thy-bugs-in-ie/</id><summary type="html">&lt;p&gt;Yes, it&amp;#8217;s another post about Microsoft and its poor implementation of
+Internet Explorer. This time it&amp;#8217;s version 8 and its rendering of lists,
+and in specific, links within list items. Most humorously, Microsoft&amp;#8217;s
 own documentation (separate issue; about &lt;a class="reference external" href="http://msdn.microsoft.com/en-us/library/bb250413%28VS.85%29.aspx"&gt;rounded corners&lt;/a&gt;) gave me a
-laugh when it said:&lt;/p&gt;
+laugh when it&amp;nbsp;said:&lt;/p&gt;
 &lt;blockquote&gt;
-&amp;quot;Microsoft is committed to providing a browser that
-accurately supports Web standards.&amp;quot;&lt;/blockquote&gt;
-&lt;p&gt;Maybe it's just me, but I've given up waiting for the day that IE actually
-supports anything correctly.&lt;/p&gt;
+&amp;#8220;Microsoft is committed to providing a browser that
+accurately supports Web standards.&amp;#8221;&lt;/blockquote&gt;
+&lt;p&gt;Maybe it&amp;#8217;s just me, but I&amp;#8217;ve given up waiting for the day that &lt;span class="caps"&gt;IE&lt;/span&gt; actually
+supports anything&amp;nbsp;correctly.&lt;/p&gt;
 &lt;p&gt;So, the issue I found was that with a &lt;tt class="docutils literal"&gt;&amp;lt;ul&amp;gt;&lt;/tt&gt; with a number of &lt;tt class="docutils literal"&gt;&amp;lt;li&amp;gt;&lt;/tt&gt;
-tags inside wouldn't stop displaying the list bullets, despite a very
-explicit CSS definition on the &lt;tt class="docutils literal"&gt;&amp;lt;li&amp;gt;&lt;/tt&gt; tags.&amp;nbsp; Why this was the case,
-I'm not sure, and am happy to chalk it up to IE being IE, like it always
-is.&lt;/p&gt;
+tags inside wouldn&amp;#8217;t stop displaying the list bullets, despite a very
+explicit &lt;span class="caps"&gt;CSS&lt;/span&gt; definition on the &lt;tt class="docutils literal"&gt;&amp;lt;li&amp;gt;&lt;/tt&gt; tags.&amp;nbsp; Why this was the case,
+I&amp;#8217;m not sure, and am happy to chalk it up to &lt;span class="caps"&gt;IE&lt;/span&gt; being &lt;span class="caps"&gt;IE&lt;/span&gt;, like it always&amp;nbsp;is.&lt;/p&gt;
 &lt;p&gt;In order to fix the issue, however, I just started poking and prodding
-IE in its Developer Toolbar with extra styles until it did what I wanted
+&lt;span class="caps"&gt;IE&lt;/span&gt; in its Developer Toolbar with extra styles until it did what I wanted
 it to.&amp;nbsp; Turns out that at least in my case, that in order to remove all
 trace of bullets, I needed to have the &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;list-style:none&lt;/span&gt; outside none;&lt;/tt&gt;
-CSS declaration attached to the &lt;tt class="docutils literal"&gt;&amp;lt;ul&amp;gt;&lt;/tt&gt;, each &lt;tt class="docutils literal"&gt;&amp;lt;li&amp;gt;&lt;/tt&gt;, and the top
+&lt;span class="caps"&gt;CSS&lt;/span&gt; declaration attached to the &lt;tt class="docutils literal"&gt;&amp;lt;ul&amp;gt;&lt;/tt&gt;, each &lt;tt class="docutils literal"&gt;&amp;lt;li&amp;gt;&lt;/tt&gt;, and the top
 level &lt;tt class="docutils literal"&gt;&amp;lt;a&amp;gt;&lt;/tt&gt; tags that were inside the &lt;tt class="docutils literal"&gt;&amp;lt;li&amp;gt;&lt;/tt&gt; tags.&amp;nbsp; Talk about
-repeating myself.&amp;nbsp; You'd think that the CSS would be applied to the
+repeating myself.&amp;nbsp; You&amp;#8217;d think that the &lt;span class="caps"&gt;CSS&lt;/span&gt; would be applied to the
 &lt;tt class="docutils literal"&gt;&amp;lt;ul&amp;gt;&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;&amp;lt;li&amp;gt;&lt;/tt&gt;, which are list elements, and not be needed for
-the &lt;tt class="docutils literal"&gt;&amp;lt;a&amp;gt;&lt;/tt&gt; tag, which shouldn't matter despite it being in an &lt;tt class="docutils literal"&gt;&amp;lt;li&amp;gt;&lt;/tt&gt;.&lt;/p&gt;
-&lt;p&gt;I guess the good news is that you can bash the crap out of IE until it
+the &lt;tt class="docutils literal"&gt;&amp;lt;a&amp;gt;&lt;/tt&gt; tag, which shouldn&amp;#8217;t matter despite it being in an &lt;tt class="docutils literal"&gt;&amp;lt;li&amp;gt;&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;I guess the good news is that you can bash the crap out of &lt;span class="caps"&gt;IE&lt;/span&gt; until it
 works and Microsoft has provided the Developer Toolbar.&amp;nbsp; The bad news is
-that &amp;quot;fixes&amp;quot; aren't always so obvious because you can never trust where
-the bug could be.&lt;/p&gt;
-&lt;p&gt;As a final aside about IE 8, here's another snippet from that &lt;a class="reference external" href="http://msdn.microsoft.com/en-us/library/bb250413%28VS.85%29.aspx"&gt;same
-documentation&lt;/a&gt; about IE8:&lt;/p&gt;
+that &amp;#8220;fixes&amp;#8221; aren&amp;#8217;t always so obvious because you can never trust where
+the bug could&amp;nbsp;be.&lt;/p&gt;
+&lt;p&gt;As a final aside about &lt;span class="caps"&gt;IE&lt;/span&gt; 8, here&amp;#8217;s another snippet from that &lt;a class="reference external" href="http://msdn.microsoft.com/en-us/library/bb250413%28VS.85%29.aspx"&gt;same
+documentation&lt;/a&gt; about&amp;nbsp;&lt;span class="caps"&gt;IE8&lt;/span&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
-In Internet Explorer 8, we shipped several features from HTML5 and
-CSS3. Our primary goal was implementing CSS 2.1 (a specification
+In Internet Explorer 8, we shipped several features from &lt;span class="caps"&gt;HTML5&lt;/span&gt; and
+&lt;span class="caps"&gt;CSS3&lt;/span&gt;. Our primary goal was implementing &lt;span class="caps"&gt;CSS&lt;/span&gt; 2.1 (a specification
 that has reached final candidate stage) &lt;em&gt;completely and correctly&lt;/em&gt;
 before moving on to specifications that are still in development and
 may change.&lt;/blockquote&gt;
-&lt;p&gt;Completely and correctly implemented?&amp;nbsp; Again, I'm still waiting.&lt;/p&gt;
-</summary><category term="bug"></category><category term="css"></category><category term="html"></category><category term="IE"></category><category term="ie8"></category><category term="internet explorer"></category><category term="rendering"></category><category term="tag"></category><category term="tags"></category></entry><entry><title>CSS: Internet Explorer and Self-Imposed Limitations (+ Plone)</title><link href="http://davidjb.com/blog/2010/01/css-internet-explorer-and-self-imposed-limitations-plone/" rel="alternate"></link><updated>2010-01-28T11:52:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2010-01-28:blog/2010/01/css-internet-explorer-and-self-imposed-limitations-plone/</id><summary type="html">&lt;p&gt;Microsoft and IE are insane.&amp;nbsp; Yes, we all knew this, but
-here's the proof:&lt;/p&gt;
+&lt;p&gt;Completely and correctly implemented?&amp;nbsp; Again, I&amp;#8217;m still&amp;nbsp;waiting.&lt;/p&gt;
+</summary><category term="bug"></category><category term="css"></category><category term="html"></category><category term="IE"></category><category term="ie8"></category><category term="internet explorer"></category><category term="rendering"></category><category term="tag"></category><category term="tags"></category></entry><entry><title>CSS: Internet Explorer and Self-Imposed Limitations (+ Plone)</title><link href="http://davidjb.com/blog/2010/01/css-internet-explorer-and-self-imposed-limitations-plone/" rel="alternate"></link><updated>2010-01-28T11:52:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2010-01-28:blog/2010/01/css-internet-explorer-and-self-imposed-limitations-plone/</id><summary type="html">&lt;p&gt;Microsoft and &lt;span class="caps"&gt;IE&lt;/span&gt; are insane.&amp;nbsp; Yes, we all knew this, but
+here&amp;#8217;s the&amp;nbsp;proof:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 IE won't accept more than 30 style sheets to be loaded via &amp;lt;style&amp;gt; tags within a single page.
 &lt;/pre&gt;
-&lt;p&gt;Insanity?&amp;nbsp; Yes.&amp;nbsp; It's made even worse by the fact they openly admit this
-lunacy!&amp;nbsp; See the relevant &lt;a class="reference external" href="http://support.microsoft.com/default.aspx?scid=kb;en-us;262161"&gt;support article&lt;/a&gt; from MS as proof.&lt;/p&gt;
+&lt;p&gt;Insanity?&amp;nbsp; Yes.&amp;nbsp; It&amp;#8217;s made even worse by the fact they openly admit this
+lunacy!&amp;nbsp; See the relevant &lt;a class="reference external" href="http://support.microsoft.com/default.aspx?scid=kb;en-us;262161"&gt;support article&lt;/a&gt; from &lt;span class="caps"&gt;MS&lt;/span&gt; as&amp;nbsp;proof.&lt;/p&gt;
 &lt;p&gt;Good gosh.&amp;nbsp; I can just imagine the staff (managers, probably) from
-Microsoft thinking &amp;quot;30 style sheets?&amp;nbsp; Who needs more than 30 style
+Microsoft thinking &amp;#8220;30 style sheets?&amp;nbsp; Who needs more than 30 style
 sheets?&amp;nbsp; Just kill off anything after that and those sites that use that
-many can &lt;em&gt;BURN&lt;/em&gt;.&amp;quot;&lt;/p&gt;
+many can &lt;em&gt;&lt;span class="caps"&gt;BURN&lt;/span&gt;&lt;/em&gt;.&amp;#8221;&lt;/p&gt;
 &lt;p&gt;I mean, really, who does need 30 style sheets?&amp;nbsp; Never mind that a lot of
-CMSes (like Plone, or Drupal) have CSS debug modes that can be turned on
-in order -- you guessed it -- debug the styles.&amp;nbsp; Add this to the fact
-that IE gives two middle fingers to standards compliance and not only
-can you not have it understand your CSS correctly, but you can't even
-&lt;strong&gt;debug&lt;/strong&gt; it normally when IE screws up!&amp;nbsp; So, this solves the issue of
-my ploneCustom.css file wouldn't load -- it's the last CSS import being
-brought in from portal_css in Plone.&lt;/p&gt;
+CMSes (like Plone, or Drupal) have &lt;span class="caps"&gt;CSS&lt;/span&gt; debug modes that can be turned on
+in order &amp;#8212; you guessed it &amp;#8212; debug the styles.&amp;nbsp; Add this to the fact
+that &lt;span class="caps"&gt;IE&lt;/span&gt; gives two middle fingers to standards compliance and not only
+can you not have it understand your &lt;span class="caps"&gt;CSS&lt;/span&gt; correctly, but you can&amp;#8217;t even
+&lt;strong&gt;debug&lt;/strong&gt; it normally when &lt;span class="caps"&gt;IE&lt;/span&gt; screws up!&amp;nbsp; So, this solves the issue of
+my ploneCustom.css file wouldn&amp;#8217;t load &amp;#8212; it&amp;#8217;s the last &lt;span class="caps"&gt;CSS&lt;/span&gt; import being
+brought in from portal_css in&amp;nbsp;Plone.&lt;/p&gt;
 &lt;p&gt;This issue is admitted by them and has been around since&lt;strong&gt;Internet
-Explorer 4&lt;/strong&gt;.&amp;nbsp; Yes, that's right, back from when the dinosaurs roamed
-the earth and array indices only went to 30.&amp;nbsp; Get real IE developers and
-Microsoft.&lt;/p&gt;
-&lt;p&gt;And to anyone who's reading this on IE:&amp;nbsp; get a &lt;a class="reference external" href="http://getfirefox.com"&gt;real&lt;/a&gt; browser.&lt;/p&gt;
-</summary><category term="bug"></category><category term="css"></category><category term="IE"></category><category term="issue"></category><category term="limitation"></category><category term="plone"></category><category term="problem"></category><category term="styles"></category><category term="stylesheets"></category></entry><entry><title>HTML formatting made easy</title><link href="http://davidjb.com/blog/2009/10/html-formatting-made-easy/" rel="alternate"></link><updated>2009-10-13T10:30:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2009-10-13:blog/2009/10/html-formatting-made-easy/</id><summary type="html">&lt;p&gt;There's a tool for everything somewhere on the web.&lt;/p&gt;
-&lt;p&gt;Whilst about 99.5% perfect (some indentation issues remain), I've found
-a pretty nice, easy to use, and very feature-rich HTML code formatter.
-See &lt;a class="reference external" href="http://www.mycoolform.com/index.php?lang=en"&gt;http://www.mycoolform.com/index.php?lang=en&lt;/a&gt; for the formatter.&lt;/p&gt;
-&lt;p&gt;It's something I was looking for a while back but didn't have so much
+Explorer 4&lt;/strong&gt;.&amp;nbsp; Yes, that&amp;#8217;s right, back from when the dinosaurs roamed
+the earth and array indices only went to 30.&amp;nbsp; Get real &lt;span class="caps"&gt;IE&lt;/span&gt; developers and&amp;nbsp;Microsoft.&lt;/p&gt;
+&lt;p&gt;And to anyone who&amp;#8217;s reading this on &lt;span class="caps"&gt;IE&lt;/span&gt;:&amp;nbsp; get a &lt;a class="reference external" href="http://getfirefox.com"&gt;real&lt;/a&gt;&amp;nbsp;browser.&lt;/p&gt;
+</summary><category term="bug"></category><category term="css"></category><category term="IE"></category><category term="issue"></category><category term="limitation"></category><category term="plone"></category><category term="problem"></category><category term="styles"></category><category term="stylesheets"></category></entry><entry><title>HTML formatting made easy</title><link href="http://davidjb.com/blog/2009/10/html-formatting-made-easy/" rel="alternate"></link><updated>2009-10-13T10:30:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2009-10-13:blog/2009/10/html-formatting-made-easy/</id><summary type="html">&lt;p&gt;There&amp;#8217;s a tool for everything somewhere on the&amp;nbsp;web.&lt;/p&gt;
+&lt;p&gt;Whilst about 99.5% perfect (some indentation issues remain), I&amp;#8217;ve found
+a pretty nice, easy to use, and very feature-rich &lt;span class="caps"&gt;HTML&lt;/span&gt; code formatter.
+See &lt;a class="reference external" href="http://www.mycoolform.com/index.php?lang=en"&gt;http://www.mycoolform.com/index.php?lang=en&lt;/a&gt; for the&amp;nbsp;formatter.&lt;/p&gt;
+&lt;p&gt;It&amp;#8217;s something I was looking for a while back but didn&amp;#8217;t have so much
 luck to stumble onto something so useful.&amp;nbsp; Previously, I was looking for
-something that would fix up some HTML to XHTML and whilst I'm sure
+something that would fix up some &lt;span class="caps"&gt;HTML&lt;/span&gt; to &lt;span class="caps"&gt;XHTML&lt;/span&gt; and whilst I&amp;#8217;m sure
 something was out there, the problem was I needed something that would
-do the job, but stay away from TAL attributes on my elements.&amp;nbsp; The
-things that I had found did &amp;quot;too good&amp;quot; of a job and dumped those
-elements, which is fair enough because things like 'tal:content=' isn't
-valid XHTML.&lt;/p&gt;
+do the job, but stay away from &lt;span class="caps"&gt;TAL&lt;/span&gt; attributes on my elements.&amp;nbsp; The
+things that I had found did &amp;#8220;too good&amp;#8221; of a job and dumped those
+elements, which is fair enough because things like &amp;#8216;tal:content=&amp;#8217; isn&amp;#8217;t
+valid&amp;nbsp;&lt;span class="caps"&gt;XHTML&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;This formatted though does new lines, auto-indentation, change of case
-for tags and attributes (hello XHTML compliance), comment removal and
+for tags and attributes (hello &lt;span class="caps"&gt;XHTML&lt;/span&gt; compliance), comment removal and
 white space elimination.&amp;nbsp; Great stuff; so many thanks to its author (who
-is anonymous I guess?).&lt;/p&gt;
-</summary><category term="code"></category><category term="formatter"></category><category term="html"></category><category term="indentation"></category><category term="tool"></category><category term="web"></category></entry><entry><title>Webpage content underneath Flash content</title><link href="http://davidjb.com/blog/2009/06/webpage-content-underneath-flash-content/" rel="alternate"></link><updated>2009-06-12T13:33:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2009-06-12:blog/2009/06/webpage-content-underneath-flash-content/</id><summary type="html">&lt;p&gt;So, you've got a website that you've made and you've used a Flash movie
+is anonymous I&amp;nbsp;guess?).&lt;/p&gt;
+</summary><category term="code"></category><category term="formatter"></category><category term="html"></category><category term="indentation"></category><category term="tool"></category><category term="web"></category></entry><entry><title>Webpage content underneath Flash content</title><link href="http://davidjb.com/blog/2009/06/webpage-content-underneath-flash-content/" rel="alternate"></link><updated>2009-06-12T13:33:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2009-06-12:blog/2009/06/webpage-content-underneath-flash-content/</id><summary type="html">&lt;p&gt;So, you&amp;#8217;ve got a website that you&amp;#8217;ve made and you&amp;#8217;ve used a Flash movie
 on it.&amp;nbsp; Okay, no worries.&amp;nbsp; Now, what if you tried to add a
-(non-form-element) drop-down menu or some AJAX-ed content into the site,
-and found the Flash movie actually acted as an overlay?&lt;/p&gt;
-&lt;p&gt;This problem doesn't seem consistent.&amp;nbsp; Different OSs, browsers, and
-Flash versions don't indicate consistency - that's what I've seen
-anyway.&amp;nbsp; Nevertheless, the problem persists for some users and it's
-down-right annoying.&lt;/p&gt;
-&lt;p&gt;The fix?&amp;nbsp; Make your Flash code look similar to this:&lt;/p&gt;
+(non-form-element) drop-down menu or some &lt;span class="caps"&gt;AJAX&lt;/span&gt;-ed content into the site,
+and found the Flash movie actually acted as an&amp;nbsp;overlay?&lt;/p&gt;
+&lt;p&gt;This problem doesn&amp;#8217;t seem consistent.&amp;nbsp; Different OSs, browsers, and
+Flash versions don&amp;#8217;t indicate consistency - that&amp;#8217;s what I&amp;#8217;ve seen
+anyway.&amp;nbsp; Nevertheless, the problem persists for some users and it&amp;#8217;s
+down-right&amp;nbsp;annoying.&lt;/p&gt;
+&lt;p&gt;The fix?&amp;nbsp; Make your Flash code look similar to&amp;nbsp;this:&lt;/p&gt;
 &lt;pre class="code html literal-block"&gt;
 &lt;span class="nt"&gt;&amp;lt;object&lt;/span&gt; &lt;span class="na"&gt;data=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;my-movie.swf&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;application/x-shockwave-flash&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;height=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;100&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;width=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
     &lt;span class="nt"&gt;&amp;lt;param&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;movie&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;value=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;my-movie.swf&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
@@ -129,10 +127,10 @@ down-right annoying.&lt;/p&gt;
     &lt;span class="nt"&gt;&amp;lt;param&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;embed&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;value=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;transparent&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
     &lt;span class="nt"&gt;&amp;lt;param&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;wmode&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;value=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;transparent&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
     &lt;span class="nt"&gt;&amp;lt;param&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;menu&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;value=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;false&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
-    &lt;span class="nt"&gt;&amp;lt;img&lt;/span&gt; &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;alternate.jpg&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;alt=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;ARCS - Revolutionising Collaboration&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;height=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;100&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;width=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;200&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;img&lt;/span&gt; &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;alternate.jpg&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;alt=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;span class="caps"&gt;ARCS&lt;/span&gt; - Revolutionising Collaboration&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;height=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;100&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;width=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;200&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
 &lt;span class="nt"&gt;&amp;lt;/object&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;That there should be entirely XHTML compliant (and completely
+&lt;p&gt;That there should be entirely &lt;span class="caps"&gt;XHTML&lt;/span&gt; compliant (and completely
 cross-browser compatible) code for creating a Flash object on your page
-that'll place nice with other content.&lt;/p&gt;
+that&amp;#8217;ll place nice with other&amp;nbsp;content.&lt;/p&gt;
 </summary><category term="content"></category><category term="flash"></category><category term="html"></category><category term="problem"></category><category term="web"></category><category term="xhtml"></category></entry></feed>

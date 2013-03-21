@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Plone/Zope: Using LDAPUserFolder with posixGroups</title>
+        <title>Plone/Zope: Using LDAPUserFolder with posixGroups</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2010/06/plonezope-using-ldapuserfolder-with-posixgroups/" rel="bookmark"
-           title="Permalink to Plone/Zope: Using LDAPUserFolder with posixGroups">Plone/Zope: Using LDAPUserFolder with posixGroups</a></h1>
+           title="Permalink to Plone/Zope: Using LDAPUserFolder with posixGroups">Plone/Zope: Using LDAPUserFolder with&nbsp;posixGroups</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -48,28 +48,27 @@
         <p>In <a href="../../../../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../../../../tag/groups.html">groups</a><a href="../../../../tag/ldap.html">ldap</a><a href="../../../../tag/ldapuserfolder.html">ldapuserfolder</a><a href="../../../../tag/openldap.html">openldap</a><a href="../../../../tag/patch.html">patch</a><a href="../../../../tag/plone.html">plone</a><a href="../../../../tag/python.html">python</a><a href="../../../../tag/zope.html">zope</a></p>
 </footer><!-- /.post-info -->      <p>Due to various reasons, the Products.LDAPUserFolder package available
-for Plone and Zope doesn't support POSIX groups.&nbsp; The 'official' (ish)
-reason for this is because of the fact that these groups don't store
+for Plone and Zope doesn&#8217;t support <span class="caps">POSIX</span> groups.&nbsp; The &#8216;official&#8217; (ish)
+reason for this is because of the fact that these groups don&#8217;t store
 full distinguished names (DNs) for members.&nbsp; It makes some degree of
-sense, because a user ID like 'david.test' isn't strictly unique.&nbsp; On
-the other hand, these types of groups are quite common in LDAP
+sense, because a user <span class="caps">ID</span> like &#8216;david.test&#8217; isn&#8217;t strictly unique.&nbsp; On
+the other hand, these types of groups are quite common in <span class="caps">LDAP</span>
 implementations; not supporting them without giving it at least half a
-shot to find the user seems a bit strange.</p>
-<p>Here's where a quick patch steps in. Thanks to Weblion's infinity of
-Plone resources (specifically, their article on <a class="reference external" href="https://weblion.psu.edu/trac/weblion/wiki/LDAPWithPlone">Plone LDAP</a>), I
-patched part of my Products.LDAPUserFolder.</p>
-<p>Now, what they've got wasn't infallible. Whilst the patch they have on
+shot to find the user seems a bit&nbsp;strange.</p>
+<p>Here&#8217;s where a quick patch steps in. Thanks to Weblion&#8217;s infinity of
+Plone resources (specifically, their article on <a class="reference external" href="https://weblion.psu.edu/trac/weblion/wiki/LDAPWithPlone">Plone <span class="caps">LDAP</span></a>), I
+patched part of my&nbsp;Products.LDAPUserFolder.</p>
+<p>Now, what they&#8217;ve got wasn&#8217;t infallible. Whilst the patch they have on
 their site took care of enumerating the groups, and the groups a user is
-in, it didn't ensure looking a group showed its users. Whether this was
-a change in LDAPUserFolder recently (since version 2.12) or not, I'm not
-sure.</p>
+in, it didn&#8217;t ensure looking a group showed its users. Whether this was
+a change in LDAPUserFolder recently (since version 2.12) or not, I&#8217;m not&nbsp;sure.</p>
 <p>In any case, the reason for the issue is that deep down, the code
-attempts to query group members by DN. Obviously our POSIX groups don't
+attempts to query group members by <span class="caps">DN</span>. Obviously our <span class="caps">POSIX</span> groups don&#8217;t
 have full DNs, so with a quick bit of string manipulation (read:
 hacking), I assume that the <em>user base</em> you specify will have your user.
-<strong>Note:</strong> this won't do one iota if your user isn't at the user base,
-but if it is -- like all the LDAPs I've used -- you're golden. Here's
-the patch for Products.LDAPUserFolder 2.17.</p>
+<strong>Note:</strong> this won&#8217;t do one iota if your user isn&#8217;t at the user base,
+but if it is &#8212; like all the LDAPs I&#8217;ve used &#8212; you&#8217;re golden. Here&#8217;s
+the patch for Products.LDAPUserFolder&nbsp;2.17.</p>
 <pre class="code diff literal-block">
 <span class="gh">diff --git a/Products/LDAPUserFolder/LDAPUserFolder.py b/Products/LDAPUserFolder/LDAPUserFolder.py
 index 0e61396..a235e74 100644

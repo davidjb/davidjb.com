@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Start screen after su'ing to another user</title>
+        <title>Start screen after su’ing to another user</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2009/12/start-screen-after-suing-to-another-user/" rel="bookmark"
-           title="Permalink to Start screen after su'ing to another user">Start screen after su'ing to another user</a></h1>
+           title="Permalink to Start screen after su’ing to another user">Start screen after su&#8217;ing to another&nbsp;user</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -47,27 +47,27 @@
         </address>
         <p>In <a href="../../../../category/linux.html">Linux</a>. </p>
 
-</footer><!-- /.post-info -->      <p>Today's problem is one that requires no introduction (well, maybe it
-does :-| ) but it's a problem nonetheless.&nbsp; The issue is that after
-using the '<strong>su</strong>' command to become another user, there's trouble
-running <strong>screen</strong> sessions.</p>
+</footer><!-- /.post-info -->      <p>Today&#8217;s problem is one that requires no introduction (well, maybe it
+does :-| ) but it&#8217;s a problem nonetheless.&nbsp; The issue is that after
+using the &#8216;<strong>su</strong>&#8216; command to become another user, there&#8217;s trouble
+running <strong>screen</strong>&nbsp;sessions.</p>
 <p>This page
 (<a class="reference external" href="http://dbadump.blogspot.com/2009/04/start-screen-after-sudo-su-to-another.html">http://dbadump.blogspot.com/2009/04/start-screen-after-sudo-su-to-another.html</a>)
 details it simply and perfectly (which, yes, I know in turn came from
-another page).&nbsp; Essentially the error is thus:</p>
+another page).&nbsp; Essentially the error is&nbsp;thus:</p>
 <pre class="literal-block">
 Cannot open your terminal '/dev/pts/1' - please check.
 </pre>
-<p>Which really doesn't man nor beast with its descriptiveness.&nbsp; From that
-page, which came from another page mentioned on that page (?), here's
-the fix:</p>
+<p>Which really doesn&#8217;t man nor beast with its descriptiveness.&nbsp; From that
+page, which came from another page mentioned on that page (?), here&#8217;s
+the&nbsp;fix:</p>
 <pre class="code bash literal-block">
 su <span class="o">[</span>userName<span class="o">]</span>
 script /dev/null
 screen -x <span class="o">[</span>screenName<span class="o">]</span>
 </pre>
-<p>And that's it!&nbsp; Simple solution, and many thanks to that blog for
-sorting it out for me.</p>
+<p>And that&#8217;s it!&nbsp; Simple solution, and many thanks to that blog for
+sorting it out for&nbsp;me.</p>
 
     </div><!-- /.entry-content -->
         <div class="comments">

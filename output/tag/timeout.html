@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2011/03/increasing-plones-session-timeout/">Increasing Plone's session timeout</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2011/03/increasing-plones-session-timeout/">Increasing Plone&#8217;s session&nbsp;timeout</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2011-03-08T10:01:00">
                 Tue 08 March 2011
@@ -43,21 +43,20 @@
         </address>
         <p>In <a href="../category/plon.html">Plon</a>. </p>
 <p>tags: <a href="../tag/buildout.html">buildout</a><a href="../tag/plone.html">plone</a><a href="../tag/session.html">session</a><a href="../tag/timeout.html">timeout</a><a href="../tag/zope.html">zope</a></p>
-</footer><!-- /.post-info --><p>What you may notice if you're developing with Plone/Zope, is that if
-you're storing small pieces of data within Plone's session variable (the
+</footer><!-- /.post-info --><p>What you may notice if you&#8217;re developing with Plone/Zope, is that if
+you&#8217;re storing small pieces of data within Plone&#8217;s session variable (the
 session_data_manager tool), data expires after a few minutes.&nbsp; By
-default, this timeout is 20 minutes, but is far too short if you're
+default, this timeout is 20 minutes, but is far too short if you&#8217;re
 expecting the information stored to last for say the whole time a user
-is logged in.&nbsp; In this situation, you'll need to increase the timeout.</p>
+is logged in.&nbsp; In this situation, you&#8217;ll need to increase the&nbsp;timeout.</p>
 <p>Documentation on changing the session timeout is potentially a little
-sketchy (Google &quot;session-timeout-minutes zope&quot;), but it's clear that you
+sketchy (Google &#8220;session-timeout-minutes zope&#8221;), but it&#8217;s clear that you
 need to change the <tt class="docutils literal"><span class="pre">session-timeout-minutes</span></tt> directive in your
 <tt class="docutils literal">zope.conf</tt>.</p>
-<p>What's not immediately obvious is how to make a session persist
+<p>What&#8217;s not immediately obvious is how to make a session persist
 indefinitely (until server reboot), but this can be achieved by setting
 the value to 0. Within a buildout environment for Plone, adding this
-under your Plone's instance section will add the configuration to your
-zope.conf.</p>
+under your Plone&#8217;s instance section will add the configuration to your&nbsp;zope.conf.</p>
 <pre class="code cfg literal-block">
 <span class="k">[instance]</span>
 <span class="err">...</span>
@@ -66,10 +65,10 @@ zope.conf.</p>
 </pre>
 <p>There are obviously implications for performance and other issues
 associated with persisting session data like this, but for arguments
-sake, let's say we've considered them.&nbsp; You'll probably also want to
+sake, let&#8217;s say we&#8217;ve considered them.&nbsp; You&#8217;ll probably also want to
 consider deleting session data stored like this on logout (see <a class="reference external" href="http://collective-docs.plone.org/sessions/session_variables.html">Session
-Variables</a> in the Plone collective documentation) but that's dependant
-on your use case.</p>
+Variables</a> in the Plone collective documentation) but that&#8217;s dependant
+on your use&nbsp;case.</p>
 <p>There are <a href="../blog/2011/03/increasing-plones-session-timeout/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">
         Page 1 / 1

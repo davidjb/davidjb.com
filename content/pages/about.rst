@@ -1,10 +1,18 @@
 About me
 ########
 
+.. raw:: html
+
+   <div style="float: right; margin: 2em;">
+
 .. image:: |filename|../images/me.png
    :width: 150px
    :align: right
    :alt: What a handsome fellow.
+
+.. raw:: html
+
+   </div>
 
 I'm a web-dev-ops-slash-anything-you-can-think-of IT developer. My personality
 would likely be described by most as easy-going and personable, however I take

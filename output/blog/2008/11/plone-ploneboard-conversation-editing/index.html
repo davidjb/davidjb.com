@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Plone: Ploneboard Conversation Editing</title>
+        <title>Plone: Ploneboard Conversation Editing</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2008/11/plone-ploneboard-conversation-editing/" rel="bookmark"
-           title="Permalink to Plone: Ploneboard Conversation Editing">Plone: Ploneboard Conversation Editing</a></h1>
+           title="Permalink to Plone: Ploneboard Conversation Editing">Plone: Ploneboard Conversation&nbsp;Editing</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -47,31 +47,30 @@
         </address>
         <p>In <a href="../../../../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../../../../tag/conversation.html">conversation</a><a href="../../../../tag/editing.html">editing</a><a href="../../../../tag/plone.html">plone</a><a href="../../../../tag/ploneboard.html">ploneboard</a><a href="../../../../tag/python.html">python</a><a href="../../../../tag/redirection.html">redirection</a><a href="../../../../tag/script.html">script</a></p>
-</footer><!-- /.post-info -->      <p>I'm back with even more Plone goodness. Turns out Ploneboard has a
-problem/issue (well, HAD an issue until I went and edited the code on
-the SVN repository for the Collective of Plone. Read: will not have in
+</footer><!-- /.post-info -->      <p>I&#8217;m back with even more Plone goodness. Turns out Ploneboard has a
+problem/issue (well, <span class="caps">HAD</span> an issue until I went and edited the code on
+the <span class="caps">SVN</span> repository for the Collective of Plone. Read: will not have in
 the next major release) with redirecting the user after they go and edit
 a post. So essentially the user ends up getting to a page that says
-'Insufficient privileges', which is was extremely odd considering I do
-everything as an admin.</p>
-<p>The fix goes a little something like this:</p>
-<p>In ploneboard_scripts/comment_redirect_to_conversation change it to
-be:</p>
+&#8216;Insufficient privileges&#8217;, which is was extremely odd considering I do
+everything as an&nbsp;admin.</p>
+<p>The fix goes a little something like&nbsp;this:</p>
+<p>In ploneboard_scripts/comment_redirect_to_conversation change it to&nbsp;be:</p>
 <pre class="code python literal-block">
-<span class="c"># XXX if we ever do batching, we need extra logic here.</span>
+<span class="c"># <span class="caps">XXX</span> if we ever do batching, we need extra logic here.</span>
 <span class="n">redirect_target</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">getConversation</span><span class="p">()</span>
 <span class="n">anchor</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">getId</span><span class="p">()</span>
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">REQUEST</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'RESPONSE'</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n"><span class="caps">REQUEST</span></span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'<span class="caps">RESPONSE</span>'</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">response</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
 <span class="n">response</span><span class="o">.</span><span class="n">redirect</span><span class="p">(</span><span class="s">'</span><span class="si">%s</span><span class="s">#</span><span class="si">%s</span><span class="s">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">redirect_target</span><span class="o">.</span><span class="n">absolute_url</span><span class="p">(),</span> <span class="n">anchor</span><span class="p">))</span>
 <span class="k">print</span> <span class="s">&quot;Redirecting to </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">redirect_target</span><span class="o">.</span><span class="n">absolute_url</span><span class="p">()</span>
 <span class="k">return</span> <span class="n">printed</span>
 </pre>
 <p>Originally, the user was attempted to be sent to some other view that
-they couldn't access. Now, they just get sent to the conversation. No
-tricks, just the conversation.</p>
-<p>More Plone on the way!</p>
+they couldn&#8217;t access. Now, they just get sent to the conversation. No
+tricks, just the&nbsp;conversation.</p>
+<p>More Plone on the&nbsp;way!</p>
 
     </div><!-- /.entry-content -->
         <div class="comments">

@@ -3,7 +3,7 @@
 
 PLUGINS = ['pelican.plugins.gravatar']
 
-AUTHOR = u'David Beitey'
+AUTHOR = u'davidjb'
 AUTHOR_EMAIL = u'qnivq@qnivqwo.pbz'.decode('rot13')
 SITENAME = u'DavidJB.com'
 SITEURL = 'http://davidjb.com'
@@ -17,10 +17,14 @@ TWITTER_USERNAME = 'davidjb_'
 PAGE_DIR = 'pages'
 DISPLAY_PAGES_ON_MENU = True
 DISPLAY_CATEGORIES_ON_MENU = False
+DEFAULT_DATE = 'fs'
 
 STATIC_PATHS = ['images', 'files']
+FILES_TO_COPY = (('extras/CNAME', 'CNAME'),
+                 ('extras/.nojekyll', '.nojekyll'))
 
 TIMEZONE = 'Australia/Queensland'
+TYPOGRIFY = True
 
 DEFAULT_LANG = u'en'
 

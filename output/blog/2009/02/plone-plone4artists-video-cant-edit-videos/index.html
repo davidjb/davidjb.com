@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Plone: Plone4Artists Video - Can't Edit Videos</title>
+        <title>Plone: Plone4Artists Video - Can’t Edit Videos</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2009/02/plone-plone4artists-video-cant-edit-videos/" rel="bookmark"
-           title="Permalink to Plone: Plone4Artists Video - Can't Edit Videos">Plone: Plone4Artists Video - Can't Edit Videos</a></h1>
+           title="Permalink to Plone: Plone4Artists Video - Can’t Edit Videos">Plone: Plone4Artists Video - Can&#8217;t Edit&nbsp;Videos</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -50,8 +50,8 @@
 </footer><!-- /.post-info -->      <p>Wow..I just keep hitting these problems. The latest issue is chronicled
 here: <a class="reference external" href="http://dev.plone4artists.org/pm/p/plone4artists/ticket/160">http://dev.plone4artists.org/pm/p/plone4artists/ticket/160</a></p>
 <p>which essentially boils down to this problem when you try and edit a
-video subtyped File from p4a.plonevideo (or p4a.video or whatever it's
-called now):</p>
+video subtyped File from p4a.plonevideo (or p4a.video or whatever it&#8217;s
+called&nbsp;now):</p>
 <pre class="code pytb literal-block">
 <span class="x">Traceback (innermost last):
 * Module ZPublisher.Publish, line 119, in publish
@@ -65,12 +65,12 @@ called now):</p>
 * Module zope.formlib.form, line 393, in setUpEditWidgets
 * Module zope.formlib.form, line 323, in _createWidget
 * Module zope.component._api, line 103, in getMultiAdapter
-ComponentLookupError: ((&lt;p4a .fileimage.file._field.FileField object at 0x15ce2610&gt;, &lt;httprequest , URL=[snip].mp4/atct_edit&gt;), &lt;interfaceclass zope.app.form.interfaces.IInputWidget&gt;, u'')</span>
+ComponentLookupError: ((&lt;p4a .fileimage.file._field.FileField object at 0x15ce2610&gt;, &lt;httprequest , <span class="caps">URL</span>=[snip].mp4/atct_edit&gt;), &lt;interfaceclass zope.app.form.interfaces.IInputWidget&gt;, u'')</span>
 </pre>
-<p>And so, after much painful searching and confusion, it's just simply an
-issue of including <tt class="docutils literal">p4a.fileimage</tt> in the ZCML section of your
-instance in your buildout.</p>
-<p>Wow..back to work (finally).</p>
+<p>And so, after much painful searching and confusion, it&#8217;s just simply an
+issue of including <tt class="docutils literal">p4a.fileimage</tt> in the <span class="caps">ZCML</span> section of your
+instance in your&nbsp;buildout.</p>
+<p>Wow..back to work&nbsp;(finally).</p>
 
     </div><!-- /.entry-content -->
         <div class="comments">

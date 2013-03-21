@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Plone and Dexterity: Working with computed fields</title>
+        <title>Plone and Dexterity: Working with computed fields</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2010/04/plone-and-dexterity-working-with-computed-fields/" rel="bookmark"
-           title="Permalink to Plone and Dexterity: Working with computed fields">Plone and Dexterity: Working with computed fields</a></h1>
+           title="Permalink to Plone and Dexterity: Working with computed fields">Plone and Dexterity: Working with computed&nbsp;fields</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -47,26 +47,25 @@
         </address>
         <p>In <a href="../../../../category/plon.html">Plon</a>. </p>
 <p>tags: <a href="../../../../tag/computation.html">computation</a><a href="../../../../tag/content.html">content</a><a href="../../../../tag/dexterity.html">dexterity</a><a href="../../../../tag/extension.html">extension</a><a href="../../../../tag/function.html">function</a><a href="../../../../tag/plone.html">plone</a><a href="../../../../tag/product.html">product</a><a href="../../../../tag/python.html">python</a></p>
-</footer><!-- /.post-info -->      <p>Today, we're looking at how to utilise computed fields within a
+</footer><!-- /.post-info -->      <p>Today, we&#8217;re looking at how to utilise computed fields within a
 Dexterity-based content type. The specific use-case is that of having
 two separate fields (first name and surname, for a Person type, for
-example) generate the complete object title. The first part of this --
-having the title of the content displayed correctly -- is pretty
+example) generate the complete object title. The first part of this &#8212;
+having the title of the content displayed correctly &#8212; is pretty
 straight forward once you know what documentation to read and understand
-how things happen. The second part -- having the ID of the content
-correctly generated to be first name/surname is slightly more
-complicated.</p>
+how things happen. The second part &#8212; having the <span class="caps">ID</span> of the content
+correctly generated to be first name/surname is slightly more&nbsp;complicated.</p>
 <div class="section" id="title-computation-and-display">
-<h2>Title computation and display</h2>
-<p>Let's look at the first part.&nbsp; What we need is a custom content class,
+<h2>Title computation and&nbsp;display</h2>
+<p>Let&#8217;s look at the first part.&nbsp; What we need is a custom content class,
 and this is documented in the <a class="reference external" href="http://plone.org/products/dexterity/documentation/manual/developer-manual/advanced/classes">Dexterity Developer Manual</a>.&nbsp; As per the
 documentation, you need to create a class and derive it off from either
 Item or Container, depending on what your content originally is.&nbsp; Then,
-specify your new class as the 'klass' in your relevant type XML file in
-your GenericSetup profile.</p>
+specify your new class as the &#8216;klass&#8217; in your relevant type <span class="caps">XML</span> file in
+your GenericSetup&nbsp;profile.</p>
 <p>Now, with an empty class definition, like in the manual page, you can
 start to add your computed fields. Your class might look something like
-this (don't worry, I'll explain):</p>
+this (don&#8217;t worry, I&#8217;ll&nbsp;explain):</p>
 <pre class="code python literal-block">
 <span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="n">Item</span><span class="p">):</span>
 <span class="sd">&quot;&quot;&quot;Customised Person content class&quot;&quot;&quot;</span>
@@ -81,34 +80,33 @@ this (don't worry, I'll explain):</p>
         <span class="k">return</span>
 </pre>
 <p>So, we have our relevant function defined and decorated to be a
-property. I've found that in at least this specific use-case (setting
+property. I&#8217;ve found that in at least this specific use-case (setting
 the title from other fields), that this method is getting called before
-the object's fields are instantiated. Hence the presence of the hasattr
-checks.</p>
+the object&#8217;s fields are instantiated. Hence the presence of the hasattr&nbsp;checks.</p>
 <p>Now, having a setTitle function seems a bit odd yes? Especially so since
-it doesn't do anything meaningful at all. Odds are that you probably
-won't need this type of function <em>unless</em> you're like me and needing to
+it doesn&#8217;t do anything meaningful at all. Odds are that you probably
+won&#8217;t need this type of function <em>unless</em> you&#8217;re like me and needing to
 set the <strong>title</strong> specifically. The reason you need it for the title
-attribute is because you've got &quot;def title(self)&quot; as a function and your
+attribute is because you&#8217;ve got &#8220;def title(self)&#8221; as a function and your
 default DublinCore functionality (called by Dexterity &#64;
 plone.dexterity.content, line 221, in __init__) attempts to
-initialise the title, amongst other DC metadata. Interesting!</p>
+initialise the title, amongst other <span class="caps">DC</span> metadata.&nbsp;Interesting!</p>
 <p>So, without a setTitle function, attempting to create a new instance of
-your content fails with a &quot;AttributeError: can't set attribute&quot; error
-because DC (Module Products.CMFDefault.DublinCore, line 369, in
-setTitle) wants to set the title. Sorry, it can't do this (we don't want
-it to, and it physically can't), so we override what would be the
-default setTitle function to do nothing at all.</p>
+your content fails with a &#8220;AttributeError: can&#8217;t set attribute&#8221; error
+because <span class="caps">DC</span> (Module Products.CMFDefault.DublinCore, line 369, in
+setTitle) wants to set the title. Sorry, it can&#8217;t do this (we don&#8217;t want
+it to, and it physically can&#8217;t), so we override what would be the
+default setTitle function to do nothing at&nbsp;all.</p>
 </div>
 <div class="section" id="correct-id-at-creation-time-from-computed-title">
-<h2>Correct ID at creation time from computed title</h2>
-<p>Now, this one's a little trickier. Unfortunately, there's no
+<h2>Correct <span class="caps">ID</span> at creation time from computed&nbsp;title</h2>
+<p>Now, this one&#8217;s a little trickier. Unfortunately, there&#8217;s no
 documentation that I could find on the web about doing this, save a
 <a class="reference external" href="http://n2.nabble.com/Dexterity-computed-fields-td3498400.html">very short thread</a> on Nabble. In that thread, Martin Aspeli provides
 some good pointers to this very use-case, but the example of
 INameFromTitle provides the title as a field, rather than a function
-(and isn't specifically registered as an adapter).</p>
-<p>After a bit of poking and prodding, here's my solution:</p>
+(and isn&#8217;t specifically registered as an&nbsp;adapter).</p>
+<p>After a bit of poking and prodding, here&#8217;s my&nbsp;solution:</p>
 <pre class="code python literal-block">
 <span class="kn">from</span> <span class="nn">plone.app.content.interfaces</span> <span class="kn">import</span> <span class="n">INameFromTitle</span>
 <span class="k">class</span> <span class="nc">INameFromPersonNames</span><span class="p">(</span><span class="n">INameFromTitle</span><span class="p">):</span>
@@ -126,13 +124,12 @@ INameFromTitle provides the title as a field, rather than a function
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">first_names</span> <span class="o">+</span> <span class="s">' '</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">surname</span>
 </pre>
 <p>So, we extend off from the default functionality, making sure that our
-title function is going to override the title field that's in
+title function is going to override the title field that&#8217;s in
 INameFromTitle by default. Then, we create our adapter and return the
 processed title (function decorated as a property). No need for hasattr
-checks here; the object is already initialised.</p>
-<p>Then, register this in some ZCML, where the 'for' is the Dexterity
-interface class and the latter two attributes are the classes we just
-specified:</p>
+checks here; the object is already&nbsp;initialised.</p>
+<p>Then, register this in some <span class="caps">ZCML</span>, where the &#8216;for&#8217; is the Dexterity
+interface class and the latter two attributes are the classes we just&nbsp;specified:</p>
 <pre class="code xml literal-block">
 <span class="nt">&lt;adapter</span> <span class="na">for=</span><span class="s">&quot;sample.project.person.ISamplePerson&quot;</span>
     <span class="na">provides=</span><span class="s">&quot;sample.project.person.INameFromPersonNames&quot;</span>
@@ -140,18 +137,18 @@ specified:</p>
     <span class="nt">/&gt;</span>
 </pre>
 <p>Then, the magic of inheritance takes over and the relevant code that
-would normally generate the ID off from the title field comes from the
-processed title. Tada!</p>
+would normally generate the <span class="caps">ID</span> off from the title field comes from the
+processed title.&nbsp;Tada!</p>
 <div class="section" id="conclusion">
 <h3>Conclusion</h3>
-<p>Put all these things together with Dexterity and that's it. I'm still in
+<p>Put all these things together with Dexterity and that&#8217;s it. I&#8217;m still in
 the process of doing this, but you should be able to apply the same
 processes to other fields. Just watch out for DublinCore initialisation.
 If you see that sort of error message about a setXXX function and
-attribute, then you'll know what to do.</p>
-<p><strong>Note to self:</strong> the reason I didn't use a behaviour here is because
-things like INameFromTitle give us a field (see source file). We don't
-want this, but rather just programmatic generation of the title.</p>
+attribute, then you&#8217;ll know what to&nbsp;do.</p>
+<p><strong>Note to self:</strong> the reason I didn&#8217;t use a behaviour here is because
+things like INameFromTitle give us a field (see source file). We don&#8217;t
+want this, but rather just programmatic generation of the&nbsp;title.</p>
 </div>
 </div>
 

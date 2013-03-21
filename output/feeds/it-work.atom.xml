@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>DavidJB.com</title><link href="http://davidjb.com/" rel="alternate"></link><link href="http://davidjb.com/feeds/it-work.atom.xml" rel="self"></link><id>http://davidjb.com/</id><updated>2010-10-26T17:38:00+10:00</updated><entry><title>Bad relationships: RelationChoice, RelationCatalog and removed Dexterity content in Plone</title><link href="http://davidjb.com/blog/2010/10/bad-relationships-relationchoice-relationcatalog-and-removed-dexterity-content-in-plone/" rel="alternate"></link><updated>2010-10-26T17:38:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2010-10-26:blog/2010/10/bad-relationships-relationchoice-relationcatalog-and-removed-dexterity-content-in-plone/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Disclaimer:&lt;/strong&gt; this post isn't giving relationship advice (or..it is in
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DavidJB.com</title><link href="http://davidjb.com/" rel="alternate"></link><link href="http://davidjb.com/feeds/it-work.atom.xml" rel="self"></link><id>http://davidjb.com/</id><updated>2010-10-26T17:38:00+10:00</updated><entry><title>Bad relationships: RelationChoice, RelationCatalog and removed Dexterity content in Plone</title><link href="http://davidjb.com/blog/2010/10/bad-relationships-relationchoice-relationcatalog-and-removed-dexterity-content-in-plone/" rel="alternate"></link><updated>2010-10-26T17:38:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2010-10-26:blog/2010/10/bad-relationships-relationchoice-relationcatalog-and-removed-dexterity-content-in-plone/</id><summary type="html">&lt;p&gt;&lt;strong&gt;Disclaimer:&lt;/strong&gt; this post isn&amp;#8217;t giving relationship advice (or..it is in
 some twisted way).&amp;nbsp; Unsurprisingly, removing content in Plone via the
-ZMI when Plone says something can't be deleted is likely to cause
-problems.&lt;/p&gt;
-&lt;p&gt;In my case, the fact I removed a Dexterity-based container (&amp;quot;Project&amp;quot;)
+&lt;span class="caps"&gt;ZMI&lt;/span&gt; when Plone says something can&amp;#8217;t be deleted is likely to cause&amp;nbsp;problems.&lt;/p&gt;
+&lt;p&gt;In my case, the fact I removed a Dexterity-based container (&amp;#8220;Project&amp;#8221;)
 caused users to no longer add or edit content of my Project type.&amp;nbsp; The
 reason for this boiled down to my use of RelationChoice fields, in order
 link Projects to Person objects and vice versa.&amp;nbsp; The backend storage for
 the RelationChoice field is an instance of
 &lt;tt class="docutils literal"&gt;z3c.relationfield.index.RelationCatalog&lt;/tt&gt;, and this keeps records of where
-the relations are going to and going from.&lt;/p&gt;
+the relations are going to and going&amp;nbsp;from.&lt;/p&gt;
 &lt;p&gt;Now, I created a test Project and some content underneath it.&amp;nbsp; Due to
-some strange KSS errors I was getting on said content, I decided to try
+some strange &lt;span class="caps"&gt;KSS&lt;/span&gt; errors I was getting on said content, I decided to try
 deleting the parent Project.&amp;nbsp; Plone complained, telling me that the
-content couldn't be deleted, and giving the same KSS traceback errors.
-Needing to get rid of the Project, I decided to traipse into the ZMI and
+content couldn&amp;#8217;t be deleted, and giving the same &lt;span class="caps"&gt;KSS&lt;/span&gt; traceback errors.
+Needing to get rid of the Project, I decided to traipse into the &lt;span class="caps"&gt;ZMI&lt;/span&gt; and
 manually delete the Project that way.&amp;nbsp; I thought I was successful.&amp;nbsp; I
 was, but I caused more problems because the Project I made was still
-pointing at a Person object.&lt;/p&gt;
+pointing at a Person&amp;nbsp;object.&lt;/p&gt;
 &lt;p&gt;Several days later, users began complaining of not being able to add new
 Projects or edit existing Project content either.&amp;nbsp; The traceback looked
-like this:&lt;/p&gt;
+like&amp;nbsp;this:&lt;/p&gt;
 &lt;pre class="code pytb literal-block"&gt;
-&lt;span class="x"&gt;2010-10-26 13:30:02 ERROR Zope.SiteErrorLog 1288063802.910.831336088181 http://localhost:8080/plone/programs/sample-project/&amp;#64;&amp;#64;edit
+&lt;span class="x"&gt;2010-10-26 13:30:02 &lt;span class="caps"&gt;ERROR&lt;/span&gt; Zope.SiteErrorLog 1288063802.910.831336088181 http://localhost:8080/plone/programs/sample-project/&amp;#64;&amp;#64;edit
 Traceback (innermost last):
   Module ZPublisher.Publish, line 119, in publish
   Module ZPublisher.mapply, line 88, in mapply
@@ -55,31 +54,31 @@ KeyError: 128268893&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;These errors were strange, because the KeyError was different every
 time. After several hours of delving through code, it was clear that the
-ZC relation catalog was expecting a given key but not finding it (as the
-traceback suggests). After poking around in the RelationCatalog's
+&lt;span class="caps"&gt;ZC&lt;/span&gt; relation catalog was expecting a given key but not finding it (as the
+traceback suggests). After poking around in the RelationCatalog&amp;#8217;s
 storage, there were a variety of references sticking around that
-involved the old Project that I'd deleted. I hacked in a:&lt;/p&gt;
+involved the old Project that I&amp;#8217;d deleted. I hacked in&amp;nbsp;a:&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
 &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;from&lt;/span&gt;\&lt;span class="n"&gt;_object&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;sorted&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;catalog&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;findRelations&lt;/span&gt;&lt;span class="p"&gt;({}))]&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;at line 84 of &lt;tt class="docutils literal"&gt;z3c/relationfield/event.py&lt;/tt&gt;, and it showed references
-to objects that no longer existed.&lt;/p&gt;
+to objects that no longer&amp;nbsp;existed.&lt;/p&gt;
 &lt;p&gt;Trying to use the &lt;tt class="docutils literal"&gt;removeRelations&lt;/tt&gt; method of
-&lt;tt class="docutils literal"&gt;z3c/relationfield/event.py&lt;/tt&gt; isn't useful, because that swallows up
+&lt;tt class="docutils literal"&gt;z3c/relationfield/event.py&lt;/tt&gt; isn&amp;#8217;t useful, because that swallows up
 the same KeyError, so in order to remove the borked relations, it would
 have to be done manually. That said, the underlying storage for the
-RelationCatalog goes over my head.&lt;/p&gt;
-&lt;p&gt;So, due to time constraints, I resolved my issues by using the catalog's
-&amp;quot;clear&amp;quot; method to remove all records. Easily done by inserting:&lt;/p&gt;
+RelationCatalog goes over my&amp;nbsp;head.&lt;/p&gt;
+&lt;p&gt;So, due to time constraints, I resolved my issues by using the catalog&amp;#8217;s
+&amp;#8220;clear&amp;#8221; method to remove all records. Easily done by&amp;nbsp;inserting:&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
 &lt;span class="n"&gt;catalog&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;clear&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;at line 84 of &lt;tt class="docutils literal"&gt;z3c/relationfield/event.py&lt;/tt&gt; (and removing
 after I edited a Project and invoked said code). Clearing the catalog
-didn't break any of relations for my content, and everything's now
-re-indexed after each Project was edited and saved again.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Word to the wise:&lt;/strong&gt; if you're working with this sort of tech, figure
-out why you can't delete something and solve that, rather than hacking
-away. It will come back to bite you. Let me know if you've fixed a
-similar issue without needing to clear the catalog.&lt;/p&gt;
+didn&amp;#8217;t break any of relations for my content, and everything&amp;#8217;s now
+re-indexed after each Project was edited and saved&amp;nbsp;again.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Word to the wise:&lt;/strong&gt; if you&amp;#8217;re working with this sort of tech, figure
+out why you can&amp;#8217;t delete something and solve that, rather than hacking
+away. It will come back to bite you. Let me know if you&amp;#8217;ve fixed a
+similar issue without needing to clear the&amp;nbsp;catalog.&lt;/p&gt;
 </summary><category term="borked"></category><category term="dexterity"></category><category term="plone"></category><category term="problem"></category><category term="zope"></category></entry></feed>

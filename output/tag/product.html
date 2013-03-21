@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2010/06/plone-dexterity-and-incorrect-widgets/">Plone, Dexterity, and Incorrect Widgets</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2010/06/plone-dexterity-and-incorrect-widgets/">Plone, Dexterity, and Incorrect&nbsp;Widgets</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2010-06-21T15:09:00">
                 Mon 21 June 2010
@@ -43,24 +43,23 @@
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/content-type.html">content type</a><a href="../tag/datetime.html">datetime</a><a href="../tag/dexterity.html">dexterity</a><a href="../tag/fields.html">fields</a><a href="../tag/form.html">form</a><a href="../tag/plone.html">plone</a><a href="../tag/problem.html">problem</a><a href="../tag/product.html">product</a><a href="../tag/zope.html">zope</a></p>
-</footer><!-- /.post-info --><p>A nice 'gotcha' is the distinction between Zope's schema.Date and
+</footer><!-- /.post-info --><p>A nice &#8216;gotcha&#8217; is the distinction between Zope&#8217;s schema.Date and
 schema.Datetime. The difference is obvious and straightforward when the
 two terms are laid out side-by-side: one is for dates only and the other
 adds a time component. Where things fell down for me in my usage of
 these fields with a Dexterity-based content type in Plone is the human
 component. When these fields are mashed in together within a lot of
-other text/Python/names, it's easy to miss those 4 little letters of
-'time'. This lead me trying to use a DatetimeFieldWidget when I really
-could only use a DateFieldWidget. <strong>Wrong widget for the wrong type =
-unpredictable.</strong></p>
-<p>When it's all laid out like that, things are clear and simple. When the
+other text/Python/names, it&#8217;s easy to miss those 4 little letters of
+&#8216;time&#8217;. This lead me trying to use a DatetimeFieldWidget when I really
+could only use a DateFieldWidget. <strong>Wrong widget for the wrong type =&nbsp;unpredictable.</strong></p>
+<p>When it&#8217;s all laid out like that, things are clear and simple. When the
 small typo has been made, however, things are far less forgiving and
-informative. Thankfully, the typo wasn't my fault, but was caused by a
-ZopeSkel template for Dexterity (<a class="reference external" href="http://pypi.python.org/pypi/zopeskel.dexterity">zopeskel.dexterity</a>) so I'm not
+informative. Thankfully, the typo wasn&#8217;t my fault, but was caused by a
+ZopeSkel template for Dexterity (<a class="reference external" href="http://pypi.python.org/pypi/zopeskel.dexterity">zopeskel.dexterity</a>) so I&#8217;m not
 kicking myself over it. Essentially, the error message (for those of you
-possibly experiencing something similar) is like this:</p>
+possibly experiencing something similar) is like&nbsp;this:</p>
 <pre class="code pytb literal-block">
-<span class="x">2010-06-18 16:32:03 ERROR Zope.SiteErrorLog 1276842723.120.730292360531 http://localhost:8080/test/kss_z3cform_inline_validation/validate_input
+<span class="x">2010-06-18 16:32:03 <span class="caps">ERROR</span> Zope.SiteErrorLog 1276842723.120.730292360531 http://localhost:8080/test/kss_z3cform_inline_validation/validate_input
     Traceback (innermost last):
     Module ZPublisher.Publish, line 119, in publish
     Module ZPublisher.mapply, line 88, in mapply
@@ -76,22 +75,21 @@ possibly experiencing something similar) is like this:</p>
     Module sre, line 129, in match
     TypeError: expected string or buffer</span>
 </pre>
-<p>And the end result of this is that you can't validate fields in your
+<p>And the end result of this is that you can&#8217;t validate fields in your
 Dexterity content Add form (eg the above traceback is echoed whenever
 you click in/out of a field), nor can you actually save your content.
 Unfortunately, even if you were to go hunting through the traceback,
-you'd probably end up like me and find that the code is trying to
-validate a completely different field than the problematic one. No help
-whatsoever.</p>
+you&#8217;d probably end up like me and find that the code is trying to
+validate a completely different field than the problematic one. No help&nbsp;whatsoever.</p>
 <p>After going through each of the different fields I had on my content
-type, I figured out the cause. If you're hitting a similar issue, check
-your widgets. If you're using <a class="reference external" href="http://pypi.python.org/pypi/zopeskel.dexterity">zopeskel.dexterity</a>, don't worry though.
+type, I figured out the cause. If you&#8217;re hitting a similar issue, check
+your widgets. If you&#8217;re using <a class="reference external" href="http://pypi.python.org/pypi/zopeskel.dexterity">zopeskel.dexterity</a>, don&#8217;t worry though.
 I checked in a fix for this issue this morning, correcting the widget to
-be used. You'll need to use the latest version from the Plone Collective
-SVN to make the templates work correctly.</p>
+be used. You&#8217;ll need to use the latest version from the Plone Collective
+<span class="caps">SVN</span> to make the templates work&nbsp;correctly.</p>
 <p>On the other hand, you could look at <a class="reference external" href="http://pypi.python.org/pypi/collective.z3cform.datepicker">collective.z3cform.datepicker</a>,
 which implements a much more user-friendly Date and DateTime widgets
-(using jQuery UI etc).</p>
+(using jQuery <span class="caps">UI</span>&nbsp;etc).</p>
 <p>There are <a href="../blog/2010/06/plone-dexterity-and-incorrect-widgets/#disqus_thread">comments</a>.</p>                </article>
                             </aside><!-- /#featured -->
                             <section id="content" class="body">
@@ -104,7 +102,7 @@ which implements a much more user-friendly Date and DateTime widgets
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2010/04/plone-and-dexterity-working-with-computed-fields/" rel="bookmark"
-                           title="Permalink to Plone and Dexterity: Working with computed fields">Plone and Dexterity: Working with computed fields</a></h1>
+                           title="Permalink to Plone and Dexterity: Working with computed fields">Plone and Dexterity: Working with computed&nbsp;fields</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -118,10 +116,10 @@ which implements a much more user-friendly Date and DateTime widgets
         </address>
         <p>In <a href="../category/plon.html">Plon</a>. </p>
 <p>tags: <a href="../tag/computation.html">computation</a><a href="../tag/content.html">content</a><a href="../tag/dexterity.html">dexterity</a><a href="../tag/extension.html">extension</a><a href="../tag/function.html">function</a><a href="../tag/plone.html">plone</a><a href="../tag/product.html">product</a><a href="../tag/python.html">python</a></p>
-</footer><!-- /.post-info -->                <p>Today, we're looking at how to utilise computed fields within a
+</footer><!-- /.post-info -->                <p>Today, we&#8217;re looking at how to utilise computed fields within a
 Dexterity-based content type. The specific use-case is that of having
 two separate fields (first name and surname, for a Person type, for
-example) generate the complete object title. The first part of this --
+example) generate the complete object title. The first part of this &#8212;
 having the title of the ...</p>
                 <a class="readmore" href="../blog/2010/04/plone-and-dexterity-working-with-computed-fields/">read more</a>
                 <p>There are <a href="../blog/2010/04/plone-and-dexterity-working-with-computed-fields/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
@@ -132,7 +130,7 @@ having the title of the ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2010/03/plonezope-utilising-zope-testrecorder-for-unit-testing/" rel="bookmark"
-                           title="Permalink to Plone/Zope: Utilising zope.testrecorder for unit testing">Plone/Zope:  Utilising zope.testrecorder for unit testing</a></h1>
+                           title="Permalink to Plone/Zope: Utilising zope.testrecorder for unit testing">Plone/Zope:  Utilising zope.testrecorder for unit&nbsp;testing</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -150,7 +148,7 @@ having the title of the ...</p>
 reasonably time consuming. For us developers, having tested code is
 absolutely essential. This is especially true when clients are beating
 down your door looking for a fully functional product and you need to
-know what you've written works and ...</p>
+know what you&#8217;ve written works and ...</p>
                 <a class="readmore" href="../blog/2010/03/plonezope-utilising-zope-testrecorder-for-unit-testing/">read more</a>
                 <p>There are <a href="../blog/2010/03/plonezope-utilising-zope-testrecorder-for-unit-testing/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
@@ -160,7 +158,7 @@ know what you've written works and ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/09/ploneformgen-plone-google-calendar-integration/" rel="bookmark"
-                           title="Permalink to PloneFormGen (Plone) & Google Calendar Integration">PloneFormGen (Plone) &amp; Google Calendar Integration</a></h1>
+                           title="Permalink to PloneFormGen (Plone) & Google Calendar Integration">PloneFormGen (Plone) <span class="amp">&amp;</span> Google Calendar&nbsp;Integration</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -174,7 +172,7 @@ know what you've written works and ...</p>
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/calendar.html">calendar</a><a href="../tag/form.html">form</a><a href="../tag/gen.html">gen</a><a href="../tag/google.html">google</a><a href="../tag/mash.html">mash</a><a href="../tag/pfg.html">pfg</a><a href="../tag/plone.html">plone</a><a href="../tag/product.html">product</a><a href="../tag/python.html">python</a><a href="../tag/script.html">script</a></p>
-</footer><!-- /.post-info -->                <p>It's a little bit of a different mash-up, but it's still nonetheless
+</footer><!-- /.post-info -->                <p>It&#8217;s a little bit of a different mash-up, but it&#8217;s still nonetheless
 useful to have, given types of booking forms and so forth that could
 utilise it.&nbsp; The easiest way I found (to avoid security issues with
 Python scripts in Plone) was to create an external method and ...</p>
@@ -187,7 +185,7 @@ Python scripts in Plone) was to create an external method and ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/08/plone-re-ordering-viewlets/" rel="bookmark"
-                           title="Permalink to Plone: Re-ordering Viewlets">Plone: Re-ordering Viewlets</a></h1>
+                           title="Permalink to Plone: Re-ordering Viewlets">Plone: Re-ordering&nbsp;Viewlets</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -215,7 +213,7 @@ this is straight forward because ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/08/creating-distributing-a-new-plonepypi-product/" rel="bookmark"
-                           title="Permalink to Creating & distributing a new Plone/PyPI product">Creating &amp; distributing a new Plone/PyPI product</a></h1>
+                           title="Permalink to Creating & distributing a new Plone/PyPI product">Creating <span class="amp">&amp;</span> distributing a new Plone/PyPI&nbsp;product</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -229,10 +227,10 @@ this is straight forward because ...</p>
         </address>
         <p>In <a href="../category/python.html">Python</a>. </p>
 <p>tags: <a href="../tag/easy_install.html">easy_install</a><a href="../tag/open-source.html">open source</a><a href="../tag/plone.html">plone</a><a href="../tag/product.html">product</a><a href="../tag/python.html">python</a><a href="../tag/release.html">release</a><a href="../tag/software.html">Software</a></p>
-</footer><!-- /.post-info -->                <p>It's amazing to see how technologies can be so smoothly integrated these
-days.&nbsp; I'm talking, at least in this instance, about how setuptools
-works with PyPI (and then Plone.org's Products section) and allows you
-to distribute your product(s) to the world.&nbsp; So far, I've ...</p>
+</footer><!-- /.post-info -->                <p>It&#8217;s amazing to see how technologies can be so smoothly integrated these
+days.&nbsp; I&#8217;m talking, at least in this instance, about how setuptools
+works with PyPI (and then Plone.org&#8217;s Products section) and allows you
+to distribute your product(s) to the world.&nbsp; So far, I&#8217;ve ...</p>
                 <a class="readmore" href="../blog/2009/08/creating-distributing-a-new-plonepypi-product/">read more</a>
                 <p>There are <a href="../blog/2009/08/creating-distributing-a-new-plonepypi-product/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
@@ -242,7 +240,7 @@ to distribute your product(s) to the world.&nbsp; So far, I've ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2008/11/plone-relative-recent-changes-portlets/" rel="bookmark"
-                           title="Permalink to Plone: Relative 'Recent Changes' Portlets">Plone: Relative 'Recent Changes' Portlets</a></h1>
+                           title="Permalink to Plone: Relative ‘Recent Changes’ Portlets">Plone: Relative &#8216;Recent Changes&#8217;&nbsp;Portlets</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -256,10 +254,10 @@ to distribute your product(s) to the world.&nbsp; So far, I've ...</p>
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/features.html">features</a><a href="../tag/plone.html">plone</a><a href="../tag/portlets.html">portlets</a><a href="../tag/product.html">product</a><a href="../tag/python.html">python</a></p>
-</footer><!-- /.post-info -->                <p>The problem I've been faced with today on our Plone systems is that I
-need to created a 'Recent Changes' portlet that's relative to where the
-user is on the site.</p>
-<p>Now, the standard portlet doesn't do anything for me, so that's pretty
+</footer><!-- /.post-info -->                <p>The problem I&#8217;ve been faced with today on our Plone systems is that I
+need to created a &#8216;Recent Changes&#8217; portlet that&#8217;s relative to where the
+user is on the&nbsp;site.</p>
+<p>Now, the standard portlet doesn&#8217;t do anything for me, so that&#8217;s pretty
 useless. I had ...</p>
                 <a class="readmore" href="../blog/2008/11/plone-relative-recent-changes-portlets/">read more</a>
                 <p>There are <a href="../blog/2008/11/plone-relative-recent-changes-portlets/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->

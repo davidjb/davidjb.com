@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Plone: Python Eggs And Development</title>
+        <title>Plone: Python Eggs And Development</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2009/01/plone-python-eggs-and-development/" rel="bookmark"
-           title="Permalink to Plone: Python Eggs And Development">Plone: Python Eggs And Development</a></h1>
+           title="Permalink to Plone: Python Eggs And Development">Plone: Python Eggs And&nbsp;Development</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -47,39 +47,39 @@
         </address>
         <p>In <a href="../../../../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../../../../tag/egg.html">egg</a><a href="../../../../tag/linux.html">linux</a><a href="../../../../tag/python.html">python</a><a href="../../../../tag/setuptools.html">setuptools</a></p>
-</footer><!-- /.post-info -->      <p>Welcome to the new year! It's the start of another journey around the
-sun and the beginning of work for me. Whilst I'm the only one actually
-working around here today, I thought I'd take the chance and update with
-some useful info:</p>
+</footer><!-- /.post-info -->      <p>Welcome to the new year! It&#8217;s the start of another journey around the
+sun and the beginning of work for me. Whilst I&#8217;m the only one actually
+working around here today, I thought I&#8217;d take the chance and update with
+some useful&nbsp;info:</p>
 <div class="section" id="troublesome-python-eggs">
-<h2>Troublesome Python eggs</h2>
-<p>Now, much to my amazement, when you're creating/compiling/whatever
+<h2>Troublesome Python&nbsp;eggs</h2>
+<p>Now, much to my amazement, when you&#8217;re creating/compiling/whatever
 Python eggs for Plone you need to actually specify the files you want
-included in the build. I suppose it's fair enough, but thought it might
-have actually done it for me. No such luck!</p>
-<p>The <tt class="docutils literal">SOURCES.txt</tt> file in the egg-info folder needs to be updated
-accordingly. A command like <tt class="docutils literal">find ‘pwd` <span class="pre">-name</span> <span class="pre">&quot;*.*&quot;</span></tt> will do the trick
+included in the build. I suppose it&#8217;s fair enough, but thought it might
+have actually done it for me. No such&nbsp;luck!</p>
+<p>The <tt class="docutils literal"><span class="caps">SOURCES</span>.txt</tt> file in the egg-info folder needs to be updated
+accordingly. A command like <tt class="docutils literal">find ‘pwd` <span class="pre">-name</span> <span class="pre">&#8220;*.*&#8221;</span></tt> will do the trick
 and list out the files in the directory (assuming you start from the
-root of the egg). If there’s extra stuff in the folder, you'll probably
+root of the egg). If there’s extra stuff in the folder, you&#8217;ll probably
 need to weed out the extraneous files (.pyc, git, svn, etc) before
-building the egg with:</p>
+building the egg&nbsp;with:</p>
 <pre class="literal-block">
 david&#64;computer: python2.4 setup.py build
 david&#64;computer: python2.4 setup.py sdist bdist\_egg
 </pre>
 <p>which gets our lovely setuptools to build (scramble?) the egg and place
-the source and egg into the <tt class="docutils literal">dist</tt> folder. Providing the SOURCES.txt
-file was correct, then you'll have the right files included. If you
-don't, you'll be in for trouble when you try and include the egg under
-ZCML etc because the files just don't come along for the ride.</p>
+the source and egg into the <tt class="docutils literal">dist</tt> folder. Providing the <span class="caps">SOURCES</span>.txt
+file was correct, then you&#8217;ll have the right files included. If you
+don&#8217;t, you&#8217;ll be in for trouble when you try and include the egg under
+<span class="caps">ZCML</span> etc because the files just don&#8217;t come along for the&nbsp;ride.</p>
 <p>Serve with sides of bacon and toast, place into your favourite PyPi
-(cheese shop) and include with your buildout config.</p>
+(cheese shop) and include with your buildout&nbsp;config.</p>
 </div>
 <div class="section" id="further-reading">
-<h2>Further reading</h2>
-<p>If you're really bored, check out
+<h2>Further&nbsp;reading</h2>
+<p>If you&#8217;re really bored, check out
 <a class="reference external" href="http://peak.telecommunity.com/DevCenter/setuptools">http://peak.telecommunity.com/DevCenter/setuptools</a> for some good
-material on what Setuptools can do for you.</p>
+material on what Setuptools can do for&nbsp;you.</p>
 </div>
 
     </div><!-- /.entry-content -->

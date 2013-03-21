@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Plone: Issues with products</title>
+        <title>Plone: Issues with products</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2009/04/plone-issues-with-products/" rel="bookmark"
-           title="Permalink to Plone: Issues with products">Plone: Issues with products</a></h1>
+           title="Permalink to Plone: Issues with products">Plone: Issues with&nbsp;products</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -47,38 +47,36 @@
         </address>
         <p>In <a href="../../../../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../../../../tag/plone.html">plone</a><a href="../../../../tag/problem.html">problem</a><a href="../../../../tag/products.html">products</a><a href="../../../../tag/zip.html">zip</a></p>
-</footer><!-- /.post-info -->      <p>Oh dear. Products in Plone that don't care to uninstall themselves at
-all when removed. One such product that comes to mind is
-ZipFileTransport.</p>
+</footer><!-- /.post-info -->      <p>Oh dear. Products in Plone that don&#8217;t care to uninstall themselves at
+all when removed. One such product that comes to mind is&nbsp;ZipFileTransport.</p>
 <p>I could go into depth all day about its failure to uninstall, but in
-specific, it's this line of code in its setupHandlers.py file that kills
-me:</p>
+specific, it&#8217;s this line of code in its setupHandlers.py file that kills&nbsp;me:</p>
 <pre class="code python literal-block">
 <span class="n">sm</span><span class="o">.</span><span class="n">registerUtility</span><span class="p">(</span><span class="n">ZipFileTransportUtility</span><span class="p">(</span><span class="s">'zipfiletransport'</span><span class="p">),</span> <span class="n">IZipFileTransportUtility</span><span class="p">)</span>
 </pre>
-<p>Now, where's the unregisterUtility called? Nowhere, unfortunately. So
+<p>Now, where&#8217;s the unregisterUtility called? Nowhere, unfortunately. So
 when one tries to go and install/uninstall/reinstall/do certain things
 on the site, you get a nasty failure message about trying to unpickle a
-python object:</p>
+python&nbsp;object:</p>
 <pre class="code pytb literal-block">
-<span class="x">2009-04-23 10:19:19 ERROR Zope.SiteErrorLog http://localhost:8080/eresearch/portal_quickinstaller/uninstallProductsTraceback (innermost last):
+<span class="x">2009-04-23 10:19:19 <span class="caps">ERROR</span> Zope.SiteErrorLog http://localhost:8080/eresearch/portal_quickinstaller/uninstallProductsTraceback (innermost last):
 Module ZPublisher.Publish, line 125, in publish
 Module Zope2.App.startup, line 238, in commit
 Module transaction._manager, line 96, in commit
 Module transaction._transaction, line 395, in commit
 Module transaction._transaction, line 495, in _commitResources
-Module ZODB.Connection, line 510, in commit
-Module ZODB.Connection, line 555, in _commit
-Module ZODB.Connection, line 582, in _store_objects
-Module ZODB.serialize, line 407, in serialize
-Module ZODB.serialize, line 416, in _dump
+Module <span class="caps">ZODB</span>.Connection, line 510, in commit
+Module <span class="caps">ZODB</span>.Connection, line 555, in _commit
+Module <span class="caps">ZODB</span>.Connection, line 582, in _store_objects
+Module <span class="caps">ZODB</span>.serialize, line 407, in serialize
+Module <span class="caps">ZODB</span>.serialize, line 416, in _dump
 PicklingError: Can't pickle: import of module Products.ZipFileTransport.utilities.interfaces failed</span>
 </pre>
 <div class="section" id="solution">
 <h2>Solution?</h2>
 <p>Okay, I found the unregisterUtility function in zope.component, and it
 can be accessed by something like this (ipython session, of course):
-(You'll need at least the ZFT parts below present to import them).</p>
+(You&#8217;ll need at least the <span class="caps">ZFT</span> parts below present to import&nbsp;them).</p>
 <pre class="code python literal-block">
 <span class="kn">from</span> <span class="nn">zope.app.component.hooks</span> <span class="kn">import</span> <span class="n">setSite</span>
 <span class="kn">from</span> <span class="nn">zope.component</span> <span class="kn">import</span> <span class="n">getSiteManager</span>
@@ -103,17 +101,17 @@ can be accessed by something like this (ipython session, of course):
 <span class="nb">str</span><span class="p">(</span><span class="n">sm</span><span class="o">.</span><span class="n">utilities</span><span class="o">.</span><span class="n">_subscribers</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'Zip'</span><span class="p">)</span>
 <span class="nb">str</span><span class="p">(</span><span class="n">sm</span><span class="o">.</span><span class="n">utilities</span><span class="o">.</span><span class="n">__bases__</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">__dict__</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'Zip'</span><span class="p">)</span>
 </pre>
-<p>And thus ends the tyranny of ZipFileTransport.</p>
+<p>And thus ends the tyranny of&nbsp;ZipFileTransport.</p>
 <p><strong>Edit:</strong> I should make it clear that to run the above commands you need
 to have a handle to your Plone site object, and be pre-set as the
-'portal' variable. If you set up ipython like so:
+&#8216;portal&#8217; variable. If you set up ipython like so:
 <a class="reference external" href="http://plone.org/documentation/kb/setup-ipython-for-zope">http://plone.org/documentation/kb/setup-ipython-for-zope</a> then that takes
 care of things automatically and gives you interactive handles to your
-portal and Zope app root. If you're not using this, then figure out how
-to set 'portal' manually to be your Plone site object (not a string or
-name, but the actual object) and run the rest of the lines of code.</p>
-<p>Also, I'm not sure whether you need to commit your changes or not. If
-you find the changes don't stick, then try this in your ipython session:</p>
+portal and Zope app root. If you&#8217;re not using this, then figure out how
+to set &#8216;portal&#8217; manually to be your Plone site object (not a string or
+name, but the actual object) and run the rest of the lines of&nbsp;code.</p>
+<p>Also, I&#8217;m not sure whether you need to commit your changes or not. If
+you find the changes don&#8217;t stick, then try this in your ipython&nbsp;session:</p>
 <pre class="code python literal-block">
 <span class="kn">import</span> <span class="nn">transaction</span>
 <span class="n">transaction</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>

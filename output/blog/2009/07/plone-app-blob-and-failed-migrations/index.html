@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>plone.app.blob and Failed Migrations</title>
+        <title>plone.app.blob and Failed Migrations</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2009/07/plone-app-blob-and-failed-migrations/" rel="bookmark"
-           title="Permalink to plone.app.blob and Failed Migrations">plone.app.blob and Failed Migrations</a></h1>
+           title="Permalink to plone.app.blob and Failed Migrations">plone.app.blob and Failed&nbsp;Migrations</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -47,26 +47,25 @@
         </address>
         <p>In <a href="../../../../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../../../../tag/blob.html">blob</a><a href="../../../../tag/fix.html">fix</a><a href="../../../../tag/links.html">links</a><a href="../../../../tag/plone.html">plone</a><a href="../../../../tag/problem.html">problem</a><a href="../../../../tag/traceback.html">traceback</a></p>
-</footer><!-- /.post-info -->      <p>Another fun-and-games style problem I've come across when using
-plone.app.blob: sometimes migrations won't work when converting a
-standard site's files over to blobs.</p>
-<p>That's a pretty ambiguious description, but essentially, the error you
+</footer><!-- /.post-info -->      <p>Another fun-and-games style problem I&#8217;ve come across when using
+plone.app.blob: sometimes migrations won&#8217;t work when converting a
+standard site&#8217;s files over to&nbsp;blobs.</p>
+<p>That&#8217;s a pretty ambiguious description, but essentially, the error you
 might see will have a semi-normal traceback to start, and then garbage
 (contents of a file, presumably) - which, depending on the file size
-might hurt your browser.&nbsp; The last part of the (normal) traceback reads
-thus:</p>
+might hurt your browser.&nbsp; The last part of the (normal) traceback reads&nbsp;thus:</p>
 <pre class="code pytb literal-block">
 <span class="x">File &quot;/home/buildout/instance/eggs/plone.app.linkintegrity-1.0.11-py2.4.egg/ plone/app/linkintegrity/handlers.py&quot;, line 158, in referencedObjectRemoved raise LinkIntegrityNotificationException, obj LinkIntegrityNotificationException</span>
 </pre>
 <p>Thankfully, this gives us an excellent pointer to a solution: disable
-link integrity checking on your site prior to migrating.</p>
+link integrity checking on your site prior to&nbsp;migrating.</p>
 <div class="section" id="the-fix-workaround">
-<h2>The fix/workaround</h2>
+<h2>The&nbsp;fix/workaround</h2>
 <p>Head to the Plone Control Panel, and click onto Site.&nbsp; Uncheck <em>Enable
-link integrity checks</em>and then run your blob migration.&nbsp; When you're
-done, you can return your site to normal.Or not.&nbsp; Your choice.&nbsp; Doens't
-seem like there's any harm with turning it back on once everything's
-happy; just something to watch out when migrating content.</p>
+link integrity checks</em>and then run your blob migration.&nbsp; When you&#8217;re
+done, you can return your site to normal.Or not.&nbsp; Your choice.&nbsp; Doens&#8217;t
+seem like there&#8217;s any harm with turning it back on once everything&#8217;s
+happy; just something to watch out when migrating&nbsp;content.</p>
 </div>
 
     </div><!-- /.entry-content -->

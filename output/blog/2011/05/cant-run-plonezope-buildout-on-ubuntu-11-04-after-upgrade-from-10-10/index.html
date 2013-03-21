@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Can't run Plone/Zope buildout on Ubuntu 11.04 after upgrade from 10.10</title>
+        <title>Can’t run Plone/Zope buildout on Ubuntu 11.04 after upgrade from 10.10</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2011/05/cant-run-plonezope-buildout-on-ubuntu-11-04-after-upgrade-from-10-10/" rel="bookmark"
-           title="Permalink to Can't run Plone/Zope buildout on Ubuntu 11.04 after upgrade from 10.10">Can't run Plone/Zope buildout on Ubuntu 11.04 after upgrade from 10.10</a></h1>
+           title="Permalink to Can’t run Plone/Zope buildout on Ubuntu 11.04 after upgrade from 10.10">Can&#8217;t run Plone/Zope buildout on Ubuntu 11.04 after upgrade from&nbsp;10.10</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -48,9 +48,9 @@
         <p>In <a href="../../../../category/it-linux-software.html">IT, Linux, Software</a>. </p>
 <p>tags: <a href="../../../../tag/buildout.html">buildout</a><a href="../../../../tag/plone.html">plone</a><a href="../../../../tag/python.html">python</a><a href="../../../../tag/zope.html">zope</a></p>
 </footer><!-- /.post-info -->      <p>After upgrading from Ubuntu 10.10 (Maverick Meerkat) to Ubuntu 11.04
-(Natty Narwhal), you'll probably find that if you're running a Plone 4
+(Natty Narwhal), you&#8217;ll probably find that if you&#8217;re running a Plone 4
 buildout where you need to upgrade the Plone version, that compilation
-of Zope will fail. The output will look something like this:</p>
+of Zope will fail. The output will look something like&nbsp;this:</p>
 <pre class="code pytb literal-block">
 <span class="x">Getting distribution for 'Zope2==2.12.17'.
 In file included from src/AccessControl/cAccessControl.c:51:0:
@@ -62,13 +62,13 @@ An error occured when trying to install Zope2 2.12.17. Look above this message f
 <p>The reason for this is that the default Python version in Ubuntu 11.04
 is now Python 2.7, rather than 2.6 as was previously the case. The
 message here is telling us our Python development libraries/headers
-aren't available, so do this:</p>
+aren&#8217;t available, so do&nbsp;this:</p>
 <pre class="code bash literal-block">
 sudo apt-get install python2.6-dev
 </pre>
-<p>and re-run your buildout. Make sure too that if you're using Plone 4
-that you're using Python 2.6, as newer versions like 2.7 aren't
-supported (yet).</p>
+<p>and re-run your buildout. Make sure too that if you&#8217;re using Plone 4
+that you&#8217;re using Python 2.6, as newer versions like 2.7 aren&#8217;t
+supported&nbsp;(yet).</p>
 
     </div><!-- /.entry-content -->
         <div class="comments">

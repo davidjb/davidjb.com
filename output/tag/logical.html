@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2009/05/unix-removing-open-logical-volumes-in-centosrhl/">Unix: Removing Open Logical Volumes in Centos/RHL</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2009/05/unix-removing-open-logical-volumes-in-centosrhl/">Unix: Removing Open Logical Volumes in&nbsp;Centos/<span class="caps">RHL</span></a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2009-05-13T09:19:00">
                 Wed 13 May 2009
@@ -43,25 +43,24 @@
         </address>
         <p>In <a href="../category/linux.html">Linux</a>. </p>
 <p>tags: <a href="../tag/centos.html">centos</a><a href="../tag/close.html">close</a><a href="../tag/logical.html">logical</a><a href="../tag/red-hat.html">red hat</a><a href="../tag/remove.html">remove</a><a href="../tag/unix.html">unix</a><a href="../tag/volume.html">volume</a></p>
-</footer><!-- /.post-info --><p>Because I still haven't remembered to set myself up with a
-limited-access account for blogging on my new site, I'm back here again.
-(EDIT: Migrated from old site)</p>
-<p>This time is a lot of fun and games with removing an &quot;open&quot; logical
+</footer><!-- /.post-info --><p>Because I still haven&#8217;t remembered to set myself up with a
+limited-access account for blogging on my new site, I&#8217;m back here again.
+(<span class="caps">EDIT</span>: Migrated from old&nbsp;site)</p>
+<p>This time is a lot of fun and games with removing an &#8220;open&#8221; logical
 volume from within a CentOS environment. The dom0 machine has a set of
 logical volumes in a volume group for each of the VMs and one of them
 went and failed dismally, and after its xen destruction (xm destory foo)
-its LV was left with it being &quot;open&quot;.</p>
-<p>It's not exactly easy to see how/why this would be the case and every
-command (lsof, fuser, mount, etc) told me that the LV wasn't in use. But
-still, lvremove, lvchange, and dmsetup commands failed.</p>
-<p>But, I've solved my problem! Hopefully yours too.. read on through the
-commands:</p>
+its <span class="caps">LV</span> was left with it being&nbsp;&#8220;open&#8221;.</p>
+<p>It&#8217;s not exactly easy to see how/why this would be the case and every
+command (lsof, fuser, mount, etc) told me that the <span class="caps">LV</span> wasn&#8217;t in use. But
+still, lvremove, lvchange, and dmsetup commands&nbsp;failed.</p>
+<p>But, I&#8217;ve solved my problem! Hopefully yours too.. read on through the&nbsp;commands:</p>
 <pre class="code bash literal-block">
 <span class="c"># lvchange -an /dev/vmsvg1/foo
-</span>LV vmsvg1/foo in use: not deactivating
+</span><span class="caps">LV</span> vmsvg1/foo in use: not deactivating
 <span class="c"># dmsetup info -c vmsvg1-foo
-</span>Name             Maj Min Stat Open Targ Event  UUID
-vmsvg1-foo    253  65 L--w    1    1      2  XXX
+</span>Name             Maj Min Stat Open Targ Event  <span class="caps">UUID</span>
+vmsvg1-foo    253  65 L--w    1    1      2  <span class="caps">XXX</span>
 <span class="c"># dmsetup remove -force vmsvg1-foo
 </span>device-mapper: remove ioctl failed: Device or resource busy
 <span class="c"># lvchange -an /dev/vmsvg1/foo
@@ -75,9 +74,9 @@ vmsvg1-foo    253  65 L--w    1    1      2  XXX
 # lvremove /dev/vmsvg1/foo
 </span>Logical volume <span class="s2">&quot;foo&quot;</span> successfully removed
 </pre>
-<p>So, after all that, it looks like there's some stupid 'p1' references in
+<p>So, after all that, it looks like there&#8217;s some stupid &#8216;p1&#8217; references in
 /dev/mapper/ . Nfi why, but removing it (albeit by force with dmsetup)
-solved the problem.</p>
+solved the&nbsp;problem.</p>
 <p>There are <a href="../blog/2009/05/unix-removing-open-logical-volumes-in-centosrhl/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">
         Page 1 / 1

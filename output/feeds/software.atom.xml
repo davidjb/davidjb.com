@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>DavidJB.com</title><link href="http://davidjb.com/" rel="alternate"></link><link href="http://davidjb.com/feeds/software.atom.xml" rel="self"></link><id>http://davidjb.com/</id><updated>2009-07-08T02:10:00+10:00</updated><entry><title>VLC Has Turned 1!</title><link href="http://davidjb.com/blog/2009/07/vlc-has-turned-1/" rel="alternate"></link><updated>2009-07-08T02:10:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2009-07-08:blog/2009/07/vlc-has-turned-1/</id><summary type="html">&lt;p&gt;I may well be late to the party and a little late to celebrate, but I've
-just made the startling discovery that VLC 1.0.0 has now been released.&lt;/p&gt;
-&lt;p&gt;I've been using VLC since (before, actually) I thought there had to more
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DavidJB.com</title><link href="http://davidjb.com/" rel="alternate"></link><link href="http://davidjb.com/feeds/software.atom.xml" rel="self"></link><id>http://davidjb.com/</id><updated>2009-07-08T02:10:00+10:00</updated><entry><title>VLC Has Turned 1!</title><link href="http://davidjb.com/blog/2009/07/vlc-has-turned-1/" rel="alternate"></link><updated>2009-07-08T02:10:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2009-07-08:blog/2009/07/vlc-has-turned-1/</id><summary type="html">&lt;p&gt;I may well be late to the party and a little late to celebrate, but I&amp;#8217;ve
+just made the startling discovery that &lt;span class="caps"&gt;VLC&lt;/span&gt; 1.0.0 has now been&amp;nbsp;released.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ve been using &lt;span class="caps"&gt;VLC&lt;/span&gt; since (before, actually) I thought there had to more
 to playing videos than needing extravagent codec packs like K-lite or
-anything similar to be installed on your system.&amp;nbsp; It's been that long
-that the first version I used, if I remember correctly, wasn't actually
+anything similar to be installed on your system.&amp;nbsp; It&amp;#8217;s been that long
+that the first version I used, if I remember correctly, wasn&amp;#8217;t actually
 being specifically used for client-side file playback and was supposed
 to be geared towards video streaming over a network.&amp;nbsp; My memory may well
-be wrong on that one, so don't quote me.&lt;/p&gt;
-&lt;p&gt;At any rate, VLC has matured in leaps and bounds across the versions,
+be wrong on that one, so don&amp;#8217;t quote&amp;nbsp;me.&lt;/p&gt;
+&lt;p&gt;At any rate, &lt;span class="caps"&gt;VLC&lt;/span&gt; has matured in leaps and bounds across the versions,
 much to the credit of all the developers working on it.&amp;nbsp; And this
-version - above any others so far - is truly marvelous.&amp;nbsp; It's not too
+version - above any others so far - is truly marvelous.&amp;nbsp; It&amp;#8217;s not too
 often you see software that does everything you thought you needed - and
-things you didn't.&amp;nbsp; I'll space you the mumbo-jumbo here, but if you
-haven't seen it already, the change log is &lt;a class="reference external" href="https://trac.videolan.org/vlc/browser/NEWS"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The features/updates I'd been waiting for were:&lt;/p&gt;
+things you didn&amp;#8217;t.&amp;nbsp; I&amp;#8217;ll space you the mumbo-jumbo here, but if you
+haven&amp;#8217;t seen it already, the change log is &lt;a class="reference external" href="https://trac.videolan.org/vlc/browser/NEWS"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The features/updates I&amp;#8217;d been waiting for&amp;nbsp;were:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;Fixing up DivX/XviD playback - and stopping me having to play/pause
-cycle a video to get it to play.&lt;/li&gt;
+cycle a video to get it to&amp;nbsp;play.&lt;/li&gt;
 &lt;li&gt;Global hotkeys - finally!&amp;nbsp; No more messing with GhostScript to get
-VLC to play if it's not in focus&lt;/li&gt;
-&lt;li&gt;Remembering past files and the location in the Open File dialog&lt;/li&gt;
-&lt;li&gt;Frame-by-frame playback - for finding those random stills in videos&lt;/li&gt;
-&lt;li&gt;Compressed file playback - seems like RAR files playback (and
-apparently Zip too)&lt;/li&gt;
-&lt;li&gt;Live recording - slicing out bits of videos with a single click&lt;/li&gt;
-&lt;li&gt;DVB playback for TV - looks good, haven't tested it yet though&lt;/li&gt;
-&lt;li&gt;Adjustable toolbars - yay!&lt;/li&gt;
+&lt;span class="caps"&gt;VLC&lt;/span&gt; to play if it&amp;#8217;s not in&amp;nbsp;focus&lt;/li&gt;
+&lt;li&gt;Remembering past files and the location in the Open File&amp;nbsp;dialog&lt;/li&gt;
+&lt;li&gt;Frame-by-frame playback - for finding those random stills in&amp;nbsp;videos&lt;/li&gt;
+&lt;li&gt;Compressed file playback - seems like &lt;span class="caps"&gt;RAR&lt;/span&gt; files playback (and
+apparently Zip&amp;nbsp;too)&lt;/li&gt;
+&lt;li&gt;Live recording - slicing out bits of videos with a single&amp;nbsp;click&lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;DVB&lt;/span&gt; playback for &lt;span class="caps"&gt;TV&lt;/span&gt; - looks good, haven&amp;#8217;t tested it yet&amp;nbsp;though&lt;/li&gt;
+&lt;li&gt;Adjustable toolbars -&amp;nbsp;yay!&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The list goes on..but it ticks all the boxes.&lt;/p&gt;
-&lt;p&gt;Happy first birthday VLC; here's to version 2 and onwards.&lt;/p&gt;
+&lt;p&gt;The list goes on..but it ticks all the&amp;nbsp;boxes.&lt;/p&gt;
+&lt;p&gt;Happy first birthday &lt;span class="caps"&gt;VLC&lt;/span&gt;; here&amp;#8217;s to version 2 and&amp;nbsp;onwards.&lt;/p&gt;
 </summary><category term="features"></category><category term="Software"></category><category term="update"></category><category term="video"></category><category term="vlc"></category></entry></feed>

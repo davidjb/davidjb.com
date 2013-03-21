@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2009/01/plone-how-to-xhtml-compliant-flash-insertion/">Plone How-To: XHTML Compliant Flash Insertion</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2009/01/plone-how-to-xhtml-compliant-flash-insertion/">Plone How-To: <span class="caps">XHTML</span> Compliant Flash&nbsp;Insertion</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2009-01-13T16:40:00">
                 Tue 13 January 2009
@@ -43,10 +43,9 @@
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/filtering.html">filtering</a><a href="../tag/flash.html">flash</a><a href="../tag/parameters.html">parameters</a><a href="../tag/plone.html">plone</a><a href="../tag/xhtml.html">xhtml</a></p>
-</footer><!-- /.post-info --><p>Wow, it seems easy doesn't it. Just add an object tag, params, and embed
-and we're done, right? Well, sure, if we didn't want to adhere to W3C
-standards.</p>
-<p>To do the right thing, we need something like this:</p>
+</footer><!-- /.post-info --><p>Wow, it seems easy doesn&#8217;t it. Just add an object tag, params, and embed
+and we&#8217;re done, right? Well, sure, if we didn&#8217;t want to adhere to <span class="caps">W3C</span>&nbsp;standards.</p>
+<p>To do the right thing, we need something like&nbsp;this:</p>
 <pre class="code html literal-block">
 <span class="nt">&lt;object</span> <span class="na">type=</span><span class="s">&quot;application/x-shockwave-flash&quot;</span> <span class="na">data=</span><span class="s">&quot;movie.swf&quot;</span> <span class="na">width=</span><span class="s">&quot;100&quot;</span> <span class="na">height=</span><span class="s">&quot;100&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;movie&quot;</span> <span class="na">value=</span><span class="s">&quot;movie.swf&quot;</span> <span class="nt">/&gt;</span>
@@ -54,21 +53,21 @@ standards.</p>
 <span class="nt">&lt;/object&gt;</span>
 </pre>
 <p>Not much to it there, and this is available everywhere on the web. It
-validates okay, and that's what we need.</p>
+validates okay, and that&#8217;s what we&nbsp;need.</p>
 <p>However, if you follow normal procedure for sticking this in Plone
-(disable filtering of the relevant <strong>object</strong> and <strong>param</strong> tags in HTML
+(disable filtering of the relevant <strong>object</strong> and <strong>param</strong> tags in <span class="caps">HTML</span>
 Filtering (Plone Control Panel), then make a Page with this code),
-you'll see it won't work in IE.</p>
+you&#8217;ll see it won&#8217;t work in&nbsp;<span class="caps">IE</span>.</p>
 <p>Much hair-tearing and searching led me to find that the rendered Page is
-missing the <strong>param</strong> tag in the source XHTML. Huh?!?, you say - I just
-disabled the filtering. Why's it not there?!.</p>
-<p>Sure, you did. What noone told you is that you need to go into the ZMI
+missing the <strong>param</strong> tag in the source <span class="caps">XHTML</span>. Huh?!?, you say - I just
+disabled the filtering. Why&#8217;s it not&nbsp;there?!.</p>
+<p>Sure, you did. What noone told you is that you need to go into the <span class="caps">ZMI</span>
 -&gt; portal_transforms -&gt; safe_html and tell Plone that the <strong>param</strong>
 tag is an <em>empty tag</em> (like &lt;img /&gt;). In the list of <strong>valid_tags</strong>,
-set <strong>param</strong> to be <em>0</em>. Save this page.</p>
-<p>Now try it again in IE. Looking at the source in both should show the
+set <strong>param</strong> to be <em>0</em>. Save this&nbsp;page.</p>
+<p>Now try it again in <span class="caps">IE</span>. Looking at the source in both should show the
 <strong>param</strong> tag now, and your Flash should show up just fine once you
-convince IE to refresh.</p>
+convince <span class="caps">IE</span> to&nbsp;refresh.</p>
 <p>There are <a href="../blog/2009/01/plone-how-to-xhtml-compliant-flash-insertion/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">
         Page 1 / 1

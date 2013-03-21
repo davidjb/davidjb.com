@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>DavidJB.com</title><link href="http://davidjb.com/" rel="alternate"></link><link href="http://davidjb.com/feeds/it.atom.xml" rel="self"></link><id>http://davidjb.com/</id><updated>2012-06-25T10:34:00+10:00</updated><entry><title>Restart/reset USB in Ubuntu 12.04 without rebooting</title><link href="http://davidjb.com/blog/2012/06/restartreset-usb-in-ubuntu-12-04-without-rebooting/" rel="alternate"></link><updated>2012-06-25T10:34:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2012-06-25:blog/2012/06/restartreset-usb-in-ubuntu-12-04-without-rebooting/</id><summary type="html">&lt;p&gt;Either my Dell Optiplex 990 computer or my Linux install has an issue:
-occasionally, when I re-plug a USB device into the system, it'll cause a
-fault in the USB module in the kernel and USB goes dark. I'm unsure as
-to whether this is a hardware or software issue, but I'd simply like to
-restart my USB subsystem and continue working. When searching the web
-for 'restart USB in Linux' and 'reload USB kernel module', you get a
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DavidJB.com</title><link href="http://davidjb.com/" rel="alternate"></link><link href="http://davidjb.com/feeds/it.atom.xml" rel="self"></link><id>http://davidjb.com/</id><updated>2012-06-25T10:34:00+10:00</updated><entry><title>Restart/reset USB in Ubuntu 12.04 without rebooting</title><link href="http://davidjb.com/blog/2012/06/restartreset-usb-in-ubuntu-12-04-without-rebooting/" rel="alternate"></link><updated>2012-06-25T10:34:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2012-06-25:blog/2012/06/restartreset-usb-in-ubuntu-12-04-without-rebooting/</id><summary type="html">&lt;p&gt;Either my Dell Optiplex 990 computer or my Linux install has an issue:
+occasionally, when I re-plug a &lt;span class="caps"&gt;USB&lt;/span&gt; device into the system, it&amp;#8217;ll cause a
+fault in the &lt;span class="caps"&gt;USB&lt;/span&gt; module in the kernel and &lt;span class="caps"&gt;USB&lt;/span&gt; goes dark. I&amp;#8217;m unsure as
+to whether this is a hardware or software issue, but I&amp;#8217;d simply like to
+restart my &lt;span class="caps"&gt;USB&lt;/span&gt; subsystem and continue working. When searching the web
+for &amp;#8216;restart &lt;span class="caps"&gt;USB&lt;/span&gt; in Linux&amp;#8217; and &amp;#8216;reload &lt;span class="caps"&gt;USB&lt;/span&gt; kernel module&amp;#8217;, you get a
 plethora of results and none of which will work (seemingly due to how
 the Ubuntu standard kernel is compiled), at least for me within Ubuntu
-12.04, Precise Pangolin. Until now, I've had no success and had to hard
-reset. No longer.&lt;/p&gt;
-&lt;p&gt;You'll need root/sudo access to the machine to be able to run commands.
-In my case, without USB available, then I've either got to sprint for a
-PS/2 keyboard and mouse or login via SSH. You can do what I've done and
+12.04, Precise Pangolin. Until now, I&amp;#8217;ve had no success and had to hard
+reset. No&amp;nbsp;longer.&lt;/p&gt;
+&lt;p&gt;You&amp;#8217;ll need root/sudo access to the machine to be able to run commands.
+In my case, without &lt;span class="caps"&gt;USB&lt;/span&gt; available, then I&amp;#8217;ve either got to sprint for a
+&lt;span class="caps"&gt;PS&lt;/span&gt;/2 keyboard and mouse or login via &lt;span class="caps"&gt;SSH&lt;/span&gt;. You can do what I&amp;#8217;ve done and
 prepared things into a suitable script I can run with just a Gnome
 launcher. &amp;nbsp;Thanks to this &lt;a class="reference external" href="http://ubuntuforums.org/showpost.php?p=9162799&amp;amp;postcount=1"&gt;fantastic post&lt;/a&gt; for the help. Either place
-the following into a script or run the commands directly:&lt;/p&gt;
+the following into a script or run the commands&amp;nbsp;directly:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 &lt;span class="nb"&gt;echo&lt;/span&gt; -n &lt;span class="s2"&gt;&amp;quot;0000:00:1a.0&amp;quot;&lt;/span&gt; | tee /sys/bus/pci/drivers/ehci_hcd/unbind
 &lt;span class="nb"&gt;echo&lt;/span&gt; -n &lt;span class="s2"&gt;&amp;quot;0000:00:1d.0&amp;quot;&lt;/span&gt; | tee /sys/bus/pci/drivers/ehci_hcd/unbind
@@ -22,96 +22,93 @@ the following into a script or run the commands directly:&lt;/p&gt;
 &lt;span class="nb"&gt;echo&lt;/span&gt; -n &lt;span class="s2"&gt;&amp;quot;0000:00:1d.0&amp;quot;&lt;/span&gt; | tee /sys/bus/pci/drivers/ehci_hcd/bind
 &lt;/pre&gt;
 &lt;p&gt;The hardware identifiers being passed around here can be revealed using
-a command like &lt;tt class="docutils literal"&gt;lspci | grep USB&lt;/tt&gt;. In my case, the identifiers in the
-original post were exactly what I have in my system.&lt;/p&gt;
-&lt;p&gt;I'm yet to see if my USB will correctly come back online after freezing
-up as it hasn't happened yet, but I'll try this when it does and report
-back. That said, the commands above definitely reload all USB devices
-attached to the system; that much I've tried.&lt;/p&gt;
-</summary><category term="linux"></category><category term="power"></category><category term="reset"></category><category term="restart"></category><category term="ubuntu"></category><category term="usb"></category></entry><entry><title>Easier GitHub organisation, repository and team management with github-collective</title><link href="http://davidjb.com/blog/2012/06/easier-github-organisation-repository-and-team-management-with-github-collective/" rel="alternate"></link><updated>2012-06-22T12:17:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2012-06-22:blog/2012/06/easier-github-organisation-repository-and-team-management-with-github-collective/</id><summary type="html">&lt;p&gt;Have you ever felt that administering your GitHub organisation (or
+a command like &lt;tt class="docutils literal"&gt;lspci | grep &lt;span class="caps"&gt;USB&lt;/span&gt;&lt;/tt&gt;. In my case, the identifiers in the
+original post were exactly what I have in my&amp;nbsp;system.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;m yet to see if my &lt;span class="caps"&gt;USB&lt;/span&gt; will correctly come back online after freezing
+up as it hasn&amp;#8217;t happened yet, but I&amp;#8217;ll try this when it does and report
+back. That said, the commands above definitely reload all &lt;span class="caps"&gt;USB&lt;/span&gt; devices
+attached to the system; that much I&amp;#8217;ve&amp;nbsp;tried.&lt;/p&gt;
+</summary><category term="linux"></category><category term="power"></category><category term="reset"></category><category term="restart"></category><category term="ubuntu"></category><category term="usb"></category></entry><entry><title>Easier GitHub organisation, repository and team management with github-collective</title><link href="http://davidjb.com/blog/2012/06/easier-github-organisation-repository-and-team-management-with-github-collective/" rel="alternate"></link><updated>2012-06-22T12:17:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2012-06-22:blog/2012/06/easier-github-organisation-repository-and-team-management-with-github-collective/</id><summary type="html">&lt;p&gt;Have you ever felt that administering your GitHub organisation (or
 organization, depending from where you hail), its repositories, teams,
-and service hooks has become a tedious task and that you'd rather be
-doing something else? &amp;nbsp;Maybe you're of the mindset that there should be
+and service hooks has become a tedious task and that you&amp;#8217;d rather be
+doing something else? &amp;nbsp;Maybe you&amp;#8217;re of the mindset that there should be
 a better way of doing things - a way that involves specific,
 version-controlled configuration and less repetition (less
-clicky-clicky). &amp;nbsp;The good news is that there is -- &lt;a class="reference external" href="http://pypi.python.org/pypi/github-collective"&gt;github-collective&lt;/a&gt;!&lt;/p&gt;
-&lt;p&gt;This is a script, written in Python, that utilises &lt;a class="reference external" href="http://developer.github.com/"&gt;GitHub's JSON-based
-API&lt;/a&gt; to allow you to construct an ini-style text-based configuration
+clicky-clicky). &amp;nbsp;The good news is that there is &amp;#8212; &lt;a class="reference external" href="http://pypi.python.org/pypi/github-collective"&gt;github-collective&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;This is a script, written in Python, that utilises &lt;a class="reference external" href="http://developer.github.com/"&gt;GitHub&amp;#8217;s &lt;span class="caps"&gt;JSON&lt;/span&gt;-based
+&lt;span class="caps"&gt;API&lt;/span&gt;&lt;/a&gt; to allow you to construct an ini-style text-based configuration
 representing your GitHub organisation and have this sync to create
 repositories and service hooks for said repositories, teams, and
 configure access rights. &amp;nbsp;At present, this works &lt;em&gt;from&lt;/em&gt; your
 configuration &lt;em&gt;to&lt;/em&gt; GitHub (not vice versa at present). You may already
-know this as what's powering the &lt;a class="reference external" href="http://git.io/collective"&gt;GitHub Collective&lt;/a&gt; to manage
-repositories and teams, especially if you're in the Plone community.&lt;/p&gt;
+know this as what&amp;#8217;s powering the &lt;a class="reference external" href="http://git.io/collective"&gt;GitHub Collective&lt;/a&gt; to manage
+repositories and teams, especially if you&amp;#8217;re in the Plone&amp;nbsp;community.&lt;/p&gt;
 &lt;p&gt;An &lt;a class="reference external" href="https://github.com/collective/github-collective/blob/master/example.cfg"&gt;example configuration&lt;/a&gt; lives within its source code repository, and
 similarly, the configuration that &lt;a class="reference external" href="https://github.com/collective/collective.github.com/blob/master/permissions.cfg"&gt;powers the Collective&lt;/a&gt; is available
 also. Effectively, you define different types of sections ([team],
 [hook], [repo]) and these will correspond to certain things being
-created on GitHub via the API.&lt;/p&gt;
+created on GitHub via the&amp;nbsp;&lt;span class="caps"&gt;API&lt;/span&gt;.&lt;/p&gt;
 &lt;div class="section" id="our-implementation"&gt;
-&lt;h2&gt;Our implementation&lt;/h2&gt;
+&lt;h2&gt;Our&amp;nbsp;implementation&lt;/h2&gt;
 &lt;p&gt;We at the James Cook University &lt;a class="reference external" href="http://eresearch.jcu.edu.au"&gt;eResearch Centre&lt;/a&gt;&amp;nbsp;have deployed this
-for use against our &lt;a class="reference external" href="http://git.io/jcu"&gt;GitHub organisation&lt;/a&gt;&amp;nbsp;and our workflow looks like
-this:&lt;/p&gt;
+for use against our &lt;a class="reference external" href="http://git.io/jcu"&gt;GitHub organisation&lt;/a&gt;&amp;nbsp;and our workflow looks like&amp;nbsp;this:&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;Users are able to fork a configuration repository and modify
 accordingly. For simplicity, since changes are frequently minor, I
-suggest using GitHub's &amp;quot;Edit this file&amp;quot; feature via the web.&lt;/li&gt;
-&lt;li&gt;User creates Pull Request for changes.&lt;/li&gt;
-&lt;li&gt;Administrator reviews and merges changes from Pull Request.&lt;/li&gt;
-&lt;li&gt;Configuration repository's service hook sends POST to Jenkins CI
-instance&lt;/li&gt;
-&lt;li&gt;Jenkins CI instance runs the &lt;em&gt;github-collective&lt;/em&gt; script upon
-receiving this hook.&lt;/li&gt;
-&lt;li&gt;Changes to configuration get enacted on GitHub.&lt;/li&gt;
+suggest using GitHub&amp;#8217;s &amp;#8220;Edit this file&amp;#8221; feature via the&amp;nbsp;web.&lt;/li&gt;
+&lt;li&gt;User creates Pull Request for&amp;nbsp;changes.&lt;/li&gt;
+&lt;li&gt;Administrator reviews and merges changes from Pull&amp;nbsp;Request.&lt;/li&gt;
+&lt;li&gt;Configuration repository&amp;#8217;s service hook sends &lt;span class="caps"&gt;POST&lt;/span&gt; to Jenkins &lt;span class="caps"&gt;CI&lt;/span&gt;&amp;nbsp;instance&lt;/li&gt;
+&lt;li&gt;Jenkins &lt;span class="caps"&gt;CI&lt;/span&gt; instance runs the &lt;em&gt;github-collective&lt;/em&gt; script upon
+receiving this&amp;nbsp;hook.&lt;/li&gt;
+&lt;li&gt;Changes to configuration get enacted on&amp;nbsp;GitHub.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;This process is similar to what happens for the Collective, except that
 our service hook and Jenkins take care of making the changes happen,
-rather than a periodical cron job.&lt;/p&gt;
+rather than a periodical cron&amp;nbsp;job.&lt;/p&gt;
 &lt;p&gt;Our Jenkins job uses the&amp;nbsp;&lt;a class="reference external" href="https://wiki.jenkins-ci.org/display/JENKINS/Text-finder+Plugin"&gt;Jenkins Text Finder&lt;/a&gt;&amp;nbsp;plugin to search for
-the regex &amp;quot;Traceback \(most recent call last\)&amp;quot; in the output to
-determine success or failure. &amp;nbsp;This isn't the most elegant solution in
-the world, but it's good enough for now.&lt;/p&gt;
-&lt;p&gt;For what it's worth, we have a total of 25 repositories; a similar
+the regex &amp;#8220;Traceback \(most recent call last\)&amp;#8221; in the output to
+determine success or failure. &amp;nbsp;This isn&amp;#8217;t the most elegant solution in
+the world, but it&amp;#8217;s good enough for&amp;nbsp;now.&lt;/p&gt;
+&lt;p&gt;For what it&amp;#8217;s worth, we have a total of 25 repositories; a similar
 number of teams; give or take 12 staff members in total; and the end
 result is that running &lt;em&gt;github-collective&lt;/em&gt; once cached takes only around
-6 seconds, including Jenkins overhead. &amp;nbsp;Unfortunately I'm unable to
-provide our exact configuration, but for everything we do, I've
-'anonymised' the configuration and included it back in the public
-repository as examples. Happy to answer questions about what we're doing
-too!&lt;/p&gt;
+6 seconds, including Jenkins overhead. &amp;nbsp;Unfortunately I&amp;#8217;m unable to
+provide our exact configuration, but for everything we do, I&amp;#8217;ve
+&amp;#8216;anonymised&amp;#8217; the configuration and included it back in the public
+repository as examples. Happy to answer questions about what we&amp;#8217;re doing&amp;nbsp;too!&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="thanks"&gt;
 &lt;h2&gt;Thanks&lt;/h2&gt;
 &lt;p&gt;All credit to Rok Garbas and Alex Clark for their work on this - it
 works fantastically. I can only take credit for coming in later with a
 few things necessary our deployment. &lt;em&gt;Github-collective&lt;/em&gt; now supports
-all GitHub API settings for repositories (thus allowing you to create
+all GitHub &lt;span class="caps"&gt;API&lt;/span&gt; settings for repositories (thus allowing you to create
 private repos - something critical for us, and set other metadata) and
 post-receive service hooks (so you can easily manage hooks on GitHub).
-That, and a hearty dose of end-user documentation.&lt;/p&gt;
+That, and a hearty dose of end-user&amp;nbsp;documentation.&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="collective"></category><category term="github"></category><category term="ini"></category><category term="jenkins"></category><category term="management"></category><category term="organization"></category><category term="plone"></category><category term="script"></category></entry><entry><title>Building Cherokee RPMs on RHEL 6 (x86_64)</title><link href="http://davidjb.com/blog/2011/05/building-cherokee-rpms-on-rhel-6-x86_64/" rel="alternate"></link><updated>2011-05-31T12:27:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2011-05-31:blog/2011/05/building-cherokee-rpms-on-rhel-6-x86_64/</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://www.cherokee-project.com/"&gt;Cherokee&lt;/a&gt; is a fast web server and something I'm looking
+</summary><category term="collective"></category><category term="github"></category><category term="ini"></category><category term="jenkins"></category><category term="management"></category><category term="organization"></category><category term="plone"></category><category term="script"></category></entry><entry><title>Building Cherokee RPMs on RHEL 6 (x86_64)</title><link href="http://davidjb.com/blog/2011/05/building-cherokee-rpms-on-rhel-6-x86_64/" rel="alternate"></link><updated>2011-05-31T12:27:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2011-05-31:blog/2011/05/building-cherokee-rpms-on-rhel-6-x86_64/</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="http://www.cherokee-project.com/"&gt;Cherokee&lt;/a&gt; is a fast web server and something I&amp;#8217;m looking
 at using instead of my current Apache installs in order to squeeze a bit
-(lot) more juice out of my web services.&lt;/p&gt;
-&lt;p&gt;You can easily install Cherokee via its automated scripting and that's
-really useful.&amp;nbsp; Unfortunately, since I'm within a RedHat environment,
+(lot) more juice out of my web&amp;nbsp;services.&lt;/p&gt;
+&lt;p&gt;You can easily install Cherokee via its automated scripting and that&amp;#8217;s
+really useful.&amp;nbsp; Unfortunately, since I&amp;#8217;m within a RedHat environment,
 init scripts and other useful aspects that come packaged with Apache
-don't get installed when installing from source. Now, there's a lot of
+don&amp;#8217;t get installed when installing from source. Now, there&amp;#8217;s a lot of
 activity regarding installing the latest packages for Ubuntu, but not
-much of anything recent for RHEL (current Cherokee is 1.2.98 and latest
-RHEL packages are 1.2.1).&amp;nbsp; Since development of Cherokee appears to be
+much of anything recent for &lt;span class="caps"&gt;RHEL&lt;/span&gt; (current Cherokee is 1.2.98 and latest
+&lt;span class="caps"&gt;RHEL&lt;/span&gt; packages are 1.2.1).&amp;nbsp; Since development of Cherokee appears to be
 moving very fast, having the most recent version is always a good choice
-for bug fixes and new features.&lt;/p&gt;
-&lt;p&gt;So, how about creating packages for RHEL 6?&amp;nbsp; The good news is that
-Fedora does have a git repo for the RPM spec and relevant scripts, and
-that repo has a branch for EL6.&lt;/p&gt;
-&lt;p&gt;That said, there's no guarantee this branch will continue to work for
-future Cherokee or EL versions, so if there's a problem running the
-following RPM build, then someone will have to fix whatever error takes
+for bug fixes and new&amp;nbsp;features.&lt;/p&gt;
+&lt;p&gt;So, how about creating packages for &lt;span class="caps"&gt;RHEL&lt;/span&gt; 6?&amp;nbsp; The good news is that
+Fedora does have a git repo for the &lt;span class="caps"&gt;RPM&lt;/span&gt; spec and relevant scripts, and
+that repo has a branch for&amp;nbsp;&lt;span class="caps"&gt;EL6&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;That said, there&amp;#8217;s no guarantee this branch will continue to work for
+future Cherokee or &lt;span class="caps"&gt;EL&lt;/span&gt; versions, so if there&amp;#8217;s a problem running the
+following &lt;span class="caps"&gt;RPM&lt;/span&gt; build, then someone will have to fix whatever error takes
 place. That said, for now, on version 1.2.98 of Cherokee, things work,
-as far as I can tell for Cherokee (also, disclaimer: I'm not an RHEL/RPM
-expert). That said, here's what I did:&lt;/p&gt;
+as far as I can tell for Cherokee (also, disclaimer: I&amp;#8217;m not an &lt;span class="caps"&gt;RHEL&lt;/span&gt;/&lt;span class="caps"&gt;RPM&lt;/span&gt;
+expert). That said, here&amp;#8217;s what I&amp;nbsp;did:&lt;/p&gt;
 &lt;pre class="code bash literal-block"&gt;
 yum install rpm-build spectool pam-devel gettext
 cherokee&lt;span class="se"&gt;\_&lt;/span&gt;version&lt;span class="o"&gt;=&lt;/span&gt;1.2.98
@@ -126,113 +123,107 @@ rpmbuild -ba cherokee.spec
 ls -lah
 yum install cherokee-&lt;span class="se"&gt;\*&lt;/span&gt;
 &lt;/pre&gt;
-</summary><category term="build"></category><category term="cherokee"></category><category term="el"></category><category term="red hat"></category><category term="rhel"></category><category term="rpm"></category></entry><entry><title>Bailing on Outlook Web App (Windows Live) and using Gmail with POP/SMTP instead</title><link href="http://davidjb.com/blog/2011/01/bailing-on-outlook-web-app-windows-live-and-using-gmail-with-popsmtp-instead/" rel="alternate"></link><updated>2011-01-05T12:33:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2011-01-05:blog/2011/01/bailing-on-outlook-web-app-windows-live-and-using-gmail-with-popsmtp-instead/</id><summary type="html">&lt;p&gt;I'm not a fan of Microsoft's solutions for mail (Exchange, Outlook,
-Outlook Web Access, etc) because they simply aren't as smooth as other
+</summary><category term="build"></category><category term="cherokee"></category><category term="el"></category><category term="red hat"></category><category term="rhel"></category><category term="rpm"></category></entry><entry><title>Bailing on Outlook Web App (Windows Live) and using Gmail with POP/SMTP instead</title><link href="http://davidjb.com/blog/2011/01/bailing-on-outlook-web-app-windows-live-and-using-gmail-with-popsmtp-instead/" rel="alternate"></link><updated>2011-01-05T12:33:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2011-01-05:blog/2011/01/bailing-on-outlook-web-app-windows-live-and-using-gmail-with-popsmtp-instead/</id><summary type="html">&lt;p&gt;I&amp;#8217;m not a fan of Microsoft&amp;#8217;s solutions for mail (Exchange, Outlook,
+Outlook Web Access, etc) because they simply aren&amp;#8217;t as smooth as other
 alternatives. In my case, my weapon of choice is Gmail for all my mail.
 Unless you really like the old-school style popup windows and Web 1.0
-feel of Microsoft's options, you're probably opting for something else,
-too. Now, there's no helping my institutional mail account as they've
-disabled all standards-compliant forms of access (POP, IMAP, SMTP; short
+feel of Microsoft&amp;#8217;s options, you&amp;#8217;re probably opting for something else,
+too. Now, there&amp;#8217;s no helping my institutional mail account as they&amp;#8217;ve
+disabled all standards-compliant forms of access (&lt;span class="caps"&gt;POP&lt;/span&gt;, &lt;span class="caps"&gt;IMAP&lt;/span&gt;, &lt;span class="caps"&gt;SMTP&lt;/span&gt;; short
 of going down the route of &lt;a class="reference external" href="http://davmail.sourceforge.net/"&gt;DavMail&lt;/a&gt;). But, that said, there &lt;strong&gt;is&lt;/strong&gt;
-hope to be had for my personal account, which is using &amp;quot;Outlook Web App&amp;quot;
-or whatever the hosted version of Hotmail is really called. Here's how
-you can connect via POP and SMTP.&lt;/p&gt;
-&lt;p&gt;This works for me on my tertiary institution's Microsoft-hosted Outlook
-solution, so it may or may not work on yours (or work if you're not
-using a 'hosted' option). Try it and see!&amp;nbsp; All settings and details I'm
-providing here should work with any mail app, but I'm specifically using
-Gmail.&lt;/p&gt;
+hope to be had for my personal account, which is using &amp;#8220;Outlook Web App&amp;#8221;
+or whatever the hosted version of Hotmail is really called. Here&amp;#8217;s how
+you can connect via &lt;span class="caps"&gt;POP&lt;/span&gt; and&amp;nbsp;&lt;span class="caps"&gt;SMTP&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;This works for me on my tertiary institution&amp;#8217;s Microsoft-hosted Outlook
+solution, so it may or may not work on yours (or work if you&amp;#8217;re not
+using a &amp;#8216;hosted&amp;#8217; option). Try it and see!&amp;nbsp; All settings and details I&amp;#8217;m
+providing here should work with any mail app, but I&amp;#8217;m specifically using&amp;nbsp;Gmail.&lt;/p&gt;
 &lt;div class="section" id="before-we-begin"&gt;
-&lt;h2&gt;Before we begin&lt;/h2&gt;
-&lt;p&gt;Find your POP/SMTP server details by first logging into your Outlook Web
+&lt;h2&gt;Before we&amp;nbsp;begin&lt;/h2&gt;
+&lt;p&gt;Find your &lt;span class="caps"&gt;POP&lt;/span&gt;/&lt;span class="caps"&gt;SMTP&lt;/span&gt; server details by first logging into your Outlook Web
 account as normal, and then clicking the drop-down arrow on the Help
-icon (it's a &amp;quot;?&amp;quot; icon) on the right-hand side.&amp;nbsp; Click &amp;quot;About&amp;quot; and scroll
-down until you find &amp;quot;External POP setting&amp;quot; and &amp;quot;External SMTP setting&amp;quot;.
+icon (it&amp;#8217;s a &amp;#8220;?&amp;#8221; icon) on the right-hand side.&amp;nbsp; Click &amp;#8220;About&amp;#8221; and scroll
+down until you find &amp;#8220;External &lt;span class="caps"&gt;POP&lt;/span&gt; setting&amp;#8221; and &amp;#8220;External &lt;span class="caps"&gt;SMTP&lt;/span&gt; setting&amp;#8221;.
 Make a record of these details (or just keep this popup open while you
 configure away).&amp;nbsp; Apparently the addresses can be different for users on
 the same domain, so if your friends are trying this, make sure they
-follow the same process.&lt;/p&gt;
-&lt;p&gt;As a side note, if you're using something that supports IMAP (like
-Thunderbird), then you'll find the IMAP settings for Outlook Web under
-the About settings too.&amp;nbsp; Gmail doesn't (yet), hence we're using
-POP/SMTP.&lt;/p&gt;
+follow the same&amp;nbsp;process.&lt;/p&gt;
+&lt;p&gt;As a side note, if you&amp;#8217;re using something that supports &lt;span class="caps"&gt;IMAP&lt;/span&gt; (like
+Thunderbird), then you&amp;#8217;ll find the &lt;span class="caps"&gt;IMAP&lt;/span&gt; settings for Outlook Web under
+the About settings too.&amp;nbsp; Gmail doesn&amp;#8217;t (yet), hence we&amp;#8217;re using&amp;nbsp;&lt;span class="caps"&gt;POP&lt;/span&gt;/&lt;span class="caps"&gt;SMTP&lt;/span&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="pop3-downloading-your-mail"&gt;
-&lt;h2&gt;POP3 - Downloading your mail&lt;/h2&gt;
+&lt;h2&gt;&lt;span class="caps"&gt;POP3&lt;/span&gt; - Downloading your&amp;nbsp;mail&lt;/h2&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;Go into Gmail and find your account settings (Settings &amp;gt; Accounts)
-and click on 'Add a mail account you own'.&lt;/li&gt;
-&lt;li&gt;Enter your email address, and click 'Next Step'&lt;/li&gt;
+and click on &amp;#8216;Add a mail account you&amp;nbsp;own&amp;#8217;.&lt;/li&gt;
+&lt;li&gt;Enter your email address, and click &amp;#8216;Next&amp;nbsp;Step&amp;#8217;&lt;/li&gt;
 &lt;li&gt;Specify the following details:&lt;ol class="arabic"&gt;
-&lt;li&gt;Username: your full email address&lt;/li&gt;
-&lt;li&gt;Password: your institutional or other password&lt;/li&gt;
-&lt;li&gt;POP Server: [what setting you found before]&lt;/li&gt;
-&lt;li&gt;Port: [what setting you found before]&lt;/li&gt;
-&lt;li&gt;Check &amp;quot;Always use a secure connection (SSL) when retrieving mail&amp;quot;.&lt;/li&gt;
-&lt;li&gt;Other options are up to you.&lt;/li&gt;
+&lt;li&gt;Username: your full email&amp;nbsp;address&lt;/li&gt;
+&lt;li&gt;Password: your institutional or other&amp;nbsp;password&lt;/li&gt;
+&lt;li&gt;&lt;span class="caps"&gt;POP&lt;/span&gt; Server: [what setting you found&amp;nbsp;before]&lt;/li&gt;
+&lt;li&gt;Port: [what setting you found&amp;nbsp;before]&lt;/li&gt;
+&lt;li&gt;Check &amp;#8220;Always use a secure connection (&lt;span class="caps"&gt;SSL&lt;/span&gt;) when retrieving&amp;nbsp;mail&amp;#8221;.&lt;/li&gt;
+&lt;li&gt;Other options are up to&amp;nbsp;you.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
-&lt;li&gt;Click 'Save Changes' and Gmail should now start checking your mail
-via POP.&amp;nbsp; Look in the accounts listing to make sure everything is
-working.&lt;/li&gt;
+&lt;li&gt;Click &amp;#8216;Save Changes&amp;#8217; and Gmail should now start checking your mail
+via &lt;span class="caps"&gt;POP&lt;/span&gt;.&amp;nbsp; Look in the accounts listing to make sure everything is&amp;nbsp;working.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 &lt;div class="section" id="smtp-sending-your-mail"&gt;
-&lt;h2&gt;SMTP - Sending your mail&lt;/h2&gt;
+&lt;h2&gt;&lt;span class="caps"&gt;SMTP&lt;/span&gt; - Sending your&amp;nbsp;mail&lt;/h2&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;Go into Gmail and find your account settings (Settings &amp;gt; Accounts)
-and click on 'Add another email address you own'.&lt;/li&gt;
-&lt;li&gt;Enter your name and email address you'd like shown on the mail you
-send and click 'Next Step'&amp;nbsp; This should be the same as the email
-above.&lt;/li&gt;
-&lt;li&gt;Select &amp;quot;Sent through xxx.com SMTP servers (recommended for
-professional domains)&amp;quot;, and enter these details:&lt;ol class="arabic"&gt;
-&lt;li&gt;SMTP Server:&amp;nbsp; [what setting you found before]&lt;/li&gt;
-&lt;li&gt;Port: [what setting you found before]&lt;/li&gt;
-&lt;li&gt;Username: your full email address&lt;/li&gt;
-&lt;li&gt;Password: your institutional or other password&lt;/li&gt;
-&lt;li&gt;Check &amp;quot;Always use a secure connection (SSL) when sending mail&amp;quot;.&lt;/li&gt;
+and click on &amp;#8216;Add another email address you&amp;nbsp;own&amp;#8217;.&lt;/li&gt;
+&lt;li&gt;Enter your name and email address you&amp;#8217;d like shown on the mail you
+send and click &amp;#8216;Next Step&amp;#8217;&amp;nbsp; This should be the same as the email&amp;nbsp;above.&lt;/li&gt;
+&lt;li&gt;Select &amp;#8220;Sent through xxx.com &lt;span class="caps"&gt;SMTP&lt;/span&gt; servers (recommended for
+professional domains)&amp;#8221;, and enter these details:&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;span class="caps"&gt;SMTP&lt;/span&gt; Server:&amp;nbsp; [what setting you found&amp;nbsp;before]&lt;/li&gt;
+&lt;li&gt;Port: [what setting you found&amp;nbsp;before]&lt;/li&gt;
+&lt;li&gt;Username: your full email&amp;nbsp;address&lt;/li&gt;
+&lt;li&gt;Password: your institutional or other&amp;nbsp;password&lt;/li&gt;
+&lt;li&gt;Check &amp;#8220;Always use a secure connection (&lt;span class="caps"&gt;SSL&lt;/span&gt;) when sending&amp;nbsp;mail&amp;#8221;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
-&lt;li&gt;Click the 'Add Account' button and Gmail will check your settings.
+&lt;li&gt;Click the &amp;#8216;Add Account&amp;#8217; button and Gmail will check your settings.
 Everything should be fine unless your domain settings disallow you
-from this sort of access.&lt;/li&gt;
-&lt;li&gt;Try and send an email!&amp;nbsp; You should be able to do so successfully.&lt;/li&gt;
+from this sort of&amp;nbsp;access.&lt;/li&gt;
+&lt;li&gt;Try and send an email!&amp;nbsp; You should be able to do so&amp;nbsp;successfully.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 &lt;div class="section" id="wrapping-up"&gt;
-&lt;h2&gt;Wrapping up&lt;/h2&gt;
-&lt;p&gt;Log out of Outlook Web App and forget it even exists.&amp;nbsp; Problem solved.&lt;/p&gt;
-&lt;p&gt;Now if only things were this easy for Microsoft's BPOS / Exchange for my
-university...&lt;/p&gt;
+&lt;h2&gt;Wrapping&amp;nbsp;up&lt;/h2&gt;
+&lt;p&gt;Log out of Outlook Web App and forget it even exists.&amp;nbsp; Problem&amp;nbsp;solved.&lt;/p&gt;
+&lt;p&gt;Now if only things were this easy for Microsoft&amp;#8217;s &lt;span class="caps"&gt;BPOS&lt;/span&gt; / Exchange for my&amp;nbsp;university&amp;#8230;&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="email"></category><category term="freedom"></category><category term="gmail"></category><category term="live"></category><category term="microsoft"></category><category term="outlook"></category><category term="pop3"></category><category term="smtp"></category></entry><entry><title>Apache: Directories and trailing slashes</title><link href="http://davidjb.com/blog/2010/01/apache-directories-and-trailing-slashes/" rel="alternate"></link><updated>2010-01-18T11:51:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2010-01-18:blog/2010/01/apache-directories-and-trailing-slashes/</id><summary type="html">&lt;p&gt;Apache does something interesting (yes, I still
-think it's logical) when you're accessing a directory that it's serving:
-if you access it without a trailing slash, it'll add one by default.
-This makes sense if you're going after some static content or a folder
-index (or pretty much any sane usage) but it didn't fit my use case of
-serving Plone using rewrite rules in a .htaccess file.&lt;/p&gt;
+</summary><category term="email"></category><category term="freedom"></category><category term="gmail"></category><category term="live"></category><category term="microsoft"></category><category term="outlook"></category><category term="pop3"></category><category term="smtp"></category></entry><entry><title>Apache: Directories and trailing slashes</title><link href="http://davidjb.com/blog/2010/01/apache-directories-and-trailing-slashes/" rel="alternate"></link><updated>2010-01-18T11:51:00+10:00</updated><author><name>davidjb</name></author><id>tag:davidjb.com,2010-01-18:blog/2010/01/apache-directories-and-trailing-slashes/</id><summary type="html">&lt;p&gt;Apache does something interesting (yes, I still
+think it&amp;#8217;s logical) when you&amp;#8217;re accessing a directory that it&amp;#8217;s serving:
+if you access it without a trailing slash, it&amp;#8217;ll add one by default.
+This makes sense if you&amp;#8217;re going after some static content or a folder
+index (or pretty much any sane usage) but it didn&amp;#8217;t fit my use case of
+serving Plone using rewrite rules in a .htaccess&amp;nbsp;file.&lt;/p&gt;
 &lt;p&gt;The issue that arises for myself with Plone is that my sites need to
-have their access customised through that .htaccess file and that's been
-placed within a &lt;tt class="docutils literal"&gt;public_html&lt;/tt&gt; directory thus:&lt;/p&gt;
+have their access customised through that .htaccess file and that&amp;#8217;s been
+placed within a &lt;tt class="docutils literal"&gt;public_html&lt;/tt&gt; directory&amp;nbsp;thus:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 /home/user/public_html/
 &lt;/pre&gt;
 &lt;p&gt;Because this is a directory, Apache adds that trailing slash by default
-when accessing an aliased URL like:&lt;/p&gt;
+when accessing an aliased &lt;span class="caps"&gt;URL&lt;/span&gt;&amp;nbsp;like:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 http://mysite.org/user
 &lt;/pre&gt;
-&lt;p&gt;because it's actually pointing to &lt;tt class="docutils literal"&gt;/home/user/public_html/&lt;/tt&gt;.&lt;/p&gt;
-&lt;p&gt;I wasn't aware, but you can disable this functionality with just one
-line:&lt;/p&gt;
+&lt;p&gt;because it&amp;#8217;s actually pointing to &lt;tt class="docutils literal"&gt;/home/user/public_html/&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;I wasn&amp;#8217;t aware, but you can disable this functionality with just one&amp;nbsp;line:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 DirectorySlash Off
 &lt;/pre&gt;
-&lt;p&gt;Pages like &lt;a class="reference external" href="http://httpd.apache.org/docs/1.3/mod/mod_dir.html"&gt;this&lt;/a&gt; don't help since it's outdated doco for Apache httpd;
-they are annoying since it's what came up first in Google. It ended up
+&lt;p&gt;Pages like &lt;a class="reference external" href="http://httpd.apache.org/docs/1.3/mod/mod_dir.html"&gt;this&lt;/a&gt; don&amp;#8217;t help since it&amp;#8217;s outdated doco for Apache httpd;
+they are annoying since it&amp;#8217;s what came up first in Google. It ended up
 being the &lt;a class="reference external" href="http://httpd.apache.org/docs/2.2/mod/mod_dir.html"&gt;latest version&lt;/a&gt; of that same doco page that solved it for me
-by chance.&lt;/p&gt;
+by&amp;nbsp;chance.&lt;/p&gt;
 &lt;p&gt;As a side note, you apparently need Apache 2.0.51 or later to make this
-happen for you.&lt;/p&gt;
+happen for&amp;nbsp;you.&lt;/p&gt;
 </summary><category term="apache"></category><category term="directories"></category><category term="folder"></category><category term="http"></category><category term="httpd"></category><category term="problem"></category><category term="web"></category><category term="web server"></category></entry></feed>

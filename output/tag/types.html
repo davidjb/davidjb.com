@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2008/12/plone-archetypes-with-paster/">Plone: Archetypes With Paster</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2008/12/plone-archetypes-with-paster/">Plone: Archetypes With&nbsp;Paster</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2008-12-17T11:42:00">
                 Wed 17 December 2008
@@ -45,10 +45,9 @@
 <p>tags: <a href="../tag/content.html">content</a><a href="../tag/paster.html">paster</a><a href="../tag/plone.html">plone</a><a href="../tag/types.html">types</a><a href="../tag/zopeskel.html">zopeskel</a></p>
 </footer><!-- /.post-info --><p>From
 <a class="reference external" href="http://www.koansys.com/tech/create-plone-3-archetype-product-with-zopeskel-and-buildout">http://www.koansys.com/tech/create-plone-3-archetype-product-with-zopeskel-and-buildout</a>:</p>
-<p>ZopeSkel can create Archetype-based products for Plone 3. Wire it up in
-Buildout.</p>
+<p>ZopeSkel can create Archetype-based products for Plone 3. Wire it up in&nbsp;Buildout.</p>
 <p>After creating a Plone 3 instance (e.g., with Unified Installer) go into
-the src/ directory and create a development product with ZopeSkel:</p>
+the src/ directory and create a development product with&nbsp;ZopeSkel:</p>
 <pre class="literal-block">
 &gt; paster create -t archetype
 Enter title (The title of the project) ['Plone Example']: Koansys Newproduct
@@ -65,7 +64,7 @@ Enter url (URL of homepage) ['http://svn.plone.org/svn/plone/plone.example']:
 Enter license_name (License name) ['GPL']:
 Enter zip_safe (True/False: if the package can be distributed as a .zip file) [False]:
 </pre>
-<p>then go into that directory (koansys.newproduct) and add a content type:</p>
+<p>then go into that directory (koansys.newproduct) and add a content&nbsp;type:</p>
 <pre class="literal-block">
 &gt; paster addcontent contenttype
 Enter contenttype_name (Content type name ) ['Example Type']: Recipe
@@ -75,8 +74,7 @@ Enter global_allow (True/False: Globally addable ) [True]:
 Enter allow_discussion (True/False: Allow discussion ) [False]: True
 </pre>
 <p>Modify your buildout.cfg to use these as development eggs and tell each
-instance about it's ZCML (otherwise it won't show up in the Quick
-Installer):</p>
+instance about it&#8217;s <span class="caps">ZCML</span> (otherwise it won&#8217;t show up in the Quick&nbsp;Installer):</p>
 <pre class="code cfg literal-block">
 <span class="k">[buildout]</span>
 <span class="err">...</span>
@@ -97,7 +95,7 @@ Installer):</p>
 <span class="c1">#name of the egg itself</span>
 <span class="err">nrbc.literature</span>
 </pre>
-<p>Re-run buildout and restart your &quot;instance&quot; instance and you should see it in the Quick Installer.</p>
+<p>Re-run buildout and restart your &#8220;instance&#8221; instance and you should see it in the Quick&nbsp;Installer.</p>
 <p>There are <a href="../blog/2008/12/plone-archetypes-with-paster/#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">
         Page 1 / 1

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Logitech G930 Headphones audio quality under Ubuntu</title>
+        <title>Logitech G930 Headphones audio quality under Ubuntu</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2011/10/logitech-g930-headphones-audio-quality-under-ubuntu/" rel="bookmark"
-           title="Permalink to Logitech G930 Headphones audio quality under Ubuntu">Logitech G930 Headphones audio quality under Ubuntu</a></h1>
+           title="Permalink to Logitech G930 Headphones audio quality under Ubuntu">Logitech G930 Headphones audio quality under&nbsp;Ubuntu</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -51,20 +51,20 @@
 currently using them with the latest version of Ubuntu, 11.10.&nbsp; Set up
 was a breeze - just plug, check your PulseAudio config, and play.&nbsp; For
 those of you, like me originally, who were wondering whether the G930
-works on Linux, it certain does on Ubuntu.</p>
-<p>Now, it wasn't all peaches and cream because of two things.&nbsp; Firstly,
+works on Linux, it certain does on&nbsp;Ubuntu.</p>
+<p>Now, it wasn&#8217;t all peaches and cream because of two things.&nbsp; Firstly,
 the audio output with the default configuration was completely lacking
-any depth and 'substance' to the sound being produced.&nbsp; I'm not an
+any depth and &#8216;substance&#8217; to the sound being produced.&nbsp; I&#8217;m not an
 audiophile and I have slight hearing problems, but the sound was
 entirely lacking anything in the form of bass, and overall, just very
-tinny and washed out.&nbsp; Praying it's not the headset itself, I went and
-obtained <tt class="docutils literal"><span class="pre">pulseaudio-equalizer</span></tt> from <a class="reference external" href="https://launchpad.net/~nilarimogard/+archive/webupd8">this PPA</a> (and it comes with
-its GTK counterpart, <tt class="docutils literal"><span class="pre">pulseaudio-equalizer-gtk</span></tt>).&nbsp; Running the latter
+tinny and washed out.&nbsp; Praying it&#8217;s not the headset itself, I went and
+obtained <tt class="docutils literal"><span class="pre">pulseaudio-equalizer</span></tt> from <a class="reference external" href="https://launchpad.net/~nilarimogard/+archive/webupd8">this <span class="caps">PPA</span></a> (and it comes with
+its <span class="caps">GTK</span> counterpart, <tt class="docutils literal"><span class="pre">pulseaudio-equalizer-gtk</span></tt>).&nbsp; Running the latter
 of these two commands brings you up the interface, and I selected the
-'Laptop' preset and enabled this.&nbsp; I had to re-jig around a little with
-clicking the 'EQ enabled' checkbox and the 'Apply Settings' button
+&#8216;Laptop&#8217; preset and enabled this.&nbsp; I had to re-jig around a little with
+clicking the &#8216;<span class="caps">EQ</span> enabled&#8217; checkbox and the &#8216;Apply Settings&#8217; button
 whilst listening to music but this preset makes things 100% better.
-First hurdle solved.</p>
+First hurdle&nbsp;solved.</p>
 <p>The second issue was the constant static being introduced in my audio.
 Only when sound was being played mind you, not just when the headset was
 sitting turned on in silence, so this lead me to think it must
@@ -73,11 +73,11 @@ or something hardware related.&nbsp; Thankfully, I was right.&nbsp; Firing up
 <tt class="docutils literal">pavucontrol</tt>, my much-preferred application over the default Ubuntu
 sound panel, I found the static was being introduced when my headphone
 output device was set at 100% volume (the Output Device, not anything
-else). The static is gone after I dropped the device output back (I'm
+else). The static is gone after I dropped the device output back (I&#8217;m
 using 33%). If I need more amplification, then I can simply use the
 Equalizer virtual output device to increase the volume (and/or amplify
-the applications behind the output).</p>
-<p>Now, the headset works fantastically.</p>
+the applications behind the&nbsp;output).</p>
+<p>Now, the headset works&nbsp;fantastically.</p>
 
     </div><!-- /.entry-content -->
         <div class="comments">

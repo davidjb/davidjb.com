@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Virtualenv, Python 2.4, Plone 3.x and Lucid Lynx (Ubuntu 10.04)</title>
+        <title>Virtualenv, Python 2.4, Plone 3.x and Lucid Lynx (Ubuntu 10.04)</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2010/05/virtualenv-python-2-4-plone-3-x-and-lucid-lynx-ubuntu-10-04/" rel="bookmark"
-           title="Permalink to Virtualenv, Python 2.4, Plone 3.x and Lucid Lynx (Ubuntu 10.04)">Virtualenv, Python 2.4, Plone 3.x and Lucid Lynx (Ubuntu 10.04)</a></h1>
+           title="Permalink to Virtualenv, Python 2.4, Plone 3.x and Lucid Lynx (Ubuntu 10.04)">Virtualenv, Python 2.4, Plone 3.x and Lucid Lynx (Ubuntu&nbsp;10.04)</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -54,24 +54,24 @@ Previously, it was Centos 5.x, Jaunty (9.04), Karmic (9.10) and now
 Lucid (10.04).&nbsp; Only subtly different, each of this distributions has
 pretty much called for its own post on the matter of getting a working
 Plone 3.x / Python 2.4 virtualenv installation going.&nbsp; So, here goes
-this time around.</p>
+this time&nbsp;around.</p>
 <div class="section" id="install-python-2-4-first">
-<h2>Install Python 2.4 first</h2>
-<p>If you've not done so already, you need to install Python 2.4.&nbsp; Lucid
+<h2>Install Python 2.4&nbsp;first</h2>
+<p>If you&#8217;ve not done so already, you need to install Python 2.4.&nbsp; Lucid
 now no longer comes with the packages for Python 2.4 (at all; so not
 even python2.4, python2.4-dev) in its repositories, so you need to wind
-back the clock and get the Karmic packages.&nbsp; Don't worry, everything
-seems to work okay.&nbsp; <a class="reference external" href="http://davidjb.com/blog/2010/05/installing-python-2-4-on-ubuntu-10-04-lucid-lynx">Read my post about this</a> and come back here.</p>
+back the clock and get the Karmic packages.&nbsp; Don&#8217;t worry, everything
+seems to work okay.&nbsp; <a class="reference external" href="http://davidjb.com/blog/2010/05/installing-python-2-4-on-ubuntu-10-04-lucid-lynx">Read my post about this</a> and come back&nbsp;here.</p>
 </div>
 <div class="section" id="prerequisites">
 <h2>Prerequisites</h2>
-<p>Ready to roll? You might want to make sure that you've got python2.4
+<p>Ready to roll? You might want to make sure that you&#8217;ve got python2.4
 available (eg run <tt class="docutils literal">python2.4</tt>) and that you can <tt class="docutils literal">import&nbsp; profile</tt>.
 If not, go back to the other post and read carefully (or complain loudly
-:)). You should also check the following:</p>
+:)). You should also check the&nbsp;following:</p>
 <ul>
 <li><p class="first">Got easy_install-2.4?&nbsp; Try and type it in your terminal.&nbsp; No good?
-Then do this:</p>
+Then do&nbsp;this:</p>
 <pre class="code bash literal-block">
 wget http://pypi.python.org/packages/2.4/s/setuptools/setuptools-0.6c11-py2.4.egg
 sudo sh setuptools-0.6c11-py2.4.egg
@@ -80,14 +80,14 @@ sudo easy_install-2.4 -U setuptools
 sudo easy_install-2.4 virtualenv
 </pre>
 </li>
-<li><p class="first">If you've got the python-virtualenv Ubuntu package installed.&nbsp; If you
+<li><p class="first">If you&#8217;ve got the python-virtualenv Ubuntu package installed.&nbsp; If you
 do, have a serious think about uninstalling it and getting the one
 for Python2.4 via easy_install-2.4. Your warranty ends here if you
-continue with the Ubunutu-installed virtualenv.</p>
+continue with the Ubunutu-installed&nbsp;virtualenv.</p>
 </li>
-<li><p class="first">If you need to install system-level packages. Even if you've run this
-before on an old Karmic (or older install), do it again as you've
-likely lost packages in the upgrade.</p>
+<li><p class="first">If you need to install system-level packages. Even if you&#8217;ve run this
+before on an old Karmic (or older install), do it again as you&#8217;ve
+likely lost packages in the&nbsp;upgrade.</p>
 <pre class="code bash literal-block">
 sudo apt-get install libtk-img-dev libfreeimage-dev libjpeg62-dev libfreetype6-dev libtk-img-dev tcl8.5-dev tk8.5-dev lynx poppler-utils xpdf wv xlhtml ppthtml
 </pre>
@@ -95,9 +95,8 @@ sudo apt-get install libtk-img-dev libfreeimage-dev libjpeg62-dev libfreetype6-d
 </ul>
 </div>
 <div class="section" id="make-your-virtualenv-happen">
-<h2>Make your virtualenv happen</h2>
-<p>Now that's sorted, convert an existing buildout folder over to
-Virtualenv:</p>
+<h2>Make your virtualenv&nbsp;happen</h2>
+<p>Now that&#8217;s sorted, convert an existing buildout folder over to&nbsp;Virtualenv:</p>
 <pre class="code bash literal-block">
 virtualenv -p /usr/bin/python2.4 .
 <span class="nb">source</span> ./bin/activate
@@ -112,14 +111,14 @@ easy_install python-ldap
 bootstrap with version 1.4.3 of buildout</strong>, installing useful/necessary
 python packages, and reworking everything via buildout. As highlighted
 with the <strong>bold</strong> text, you must make sure you add the <tt class="docutils literal"><span class="pre">-v1.4.3</span></tt>
-option to running bootstrap.py.</p>
+option to running&nbsp;bootstrap.py.</p>
 </div>
 <div class="section" id="conclusion">
 <h2>Conclusion</h2>
 <p>So, that wraps things up. You should now have a fully functional
-virtualenv, just like you did back in the good old days (or, if you're
-new to this game, a fresh new install). Now, if you're a Plonista, you
-can fire up your instance and it should start just fine.</p>
+virtualenv, just like you did back in the good old days (or, if you&#8217;re
+new to this game, a fresh new install). Now, if you&#8217;re a Plonista, you
+can fire up your instance and it should start just&nbsp;fine.</p>
 </div>
 
     </div><!-- /.entry-content -->

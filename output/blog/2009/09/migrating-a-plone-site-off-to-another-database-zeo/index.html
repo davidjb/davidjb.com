@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Migrating a Plone site off to another database (Zeo)</title>
+        <title>Migrating a Plone site off to another database (Zeo)</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2009/09/migrating-a-plone-site-off-to-another-database-zeo/" rel="bookmark"
-           title="Permalink to Migrating a Plone site off to another database (Zeo)">Migrating a Plone site off to another database (Zeo)</a></h1>
+           title="Permalink to Migrating a Plone site off to another database (Zeo)">Migrating a Plone site off to another database&nbsp;(Zeo)</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -50,39 +50,37 @@
 </footer><!-- /.post-info -->      <p>Another of the interesting things in my professional life has been
 migrating a Plone site from one database (where it lived as a dev site,
 along with many others) onto a nice, clean database of its own.&nbsp; Now,
-yes, I'm aware that the export/import feature of Zope <strong>isn't</strong> supposed to
+yes, I&#8217;m aware that the export/import feature of Zope <strong>isn&#8217;t</strong> supposed to
 be used for migrating content or sites.&nbsp; I am also aware, however,
 through personal experience, that things have always been fine because
-I'm using the same eggs and essentially the same installations
-everywhere, thanks to buildout.</p>
+I&#8217;m using the same eggs and essentially the same installations
+everywhere, thanks to&nbsp;buildout.</p>
 <p>So, the process goes as follows, with the above-mentioned points
-considered already:</p>
+considered&nbsp;already:</p>
 <ol class="arabic simple">
-<li>Head to the root of your ZMI and export your given Plone site&nbsp; as
-ZEXP</li>
-<li>Shut down your instance (or do what you will with your old site and
-installation)</li>
-<li>Copy the ZEXP file into the 'import' folder of your new Zope instance</li>
-<li>Start your new instance, with your new empty database</li>
-<li>Log in to the root of the ZMI</li>
-<li>Add a new Plone site and call it anything you want (eg 'foo').&nbsp; I'll
-explain why shortly.</li>
-<li>Delete your 'foo' Plone site.</li>
-<li>Import your existing Plone site and be happy because it's now arrived
-safe and sound.</li>
+<li>Head to the root of your <span class="caps">ZMI</span> and export your given Plone site&nbsp; as&nbsp;<span class="caps">ZEXP</span></li>
+<li>Shut down your instance (or do what you will with your old site and&nbsp;installation)</li>
+<li>Copy the <span class="caps">ZEXP</span> file into the &#8216;import&#8217; folder of your new Zope&nbsp;instance</li>
+<li>Start your new instance, with your new empty&nbsp;database</li>
+<li>Log in to the root of the&nbsp;<span class="caps">ZMI</span></li>
+<li>Add a new Plone site and call it anything you want (eg &#8216;foo&#8217;).&nbsp; I&#8217;ll
+explain why&nbsp;shortly.</li>
+<li>Delete your &#8216;foo&#8217; Plone&nbsp;site.</li>
+<li>Import your existing Plone site and be happy because it&#8217;s now arrived
+safe and&nbsp;sound.</li>
 </ol>
 <div class="section" id="note">
 <h2>Note</h2>
 <p>The reason I highlight adding a new Plone site a point 6 is because if
 originally, you were like me and imported your site first to a bare Zope
-install, you'll get errors <strong>everywhere</strong> in your site.&nbsp; They'll look
-like &quot;AttributeError: getGroups&quot; or possibly something more obscure (if
-possible!) and everything will fall over and die.</p>
-<p>Now, by creating a new Plone site first 'massages' the root of Zope, and
+install, you&#8217;ll get errors <strong>everywhere</strong> in your site.&nbsp; They&#8217;ll look
+like &#8220;AttributeError: getGroups&#8221; or possibly something more obscure (if
+possible!) and everything will fall over and&nbsp;die.</p>
+<p>Now, by creating a new Plone site first &#8216;massages&#8217; the root of Zope, and
 then your site should be fine.&nbsp; Among other things, adding a site
-changes the acl_users of the ZMI (seeing an abnormal acl_users is what
+changes the acl_users of the <span class="caps">ZMI</span> (seeing an abnormal acl_users is what
 led me to the solution).&nbsp; At a guess, given its type, this acl_users
-change probably has something to do with the error above.</p>
+change probably has something to do with the error&nbsp;above.</p>
 </div>
 
     </div><!-- /.entry-content -->

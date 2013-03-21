@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2011/01/buildout-order-of-extends-configuration-files/">Buildout: order of 'extends' configuration files</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2011/01/buildout-order-of-extends-configuration-files/">Buildout: order of &#8216;extends&#8217; configuration&nbsp;files</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2011-01-06T15:00:00">
                 Thu 06 January 2011
@@ -44,11 +44,11 @@
         <p>In <a href="../category/python.html">Python</a>. </p>
 <p>tags: <a href="../tag/buildout.html">buildout</a><a href="../tag/config.html">config</a><a href="../tag/dexterity.html">dexterity</a><a href="../tag/extends.html">extends</a><a href="../tag/ordering.html">ordering</a><a href="../tag/plone.html">plone</a></p>
 </footer><!-- /.post-info --><p>Yet another word to the wise: take care of your ordering of the
-'extends' configuration files within your buildout.&nbsp; It makes complete
+&#8216;extends&#8217; configuration files within your buildout.&nbsp; It makes complete
 sense, and especially so with respect to version pinning: the later
-configuration's versions will be the last one applied.</p>
+configuration&#8217;s versions will be the last one&nbsp;applied.</p>
 <p>So, it makes a lot of sense (in hindsight!) that this configuration, and
-the fact I have version pins in my base.cfg, isn't going to end well:</p>
+the fact I have version pins in my base.cfg, isn&#8217;t going to end&nbsp;well:</p>
 <pre class="code ini literal-block">
 <span class="k">[buildout]</span>
 <span class="na">extends</span> <span class="o">=</span><span class="s">
@@ -56,13 +56,13 @@ the fact I have version pins in my base.cfg, isn't going to end well:</p>
     http://good-py.appspot.com/release/dexterity/1.0b2</span>
 </pre>
 <p>The Dexterity version pins are going to override the ones I have in my
-base.cfg.&nbsp; This ends up meaning that Plone 4's version pins get applied
-first (Plone's main cfg is included in my base.cfg), then my 'custom'
-pins in base.cfg, then Dexterity's over the top.&nbsp; Any custom pins I had
-for packages used in Dexterity's KGS just got squashed.</p>
-<p>Essentially, if it looks like Buildout isn't paying attention to your
-package pins, it's not because it's being disobedient, it's likely
-because something's overriding your settings.</p>
+base.cfg.&nbsp; This ends up meaning that Plone 4&#8217;s version pins get applied
+first (Plone&#8217;s main cfg is included in my base.cfg), then my &#8216;custom&#8217;
+pins in base.cfg, then Dexterity&#8217;s over the top.&nbsp; Any custom pins I had
+for packages used in Dexterity&#8217;s <span class="caps">KGS</span> just got&nbsp;squashed.</p>
+<p>Essentially, if it looks like Buildout isn&#8217;t paying attention to your
+package pins, it&#8217;s not because it&#8217;s being disobedient, it&#8217;s likely
+because something&#8217;s overriding your&nbsp;settings.</p>
 <p>There are <a href="../blog/2011/01/buildout-order-of-extends-configuration-files/#disqus_thread">comments</a>.</p>                </article>
                             </aside><!-- /#featured -->
                             <section id="content" class="body">
@@ -75,7 +75,7 @@ because something's overriding your settings.</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2010/10/bad-relationships-relationchoice-relationcatalog-and-removed-dexterity-content-in-plone/" rel="bookmark"
-                           title="Permalink to Bad relationships: RelationChoice, RelationCatalog and removed Dexterity content in Plone">Bad relationships: RelationChoice, RelationCatalog and removed Dexterity content in Plone</a></h1>
+                           title="Permalink to Bad relationships: RelationChoice, RelationCatalog and removed Dexterity content in Plone">Bad relationships: RelationChoice, RelationCatalog and removed Dexterity content in&nbsp;Plone</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -89,11 +89,10 @@ because something's overriding your settings.</p>
         </address>
         <p>In <a href="../category/it-work.html">IT, Work</a>. </p>
 <p>tags: <a href="../tag/borked.html">borked</a><a href="../tag/dexterity.html">dexterity</a><a href="../tag/plone.html">plone</a><a href="../tag/problem.html">problem</a><a href="../tag/zope.html">zope</a></p>
-</footer><!-- /.post-info -->                <p><strong>Disclaimer:</strong> this post isn't giving relationship advice (or..it is in
+</footer><!-- /.post-info -->                <p><strong>Disclaimer:</strong> this post isn&#8217;t giving relationship advice (or..it is in
 some twisted way).&nbsp; Unsurprisingly, removing content in Plone via the
-ZMI when Plone says something can't be deleted is likely to cause
-problems.</p>
-<p>In my case, the fact I removed a Dexterity-based container (&quot;Project&quot;)
+<span class="caps">ZMI</span> when Plone says something can&#8217;t be deleted is likely to cause&nbsp;problems.</p>
+<p>In my case, the fact I removed a Dexterity-based container (&#8220;Project&#8221;)
 caused users to ...</p>
                 <a class="readmore" href="../blog/2010/10/bad-relationships-relationchoice-relationcatalog-and-removed-dexterity-content-in-plone/">read more</a>
                 <p>There are <a href="../blog/2010/10/bad-relationships-relationchoice-relationcatalog-and-removed-dexterity-content-in-plone/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
@@ -104,7 +103,7 @@ caused users to ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2010/06/plone-dexterity-and-incorrect-widgets/" rel="bookmark"
-                           title="Permalink to Plone, Dexterity, and Incorrect Widgets">Plone, Dexterity, and Incorrect Widgets</a></h1>
+                           title="Permalink to Plone, Dexterity, and Incorrect Widgets">Plone, Dexterity, and Incorrect&nbsp;Widgets</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -118,7 +117,7 @@ caused users to ...</p>
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/content-type.html">content type</a><a href="../tag/datetime.html">datetime</a><a href="../tag/dexterity.html">dexterity</a><a href="../tag/fields.html">fields</a><a href="../tag/form.html">form</a><a href="../tag/plone.html">plone</a><a href="../tag/problem.html">problem</a><a href="../tag/product.html">product</a><a href="../tag/zope.html">zope</a></p>
-</footer><!-- /.post-info -->                <p>A nice 'gotcha' is the distinction between Zope's schema.Date and
+</footer><!-- /.post-info -->                <p>A nice &#8216;gotcha&#8217; is the distinction between Zope&#8217;s schema.Date and
 schema.Datetime. The difference is obvious and straightforward when the
 two terms are laid out side-by-side: one is for dates only and the other
 adds a time component. Where things fell down for me in my usage of ...</p>
@@ -131,7 +130,7 @@ adds a time component. Where things fell down for me in my usage of ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2010/04/plone-and-dexterity-working-with-computed-fields/" rel="bookmark"
-                           title="Permalink to Plone and Dexterity: Working with computed fields">Plone and Dexterity: Working with computed fields</a></h1>
+                           title="Permalink to Plone and Dexterity: Working with computed fields">Plone and Dexterity: Working with computed&nbsp;fields</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -145,10 +144,10 @@ adds a time component. Where things fell down for me in my usage of ...</p>
         </address>
         <p>In <a href="../category/plon.html">Plon</a>. </p>
 <p>tags: <a href="../tag/computation.html">computation</a><a href="../tag/content.html">content</a><a href="../tag/dexterity.html">dexterity</a><a href="../tag/extension.html">extension</a><a href="../tag/function.html">function</a><a href="../tag/plone.html">plone</a><a href="../tag/product.html">product</a><a href="../tag/python.html">python</a></p>
-</footer><!-- /.post-info -->                <p>Today, we're looking at how to utilise computed fields within a
+</footer><!-- /.post-info -->                <p>Today, we&#8217;re looking at how to utilise computed fields within a
 Dexterity-based content type. The specific use-case is that of having
 two separate fields (first name and surname, for a Person type, for
-example) generate the complete object title. The first part of this --
+example) generate the complete object title. The first part of this &#8212;
 having the title of the ...</p>
                 <a class="readmore" href="../blog/2010/04/plone-and-dexterity-working-with-computed-fields/">read more</a>
                 <p>There are <a href="../blog/2010/04/plone-and-dexterity-working-with-computed-fields/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->

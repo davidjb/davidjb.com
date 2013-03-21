@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2011/05/how-to-updating-ocz-vertex-3-ssd-firmware-on-a-dell-m1530-laptop/">How to: Updating OCZ Vertex 3 SSD Firmware (on a Dell M1530 laptop)</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2011/05/how-to-updating-ocz-vertex-3-ssd-firmware-on-a-dell-m1530-laptop/">How to: Updating <span class="caps">OCZ</span> Vertex 3 <span class="caps">SSD</span> Firmware (on a Dell M1530&nbsp;laptop)</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2011-05-21T23:45:00">
                 Sat 21 May 2011
@@ -46,102 +46,102 @@
 </footer><!-- /.post-info --><div class="note">
 <p class="first admonition-title">Note</p>
 <p class="last"><strong>Update 3:</strong> This guide is effectively now entirely outdated
-with regards to the available tools.  I've gone back to simply using
-a Windows boot disk to handle the firmware upgrades, although they've
-gotten less frequent as of late.</p>
+with regards to the available tools.  I&#8217;ve gone back to simply using
+a Windows boot disk to handle the firmware upgrades, although they&#8217;ve
+gotten less frequent as of&nbsp;late.</p>
 </div>
-<p>I've just shelled out a good chunk of money in buying an OCZ Vertex 3
-240GB solid state drive (SSD) and it's amazingly quick. So amazingly
+<p>I&#8217;ve just shelled out a good chunk of money in buying an <span class="caps">OCZ</span> Vertex 3
+<span class="caps">240GB</span> solid state drive (<span class="caps">SSD</span>) and it&#8217;s amazingly quick. So amazingly
 quick that I thought I may just have fallen into a coma when I had to
 temporarily switch back to my old mechanical hard drive and boot from it
-again. And this is only using the Vertex 3 on a SATA II interface - not
-even the SATA III it's designed for. I actually just bought a new laptop
+again. And this is only using the Vertex 3 on a <span class="caps">SATA</span> <span class="caps">II</span> interface - not
+even the <span class="caps">SATA</span> <span class="caps">III</span> it&#8217;s designed for. I actually just bought a new laptop
 with the intention (at least one of ;)) of being able to utilise the
-drive's full potential on SATA III, but I digress.</p>
-<p>After having only had this drive for a week, I've noticed that there are
-firmware upgrades available from the OCZ website, and the Vertex 3's
+drive&#8217;s full potential on <span class="caps">SATA</span> <span class="caps">III</span>, but I&nbsp;digress.</p>
+<p>After having only had this drive for a week, I&#8217;ve noticed that there are
+firmware upgrades available from the <span class="caps">OCZ</span> website, and the Vertex 3&#8217;s
 firmware stands at 2.06 at time of writing. Now, you can upgrade this
-firmware (and upgrading did <strong>not</strong> erase my drive!) but it's not the
-easiest if you're like me and only have a laptop with the SSD as your
+firmware (and upgrading did <strong>not</strong> erase my drive!) but it&#8217;s not the
+easiest if you&#8217;re like me and only have a laptop with the <span class="caps">SSD</span> as your
 only drive. Thankfully, a bit of trial and error on my part got this
-licked. Here's a guide to how I did it.</p>
-<p>Now, as the OCZ site mentions, you can't upgrade a disk that you've
-booted off. I've also learned that you need to have your SSD connected
-in via a dedicated SATA controller (NOT a USB-to-SATA converter or any
+licked. Here&#8217;s a guide to how I did&nbsp;it.</p>
+<p>Now, as the <span class="caps">OCZ</span> site mentions, you can&#8217;t upgrade a disk that you&#8217;ve
+booted off. I&#8217;ve also learned that you need to have your <span class="caps">SSD</span> connected
+in via a dedicated <span class="caps">SATA</span> controller (<span class="caps">NOT</span> a <span class="caps">USB</span>-to-<span class="caps">SATA</span> converter or any
 such thing) and in my case of my M1530 laptop, is the internal drive
-bay. This means we need to be booting off a USB stick or optical disc -
-something Windows essentially won't do easily. Thankfully, this is
-something that Linux shines at. And the good news here is that OCZ have
-a Linux-based updater tool available. Hurray!</p>
-<p>Here's what you can do. Warning: your mileage <strong>will</strong> likely vary for
+bay. This means we need to be booting off a <span class="caps">USB</span> stick or optical disc -
+something Windows essentially won&#8217;t do easily. Thankfully, this is
+something that Linux shines at. And the good news here is that <span class="caps">OCZ</span> have
+a Linux-based updater tool available.&nbsp;Hurray!</p>
+<p>Here&#8217;s what you can do. Warning: your mileage <strong>will</strong> likely vary for
 you if using a different laptop, different model version, different
-firmware to A12, different SSD firmware, etc, so be very careful
-following my words verbatim.</p>
+firmware to A12, different <span class="caps">SSD</span> firmware, etc, so be very careful
+following my words&nbsp;verbatim.</p>
 <ol class="arabic">
-<li><p class="first">Download and install a Linux distribution to a USB stick or burn an
-optical disc.&nbsp; In my case, I chose Ubuntu 11.04, because that's what
-I'm comfortable with.</p>
+<li><p class="first">Download and install a Linux distribution to a <span class="caps">USB</span> stick or burn an
+optical disc.&nbsp; In my case, I chose Ubuntu 11.04, because that&#8217;s what
+I&#8217;m comfortable&nbsp;with.</p>
 </li>
-<li><p class="first">Head to the OCZ forums and download the linked <a class="reference external" href="http://www.ocztechnologyforum.com/forum/showthread.php?82289-OCZ-SandForce-Linux-based-firmware-update-tool">Linux OCZ Firmware
+<li><p class="first">Head to the <span class="caps">OCZ</span> forums and download the linked <a class="reference external" href="http://www.ocztechnologyforum.com/forum/showthread.php?82289-OCZ-SandForce-Linux-based-firmware-update-tool">Linux <span class="caps">OCZ</span> Firmware
 Update Tool</a>. At time of writing, the version is 1.15.&nbsp; Put the zip
-or tar file close to hand (eg on the USB stick is a good idea).</p>
+or tar file close to hand (eg on the <span class="caps">USB</span> stick is a good&nbsp;idea).</p>
 </li>
-<li><p class="first">Shut down your computer.</p>
+<li><p class="first">Shut down your&nbsp;computer.</p>
 </li>
-<li><p class="first">Potentially optional step:&nbsp; change the SATA mode on your drive to
-'ATA' (away from 'AHCI') within the BIOS.&nbsp; As far as I had read, this
-is necessary.&nbsp; That said,&nbsp; I haven't tried it without doing this as
-of yet.&nbsp; When changed, shut down your computer.</p>
+<li><p class="first">Potentially optional step:&nbsp; change the <span class="caps">SATA</span> mode on your drive to
+&#8216;<span class="caps">ATA</span>&#8217; (away from &#8216;<span class="caps">AHCI</span>&#8217;) within the <span class="caps">BIOS</span>.&nbsp; As far as I had read, this
+is necessary.&nbsp; That said,&nbsp; I haven&#8217;t tried it without doing this as
+of yet.&nbsp; When changed, shut down your&nbsp;computer.</p>
 </li>
 <li><p class="first">Disconnect all power from the computer - in the case of my laptop,
-this was the AC and the battery.&nbsp; Wait for a minute before
-reconnecting.&nbsp; Apparently this is enough time for the AHCI security
-'freeze' to be cleared from the SSD.</p>
+this was the <span class="caps">AC</span> and the battery.&nbsp; Wait for a minute before
+reconnecting.&nbsp; Apparently this is enough time for the <span class="caps">AHCI</span> security
+&#8216;freeze&#8217; to be cleared from the&nbsp;<span class="caps">SSD</span>.</p>
 </li>
-<li><p class="first">Connect power again and boot from your USB stick.</p>
+<li><p class="first">Connect power again and boot from your <span class="caps">USB</span>&nbsp;stick.</p>
 </li>
-<li><p class="first">When your Linux distro is loaded, inspect your SSD's parameters with
-this command, replacing /dev/sda with your drive's device:</p>
+<li><p class="first">When your Linux distro is loaded, inspect your <span class="caps">SSD</span>&#8217;s parameters with
+this command, replacing /dev/sda with your drive&#8217;s&nbsp;device:</p>
 <pre class="literal-block">
 sudo hdparm -I /dev/sda
 </pre>
 </li>
-<li><p class="first">If all is well, then you should see 'not frozen' and 'not locked' in
-the output, near the very bottom.&nbsp; If you only see 'frozen' (for
+<li><p class="first">If all is well, then you should see &#8216;not frozen&#8217; and &#8216;not locked&#8217; in
+the output, near the very bottom.&nbsp; If you only see &#8216;frozen&#8217; (for
 instance) as one of the lines, then your device needs to be unfrozen
-before continuing</p>
+before&nbsp;continuing</p>
 <ol class="arabic simple">
 <li>In my case, I had to turn off the swap partition on the drive
-(done easily with gparted) and</li>
+(done easily with gparted)&nbsp;and</li>
 <li>I had to suspend and resume my computer whilst on running off the
-USB stick.&nbsp; This last point clinched it for me and the security
-freeze was lifted.</li>
+<span class="caps">USB</span> stick.&nbsp; This last point clinched it for me and the security
+freeze was&nbsp;lifted.</li>
 </ol>
 </li>
-<li><p class="first">Once you're ready, make sure your computer is connected to the
+<li><p class="first">Once you&#8217;re ready, make sure your computer is connected to the
 Internet as the firmware updater downloads the latest version from
-OCZ on the fly.</p>
+<span class="caps">OCZ</span> on the&nbsp;fly.</p>
 </li>
 <li><p class="first">Locate your zip/tar of the firmware tool and extract it somewhere
-convenient.&nbsp; For argument's sake, I've put mine in my home directory.</p>
+convenient.&nbsp; For argument&#8217;s sake, I&#8217;ve put mine in my home&nbsp;directory.</p>
 </li>
 <li><p class="first">Run the appropriate command from the following to update the firmware
-(linux32 is for if you are presently booted into a 32 bit OS and
-linux64 is for 64 bit; replacing /dev/sda with your drive's device):</p>
+(linux32 is for if you are presently booted into a 32 bit <span class="caps">OS</span> and
+linux64 is for 64 bit; replacing /dev/sda with your drive&#8217;s&nbsp;device):</p>
 <pre class="literal-block">
 sudo ~/fwupd\_v115/linux32/fwupd -log /dev/sda
 sudo ~/fwupd\_v115/linux64/fwupd -log /dev/sda
 </pre>
 </li>
 <li><p class="first">You should be greeted with a message of success, if it all worked. If
-it didn't, then check to make sure your drive isn't reported as
-locked or frozen - this is what it was for me 99% of the time.</p>
+it didn&#8217;t, then check to make sure your drive isn&#8217;t reported as
+locked or frozen - this is what it was for me 99% of the&nbsp;time.</p>
 </li>
 </ol>
-<p>So that's about it. This guide and how-to is mostly posted for my own
+<p>So that&#8217;s about it. This guide and how-to is mostly posted for my own
 information for later, but hopefully it might help someone else. Like
-always, make sure you've backed up your data before beginning anything
-like this.</p>
+always, make sure you&#8217;ve backed up your data before beginning anything
+like&nbsp;this.</p>
 <p>There are <a href="../blog/2011/05/how-to-updating-ocz-vertex-3-ssd-firmware-on-a-dell-m1530-laptop/#disqus_thread">comments</a>.</p>                </article>
                             </aside><!-- /#featured -->
                             <section id="content" class="body">
@@ -154,7 +154,7 @@ like this.</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2011/01/bailing-on-outlook-web-app-windows-live-and-using-gmail-with-popsmtp-instead/" rel="bookmark"
-                           title="Permalink to Bailing on Outlook Web App (Windows Live) and using Gmail with POP/SMTP instead">Bailing on Outlook Web App (Windows Live) and using Gmail with POP/SMTP instead</a></h1>
+                           title="Permalink to Bailing on Outlook Web App (Windows Live) and using Gmail with POP/SMTP instead">Bailing on Outlook Web App (Windows Live) and using Gmail with <span class="caps">POP</span>/<span class="caps">SMTP</span>&nbsp;instead</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -168,8 +168,8 @@ like this.</p>
         </address>
         <p>In <a href="../category/it.html">IT</a>. </p>
 <p>tags: <a href="../tag/email.html">email</a><a href="../tag/freedom.html">freedom</a><a href="../tag/gmail.html">gmail</a><a href="../tag/live.html">live</a><a href="../tag/microsoft.html">microsoft</a><a href="../tag/outlook.html">outlook</a><a href="../tag/pop3.html">pop3</a><a href="../tag/smtp.html">smtp</a></p>
-</footer><!-- /.post-info -->                <p>I'm not a fan of Microsoft's solutions for mail (Exchange, Outlook,
-Outlook Web Access, etc) because they simply aren't as smooth as other
+</footer><!-- /.post-info -->                <p>I&#8217;m not a fan of Microsoft&#8217;s solutions for mail (Exchange, Outlook,
+Outlook Web Access, etc) because they simply aren&#8217;t as smooth as other
 alternatives. In my case, my weapon of choice is Gmail for all my mail.
 Unless you really like the old-school style popup windows and ...</p>
                 <a class="readmore" href="../blog/2011/01/bailing-on-outlook-web-app-windows-live-and-using-gmail-with-popsmtp-instead/">read more</a>

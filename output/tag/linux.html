@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2012/06/restartreset-usb-in-ubuntu-12-04-without-rebooting/">Restart/reset USB in Ubuntu 12.04 without rebooting</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2012/06/restartreset-usb-in-ubuntu-12-04-without-rebooting/">Restart/reset <span class="caps">USB</span> in Ubuntu 12.04 without&nbsp;rebooting</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2012-06-25T10:34:00">
                 Mon 25 June 2012
@@ -44,21 +44,21 @@
         <p>In <a href="../category/it.html">IT</a>. </p>
 <p>tags: <a href="../tag/linux.html">linux</a><a href="../tag/power.html">power</a><a href="../tag/reset.html">reset</a><a href="../tag/restart.html">restart</a><a href="../tag/ubuntu.html">ubuntu</a><a href="../tag/usb.html">usb</a></p>
 </footer><!-- /.post-info --><p>Either my Dell Optiplex 990 computer or my Linux install has an issue:
-occasionally, when I re-plug a USB device into the system, it'll cause a
-fault in the USB module in the kernel and USB goes dark. I'm unsure as
-to whether this is a hardware or software issue, but I'd simply like to
-restart my USB subsystem and continue working. When searching the web
-for 'restart USB in Linux' and 'reload USB kernel module', you get a
+occasionally, when I re-plug a <span class="caps">USB</span> device into the system, it&#8217;ll cause a
+fault in the <span class="caps">USB</span> module in the kernel and <span class="caps">USB</span> goes dark. I&#8217;m unsure as
+to whether this is a hardware or software issue, but I&#8217;d simply like to
+restart my <span class="caps">USB</span> subsystem and continue working. When searching the web
+for &#8216;restart <span class="caps">USB</span> in Linux&#8217; and &#8216;reload <span class="caps">USB</span> kernel module&#8217;, you get a
 plethora of results and none of which will work (seemingly due to how
 the Ubuntu standard kernel is compiled), at least for me within Ubuntu
-12.04, Precise Pangolin. Until now, I've had no success and had to hard
-reset. No longer.</p>
-<p>You'll need root/sudo access to the machine to be able to run commands.
-In my case, without USB available, then I've either got to sprint for a
-PS/2 keyboard and mouse or login via SSH. You can do what I've done and
+12.04, Precise Pangolin. Until now, I&#8217;ve had no success and had to hard
+reset. No&nbsp;longer.</p>
+<p>You&#8217;ll need root/sudo access to the machine to be able to run commands.
+In my case, without <span class="caps">USB</span> available, then I&#8217;ve either got to sprint for a
+<span class="caps">PS</span>/2 keyboard and mouse or login via <span class="caps">SSH</span>. You can do what I&#8217;ve done and
 prepared things into a suitable script I can run with just a Gnome
 launcher. &nbsp;Thanks to this <a class="reference external" href="http://ubuntuforums.org/showpost.php?p=9162799&amp;postcount=1">fantastic post</a> for the help. Either place
-the following into a script or run the commands directly:</p>
+the following into a script or run the commands&nbsp;directly:</p>
 <pre class="code bash literal-block">
 <span class="nb">echo</span> -n <span class="s2">&quot;0000:00:1a.0&quot;</span> | tee /sys/bus/pci/drivers/ehci_hcd/unbind
 <span class="nb">echo</span> -n <span class="s2">&quot;0000:00:1d.0&quot;</span> | tee /sys/bus/pci/drivers/ehci_hcd/unbind
@@ -66,12 +66,12 @@ the following into a script or run the commands directly:</p>
 <span class="nb">echo</span> -n <span class="s2">&quot;0000:00:1d.0&quot;</span> | tee /sys/bus/pci/drivers/ehci_hcd/bind
 </pre>
 <p>The hardware identifiers being passed around here can be revealed using
-a command like <tt class="docutils literal">lspci | grep USB</tt>. In my case, the identifiers in the
-original post were exactly what I have in my system.</p>
-<p>I'm yet to see if my USB will correctly come back online after freezing
-up as it hasn't happened yet, but I'll try this when it does and report
-back. That said, the commands above definitely reload all USB devices
-attached to the system; that much I've tried.</p>
+a command like <tt class="docutils literal">lspci | grep <span class="caps">USB</span></tt>. In my case, the identifiers in the
+original post were exactly what I have in my&nbsp;system.</p>
+<p>I&#8217;m yet to see if my <span class="caps">USB</span> will correctly come back online after freezing
+up as it hasn&#8217;t happened yet, but I&#8217;ll try this when it does and report
+back. That said, the commands above definitely reload all <span class="caps">USB</span> devices
+attached to the system; that much I&#8217;ve&nbsp;tried.</p>
 <p>There are <a href="../blog/2012/06/restartreset-usb-in-ubuntu-12-04-without-rebooting/#disqus_thread">comments</a>.</p>                </article>
                             </aside><!-- /#featured -->
                             <section id="content" class="body">
@@ -84,7 +84,7 @@ attached to the system; that much I've tried.</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2012/02/java-http-request-fails-with-javax-net-ssl-sslpeerunverifiedexception-peer-not-authenticated/" rel="bookmark"
-                           title="Permalink to Java HTTP request fails with "javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated"">Java HTTP request fails with &quot;javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated&quot;</a></h1>
+                           title="Permalink to Java HTTP request fails with “javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated”">Java <span class="caps">HTTP</span> request fails with &#8220;javax.net.ssl.SSLPeerUnverifiedException: peer not&nbsp;authenticated&#8221;</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -100,9 +100,9 @@ attached to the system; that much I've tried.</p>
 <p>tags: <a href="../tag/certificate.html">certificate</a><a href="../tag/java.html">java</a><a href="../tag/key.html">key</a><a href="../tag/linux.html">linux</a><a href="../tag/ssl.html">ssl</a><a href="../tag/store.html">store</a></p>
 </footer><!-- /.post-info -->                <p>Searching the above-mentioned stack trace reveals lots and lots of
 results, unsurprisingly. &nbsp;Most results are workarounds where you modify
-the code, but what about if an application (like Jenkins/Hudson CI, in
+the code, but what about if an application (like Jenkins/Hudson <span class="caps">CI</span>, in
 my case) throws this error at you? The reason the error is occurring is
-because the SSL certificate ...</p>
+because the <span class="caps">SSL</span> certificate ...</p>
                 <a class="readmore" href="../blog/2012/02/java-http-request-fails-with-javax-net-ssl-sslpeerunverifiedexception-peer-not-authenticated/">read more</a>
                 <p>There are <a href="../blog/2012/02/java-http-request-fails-with-javax-net-ssl-sslpeerunverifiedexception-peer-not-authenticated/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
@@ -112,7 +112,7 @@ because the SSL certificate ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2011/12/configuring-pulseaudio-equalizer-defaults/" rel="bookmark"
-                           title="Permalink to Configuring pulseaudio-equalizer defaults">Configuring pulseaudio-equalizer defaults</a></h1>
+                           title="Permalink to Configuring pulseaudio-equalizer defaults">Configuring pulseaudio-equalizer&nbsp;defaults</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -126,9 +126,9 @@ because the SSL certificate ...</p>
         </address>
         <p>In <a href="../category/ubuntu.html">Ubuntu</a>. </p>
 <p>tags: <a href="../tag/audio.html">audio</a><a href="../tag/equalizer.html">equalizer</a><a href="../tag/linux.html">linux</a><a href="../tag/pulseaudio.html">pulseaudio</a><a href="../tag/settings.html">settings</a><a href="../tag/tip.html">tip</a><a href="../tag/ubuntu.html">ubuntu</a><a href="../tag/volume.html">volume</a></p>
-</footer><!-- /.post-info -->                <p>I've recently been using the Logitech G930 headset with my Ubuntu 11.10
-install and I've found that the default configuration offers nothing in
-terms of decent sound (tinny, no bass, etc). Thankfully, I've been able
+</footer><!-- /.post-info -->                <p>I&#8217;ve recently been using the Logitech G930 headset with my Ubuntu 11.10
+install and I&#8217;ve found that the default configuration offers nothing in
+terms of decent sound (tinny, no bass, etc). Thankfully, I&#8217;ve been able
 to turn to pulseaudio-equalizer for help with turning down the treble ...</p>
                 <a class="readmore" href="../blog/2011/12/configuring-pulseaudio-equalizer-defaults/">read more</a>
                 <p>There are <a href="../blog/2011/12/configuring-pulseaudio-equalizer-defaults/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
@@ -139,7 +139,7 @@ to turn to pulseaudio-equalizer for help with turning down the treble ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2011/10/logitech-g930-headphones-audio-quality-under-ubuntu/" rel="bookmark"
-                           title="Permalink to Logitech G930 Headphones audio quality under Ubuntu">Logitech G930 Headphones audio quality under Ubuntu</a></h1>
+                           title="Permalink to Logitech G930 Headphones audio quality under Ubuntu">Logitech G930 Headphones audio quality under&nbsp;Ubuntu</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -166,7 +166,7 @@ those of you, like me originally, who were wondering whether the G930 ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2011/09/scp-files-back-home-using-reverse-ssh-in-1-command/" rel="bookmark"
-                           title="Permalink to SCP remote files back home using reverse SSH (in 1 command)">SCP remote files back home using reverse SSH (in 1 command)</a></h1>
+                           title="Permalink to SCP remote files back home using reverse SSH (in 1 command)"><span class="caps">SCP</span> remote files back home using reverse <span class="caps">SSH</span> (in 1&nbsp;command)</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -183,7 +183,7 @@ those of you, like me originally, who were wondering whether the G930 ...</p>
 </footer><!-- /.post-info -->                <p>My recent work has involved copying files from a remote host, only
 accessible via a hop, back to my local computer. This has been simple in
 the past as the remote host has been able to connect to the local
-computer and SCP files directly, on account of the firewall ...</p>
+computer and <span class="caps">SCP</span> files directly, on account of the firewall ...</p>
                 <a class="readmore" href="../blog/2011/09/scp-files-back-home-using-reverse-ssh-in-1-command/">read more</a>
                 <p>There are <a href="../blog/2011/09/scp-files-back-home-using-reverse-ssh-in-1-command/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
@@ -193,7 +193,7 @@ computer and SCP files directly, on account of the firewall ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2011/05/how-to-updating-ocz-vertex-3-ssd-firmware-on-a-dell-m1530-laptop/" rel="bookmark"
-                           title="Permalink to How to: Updating OCZ Vertex 3 SSD Firmware (on a Dell M1530 laptop)">How to: Updating OCZ Vertex 3 SSD Firmware (on a Dell M1530 laptop)</a></h1>
+                           title="Permalink to How to: Updating OCZ Vertex 3 SSD Firmware (on a Dell M1530 laptop)">How to: Updating <span class="caps">OCZ</span> Vertex 3 <span class="caps">SSD</span> Firmware (on a Dell M1530&nbsp;laptop)</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -210,11 +210,11 @@ computer and SCP files directly, on account of the firewall ...</p>
 </footer><!-- /.post-info -->                <div class="note">
 <p class="first admonition-title">Note</p>
 <p class="last"><strong>Update 3:</strong> This guide is effectively now entirely outdated
-with regards to the available tools.  I've gone back to simply using
-a Windows boot disk to handle the firmware upgrades, although they've
-gotten less frequent as of late.</p>
+with regards to the available tools.  I&#8217;ve gone back to simply using
+a Windows boot disk to handle the firmware upgrades, although they&#8217;ve
+gotten less frequent as of&nbsp;late.</p>
 </div>
-<p>I've just shelled out a good chunk of ...</p>
+<p>I&#8217;ve just shelled out a good chunk of ...</p>
                 <a class="readmore" href="../blog/2011/05/how-to-updating-ocz-vertex-3-ssd-firmware-on-a-dell-m1530-laptop/">read more</a>
                 <p>There are <a href="../blog/2011/05/how-to-updating-ocz-vertex-3-ssd-firmware-on-a-dell-m1530-laptop/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
@@ -224,7 +224,7 @@ gotten less frequent as of late.</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2010/07/plonezope-truncating-a-data-fs-back-to-a-certain-datetime/" rel="bookmark"
-                           title="Permalink to Plone/Zope: Truncating a Data.fs back to a certain date/time">Plone/Zope: Truncating a Data.fs back to a certain date/time</a></h1>
+                           title="Permalink to Plone/Zope: Truncating a Data.fs back to a certain date/time">Plone/Zope: Truncating a Data.fs back to a certain&nbsp;date/time</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -238,9 +238,9 @@ gotten less frequent as of late.</p>
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/datafs.html">data.fs</a><a href="../tag/database.html">database</a><a href="../tag/date.html">date</a><a href="../tag/fix.html">fix</a><a href="../tag/linux.html">linux</a><a href="../tag/plone.html">plone</a><a href="../tag/python.html">python</a><a href="../tag/time.html">time</a><a href="../tag/truncate.html">truncate</a><a href="../tag/zeo.html">zeo</a><a href="../tag/zodb.html">zodb</a><a href="../tag/zodb3.html">zodb3</a><a href="../tag/zope.html">zope</a></p>
-</footer><!-- /.post-info -->                <p>Okay. So, anyone out here who's listening -- particularly those
-overly-enthusiastic users -- don't try to recursively <tt class="docutils literal">wget</tt> your
-Plone site (or other CMS, for that matter) whilst you're logged in with
+</footer><!-- /.post-info -->                <p>Okay. So, anyone out here who&#8217;s listening &#8212; particularly those
+overly-enthusiastic users &#8212; don&#8217;t try to recursively <tt class="docutils literal">wget</tt> your
+Plone site (or other <span class="caps">CMS</span>, for that matter) whilst you&#8217;re logged in with
 an account that can make edits. It <strong>will</strong> lead to a very bad situation
 where your site ...</p>
                 <a class="readmore" href="../blog/2010/07/plonezope-truncating-a-data-fs-back-to-a-certain-datetime/">read more</a>
@@ -252,7 +252,7 @@ where your site ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2010/07/linux-make-time-with-faketime/" rel="bookmark"
-                           title="Permalink to Linux: Make time with faketime">Linux: Make time with faketime</a></h1>
+                           title="Permalink to Linux: Make time with faketime">Linux: Make time with&nbsp;faketime</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -266,10 +266,10 @@ where your site ...</p>
         </address>
         <p>In <a href="../category/linux.html">Linux</a>. </p>
 <p>tags: <a href="../tag/faketime.html">faketime</a><a href="../tag/fix.html">fix</a><a href="../tag/linux.html">linux</a><a href="../tag/shp2svg.html">shp2svg</a><a href="../tag/time.html">time</a><a href="../tag/wine.html">wine</a></p>
-</footer><!-- /.post-info -->                <p>So you, like me, have hit a situation where you've got a time-sensitive
-application that won't run? Maybe you've downloaded one of those apps
-(like a demo) that won't run after a certain date and time because it's
-&quot;expired&quot;. Or else, maybe some other arbitrary ...</p>
+</footer><!-- /.post-info -->                <p>So you, like me, have hit a situation where you&#8217;ve got a time-sensitive
+application that won&#8217;t run? Maybe you&#8217;ve downloaded one of those apps
+(like a demo) that won&#8217;t run after a certain date and time because it&#8217;s
+&#8220;expired&#8221;. Or else, maybe some other arbitrary ...</p>
                 <a class="readmore" href="../blog/2010/07/linux-make-time-with-faketime/">read more</a>
                 <p>There are <a href="../blog/2010/07/linux-make-time-with-faketime/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
@@ -279,7 +279,7 @@ application that won't run? Maybe you've downloaded one of those apps
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2010/05/installing-python-2-4-on-ubuntu-10-04-lucid-lynx/" rel="bookmark"
-                           title="Permalink to Installing Python 2.4 on Ubuntu 10.04 Lucid Lynx">Installing Python 2.4 on Ubuntu 10.04 Lucid Lynx</a></h1>
+                           title="Permalink to Installing Python 2.4 on Ubuntu 10.04 Lucid Lynx">Installing Python 2.4 on Ubuntu 10.04 Lucid&nbsp;Lynx</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -296,7 +296,7 @@ application that won't run? Maybe you've downloaded one of those apps
 </footer><!-- /.post-info -->                <p>Whoops.&nbsp; No one sent me the memo that Python
 2.4 support was being removed entirely from the latest version of
 Ubuntu, 10.04 Lucid Lynx.&nbsp; To be fair, I was presented with the message
-that 'these outdated packages will be removed' and in that list was
+that &#8216;these outdated packages will be removed&#8217; and in that list was
 python2.4.&nbsp; I ...</p>
                 <a class="readmore" href="../blog/2010/05/installing-python-2-4-on-ubuntu-10-04-lucid-lynx/">read more</a>
                 <p>There are <a href="../blog/2010/05/installing-python-2-4-on-ubuntu-10-04-lucid-lynx/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
@@ -307,7 +307,7 @@ python2.4.&nbsp; I ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/10/ubuntu-9-10-install-hiccough/" rel="bookmark"
-                           title="Permalink to Ubuntu 9.10 install hiccough">Ubuntu 9.10 install hiccough</a></h1>
+                           title="Permalink to Ubuntu 9.10 install hiccough">Ubuntu 9.10 install&nbsp;hiccough</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -323,8 +323,8 @@ python2.4.&nbsp; I ...</p>
 <p>tags: <a href="../tag/jaunty.html">jaunty</a><a href="../tag/karmic.html">karmic</a><a href="../tag/koala.html">koala</a><a href="../tag/linux.html">linux</a><a href="../tag/problem.html">problem</a><a href="../tag/python.html">python</a><a href="../tag/ubuntu.html">ubuntu</a><a href="../tag/upgrade.html">upgrade</a></p>
 </footer><!-- /.post-info -->                <p>Yay, the new version of Ubuntu is out. &nbsp;With it comes plenty of cool new
 features (how awesome does the start up and login screen look now?) and
-also plenty of opportunities for things to break when I've become so
-accustomed to having them working. &nbsp;At least it's ...</p>
+also plenty of opportunities for things to break when I&#8217;ve become so
+accustomed to having them working. &nbsp;At least it&#8217;s ...</p>
                 <a class="readmore" href="../blog/2009/10/ubuntu-9-10-install-hiccough/">read more</a>
                 <p>There are <a href="../blog/2009/10/ubuntu-9-10-install-hiccough/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>

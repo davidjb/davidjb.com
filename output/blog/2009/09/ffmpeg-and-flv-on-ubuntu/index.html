@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>ffmpeg and FLV on Ubuntu</title>
+        <title>ffmpeg and FLV on Ubuntu</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../../../../theme/css/main.css" type="text/css" />
                 <link href="http://davidjb.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="DavidJB.com Atom Feed" />
@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../../../../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../../../../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../../../../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../../../../pages/blog.html">Blog</a></li>
                                     <li><a href="../../../../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
     <header>
       <h1 class="entry-title">
         <a href="../../../../blog/2009/09/ffmpeg-and-flv-on-ubuntu/" rel="bookmark"
-           title="Permalink to ffmpeg and FLV on Ubuntu">ffmpeg and FLV on Ubuntu</a></h1>
+           title="Permalink to ffmpeg and FLV on Ubuntu">ffmpeg and <span class="caps">FLV</span> on&nbsp;Ubuntu</a></h1>
       <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="davidjb_">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     </header>
 
@@ -48,22 +48,21 @@
         <p>In <a href="../../../../category/linux.html">Linux</a>. </p>
 <p>tags: <a href="../../../../tag/ffmpeg.html">ffmpeg</a><a href="../../../../tag/flv.html">flv</a><a href="../../../../tag/linux.html">linux</a><a href="../../../../tag/multimedia.html">multimedia</a><a href="../../../../tag/ubuntu.html">ubuntu</a></p>
 </footer><!-- /.post-info -->      <p>Wow, ffmpeg is really great for converting multimedia.&nbsp; Unfortunately,
-the support for MP3 audio doesn't appear available by default.&nbsp; Sure, it
-can decode MP3 audio and write to an MP3 container, but what about
-having an actual MP3 codec available?</p>
+the support for <span class="caps">MP3</span> audio doesn&#8217;t appear available by default.&nbsp; Sure, it
+can decode <span class="caps">MP3</span> audio and write to an <span class="caps">MP3</span> container, but what about
+having an actual <span class="caps">MP3</span> codec&nbsp;available?</p>
 <pre class="code bash literal-block">
 sudo apt-get purge ffmpeg
 sudo apt-get install libavcodec-unstripped-52 libavdevice-unstripped-52 libavformat-unstripped-52 libavutil-unstripped-49 libpostproc-unstripped-51 libswscale-unstripped-0 ffmpeg
 </pre>
-<p>As a little bonus, there's a number of other codecs that come along with
-it too (xvid etc).&nbsp; I'm not too fussed on them but now I can use
-<tt class="docutils literal"><span class="pre">-acodec</span> libmp3lame</tt> as my audio codec and have the FLV outputted with
-MP3 audio.&nbsp; There's a problem with either the default FLV encoder or VLC
+<p>As a little bonus, there&#8217;s a number of other codecs that come along with
+it too (xvid etc).&nbsp; I&#8217;m not too fussed on them but now I can use
+<tt class="docutils literal"><span class="pre">-acodec</span> libmp3lame</tt> as my audio codec and have the <span class="caps">FLV</span> outputted with
+<span class="caps">MP3</span> audio.&nbsp; There&#8217;s a problem with either the default <span class="caps">FLV</span> encoder or <span class="caps">VLC</span>
 not being able to playback the audio with default settings, but this
-seems to work.</p>
-<p>That said, it remains to be seen if this'll cause any problems with FLV
-playback, but the players I've used so far (web-based) seem happy
-enough.</p>
+seems to&nbsp;work.</p>
+<p>That said, it remains to be seen if this&#8217;ll cause any problems with <span class="caps">FLV</span>
+playback, but the players I&#8217;ve used so far (web-based) seem happy&nbsp;enough.</p>
 
     </div><!-- /.entry-content -->
         <div class="comments">

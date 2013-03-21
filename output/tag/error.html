@@ -22,7 +22,7 @@
         <header id="banner" class="body">
                 <h1><a href="../">DavidJB.com  <strong>Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more.</strong></a></h1>
                 <nav><ul>
-                                                    <li><a href="../pages/about-me.html">About me</a></li>
+                                                    <li><a href="../pages/about-me.html">About&nbsp;me</a></li>
                                     <li><a href="../pages/blog.html">Blog</a></li>
                                     <li><a href="../pages/projects.html">Projects</a></li>
                                                                 </ul></nav>
@@ -32,7 +32,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../blog/2011/08/importerror-no-module-named-beautifulsoup/">ImportError: No module named BeautifulSoup</a></h1> 
+                    <h1 class="entry-title"><a href="../blog/2011/08/importerror-no-module-named-beautifulsoup/">ImportError: No module named&nbsp;BeautifulSoup</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2011-08-26T12:02:00">
                 Fri 26 August 2011
@@ -43,15 +43,14 @@
         </address>
         <p>In <a href="../category/python.html">Python</a>. </p>
 <p>tags: <a href="../tag/egg.html">egg</a><a href="../tag/error.html">error</a><a href="../tag/import.html">import</a><a href="../tag/packages.html">packages</a><a href="../tag/python.html">python</a></p>
-</footer><!-- /.post-info --><p>Had this issue when you've been trying to run something like
-<a class="reference external" href="http://pypi.python.org/pypi/funnelweb">Funnelweb</a>, and you hit an ImportError for BeautifulSoup?&nbsp; You're
+</footer><!-- /.post-info --><p>Had this issue when you&#8217;ve been trying to run something like
+<a class="reference external" href="http://pypi.python.org/pypi/funnelweb">Funnelweb</a>, and you hit an ImportError for BeautifulSoup?&nbsp; You&#8217;re
 definitely not alone, because I just hit the same issue.&nbsp; The answer is
-simple -- just ensure that you don't use BeautifulSoup 4 or above (this
-is still beta) -- it uses a different namespace, specifically bs4.
+simple &#8212; just ensure that you don&#8217;t use BeautifulSoup 4 or above (this
+is still beta) &#8212; it uses a different namespace, specifically bs4.
 Thus, whilst you might have the BeautifulSoup egg satisfying your
-dependencies, any imports of this package are going to fail.</p>
-<p>For me, I'm using buildout, so I just pinned my version of BeautifulSoup
-thusly:</p>
+dependencies, any imports of this package are going to&nbsp;fail.</p>
+<p>For me, I&#8217;m using buildout, so I just pinned my version of BeautifulSoup&nbsp;thusly:</p>
 <pre class="code cfg literal-block">
 <span class="k">[buildout]</span>
 <span class="err">...</span>
@@ -60,7 +59,7 @@ thusly:</p>
 <span class="k">[versions]</span>
 <span class="na">BeautifulSoup</span> <span class="o">=</span> <span class="s">3.2.0</span>
 </pre>
-<p>Now, we stop using BeautifulSoup 4.0 and everything works again.</p>
+<p>Now, we stop using BeautifulSoup 4.0 and everything works&nbsp;again.</p>
 <p>There are <a href="../blog/2011/08/importerror-no-module-named-beautifulsoup/#disqus_thread">comments</a>.</p>                </article>
                             </aside><!-- /#featured -->
                             <section id="content" class="body">
@@ -73,7 +72,7 @@ thusly:</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2010/06/plone-sitemanager-leftovers-not-the-good-kind/" rel="bookmark"
-                           title="Permalink to Plone: SiteManager leftovers; not the good kind">Plone: SiteManager leftovers; not the good kind</a></h1>
+                           title="Permalink to Plone: SiteManager leftovers; not the good kind">Plone: SiteManager leftovers; not the good&nbsp;kind</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -90,7 +89,7 @@ thusly:</p>
 </footer><!-- /.post-info -->                <div class="note">
 <p class="first admonition-title">Note</p>
 <p class="last"><strong>Update:</strong> You should check out <a class="reference external" href="http://pypi.python.org/pypi/wildcard.fixpersistentutilities">wildcard.fixpersistentutilities</a>
-- it's a fantastic solution to problems like this. Many thanks to
+- it&#8217;s a fantastic solution to problems like this. Many thanks to
 Nathan Van Gheem, the author of the add on. Check out the link and
 see how to install it (temporarily) on your Plone instance that
 needs its site manager cleaned ...</p></div>
@@ -103,7 +102,7 @@ needs its site manager cleaned ...</p></div>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2010/03/genericsetup-and-mismatched-tags-in-zcml/" rel="bookmark"
-                           title="Permalink to GenericSetup and "mismatched" tags in ZCML">GenericSetup and &quot;mismatched&quot; tags in ZCML</a></h1>
+                           title="Permalink to GenericSetup and “mismatched” tags in ZCML">GenericSetup and &#8220;mismatched&#8221; tags in&nbsp;<span class="caps">ZCML</span></a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -117,8 +116,8 @@ needs its site manager cleaned ...</p></div>
         </address>
         <p>In <a href="../category/plone.html">Plone</a>. </p>
 <p>tags: <a href="../tag/configuration.html">configuration</a><a href="../tag/error.html">error</a><a href="../tag/mismatched.html">mismatched</a><a href="../tag/plone.html">plone</a><a href="../tag/tags.html">tags</a><a href="../tag/xml.html">xml</a><a href="../tag/zcml.html">zcml</a><a href="../tag/zope.html">zope</a></p>
-</footer><!-- /.post-info -->                <p>Ever the issue-magnet, I've spent the better part of my morning trying
-to debug a mistmatched tag error from within some ZCML (aka XML for the
+</footer><!-- /.post-info -->                <p>Ever the issue-magnet, I&#8217;ve spent the better part of my morning trying
+to debug a mistmatched tag error from within some <span class="caps">ZCML</span> (aka <span class="caps">XML</span> for the
 non-initiated).&nbsp; Essentially, the issue boiled down to the system
 telling me that it was certain that I had a mistmatched tag within my ...</p>
                 <a class="readmore" href="../blog/2010/03/genericsetup-and-mismatched-tags-in-zcml/">read more</a>
@@ -130,7 +129,7 @@ telling me that it was certain that I had a mistmatched tag within my ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/11/plonezope-python-and-collective-autoreloadplone-reload/" rel="bookmark"
-                           title="Permalink to Plone/Zope, Python and collective.autoreload / plone.reload">Plone/Zope, Python and collective.autoreload / plone.reload</a></h1>
+                           title="Permalink to Plone/Zope, Python and collective.autoreload / plone.reload">Plone/Zope, Python and collective.autoreload /&nbsp;plone.reload</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -144,10 +143,10 @@ telling me that it was certain that I had a mistmatched tag within my ...</p>
         </address>
         <p>In <a href="../category/python.html">Python</a>. </p>
 <p>tags: <a href="../tag/code.html">code</a><a href="../tag/collective.html">collective</a><a href="../tag/egg.html">egg</a><a href="../tag/error.html">error</a><a href="../tag/package.html">package</a><a href="../tag/plone.html">plone</a><a href="../tag/python.html">python</a><a href="../tag/reload.html">reload</a><a href="../tag/restart.html">restart</a></p>
-</footer><!-- /.post-info -->                <p>Here's an interesting error message I got stumped with for a good set of
+</footer><!-- /.post-info -->                <p>Here&#8217;s an interesting error message I got stumped with for a good set of
 hours.&nbsp; The issue started with me using collective.autoreload with Plone
-and it does the trick, mostly.&nbsp; With any such 'operation' and live
-reloading of code for Python, you've got to expect that not ...</p>
+and it does the trick, mostly.&nbsp; With any such &#8216;operation&#8217; and live
+reloading of code for Python, you&#8217;ve got to expect that not ...</p>
                 <a class="readmore" href="../blog/2009/11/plonezope-python-and-collective-autoreloadplone-reload/">read more</a>
                 <p>There are <a href="../blog/2009/11/plonezope-python-and-collective-autoreloadplone-reload/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
@@ -157,7 +156,7 @@ reloading of code for Python, you've got to expect that not ...</p>
                         <li><article class="hentry">    
                 <header>
                     <h1><a href="../blog/2009/02/buildout-trying-to-create-a-plonezope-instance/" rel="bookmark"
-                           title="Permalink to Buildout: Trying to create a Plone/Zope instance">Buildout: Trying to create a Plone/Zope instance</a></h1>
+                           title="Permalink to Buildout: Trying to create a Plone/Zope instance">Buildout: Trying to create a Plone/Zope&nbsp;instance</a></h1>
                 </header>
                 
                 <div class="entry-content">
@@ -171,11 +170,11 @@ reloading of code for Python, you've got to expect that not ...</p>
         </address>
         <p>In <a href="../category/python.html">Python</a>. </p>
 <p>tags: <a href="../tag/bootstrap.html">bootstrap</a><a href="../tag/buildout.html">buildout</a><a href="../tag/error.html">error</a><a href="../tag/plone.html">plone</a><a href="../tag/script.html">script</a><a href="../tag/zope.html">zope</a></p>
-</footer><!-- /.post-info -->                <p>Eeek...what's this mean?</p>
+</footer><!-- /.post-info -->                <p>Eeek&#8230;what&#8217;s this&nbsp;mean?</p>
 <pre class="code pytb literal-block">
 <span class="x">install() got an unexpected keyword argument 'allow_hosts'</span>
 </pre>
-<p>after trying to build zope2zeoserver from my buildout configuration.</p>
+<p>after trying to build zope2zeoserver from my buildout&nbsp;configuration.</p>
 <p>After some searching, I found that it was due to my bootstrap.py script
 (the one the gets buildout in the first place and creates the relevant
 scripts) was ...</p>
