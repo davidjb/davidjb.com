@@ -1,6 +1,8 @@
 Projects
 ########
 
+:slug: projects.html
+
 Professional projects
 ~~~~~~~~~~~~~~~~~~~~~
 

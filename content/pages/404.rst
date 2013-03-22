@@ -1,0 +1,23 @@
+Oops, not found! (404)
+######################
+
+:date: 2013-03-21
+:status: hidden
+:slug: 404.html
+
+This page couldn't be found.  Maybe you'd like to try:
+
+* Clicking *Refresh* again.  Hey, it might just work.
+
+* Another URL at random
+
+* Waiting a while and coming back.  Something might turn up in the meantime.
+
+* Click the big header at the top and head back to the homepage.
+
+If you think there really should be somethin at this URL that isn't, then feel
+free to report the issue to me over at
+https://github.com/davidjb/davidjb.github.com.
+
+All things aside, thanks for visiting the 404 page.  These things never get much
+love.

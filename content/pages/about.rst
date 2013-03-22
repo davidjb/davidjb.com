@@ -1,6 +1,8 @@
 About me
 ########
 
+:slug: about.html
+
 .. raw:: html
 
    <div style="float: right; margin: 2em;">
