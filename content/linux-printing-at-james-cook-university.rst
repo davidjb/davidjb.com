@@ -65,5 +65,5 @@ Setting up the printer
 
 Try and print something and it should be good now.
 
-.. _fxlinuxprint-src-1.0.1.tar.gz: http://davidjb.com/wp-content/uploads/2008/12/fxlinuxprint-src-1.0.1.tar.gz
+.. _fxlinuxprint-src-1.0.1.tar.gz: |filename|files/fxlinuxprint-src-1.0.1.tar.gz
 .. _Japanese Xerox site: http://www.fujixerox.co.jp/download/apeosport/download/c4300series/linux_module.html
