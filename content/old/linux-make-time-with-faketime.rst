@@ -32,7 +32,7 @@ Sweet as. Now, if you're running a Windows app in Wine (or any other app
 with arguments), you can do that too. In my specific use-case, I was
 trying to use `shp2kml`_. Ignoring the fact their website fails at
 actually letting me download the file (I had to get my version
-elsewhere; copied here for posterity: `Shp2kml.zip <|filename|files/Shp2kml.zip>`_), their program fails
+elsewhere; copied here for posterity: `Shp2kml.zip <|filename|../files/Shp2kml.zip>`_), their program fails
 at running due to it being "expired". Noting other posts about people
 turning back their clocks to 2006, I did the same thing with faketime,
 so as not to stuff around with my system clock.

@@ -20,7 +20,7 @@ TWITTER_USERNAME = 'davidjb_'
 PAGE_DIR = 'pages'
 DISPLAY_PAGES_ON_MENU = True
 DISPLAY_CATEGORIES_ON_MENU = False
-DEFAULT_DATE = 'fs'
+FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})-.*'
 NEWEST_FIRST_ARCHIVES = True
 
 STATIC_PATHS = ['images', 'files']

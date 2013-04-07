@@ -18,10 +18,10 @@ Thanks to some great work by my lovely partner, she's whipped up some
 cupcakes for WPD.  I didn't do much save for helping with design and
 icing -- woo!  Here's the end results:
 
-.. image:: |filename|images/cupcakes1.jpg
+.. image:: |filename|../images/cupcakes1.jpg
    :width: 45%
 
-.. image:: |filename|images/cupcakes2.jpg
+.. image:: |filename|../images/cupcakes2.jpg
    :width: 45%
 
 Okay, so the CMYK colour might be a little off and I'm thinking I'm not

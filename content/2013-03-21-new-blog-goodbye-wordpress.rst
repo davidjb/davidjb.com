@@ -1,7 +1,7 @@
 New Blog, Goodbye Wordpress
 ###########################
 
-:date: 2013-03-21
+:category: General
 
 Yes, I'm a little ashamed that I did used to run Wordpress as my blog and my
 website.  Being a Python developer that I am, it's not exactly good form, nor
