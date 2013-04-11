@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*- #
 
 import itertools
+import os
 
 PLUGINS = ['pelican.plugins.gravatar']
 
@@ -25,8 +26,10 @@ NEWEST_FIRST_ARCHIVES = True
 
 STATIC_PATHS = ['images', 'files']
 EXTRA_TEMPLATES_PATHS = ['templates']
-FILES_TO_COPY = (('extras/CNAME', 'CNAME'),
-                 ('extras/.nojekyll', '.nojekyll'))
+
+#All files in the `extras` directory get picked up.
+directory='content/extras'
+FILES_TO_COPY = [(os.path.join('extras', filename), filename) for filename in os.listdir(directory)]
 
 TIMEZONE = 'Australia/Queensland'
 TYPOGRIFY = True
