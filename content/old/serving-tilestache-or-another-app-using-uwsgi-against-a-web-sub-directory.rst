@@ -58,7 +58,7 @@ Cherokee was pointed at the relevant socket and restarted, everything
 'just worked'. In the case of other web servers like Nginx, it would be
 a case of configuring a location with:
 
-.. code:: ini
+.. code:: nginx 
 
     uwsgi_param SCRIPT_NAME /tiles;
 
