@@ -6,6 +6,7 @@ include
 lib
 local
 parts
+output
 *.pid
 *.pyc
 src
