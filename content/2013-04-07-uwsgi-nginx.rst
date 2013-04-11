@@ -17,7 +17,9 @@ sub-directory path.  I haven't looked into it, but it probably just does
 the same thing that I configure Nginx to do explicitly.  Anyway, Nginx on 
 the other hand operates slightly differently - so in order to have the 
 parameters automatically modified, you pass the value ``30`` as ``modifier1``
-to uWSGI like so::
+to uWSGI like so:
+
+.. code:: nginx 
 
     location /myapp {
         include uwsgi_params;
@@ -25,6 +27,8 @@ to uWSGI like so::
         uwsgi_param SCRIPT_NAME /myapp;
         uwsgi_modifier1 30;
     } 
+
+(`Pygments`_ has an Ngnix lexer, who knew?)
 
 From the documentation 
 http://uwsgi-docs.readthedocs.org/en/latest/Nginx.html#dynamic-apps:
@@ -41,3 +45,5 @@ tending to glaze over a bit.  Maybe once I'm more awake.
 Either way, just configure the ``SCRIPT_NAME`` correctly to match the 
 location path, include the default ``uwsgi_params`` and configure the
 ``modifier1`` correctly as above.  Reload your configuration and be happy.
+
+.. _Pygments: http://pygments.org/docs/lexers/
