@@ -10,7 +10,7 @@ AUTHOR = u'davidjb'
 AUTHOR_EMAIL = u'qnivq@qnivqwo.pbz'.decode('rot13')
 SITENAME = u'DavidJB.com'
 SITEURL = 'http://davidjb.com'
-SITESUBTITLE = "Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more."
+SITESUBTITLE = "Ramblings about Plone, Pyramid, Python, the web, Linux, roses and more, by David Beitey."
 THEME = 'notmyidea'
 
 DISQUS_SITENAME = 'davidjb'
