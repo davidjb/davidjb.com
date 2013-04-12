@@ -9,7 +9,7 @@ had been running `Cherokee <http://cherokee.github.io/>`_ for quite a while
 - since September 2011, in fact, looking back at the configuration history.
 More recently, however, I've switched us again.  This time to `Nginx
 <http://nginx.org>`_ - with impressive improvements in performance and
-configurability -- and reliability.
+configurability (10x for some static files) -- and reliability.
 
 .. note::
    See my `technical guide
