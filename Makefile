@@ -71,6 +71,7 @@ ftp_upload: publish
 
 github: publish
 	ghp-import
+	git push
 #	ghp-import $(OUTPUTDIR)
 #	git push origin gh-pages
 
