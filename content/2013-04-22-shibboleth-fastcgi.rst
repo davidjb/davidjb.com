@@ -20,18 +20,11 @@ with FastCGI support.  Instructions below are for RHEL 6 or CentOS 6,
 64 bit. Feel free to contribute how to rebuild for your platform and where
 your FastCGI applications live.
 
-#. Visit 
-   http://download.opensuse.org/repositories/security://shibboleth/RHEL_6/
-   and find your latest SRPM.
-
-#. Rebuild the package:
-
-   .. code:: console
-
-       yum install libxerces-c-devel libxml-security-c-devel libxmltooling-devel libsaml-devel liblog4shib-devel chrpath boost-devel doxygen unixODBC-devel fcgi-devel httpd-devel redhat-rpm-config pcre-devel zlib-devel
-       wget http://download.opensuse.org/repositories/security://shibboleth/RHEL_6/src/shibboleth-2.5.1-1.2.el6.src.rpm
-       rpmbuild --rebuild shibboleth*.src.rpm --with fastcgi
-       ls ~/rpmbuild/RPMS
+#. Use the Vagrant configuration at
+   https://github.com/jcu-eresearch/shibboleth-fastcgi/ to easily spin up a
+   temporary VM to build the packages, or else run the underlying script
+   https://github.com/jcu-eresearch/shibboleth-fastcgi/blob/master/rebuild.sh
+   on a EL 6 machine.
 
 #. Install the resulting package onto your target machine.
 
