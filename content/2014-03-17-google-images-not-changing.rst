@@ -1,5 +1,5 @@
-Gmail avatar/photo always reverts after changing
-################################################
+Gmail avatar/photo always reverts after being changed
+#####################################################
 
 :category: Google
 
