@@ -50,8 +50,8 @@ your FastCGI applications live.
        socket_owner=shibd:shibd
        socket_mode=0660
        user=shibd
-       stdout_logfile=/var/log/supervisord/shibauthorizer.log
-       stderr_logfile=/var/log/supervisord/shibauthorizer.error.log
+       stdout_logfile=/var/log/supervisor/shibauthorizer.log
+       stderr_logfile=/var/log/supervisor/shibauthorizer.error.log
 
        [fcgi-program:shibresponder]
        command=/usr/lib64/shibboleth/shibresponder
@@ -59,8 +59,8 @@ your FastCGI applications live.
        socket_owner=shibd:shibd
        socket_mode=0660
        user=shibd
-       stdout_logfile=/var/log/supervisord/shibresponder.log
-       stderr_logfile=/var/log/supervisord/shibresponder.error.log
+       stdout_logfile=/var/log/supervisor/shibresponder.log
+       stderr_logfile=/var/log/supervisor/shibresponder.error.log
 
 #. Note the ``socket_*`` options above. I went ahead and put the ``nginx``
    user into the ``shibd`` group to allow group access to the given sockets:
@@ -68,7 +68,7 @@ your FastCGI applications live.
    .. code:: console
 
        usermod -G shibd -a nginx
-       service supervisor restart
+       service supervisord restart
        service nginx restart
 
    If you want, you could configure them to run on a TCP socket instead,
