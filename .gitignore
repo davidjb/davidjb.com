@@ -1,6 +1,7 @@
 .installed.cfg
 .mr.developer.cfg
 bin
+build
 develop-eggs
 include
 lib
@@ -11,3 +12,5 @@ output
 *.pyc
 src
 srv.pid
+*.swp
+*.log
