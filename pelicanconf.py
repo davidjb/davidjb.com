@@ -26,11 +26,14 @@ DISPLAY_CATEGORIES_ON_MENU = False
 FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})-.*'
 NEWEST_FIRST_ARCHIVES = True
 
-# All files in the `extras` directory get picked up.
-directory = 'content/extras'
 STATIC_PATHS = ['images', 'files']
-STATIC_PATHS.extend([os.path.join('extras', filename)
-                     for filename in os.listdir(directory)])
+# All files in the `extras` directory get picked up.
+# Base paths are relative to the ``content`` directory.
+EXTRA_PATH_METADATA = {
+    os.path.join('extras', filename): {'path': filename}
+    for filename in os.listdir('content/extras')
+}
+STATIC_PATHS.extend(EXTRA_PATH_METADATA.keys())
 EXTRA_TEMPLATES_PATHS = ['templates']
 
 TIMEZONE = 'Australia/Queensland'
