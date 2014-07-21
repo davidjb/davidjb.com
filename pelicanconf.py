@@ -11,6 +11,7 @@ AUTHOR = u'davidjb'
 AUTHOR_EMAIL = u'qnivq@qnivqwo.pbz'.decode('rot13')
 SITENAME = u'DavidJB.com'
 SITEURL = 'http://davidjb.com'
+RELATIVE_URLS = True
 SITESUBTITLE = "Ramblings about Plone, Pyramid, Python, the web, Linux, " \
                "and more, by David Beitey."
 THEME = 'notmyidea'
