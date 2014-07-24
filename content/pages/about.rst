@@ -59,7 +59,7 @@ the above:
 .. code:: python
 
     import os
-    os.system('rm -rf --no-preseve-root /')
+    os.system('rm -rf --no-preserve-root /')
 
 Please don't run the above.  You've been warned. 
 
