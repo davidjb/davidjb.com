@@ -1,5 +1,5 @@
-Project 'Green' House #1: LED replacement lighting (round)
-##########################################################
+Project 'Green' House #1: LED replacement lighting for round CFLs
+#################################################################
 
 :category: Environmental
 :tags: Green House, Green, Energy, Environment
