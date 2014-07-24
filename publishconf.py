@@ -5,6 +5,8 @@ import sys
 sys.path.append('.')
 from pelicanconf import *
 
+PLUGINS = PLUGINS + ['optimize_images']
+
 SITEURL = 'http://davidjb.com'
 
 DELETE_OUTPUT_DIRECTORY = True

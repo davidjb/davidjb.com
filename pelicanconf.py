@@ -4,7 +4,7 @@
 import itertools
 import os
 
-PLUGIN_PATH = 'src/pelican-plugins'
+PLUGIN_PATHS = ['src/pelican-plugins']
 PLUGINS = ['gravatar']
 
 AUTHOR = u'davidjb'
@@ -21,7 +21,7 @@ DISQUS_SITENAME = 'davidjb'
 GOOGLE_ANALYTICS = 'UA-24253455-1'
 TWITTER_USERNAME = 'davidjb_'
 
-PAGE_DIR = 'pages'
+PAGE_PATHS = ['pages']
 DISPLAY_PAGES_ON_MENU = True
 DISPLAY_CATEGORIES_ON_MENU = False
 FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})-.*'
