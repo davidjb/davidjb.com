@@ -1,6 +1,7 @@
 Project 'Green' House #2: LED replacement lighting (part 2)
 ###########################################################
 
+:status: draft
 :category: Environmental
 :tags: Green House, Green, Energy, Environment
 
