@@ -1,0 +1,36 @@
+Project 'Green' House #2: LED replacement lighting (part 2)
+###########################################################
+
+:category: Environmental
+:tags: Green House, Green, Energy, Environment
+
+
+Power comparison
+================
+
+====    ============   ===============      =======     ============    =========
+Type    Power rating   Brand                Watts       Power Factor    Amps
+====    ============   ===============      =======     ============    =========
+CFL     14w T5         Beacon Lighting      9.10        0.53            0.06-0.08
+LED     16w            Generic              4.78        0.32            0.06
+====    ============   ===============      =======     ============    =========
+
+The figures above aren't entirely accurate as the power meter I'm using is
+only montoring amps to 2 decimal places, and watts to whole numbers.  From
+some of the calculations I've done, these figures aren't even rounded, they're
+just truncated.
+
+The comparison between the two lights isn't exactly fair or exact.  The LED
+straight replacement is a lot brighter than the fluorescent tube, but the
+fitting I'm putting the LEDs into is really designed for the 360 degree nature
+of a fluorescent tube.  The LEDs are only 180 degree light emission.
+
+The colour of the LEDs in this instance is really terrible -- the colour is
+essentially purple/pink.  In order to counter this, I've opted for colouring
+in the lights with a yellow marker, in order to filter out some of the red and
+most of the blue in the light, and roughly restore the light to a 'natural
+white' like it was supposed to be the in the first place.
+
+This serves as a lesson to try and buy from a reputable seller online or try
+and buy one before committing.  LED colouring can be really messy, especially
+when dealing with manufacturers in other countries directly.
