@@ -3,6 +3,7 @@ Title
 
 :status: draft
 :category: General
+:url: override/url/path
 
 Text 
 
