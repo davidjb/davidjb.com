@@ -240,7 +240,7 @@ but the current draw is significantly smaller -- compare 0.06A to 0.22A or
 
 There are similar power savings to be had from the 12w LED boards over their
 22w counterparts, consuming around 77% less real power in watts, and 43.2%
-less total curren drawn. Again, compare 0.05A for the LED board to 0.22A for
+less total current drawn. Again, compare 0.05A for the LED board to 0.22A for
 the CFLs.
 
 The difference between 22w and 32w CFLs and their respective LED counterparts
