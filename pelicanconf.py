@@ -49,6 +49,11 @@ ARTICLE_SAVE_AS = 'blog/{date:%Y}/{date:%m}/{slug}/index.html'
 PAGE_URL = '{slug}'
 PAGE_SAVE_AS = '{slug}'
 
+# Create archives of posts
+YEAR_ARCHIVE_SAVE_AS = 'blog/{date:%Y}/index.html'
+MONTH_ARCHIVE_SAVE_AS = 'blog/{date:%Y}/{date:%m}/index.html'
+
+
 # Blogroll
 external = (('Planet Plone', 'http://planet.plone.org'),
             ('Apple Insider', 'http://appleinsider.com/'))
