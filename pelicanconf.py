@@ -65,3 +65,4 @@ SOCIAL = (('GitHub', 'http://git.io/djb'),
           ('Google+', 'https://plus.google.com/u/0/106527454335411502430'))
 
 DEFAULT_PAGINATION = 10
+SUMMARY_MAX_LENGTH = 100
