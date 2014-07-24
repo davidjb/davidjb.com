@@ -269,7 +269,7 @@ So, the overall benefits are:
 * **Cost**. For less than half the cost of one replacement tube, the LEDs
   should last a long time and a lot longer than any one CFL or starter.
 
-* **Resiliancy**.  This remains to be seen if they'll last for the claimed
+* **Resilience**.  This remains to be seen if they'll last for the claimed
   50000 hours, the boards are designed with each set of 2 LEDs in parallel so
   if one LED in a pair fails, the lights will stay on.  If one LED fails, then
   it can be replaced for almost nothing save a bit of soldering. My personal
