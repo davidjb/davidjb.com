@@ -18,6 +18,7 @@ For today's test, Google Chrome was able to upload a 26.3 GB
 (28212643840 bytes) .tar file into Plone on my local machine:
 
 .. image:: |filename|../images/2011-10-12-j9bibwU5DR.png
+   :alt: Large files
 
 It took a long while (even with my SSD) but it made it. No tracebacks or
 memory leaks with Plone/Zope so kudos to the developers. It's

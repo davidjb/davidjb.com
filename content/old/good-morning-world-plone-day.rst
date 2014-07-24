@@ -20,9 +20,11 @@ icing -- woo!  Here's the end results:
 
 .. image:: |filename|../images/cupcakes1.jpg
    :width: 45%
+   :alt: Cupcakes
 
 .. image:: |filename|../images/cupcakes2.jpg
    :width: 45%
+   :alt: More cupcakes
 
 Okay, so the CMYK colour might be a little off and I'm thinking I'm not
 conforming to all Plone logo usage guidelines but they look good. 
