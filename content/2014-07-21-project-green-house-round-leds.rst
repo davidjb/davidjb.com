@@ -62,6 +62,12 @@ Replacement lights
    :width: 400px
    :alt: LED lights delivered
 
+.. note::
+   **Update**: The prices have increased significantly since I ordered my LED
+   lights and postage is now being charged by this seller.  There will be
+   other sellers that offer cheaper prices if you take the time to look.
+
+
 * 8 x 15w round LED ceiling panel (replaces 32w CFL tube):
 
   - Cost $4.25 US each on 
@@ -196,6 +202,12 @@ your own light fittings.
 
 #. Rinse and repeat for all the remaining lights in the house!
 
+#. When done, take your CFL tubes and electrical components to your a local
+   recycler.  For me, I was able to drop my left-over parts off at `G & G
+   Markwell <http://recyclingnearyou.com.au/business/13190>`_, a business
+   specialising in second hand building materials.  Here's hoping they won't
+   just throw the lights away since they do still work!
+
 
 Power comparison
 ================
@@ -204,19 +216,21 @@ Prior to installation, the power consumption was measured for the LED lights,
 and was measured for the CFLs as well after their removal.  Here's the grand
 break-down:
 
-====    ============   ===============      =======     ============    ====
+====    ============   ===================  =======     ============    ====
 Type    Power rating   Brand                Watts       Power Factor    Amps
-====    ============   ===============      =======     ============    ====
+====    ============   ===================  =======     ============    ====
+CFL     32w            Lucci                36.00       0.33            0.44
+CFL     32w            Panasonic/Goodlite   33.55       0.33            0.41
 CFL     32w            Philips Lifemax      44.90       0.76-0.82       0.22
 CFL     32w            Hitachi              40.79       0.78            0.21
-CFL     32w            Lucci                36.00       0.33            0.44
-CFL     22w            Philips Lifemax      17.46       0.30-0.34       0.22
-CFL     22w            Hitachi              18.55       0.34            0.22
 CFL     22w            Lucci                17.86       0.30            0.24
+CFL     22w            Hitachi              18.55       0.34            0.22
 CFL     22w            Sylvannia            18.00       0.33            0.22
+CFL     22w            Philips Lifemax      17.46       0.30-0.34       0.22
 LED     15w            Generic              5.63        0.38            0.06
+LED     15w            Generic (v2)         4.46        0.30            0.06
 LED     12w            Generic              4.08        0.33            0.05
-====    ============   ===============      =======     ============    ====
+====    ============   ===================  =======     ============    ====
 
 The figures above aren't entirely accurate as the power meter I'm using is
 only monitoring amps to 2 decimal places, and watts to whole numbers.  From
