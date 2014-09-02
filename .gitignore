@@ -2,6 +2,7 @@
 .mr.developer.cfg
 bin
 build
+cache
 develop-eggs
 include
 lib
