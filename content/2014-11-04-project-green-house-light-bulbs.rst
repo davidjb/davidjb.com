@@ -1,6 +1,7 @@
-Project 'Green' House #2: LED replacement lighting for straight T5 tubes
-########################################################################
+Project 'Green' House #2: LED replacement lighting light bulbs
+##############################################################
 
+:status: draft
 :category: Environmental
 :tags: Green House, Green, Energy, Environment
 
@@ -27,8 +28,8 @@ in all directions.
 Replacement lights
 ==================
 
-* 2 x 16W straight LED panels: Cost $10.00 US each on
-  `AliExpress <http://www.aliexpress.com/snapshot/6125442187.html>`__
+* 2 x 16w straight LED panels: Cost $10.00 US each on
+  `eBay <http://>`__
 
 .. image:: |filename|./images/led-lights/IMG_3646.JPG
    :width: 300px
@@ -46,7 +47,7 @@ more for these panels than the previous lights I'd purchased.
 
 The replacement LED panels come with a driver for connecting the mains power
 to the lights, and the driver accepts worldwide AC voltage.  The page lists
-the wattage as "15W" under ordering, but is actually 16W.
+the wattage as "15w" under ordering, but is actually 16w.
 
 The page lists the option of a warm white colour, but in actuality, you can
 only pick plain "white".  As it transpires, the colour of these LEDs was
@@ -138,12 +139,26 @@ your own light fittings.
 Power comparison
 ================
 
-====    ============   ===============      =======     ============    =========
-Type    Power rating   Brand                Watts       Power Factor    Amps
-====    ============   ===============      =======     ============    =========
-CFL     14W T5         Beacon Lighting      9.23        0.53            0.07
-LED     16W            Generic              4.78        0.32            0.06
-====    ============   ===============      =======     ============    =========
+============    ============   ===============      =======     ============    =========
+Type            Power rating   Brand                Watts       Power Factor    Amps
+============    ============   ===============      =======     ============    =========
+Incandescent    60W            Generic (E22)        62          1.0             0.25      248
+CFL             10W (80mA)     Mirabella (E22)      4           0.37            0.05      249
+CFL             11W (100mA)    Osram (E22)          7           0.58            0.07      247
+CFL             11W            Chevron (B27)        8-10        0.70-0.72       0.05-0.06 249
+CFL             15W (130mA)    Mirabella (E22)      8           0.50            0.06-0.07 249
+CFL             15W (130mA)    Mirabella (E22)      9           0.52            0.06-0.07 249
+CFL             18W (150mA)    Mirabella (E22)      9           0.50            0.07-0.08 249
+LED             5W (44mA)      Philips (E22)        4           0.56            0.03      249
+LED             5W (44mA)      Philips (E22)        4           0.57            0.03      249
+LED             5W (44mA)      Philips (E22)        4           0.58            0.03      249
+LED             8W (44mA)      Philips (E22)        9           1.00            0.04      249
+LED             8W (44mA)      Philips (B27)        9-10        1.00            0.04      249
+LED             9.5W           Philips (B27)        8           0.69            0.05      249
+LED             10W (57mA)     Philips (E22)        12          1.00            0.05      249
+LED             13W (78mA)     Philips (E22)        17          1.00            0.07      247
+============    ============   ===============      =======     ============    =========
+
 
 
 As per my `previous post`_, the figures above aren't exactly brimming with
@@ -169,7 +184,26 @@ power meter, then this is probably almost statistically irrelevant.
 Conclusion
 ==========
 
-Overall, this replacement, whilst successful, hasn't been as ground-breaking
+Overall, this replacement has been one of the most interesting to date.  The
+replacement LED bulbs end up consuming notably less total current overall, but
+in some cases, the wattage is actually higher due to a higher power factor.
+This makes the bulbs, in some cases, actually cost slightly more to run where
+I live because I'm billed in kilowatts (kW).  This might freak people out and
+cause them to run screaming for the hills, but remember that the total amount
+of power being consumed is less.  This, in turn, is reducing the amount of
+power the house is consuming, and putting less of a load on the grid, and your
+local power station.  This is a good thing.
+
+If we were worried purely about cost, then I'd go searching for the least
+power factor devices and use those instead, since I'm not billed for any power
+drawn out of phase (eg volt-amps, VA; the other percentage of the power that
+makes up the power factor).
+
+
+
+---
+
+whilst successful, hasn't been as ground-breaking
 as the previous round CFL replacement.  There will always be the environmental
 benefits of not using mercury lamps and (hopefully) not having to replace the
 lights ever again.
