@@ -3,6 +3,7 @@
 bin
 build
 cache
+content/ignored
 develop-eggs
 include
 lib
