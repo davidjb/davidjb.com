@@ -19,14 +19,13 @@ About me
 I do development, handle system operations, work with the web, and fix
 people's code.  I write documentation, especially if you don't.
 
-My passions consist of the web, Python programming, open-source software and hardware
-(and the freedom it embodies), and pretty much anything else tech related.
-Except perhaps database theory, which is why I'm more than happy to leave that to
-my fiancé, and ask her questions whenever they arise.
+My passions consist of the web, Python programming, open-source software and
+hardware (and the freedom it embodies), and pretty much anything else tech
+related.
 
 In my spare time, I enjoy rose gardening.  Despite living in the wrong climate
 and a small townhouse, I have somewhere around 20 different rose plants.
-Beware the odd off-topic tweet about roses.
+Beware the odd off-topic post or tweet about roses.
 
 
 Contact me
