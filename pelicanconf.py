@@ -7,14 +7,14 @@ import os
 PLUGIN_PATHS = ['src/pelican-plugins']
 PLUGINS = ['gravatar']
 
-AUTHOR = u'davidjb'
+AUTHOR = u'davidjb (David Beitey)'
 AUTHOR_EMAIL = u'qnivq@qnivqwo.pbz'.decode('rot13')
 SITENAME = u'DavidJB.com'
 SITEURL = 'http://davidjb.com'
 RELATIVE_URLS = True
 SITESUBTITLE = "Ramblings about Plone, Pyramid, Python, the web, Linux, " \
                "and more, by David Beitey."
-THEME = 'notmyidea'
+THEME = 'src/pure-single'
 
 DISQUS_SITENAME = 'davidjb'
 # GITHUB_URL = "http://github.com/davidjb/"
@@ -63,11 +63,17 @@ fun = (('XKCD', 'http://xckd.com'),)
 LINKS = list(itertools.chain(*itertools.izip(external, professional, fun)))
 
 # Social widget
-SOCIAL = (('GitHub', 'http://git.io/djb'),
-          ('Twitter', 'http://twitter.com/davidjb_'),
-          ('LinkedIn', 'http://linkedin.com/in/davidbeitey'),
-          ('Facebook', 'http://facebook.com/david.beitey'),
-          ('Google+', 'https://plus.google.com/u/0/106527454335411502430'))
+SOCIAL = (('github-square', 'http://git.io/djb'),
+          ('twitter-square', 'http://twitter.com/davidjb_'),
+          ('linkedin-square', 'http://linkedin.com/in/davidbeitey'),
+          ('facebook-square', 'http://facebook.com/david.beitey'),
+          ('google-plus-square', 'https://plus.google.com/u/0/106527454335411502430'))
 
 DEFAULT_PAGINATION = 10
 SUMMARY_MAX_LENGTH = 100
+
+# Pure theme settings
+COVER_IMG_URL = 'images/cover.jpg'
+PROFILE_IMG_URL = 'images/me-square.png'
+FAVICON_URL = 'favicon.ico'
+TAGLINE = SITESUBTITLE
