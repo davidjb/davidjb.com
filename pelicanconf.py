@@ -12,8 +12,7 @@ AUTHOR_EMAIL = u'qnivq@qnivqwo.pbz'.decode('rot13')
 SITENAME = u'DavidJB.com'
 SITEURL = 'http://davidjb.com'
 RELATIVE_URLS = True
-SITESUBTITLE = "Ramblings about Plone, Pyramid, Python, the web, Linux, " \
-               "and more, by David Beitey."
+SITESUBTITLE = "Python, Technology, Web, Linux, and more, by David Beitey"
 THEME = 'src/pure-single'
 
 DISQUS_SITENAME = 'davidjb'
@@ -55,12 +54,12 @@ MONTH_ARCHIVE_SAVE_AS = 'blog/{date:%Y}/{date:%m}/index.html'
 
 
 # Blogroll
-external = (('Planet Plone', 'http://planet.plone.org'),
-            ('Apple Insider', 'http://appleinsider.com/'))
-professional = (('jcu.me Research Porfolio', 'http://jcu.me'),
-                ('Latest coding activity', 'http://git.io/djb'))
-fun = (('XKCD', 'http://xckd.com'),)
-LINKS = list(itertools.chain(*itertools.izip(external, professional, fun)))
+#external = (('Planet Plone', 'http://planet.plone.org'),
+            #('Apple Insider', 'http://appleinsider.com/'))
+#professional = (('jcu.me Research Porfolio', 'http://jcu.me'),
+                #('Latest coding activity', 'http://git.io/djb'))
+#fun = (('XKCD', 'http://xckd.com'),)
+#LINKS = list(itertools.chain(*itertools.izip(external, professional, fun)))
 
 # Social widget
 SOCIAL = (('github-square', 'http://git.io/djb'),
@@ -73,7 +72,7 @@ DEFAULT_PAGINATION = 10
 SUMMARY_MAX_LENGTH = 100
 
 # Pure theme settings
-COVER_IMG_URL = 'images/cover.jpg'
-PROFILE_IMG_URL = 'images/me-square.png'
-FAVICON_URL = 'favicon.ico'
+COVER_IMG_URL = '/images/cover.jpg'
+PROFILE_IMG_URL = '/images/me-square.png'
+FAVICON_URL = '/favicon.ico'
 TAGLINE = SITESUBTITLE
