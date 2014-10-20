@@ -1,6 +1,7 @@
-Project 'Green' House #2: LED replacement lighting for straight T5 tubes
-########################################################################
+Project 'Green' House #2: LED replacement lighting for straight T8 1.2m Tubes
+#############################################################################
 
+:status: draft
 :category: Environmental
 :tags: Green House, Green, Energy, Environment
 
@@ -27,8 +28,8 @@ in all directions.
 Replacement lights
 ==================
 
-* 2 x 16W straight LED panels: Cost $10.00 US each on
-  `AliExpress <http://www.aliexpress.com/snapshot/6125442187.html>`__
+* 2 x 16w straight LED panels: Cost $10.00 US each on
+  `eBay <http://>`__
 
 .. image:: |filename|./images/led-lights/IMG_3646.JPG
    :width: 300px
@@ -46,7 +47,7 @@ more for these panels than the previous lights I'd purchased.
 
 The replacement LED panels come with a driver for connecting the mains power
 to the lights, and the driver accepts worldwide AC voltage.  The page lists
-the wattage as "15W" under ordering, but is actually 16W.
+the wattage as "15w" under ordering, but is actually 16w.
 
 The page lists the option of a warm white colour, but in actuality, you can
 only pick plain "white".  As it transpires, the colour of these LEDs was
@@ -141,9 +142,11 @@ Power comparison
 ====    ============   ===============      =======     ============    =========
 Type    Power rating   Brand                Watts       Power Factor    Amps
 ====    ============   ===============      =======     ============    =========
-CFL     14W T5         Beacon Lighting      9.23        0.53            0.07
-LED     16W            Generic              4.78        0.32            0.06
+CFL     36W            Compton              42-45       0.76-0.81       0.22-0.23 249.5
+LED     18W            Generic Cree         20          1.0             0.08-0.09 250
+LED     18W            Generic Cree         17          1.0             0.07-0.08 249.5
 ====    ============   ===============      =======     ============    =========
+
 
 
 As per my `previous post`_, the figures above aren't exactly brimming with

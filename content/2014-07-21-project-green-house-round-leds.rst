@@ -68,12 +68,12 @@ Replacement lights
    other sellers that offer cheaper prices if you take the time to look.
 
 
-* 8 x 15w round LED ceiling panel (replaces 32w CFL tube):
+* 8 x 15W round LED ceiling panel (replaces 32W CFL tube):
 
   - Cost $4.25 US each on 
     `AliExpress <http://www.aliexpress.com/snapshot/6110525222.html>`__
 
-* 6 x 12w round LED ceiling panel (replaces 22w CFL tube):
+* 6 x 12W round LED ceiling panel (replaces 22W CFL tube):
 
   - Cost $3.75 US each on 
     `AliExpress <http://www.aliexpress.com/snapshot/6110525220.html>`__
@@ -219,17 +219,17 @@ break-down:
 ====    ============   ===================  =======     ============    ====
 Type    Power rating   Brand                Watts       Power Factor    Amps
 ====    ============   ===================  =======     ============    ====
-CFL     32w            Lucci                36.00       0.33            0.44
-CFL     32w            Panasonic/Goodlite   33.55       0.33            0.41
-CFL     32w            Philips Lifemax      44.90       0.76-0.82       0.22
-CFL     32w            Hitachi              40.79       0.78            0.21
-CFL     22w            Lucci                17.86       0.30            0.24
-CFL     22w            Hitachi              18.55       0.34            0.22
-CFL     22w            Sylvannia            18.00       0.33            0.22
-CFL     22w            Philips Lifemax      17.46       0.30-0.34       0.22
-LED     15w            Generic              5.63        0.38            0.06
-LED     15w            Generic (v2)         4.46        0.30            0.06
-LED     12w            Generic              4.08        0.33            0.05
+CFL     32W            Lucci                36.00       0.33            0.44
+CFL     32W            Panasonic/Goodlite   33.55       0.33            0.41
+CFL     32W            Philips Lifemax      44.90       0.76-0.82       0.22
+CFL     32W            Hitachi              40.79       0.78            0.21
+CFL     22W            Lucci                17.86       0.30            0.24
+CFL     22W            Hitachi              18.55       0.34            0.22
+CFL     22W            Sylvannia            18.00       0.33            0.22
+CFL     22W            Philips Lifemax      17.46       0.30-0.34       0.22
+LED     15W            Generic              5.63        0.38            0.06
+LED     15W            Generic (v2)         4.46        0.30            0.06
+LED     12W            Generic              4.08        0.33            0.05
 ====    ============   ===================  =======     ============    ====
 
 The figures above aren't entirely accurate as the power meter I'm using is
@@ -242,22 +242,22 @@ working with is slightly variable as well, being between 246 and 250V AC.
 Note that the power rating is only what's written on either the CFL or the LED
 board and doesn't factor everything in.  For CFLs, the power consumption goes
 up because of the ballast, and the wattage on the LEDs goes "down" because of
-the low power factor (so a "15w" board ends up being only 5w of 'real' power).
+the low power factor (so a "15W" board ends up being only 5w of 'real' power).
 
 In any case, it's clear to see just how little power the LED boards use.  In
-terms of real power (watts), the 15w LED boards use around 87.5% less, and for
+terms of real power (watts), the 15W LED boards use around 87.5% less, and for
 total power (current in amps) use 72.7% less.  When compared to the worst
-performing 32w CFL, the usage is 83% lower in watts, and 86.4% lower in terms
+performing 32W CFL, the usage is 83% lower in watts, and 86.4% lower in terms
 of total power in amps. Yes, the power factor is lower than most CFLs I had,
 but the current draw is significantly smaller -- compare 0.06A to 0.22A or
 0.44A.
 
-There are similar power savings to be had from the 12w LED boards over their
-22w counterparts, consuming around 77% less real power in watts, and 43.2%
+There are similar power savings to be had from the 12W LED boards over their
+22W counterparts, consuming around 77% less real power in watts, and 43.2%
 less total current drawn. Again, compare 0.05A for the LED board to 0.22A for
 the CFLs.
 
-The difference between 22w and 32w CFLs and their respective LED counterparts
+The difference between 22W and 32W CFLs and their respective LED counterparts
 isn't as significant as I originally expected, but I'm fairly sure this comes
 down to the differences in the electronic ballasts being very small.
 
