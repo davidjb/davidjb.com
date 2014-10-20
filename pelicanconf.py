@@ -5,7 +5,7 @@ import itertools
 import os
 
 PLUGIN_PATHS = ['src/pelican-plugins']
-PLUGINS = ['gravatar']
+PLUGINS = ['gravatar', 'tipue_search']
 
 AUTHOR = u'davidjb (David Beitey)'
 AUTHOR_EMAIL = u'qnivq@qnivqwo.pbz'.decode('rot13')
@@ -54,12 +54,12 @@ MONTH_ARCHIVE_SAVE_AS = 'blog/{date:%Y}/{date:%m}/index.html'
 
 
 # Blogroll
-#external = (('Planet Plone', 'http://planet.plone.org'),
-            #('Apple Insider', 'http://appleinsider.com/'))
-#professional = (('jcu.me Research Porfolio', 'http://jcu.me'),
-                #('Latest coding activity', 'http://git.io/djb'))
-#fun = (('XKCD', 'http://xckd.com'),)
-#LINKS = list(itertools.chain(*itertools.izip(external, professional, fun)))
+# external = (('Planet Plone', 'http://planet.plone.org'),
+#             ('Apple Insider', 'http://appleinsider.com/'))
+# professional = (('jcu.me Research Porfolio', 'http://jcu.me'),
+#                 ('Latest coding activity', 'http://git.io/djb'))
+# fun = (('XKCD', 'http://xckd.com'),)
+# LINKS = list(itertools.chain(*itertools.izip(external, professional, fun)))
 
 # Social widget
 SOCIAL = (('github-square', 'http://git.io/djb'),
