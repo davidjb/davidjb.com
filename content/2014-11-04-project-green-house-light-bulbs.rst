@@ -1,5 +1,5 @@
-Project 'Green' House #2: LED replacement lighting light bulbs
-##############################################################
+Project 'Green' House #2: LED replacement light bulbs
+#####################################################
 
 :status: draft
 :category: Environmental
