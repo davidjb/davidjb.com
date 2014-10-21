@@ -66,7 +66,7 @@ SOCIAL = (('github-square', 'http://git.io/djb'),
           ('twitter-square', 'http://twitter.com/davidjb_'),
           ('linkedin-square', 'http://linkedin.com/in/davidbeitey'),
           ('facebook-square', 'http://facebook.com/david.beitey'),
-          ('google-plus-square', 'https://plus.google.com/u/0/106527454335411502430'))
+          ('google-plus-square', 'http://google.com/+DavidBeitey'))
 
 DEFAULT_PAGINATION = 10
 SUMMARY_MAX_LENGTH = 100
