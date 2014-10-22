@@ -28,8 +28,15 @@ in all directions.
 Replacement lights
 ==================
 
-* 2 x 16w straight LED panels: Cost $10.00 US each on
-  `eBay <http://>`__
+* 3 x 5W Philips LED Edison (E27) Light Bulbs at $4.20 AUD each
+* 2 x 8W Philips LED Edison (E27) Light Bulbs at $5.66 AUD each
+* 1 x 8W Philips LED Bayonet (B22) Light Bulb at $5.96 AUD each
+* 1 x 9.5W Philips LED Bayonet (B22) Light Bulb at ~$9.00 AUD each
+* 2 x 10W Philips LED Edison (E27) Light Bulb at $7.06 AUD each
+* 1 x 13W Philips LED Edison (E27) Light Bulb at ~$9.00 AUD each
+
+  
+  straight LED panels: Cost $10.00 US each on
 
 .. image:: |filename|./images/led-lights/IMG_3646.JPG
    :width: 300px
