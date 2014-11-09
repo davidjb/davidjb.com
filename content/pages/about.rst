@@ -16,17 +16,29 @@ About me
 
    </div>
 
+I'm extremely passionate about open source development, particularly around
+software, Linux, Python programming, and the web.  The freedom these all
+embody are empowering.  Pretty much anything else tech-related will pique my
+interest.
+
 I do development, handle system operations, work with the web, and fix
 people's code.  I write documentation, especially if you don't.
 
-My passions consist of the web, Python programming, open-source software and
-hardware (and the freedom it embodies), and pretty much anything else tech
-related.
+Availability
+~~~~~~~~~~~~
+
+I'm always available for consulting or similar opportunities and can be
+contracted remotely.  You can `contact me`_ below.
+
+Feel free to keep up with my latest `CV/resumé <|filename|cv.rst>`_ online.
+
+
+Spare time
+~~~~~~~~~~
 
 In my spare time, I enjoy rose gardening.  Despite living in the wrong climate
 and a small townhouse, I have somewhere around 20 different rose plants.
 Beware the odd off-topic post or tweet about roses.
-
 
 Contact me
 ~~~~~~~~~~
