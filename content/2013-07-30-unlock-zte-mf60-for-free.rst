@@ -33,13 +33,15 @@ You'll need
 #. A physical Windows-based PC.  I used Windows 7.
 #. These downloads:
 
-  * `ZTE Generic firmware <http://download.ztedevices.com/UploadFiles/product/643/2586/soft/P020120813336503279684.zip>`_ (`Mirror <>`)
+  * `ZTE Generic firmware <http://download.ztedevices.com/UploadFiles/product/643/2586/soft/P020120813336503279684.zip>`_ (`Mirror <https://drive.google.com/a/davidjb.com/file/d/0B5CAsXBD5-mARHBUek9Wb2pfT1U/view>`_)
+
   * `Firmware version check patch <https://sites.google.com/site/mf60guide/MF60-patch.zip?attredirects=0>`_ -
     (Thanks to Hexecute @ https://sites.google.com/site/mf60guide/)
 
-    (`Mirror <https://docs.google.com/file/d/0B5CAsXBD5-mAbzZKOFRwM3RfdkE/edit>`_)
+    (`Mirror <https://docs.google.com/file/d/0B5CAsXBD5-mAbzZKOFRwM3RfdkE/view>`_)
+
   * Drivers for Telstra Elite device circa June 2013):
-    `ZTEMODEM.ISO <https://docs.google.com/file/d/0B5CAsXBD5-mAV2k1NGpKU1JJVkk/edit>`_
+    `ZTEMODEM.ISO <https://docs.google.com/file/d/0B5CAsXBD5-mAV2k1NGpKU1JJVkk/view>`_
 
 Process
 ^^^^^^^
