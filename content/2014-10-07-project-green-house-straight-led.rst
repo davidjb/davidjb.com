@@ -5,14 +5,14 @@ Project 'Green' House #2: LED replacement lighting for straight T5 tubes
 :tags: Green House, Green, Energy, Environment
 
 
-In my `previous post`_, I talked about replacing the various round fluorescent
-tubes in my house over to LEDs.  In this post, I'll cover the replacement of
-short, straight T5 "compact fluorescent lamps" (CFLs) tubes and discuss the
+In my `previous post`_, I talked about replacing the various circular
+fluorescent tubes in my house over to LEDs.  In this post, I'll cover the
+replacement of short, straight T5 fluorescent tubes and discuss the
 interesting results I had in this space.
 
 .. image:: |filename|./images/led-lights/IMG_3663.JPG
    :width: 300px
-   :alt: Before - T5 CFL tube present
+   :alt: Before - T5 tube present
 
 .. image:: |filename|./images/led-lights/IMG_3665.JPG
    :width: 300px
@@ -87,7 +87,7 @@ your own light fittings.
 
 .. image:: |filename|./images/led-lights/IMG_3658.JPG
     :width: 400px
-    :alt: Before - CFL tube present
+    :alt: Before tube present
 
 
 #. Fit the magnetic mounts to the LED boards, or for non-ferrous fittings,
@@ -103,7 +103,7 @@ your own light fittings.
 
     .. image:: |filename|./images/led-lights/IMG_3661.JPG
         :width: 400px
-        :alt: CFL tube removed
+        :alt: Tube removed
 
    All that should remain in the fitting is the mains cable entering the
    terminal block.
@@ -138,12 +138,12 @@ your own light fittings.
 Power comparison
 ================
 
-====    ============   ===============      =======     ============    =========
-Type    Power rating   Brand                Watts       Power Factor    Amps
-====    ============   ===============      =======     ============    =========
-CFL     14W T5         Beacon Lighting      9.23        0.53            0.07
-LED     16W            Generic              4.78        0.32            0.06
-====    ============   ===============      =======     ============    =========
+======    ============   ===============      =======     ============    =========
+Type      Power rating   Brand                Watts       Power Factor    Amps
+======    ============   ===============      =======     ============    =========
+Fluoro    14W T5         Beacon Lighting      9.23        0.53            0.07
+LED       16W            Generic              4.78        0.32            0.06
+======    ============   ===============      =======     ============    =========
 
 
 As per my `previous post`_, the figures above aren't exactly brimming with
@@ -170,33 +170,35 @@ Conclusion
 ==========
 
 Overall, this replacement, whilst successful, hasn't been as ground-breaking
-as the previous round CFL replacement.  There will always be the environmental
-benefits of not using mercury lamps and (hopefully) not having to replace the
-lights ever again.
+as the previous circular fluorescent replacement.  There will always be the
+environmental benefits of not using mercury lamps and (hopefully) not having
+to replace the lights ever again.
 
 The power savings are slight, but not nearly as significant as before. I would
 take an educated guess as to it being a combination of the following:
 
 * Unsuitable light fitting, requiring a higher power of LED to achieve a
   suitable brightness.
-* Higher efficiency of the original T5 CFL tubes compared to round CFLs
+* Higher efficiency of the original T5 tubes compared to circular fluorescent
+  tubes
 * Lack of efficiency of these new LED panels
 
-The first point is probably the most notable.  Last time, with the round LEDs,
-the light fittings are purely mono-directional: downwards.  This means that
-CFLs are essentially wasting power with their 360-degree light emission around
-the round tube, with light being emitted onto surfaces inside the fitting that
-aren't directly seen.  By contrast, the round LEDs purely output light
-downwards onto the diffuser cover, and out into the room.  This stands to be
-more efficient, requiring less overall light, and thus less power, meaning a
-lower-power LED panel can equate to a higher wattage of CFL.
+The first point is probably the most notable.  Last time, with the circular
+LEDs, the light fittings are purely mono-directional: downwards.  This means
+that the fluorescent tubes are essentially wasting power with their 360-degree
+light emission around the circular tube, with light being emitted onto
+surfaces inside the fitting that aren't directly seen.  By contrast, the
+circular LEDs purely output light downwards onto the diffuser cover, and out
+into the room.  This stands to be more efficient, requiring less overall
+light, and thus less power, meaning a lower-power LED panel can equate to a
+higher wattage of a fluorescent tube.
 
 .. image:: |filename|./images/led-lights/IMG_3658.JPG
     :width: 400px
-    :alt: Before - CFL tube present
+    :alt: Before tube present
 
 As you can see above, in the straight fitting, the light escapes from the top
-and bottom, passing through slightly frosted glass.  With the original T5 CFL
+and bottom, passing through slightly frosted glass.  With the original T5
 tube emitting 360 degrees of light, a lot of this light directly escapes the
 fitting, with a small proportion reflecting off the front cover.  The LED
 panel replacements only output light in a forward direction, with most
@@ -211,5 +213,5 @@ paid back eventually, since a replacement T5 tube costs just shy of $7 AUD.
 Stay tuned for more of the same as the remainder of the house gets converted
 to LEDs and made more efficient!
 
-.. _previous post: |filename|2014-07-21-project-green-house-round-leds.rst
+.. _previous post: |filename|2014-07-21-project-green-house-circular-leds.rst
 .. _Lighting Research Center: http://www.lrc.rpi.edu/programs/nlpip/lightingAnswers/lat5/abstract.asp
