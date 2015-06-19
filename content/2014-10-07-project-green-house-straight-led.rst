@@ -144,7 +144,6 @@ Type      Power rating   Brand                Watts       Power Factor    Amps
 Fluoro    14W T5         Beacon Lighting      9.23        0.53            0.07
 LED       16W            Generic              4.78        0.32            0.06
 ======    ============   ===============      =======     ============    =========
->>>>>>> 4b9342be0b3849c54f03d583e2d0f4c476f693d3
 
 
 As per my `previous post`_, the figures above aren't exactly brimming with
@@ -200,7 +199,6 @@ higher wattage of a fluorescent tube.
 
 As you can see above, in the straight fitting, the light escapes from the top
 and bottom, passing through slightly frosted glass.  With the original T5
->>>>>>> 4b9342be0b3849c54f03d583e2d0f4c476f693d3
 tube emitting 360 degrees of light, a lot of this light directly escapes the
 fitting, with a small proportion reflecting off the front cover.  The LED
 panel replacements only output light in a forward direction, with most
