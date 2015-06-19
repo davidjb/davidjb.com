@@ -2,6 +2,7 @@ My CV
 #####
 
 :slug: cv.html
+:status: hidden
 
 .. raw:: html
 
