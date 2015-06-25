@@ -1,4 +1,4 @@
-Configuring eEFInd boot manager as your startup disk on a Mac
+Configuring rEFInd boot manager as your startup disk on a Mac
 #############################################################
 
 :category: Tech
