@@ -2,6 +2,7 @@ Licence and Disclaimer
 ######################
 
 :slug: licence.html
+:status: hidden
 
 
 Licence
