@@ -1,0 +1,64 @@
+[transmogrifier]
+pipeline =
+    sitewalker
+    manifestexporter
+    fileexporter
+    marshaller
+    substitution
+    propertiesexporter
+    commentsexporter
+    datacorrector
+    writer
+    EXPORTING
+
+[sitewalker]
+blueprint = quintagroup.transmogrifier.sitewalker
+condition = python:'portal_cache_settings' not in context.getPhysicalPath() and context.getPortalTypeName() not in ('Wiki Page','Weblog','WeblogArchive','WeblogEntry','WeblogDrafts','WeblogTopics','PSCDocumentationFolder','PSCFile','PSCFileLink','PSCImprovementProposal','PSCImprovementProposalFolder','PSCProject','PSCRelease','PSCReleaseFolder','PloneFormMailer','PloneSoftwareCenter','PoiIssue','PoiPscTracker','PoiResponse','PoiTracker',)
+#('Document', 'WickedDoc', 'Folder', 'File')
+
+[manifestexporter]
+blueprint = quintagroup.transmogrifier.manifestexporter
+
+[fileexporter]
+blueprint = quintagroup.transmogrifier.fileexporter
+
+[marshaller]
+blueprint = quintagroup.transmogrifier.marshaller
+exclude =
+    locallyAllowedTypes
+    immediatelyAddableTypes
+    constrainTypesMode
+
+[substitution]
+blueprint = quintagroup.transmogrifier.substitution
+key = _type
+WickedDoc = Document
+
+[substitution]
+blueprint = quintagroup.transmogrifier.substitution
+key = _id
+index_html = main_page
+
+[propertiesexporter]
+blueprint = quintagroup.transmogrifier.propertiesexporter
+exclude = subscriber_list
+
+[commentsexporter]
+blueprint = quintagroup.transmogrifier.commentsexporter
+
+[datacorrector]
+blueprint = quintagroup.transmogrifier.datacorrector
+sources =
+    marshall
+
+[writer]
+blueprint = quintagroup.transmogrifier.writer
+context = directory
+path = /tmp/hpc_archive/
+prefix = structure
+
+[EXPORTING]
+blueprint = quintagroup.transmogrifier.logger
+keys =
+    _type
+    _path
