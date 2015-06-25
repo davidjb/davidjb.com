@@ -3,6 +3,7 @@ Project 'Green' House #3: LED replacement lighting for straight T8 1.2m Tubes
 
 :category: Environmental
 :tags: Green House, Green, Energy, Environment
+:status: draft
 
 In my previous posts (`1`_, `2`_), I've talked about replacing the various
 round fluorescent tubes in my house over to LEDs.  In this post, I'll cover
