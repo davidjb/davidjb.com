@@ -19,19 +19,13 @@ About me
 I'm extremely passionate about open source development, particularly around
 software, Linux, Python programming, and the web.  The freedom these all
 embody are empowering.  Pretty much anything else tech-related will pique my
-interest.
+interest; dev, operations, web, coding.  
 
-I do development, handle system operations, work with the web, and fix
-people's code.  I write documentation, especially if you don't.
-
-Availability
-~~~~~~~~~~~~
-
-I'm always available for consulting or similar opportunities and can be
-contracted remotely.  You can `contact me`_ below.
+Check out my startup at `Experimental Unicorns
+<http://experimentalunicorns.com>`_. We're currently working on a number of
+exciting super-secret (or not-so-secret) projects!
 
 Feel free to keep up with my latest `CV/resumé <|filename|cv.rst>`_ online.
-
 
 Spare time
 ~~~~~~~~~~
@@ -40,30 +34,22 @@ In my spare time, I enjoy rose gardening.  Despite living in the wrong climate
 and a small townhouse, I have somewhere around 20 different rose plants.
 Beware the odd off-topic post or tweet about roses.
 
-Contact me
-~~~~~~~~~~
+Personal projects
+~~~~~~~~~~~~~~~~~
 
-Run this Python code, or else just figure out what it does and you'll get my email
-address.
+* Home monitoring platform 
 
-.. code:: python
+  * `OpenSprinkler <http://www.opensprinkler.com/>`_ OpenSprinkler: Web-accessible irrigation automation
+  * OpenEnergyMonitor
+  * Something for measuring water usage
+  * Something for measuring LPG gas usage
 
-    me = 'david'
-    domain = 'davidjb.com'
-    email = me + '@' + domain
-    print(email)
+* Starting a Python North Queensland (PyNQ: http://pynq.org) user group
 
-Also, if bots ever become smart enough to process Python code to harvest email
-addresses, then my soon-to-be-patented anti-spam technique will be add this to
-the above:
+  * Still gathering interest at present.
 
-.. code:: python
+* Blog & static site improvements
 
-    import os
-    os.system('rm -rf --no-preserve-root /')
-
-Please don't run the above.  You've been warned. 
-
-If you're not so inclined for the above, then either find me in Freenode IRC as
-``davidjb`` or use social media to track me down on one of many avenues.
+  * This blog!  (Meta, isn't it?)
+  * Improving the software (Pelican) that it runs with - http://getpelican.com/
 
