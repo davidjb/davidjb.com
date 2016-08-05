@@ -4,6 +4,14 @@ PyNQ
 :slug: pynq.html
 :status: hidden
 
+Updates: 
+   **Big news!** Some local devs have kicked off `DevNQ
+   <https://www.meetup.com/dev_nq/>`_, the North Queensland Software
+   Development Meetup.  It's an awesome group and it's totally what I'd
+   envisaged for PyNQ originally.  I've joined and was one of the first two
+   speakers; it's already a great group and only getting better. As for PyNQ,
+   maybe a Python sub-group might eventuate.  As always, get in touch.
+
 Back in 2013 and 2014, I had grand plans for starting an enthusiasts group in
 North Queensland dedicated to the Python programming language.  It was one of
 those crazy ideas  I tend to get when inspired by the genius that is PyCon AU
