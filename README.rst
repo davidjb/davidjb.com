@@ -8,5 +8,6 @@ To build::
     virtualenv .
     . bin/activate
     python bootstrap-buildout.py
+    ./bin/buildout
     make html
     make github
