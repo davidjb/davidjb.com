@@ -2,7 +2,7 @@ Wget a Plone site (and make it actually work)
 #############################################
 :date: 2010-02-25 15:01
 :author: davidjb
-:category: Plon 
+:category: Plone
 :tags: cd, content, download, dvd, export, media, offline, plone, site, static, wget
 :slug: wget-a-plone-site-and-make-it-actually-work
 

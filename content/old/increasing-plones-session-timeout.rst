@@ -2,7 +2,7 @@ Increasing Plone's session timeout
 ##################################
 :date: 2011-03-08 10:01
 :author: davidjb
-:category: Plon
+:category: Plone
 :tags: buildout, plone, session, timeout, zope
 :slug: increasing-plones-session-timeout
 

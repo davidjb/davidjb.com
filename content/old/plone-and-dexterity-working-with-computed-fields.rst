@@ -2,7 +2,7 @@ Plone and Dexterity: Working with computed fields
 #################################################
 :date: 2010-04-19 14:03
 :author: davidjb
-:category: Plon 
+:category: Plone
 :tags: computation, content, dexterity, extension, function, plone, product, python
 :slug: plone-and-dexterity-working-with-computed-fields
 
