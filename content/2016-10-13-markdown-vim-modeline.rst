@@ -7,7 +7,9 @@ A short tip: Markdown doesn't have any form of official or non-printable
 markup in its language definition (that I could `ascertain`_) so adding a Vim
 modeline into a document needs a little bit of massaging.  You could include
 the modeline inside a HTML comment, but the better option that I found was to
-do this at the end of the document::
+do this at the end of the document:
+
+.. code-block:: markdown
 
    [modeline]: # ( vim: set fenc=utf-8 spell spl=en: )
 
