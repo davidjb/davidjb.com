@@ -1,0 +1,178 @@
+Tips for the USA: Car Rental, Navigation and SIM Cards
+######################################################
+
+:category: Personal
+:tags: Personal, Travel
+
+I've travelled to the USA a few times over the past years and typically start
+the trip from California.  The United States is a big country with that comes
+complexity and a lot to learn as a visitor.  This short guide covers a few key
+things that an Australian in the States needs to know.  If you're from another
+country, it'll probably help you too but just keep in mind that things are
+geared to Australians.
+
+All info is correct at the time of writing.  Also, it goes without saying that
+all information is offered without any form of warranty or guarantee 
+
+Car Rentals and Insurance
+=========================
+
+This is a surprisingly major issue for me as an Australian.  I suppose this
+should be expected given how litigious the USA is but there's a lot of key
+differences between Australian motoring operation and the USA.  Firstly, in
+order to legally drive any vehicle, particularly a rental care, each driver
+must be named on the rental agreement - the same as here in Australia.  This
+means you'll have your driver's licence sighted and recorded at the time of
+rental. The only exceptions to this are in your rental terms and conditions,
+but in my experience, typically someone who isn't on the agreement can only
+drive in an emergency.  Immediate family, such as a spouse, might also be
+allowed to drive without being named.  If you're arriving later than when your
+travel companions pick up a car, you may be able to visit a rental agency and
+have them amend the booking; it may cost extra though.
+
+Now comes the mirth that is insurance.  Each driver must have *personal
+insurance* in order to legally drive in the USA.  This is the equivalent of
+CTP (Compulsory Third Party) insurance here in Australia, which covers you for
+any death or injury you cause in your role as a vehicle operator.  However,
+the key difference is that for us this insurance is on the *vehicle* and
+already included in the registration of all vehicles across the country.  In
+the USA, it's a little different because the insurance is on an individual
+*person* and in order to legally drive, each different state has their own
+minimum value of insurance required (see this `Wikipedia article
+<https://en.wikipedia.org/wiki/Vehicle_insurance_in_the_United_States>`_ to
+learn more).
+
+In a rental agreement, this type of insurance is called a combination of:
+
+* *SLI* (Supplemental Liability Insurance);
+* *ALI* (Additional Liability Insurance); and
+* *PAI* (Personal Accident Insurance).
+
+At the time of writing, I have not found any insurer in Australia that offers
+this type of personal insurance and your travel insurance (if any; you really
+should have it for medical cover, but that's a different story) explicitly
+denies coverage of operating a vehicle.  I've also tried sourcing this
+insurance inside the USA but after much searching and calls, no insurer would
+cover a non-resident.  So, the only way a traveller can get this insurance is
+from the rental car agency.  If you know otherwise, I'd love to hear from you;
+comment below.
+
+It's really important to know that essentially all car rental rates quoted
+from travel comparison sites (eg Expedia, Travelocity etc) or car rental
+companies directly typically don't include this insurance in their quoted
+price.  The result is a shock on your part when you get a good "deal" and then
+are forced to pay upwards of $10 USD **per day** at the rental desk if you
+book in this way.  Do your calculations and read the terms and conditions and
+make sure you know how much you'll pay all up.
+
+One solution is to use a broker like `Happy Tours USA
+<http://www.happytoursusa.com/en/index.php>`_ who list all their prices with
+"Third Party Liability Insurance" included in the price, as well as collision
+damage and theft insurance as well.  These types of brokers aren't very common
+and the few that I knew of have closed in the last years.
+
+The best option I found - although this only works if you're picking up the
+car in California, is to rent directly with Hertz.  They offer $1 million of
+SLI automatically to foreigners (eg, as long as you have a foreign driver's
+licence) and also provide a $0 excess for loss/collision damage (LDW) for
+free; so you're automatically covered for personal liability and if you hit
+anything or your car gets stolen.  There's usually some `deals on with Hertz
+<https://www.hertz.com.au/rentacar/Car-hire-deals?categoryId=T>`_.  Make sure
+you read the Hertz T&Cs down the bottom of the page when you search for a date
+range and confirm the insurance is right for you.  A final aside about Hertz:
+if you prepay your rate in AUD, you'll might find random charges for some
+discrepancy; talk to the customer service people when you drop the car and
+they'll fix it.
+
+In summary, read the T&Cs in detail before you book and ensure you have the
+correct insurance. That way, when you get to the rental desk, if they demand
+you buy some insurance, you can refuse and point out why.  In my experience,
+the person at the desk always tries to up-sell you insurance, fuel, GPS etc,
+presumably because they're working on commission.
+
+Lastly, if you're thinking of driving without being on the rental agreement or
+without the correct insurance, you're in for pain if you get pulled over by
+the police or hit/are hit by someone.  Don't cut corners; it's possible to get
+a great deal on a rental without getting screwed at the counter.
+
+Much of this I'd discovered through trial-and-error but there's another great
+reference on `LonelyPlanet` for a breakdown of all things rental cars in the
+USA.
+
+Navigation in the USA
+=====================
+
+If you're planning on going anywhere you'll want a GPS.  In this day
+and age, you should skip trying to use a dedicated GPS device. They're old,
+slow, clunky, maps are usually outdated, don't commonly have traffic
+information and are limited to being useful in a car.  You've almost certainly
+got a smartphone already so just use an app on your phone.  It's better in
+every way and also means you don't have to lug around yet another device -- it
+also means you can use your phone when walking or on public transport.
+
+Here's a quick list of travel apps that offer navigation:
+
+* `Here WeGo
+  <https://here.com/en/products-services/consumer-app/here-wego-app>`_: a
+  great free app that allows you to download maps ahead of time to navigate
+  offline. *Here* also has traffic data if you're online.
+
+* *Google Maps*: if you're on iPhone, this needs download and needs data for
+  routing and traffic information.  That said, it is very good for traffic and
+  searching for locations, especially when you're only vaguely sure of a name
+  or address.
+
+* *Apple Maps*: built in to iPhone, this needs data again but is excellent for
+  traffic and for public transport maps.  In my experience, the public
+  transport maps are the clearest I've seen, especially when looking at
+  complicated maps of New York and Washington DC.
+
+For travelling, you should definitely get a USA phone SIM so that you have
+data.  This means that you can see live traffic updates (a must in big cities
+like Los Angeles) and get live public transport information no matter where
+you go.   It's certainly possible to survive without access to the Internet
+but navigation will be a challenge, particularly in a car, because of the
+sheer volume of traffic.  If you have local knowledge of an area, this will
+trump all apps though -- for instance, don't even think about travelling
+between 6am and 9am or 3pm and 7pm in LA.
+
+It's easy to get a SIM card before you leave for the USA.  A company like
+`Travel SIMs Direct
+<http://travelsimsdirect.com/product-category/usa/t-mobile/?country_option=200>`_
+is who I tend to use and go with the T-Mobile options.  Alternatively, you can
+pick up a SIM when you get the USA, but you might have fun getting to the
+location to buy one.
+
+Finally, when using your phone in the car for navigation, you'll need to keep
+it charged and also in the line of sight of the driver.  I take my own
+suction-cupped window mount to put my phone in; you can find one of these
+pretty much anywhere that phones are sold or online on eBay or AliExpress for
+dirt-cheap.  In terms of charging, you'll need a car charger (and it's best to
+get a good quality one that can charge your phone quickly).  An unfortunate
+situation now exists in that many rental cars come with USB ports but these
+are rarely provide enough current to charge your power-hungry modern phone.  I
+take my own `Blitzwolf charger
+<http://www.banggood.com/Qualcomm-Certified-BlitzWolf-BW-C5-54W-Quick-Charge-QC-2_0-4-Port-USB-Car-Charger-p-1019904.html?rmmds=search>`_
+that provides QC support.  And of course, take at least a few
+charging cables so you can connect your phone and your travel companions'
+devices.
+
+Breakdown support
+=================
+
+As an added bonus, here's how to make your Australian automobile club
+membership (such as RACQ, RACV, NRMA or the like) work for you in the USA.
+Firstly, know that your auto club membership extends to the USA with automatic
+reciprocal membership; take your physical club card with you.  This gives you
+breakdown support from the AAA (American Automotobile Association), including
+towing, breakdown help, winching, emergency fuel and a lockout service if you
+happen to lock your keys in the car.  All you have to do is call AAA’s
+Emergency Road Service on **1-800-AAA-HELP (1-800-222-4357)**; you might want
+to record this phone number in your contacts.
+
+Refer to the `AAA Breakdown
+<http://www.aaa.com/PPInternational/International.html>`_ site for more
+information and check the `support offered <http://www.aaa.com/PPInternational/Benefits_Intl_to_US.html>`_
+for the latest details.
+
+.. _`LonelyPlanet`: https://www.lonelyplanet.com/thorntree/forums/americas-united-states-of-america/united-states/usa-branch-faq?page=15#post_9704324
