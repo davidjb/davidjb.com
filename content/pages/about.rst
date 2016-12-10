@@ -16,40 +16,35 @@ About me
 
    </div>
 
-I'm extremely passionate about open source development, particularly around
+I'm deeply interested in open source development, particularly around
 software, Linux, Python programming, and the web.  The freedom these all
 embody are empowering.  Pretty much anything else tech-related will pique my
-interest; dev, operations, web, coding.  
+interest; dev, operations, web, coding, debugging, security, ethical hacking
+and the list goes on.  I'm a financial member of the `Python Software
+Foundation <https://www.python.org/psf/>`_.
+
+Feel free to keep up with my latest `CV/resumé <|filename|cv.rst>`_ online.
 
 Check out my startup at `Experimental Unicorns
 <http://experimentalunicorns.com>`_. We're currently working on a number of
 exciting super-secret (or not-so-secret) projects!
 
-Feel free to keep up with my latest `CV/resumé <|filename|cv.rst>`_ online.
+Personal
+~~~~~~~~
 
-Spare time
-~~~~~~~~~~
+I'm extremely passionate about many things, just don't ask me what they are
+because there are just so many.  In particular, I'm passionate about
+technology (see above), the environment and reducing human impact, finances
+responsibility, travel, cooking (particularly Mexican food), fine rums and in
+general, making the world a better and more sustainable place for generations
+to come.
 
-In my spare time, I enjoy rose gardening.  Despite living in the wrong climate
-and a small townhouse, I have somewhere around 20 different rose plants.
-Beware the odd off-topic post or tweet about roses.
+I'm a member of `Save the Rhino International
+<https://www.savetherhino.org>`_, partially because of the great work that
+they do for such an important cause and also in memory of `Douglas Adams
+<http://douglasadams.com>`_.
 
-Personal projects
-~~~~~~~~~~~~~~~~~
-
-* Home monitoring platform 
-
-  * `OpenSprinkler <http://www.opensprinkler.com/>`_ OpenSprinkler: Web-accessible irrigation automation
-  * OpenEnergyMonitor
-  * Something for measuring water usage
-  * Something for measuring LPG gas usage
-
-* Starting a Python North Queensland (PyNQ: http://pynq.org) user group
-
-  * Still gathering interest at present.
-
-* Blog & static site improvements
-
-  * This blog!  (Meta, isn't it?)
-  * Improving the software (Pelican) that it runs with - http://getpelican.com/
-
+In my spare time, I also enjoy rose gardening.  Despite living in the wrong
+climate and a small townhouse, I have somewhere around 20 different rose
+plants. Beware the odd off-topic post or tweet about roses.  Feel free to
+visit my rose garden; it's open to the public.
