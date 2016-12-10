@@ -35,9 +35,9 @@ Personal
 I'm extremely passionate about many things, just don't ask me what they are
 because there are just so many.  In particular, I'm passionate about
 technology (see above), the environment and reducing human impact, finances
-responsibility, travel, cooking (particularly Mexican food), fine rums and in
-general, making the world a better and more sustainable place for generations
-to come.
+responsibility, travel, photography, cooking (particularly Mexican food), fine
+Caribbean rums and in general, making the world a better and more sustainable
+place for generations to come.
 
 I'm a member of `Save the Rhino International
 <https://www.savetherhino.org>`_, partially because of the great work that
