@@ -4,9 +4,6 @@ Creating a macOS Recovery Partition without reinstalling OSX or re-running your 
 :category: Tech
 :tags: mac, macOS, recovery
 
-   **Note that this process worked for me on macOS Sierra (10.12).  I give no
-   warranties that this will work for you so backup first.**
-
 Restoring from a Time Machine backup - at least for me - won't furnish you
 with a Recovery partition.  This is bad news because the only *official* way
 of getting a recovery partition is to reinstall macOS.  This seems a little
@@ -14,6 +11,9 @@ counter-intuitive because isn't the point of backing up your computer so you
 **don't** have to reinstall your OS?  Anyway, let's get to creating your
 recovery partition without a reinstall or without 3rd party tools.  It's
 easier than you think!
+
+**Note that this process worked for me on macOS Sierra (10.12).  I give no
+warranties that this will work for you so backup first.**
 
 Background
 ==========
