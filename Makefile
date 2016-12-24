@@ -1,11 +1,12 @@
-PELICAN=pelican
-PELICANOPTS=
-
 BASEDIR=$(CURDIR)
+BINDIR=$(BASEDIR)/bin
 INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
+
+PELICAN=$(BINDIR)/pelican
+PELICANOPTS=
 
 FTP_HOST=localhost
 FTP_USER=anonymous
@@ -35,6 +36,13 @@ help:
 	@echo '   github                           upload the web site via gh-pages   '
 	@echo '                                                                       '
 
+all: clean bootstrap buildout $(OUTPUTDIR)/index.html
+
+bootstrap:
+	python ./bootstrap-buildout.py
+
+buildout:
+	$(BINDIR)/buildout
 
 html: clean $(OUTPUTDIR)/index.html
 	@echo 'Done'
@@ -70,7 +78,7 @@ ftp_upload: publish
 	lftp ftp://$(FTP_USER)@$(FTP_HOST) -e "mirror -R $(OUTPUTDIR) $(FTP_TARGET_DIR) ; quit"
 
 github: publish
-	ghp-import
+	$(BINDIR)/ghp-import
 	git push
 #	ghp-import $(OUTPUTDIR)
 #	git push origin gh-pages
