@@ -76,3 +76,10 @@ terminal tell you what percentage complete the process is.
 
 Feel free to adapt this to your own paths or for different versions of macOS.
 
+On the off-chance (read: very likely possibility) that Apple removes the Lion
+Recovery HD installer, you can use the backup copy of `dmtest`_ that I've got
+stored here.  Note again that this file was from Lion and may or may not work
+with any future macOS after 10.12.
+
+.. _dmtest: |filename|files/dmtest
+
