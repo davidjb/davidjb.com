@@ -1,12 +1,11 @@
+PELICAN=pelican
+PELICANOPTS=
+
 BASEDIR=$(CURDIR)
-BINDIR=$(BASEDIR)/bin
 INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
-
-PELICAN=$(BINDIR)/pelican
-PELICANOPTS=
 
 FTP_HOST=localhost
 FTP_USER=anonymous
@@ -33,16 +32,7 @@ help:
 	@echo '   rsync_upload                     upload the web site via rsync+ssh  '
 	@echo '   dropbox_upload                   upload the web site via Dropbox    '
 	@echo '   ftp_upload                       upload the web site via FTP        '
-	@echo '   github                           upload the web site via gh-pages   '
 	@echo '                                                                       '
-
-all: clean bootstrap buildout $(OUTPUTDIR)/index.html
-
-bootstrap:
-	python ./bootstrap-buildout.py
-
-buildout:
-	$(BINDIR)/buildout
 
 html: clean $(OUTPUTDIR)/index.html
 	@echo 'Done'
@@ -76,11 +66,5 @@ dropbox_upload: publish
 
 ftp_upload: publish
 	lftp ftp://$(FTP_USER)@$(FTP_HOST) -e "mirror -R $(OUTPUTDIR) $(FTP_TARGET_DIR) ; quit"
-
-github: publish
-	$(BINDIR)/ghp-import
-	git push
-#	ghp-import $(OUTPUTDIR)
-#	git push origin gh-pages
 
 .PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload github

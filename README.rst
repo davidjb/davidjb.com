@@ -7,7 +7,5 @@ To build::
 
     virtualenv .
     . bin/activate
-    python bootstrap-buildout.py
-    ./bin/buildout
+    pip install -r requirements.txt
     make html
-    make github

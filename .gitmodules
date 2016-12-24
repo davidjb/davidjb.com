@@ -1,0 +1,6 @@
+[submodule "src/pure-single"]
+	path = src/pure-single
+	url = https://github.com/davidjb/pure-single.git
+[submodule "src/pelican-plugins"]
+	path = src/pelican-plugins
+	url = https://github.com/getpelican/pelican-plugins

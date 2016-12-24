@@ -13,7 +13,6 @@ parts
 output
 *.pid
 *.pyc
-src
 srv.pid
 *.swp
 *.log
