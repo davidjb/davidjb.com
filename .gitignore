@@ -16,3 +16,6 @@ output
 srv.pid
 *.swp
 *.log
+pip-selfcheck.json
+share
+
