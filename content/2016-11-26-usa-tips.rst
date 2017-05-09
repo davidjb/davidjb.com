@@ -12,7 +12,50 @@ country, it'll probably help you too but just keep in mind that things are
 geared to Australians.
 
 All info is correct at the time of writing.  Also, it goes without saying that
-all information is offered without any form of warranty or guarantee 
+all information is offered without any form of warranty or guarantee.
+Comments are always welcome, mind you.
+
+SIM Cards and Phones
+====================
+
+It's easy to get a SIM card before you leave for the USA.  A company like
+`Travel SIMs Direct
+<http://travelsimsdirect.com/product-category/usa/t-mobile/?country_option=200>`_
+is who I tend to use and go with the T-Mobile options.  That said, you tend to
+pay an extra premium these days for the convenience of getting the SIM card
+before you leave Australia, but definitely check to see if there are good
+deals available.  Depends on how much fiddling you want to do on the ground
+after you arrive.
+
+Alternatively, you can pick up a SIM when you get the USA, but you might have
+fun getting to the location to buy one.  If you've got a car or are willing to
+pay for Uber/taxi then you'll be fine.  Plus if you're non-technical you get
+the benefit of a cheerful store rep to help you activate your SIM.  In that
+case, check out your local AT&T store because their coverage is excellent,
+speed is good, and price is right at USD$45 per month for 6GB data, roaming in
+Canada/Mexico and unlimited calls (at time of writing).  Check out the details
+on the `GoPhone website
+<https://www.att.com/shop/wireless/gophone-plans.html>`_. By contrast,
+T-Mobile's prices can be cheaper (sometimes) but you won't get as good
+coverage.  For instance, I've found blackspots indoors in LA, even in a
+well-windowed house.
+
+Which SIM you go with it depends on what you need from your mobile provider --
+for instance, are you planning on visiting Mexico or Canada whilst you're in
+the USA?  If so, then you'll need roaming because - unsurprisingly - they're
+different countries.  Think about how much data you think you'll need -- if
+you're using Skype to call home and looking up plenty of guides then you might
+need several gigabytes of data.
+
+Something notably different from Australia is that you get charged for
+incoming calls in the States, as well as outgoing calls as you'd normally
+expect.  By "charged", I mean that if your account has a limited number of
+minutes a month (say 1000), then you've got that many minutes total for calls
+you make and *receive*.  Most of the big plans that you might pick with lots
+of data tend to also have unlimited minutes so it's probably not that much
+of an issue.  Plus something like 1000 minutes in/out is a lot of talk time
+for just a month.  Anyway, aren't you on holiday?
+
 
 Car Rentals and Insurance
 =========================
@@ -135,13 +178,6 @@ but navigation will be a challenge, particularly in a car, because of the
 sheer volume of traffic.  If you have local knowledge of an area, this will
 trump all apps though -- for instance, don't even think about travelling
 between 6am and 9am or 3pm and 7pm in LA.
-
-It's easy to get a SIM card before you leave for the USA.  A company like
-`Travel SIMs Direct
-<http://travelsimsdirect.com/product-category/usa/t-mobile/?country_option=200>`_
-is who I tend to use and go with the T-Mobile options.  Alternatively, you can
-pick up a SIM when you get the USA, but you might have fun getting to the
-location to buy one.
 
 Finally, when using your phone in the car for navigation, you'll need to keep
 it charged and also in the line of sight of the driver.  I take my own
