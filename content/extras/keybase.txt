@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/davidjb
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://davidjb.com
+  * I am davidjb (https://keybase.io/davidjb) on keybase.
+  * I have a public key ASAZEqpWhpC67z2LE3_yK1mVIwTsB2AZXX22I_r7STi1rAo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01201912aa568690baef3d8b137ff22b59952304ec0760195d7db623fafb4938b5ac0a",
+            "host": "keybase.io",
+            "kid": "01201912aa568690baef3d8b137ff22b59952304ec0760195d7db623fafb4938b5ac0a",
+            "uid": "7a36e2a63f64a8d7aeeae0388b427100",
+            "username": "davidjb"
+        },
+        "service": {
+            "hostname": "davidjb.com",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.23"
+    },
+    "ctime": 1496384531,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1496384494,
+        "hash": "7e58766f46c87115857df9776955268154b7316aafb0c24e98bd9247f73e4f6c0d57c288e8350392e72334fc328adc1f3e58c043e501d21559b8f0051d6307e4",
+        "seqno": 1137037
+    },
+    "prev": "39719cf4df345b139f19fcbf083de0e4542f6f325ac0dc7324b3754cbe90d7b4",
+    "seqno": 10,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgGRKqVoaQuu89ixN/8itZlSME7AdgGV19tiP6+0k4tawKp3BheWxvYWTFAvR7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwMTkxMmFhNTY4NjkwYmFlZjNkOGIxMzdmZjIyYjU5OTUyMzA0ZWMwNzYwMTk1ZDdkYjYyM2ZhZmI0OTM4YjVhYzBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMTkxMmFhNTY4NjkwYmFlZjNkOGIxMzdmZjIyYjU5OTUyMzA0ZWMwNzYwMTk1ZDdkYjYyM2ZhZmI0OTM4YjVhYzBhIiwidWlkIjoiN2EzNmUyYTYzZjY0YThkN2FlZWFlMDM4OGI0MjcxMDAiLCJ1c2VybmFtZSI6ImRhdmlkamIifSwic2VydmljZSI6eyJob3N0bmFtZSI6ImRhdmlkamIuY29tIiwicHJvdG9jb2wiOiJodHRwczoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMjMifSwiY3RpbWUiOjE0OTYzODQ1MzEsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTQ5NjM4NDQ5NCwiaGFzaCI6IjdlNTg3NjZmNDZjODcxMTU4NTdkZjk3NzY5NTUyNjgxNTRiNzMxNmFhZmIwYzI0ZTk4YmQ5MjQ3ZjczZTRmNmMwZDU3YzI4OGU4MzUwMzkyZTcyMzM0ZmMzMjhhZGMxZjNlNThjMDQzZTUwMWQyMTU1OWI4ZjAwNTFkNjMwN2U0Iiwic2Vxbm8iOjExMzcwMzd9LCJwcmV2IjoiMzk3MTljZjRkZjM0NWIxMzlmMTlmY2JmMDgzZGUwZTQ1NDJmNmYzMjVhYzBkYzczMjRiMzc1NGNiZTkwZDdiNCIsInNlcW5vIjoxMCwidGFnIjoic2lnbmF0dXJlIn2jc2lnxEC4ldmsbxRrshNxSD+jpMi9GpVsPqlbsngeJv9u1hfGY/b6vBEqTpd4qSm5jIsSZt+UlYTO5KWZhLvXmIcHqqcAqHNpZ190eXBlIKRoYXNogqR0eXBlCKV2YWx1ZcQgLeT0X0CqLf+PhS6P8FEb1K4HvcWlbLqrJ3lj/KbKomijdGFnzQICp3ZlcnNpb24B
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/davidjb
+
+==================================================================
