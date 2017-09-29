@@ -17,7 +17,7 @@ address.
 
 .. code:: python
 
-    me = 'david'
+    me = 'web.contact'
     domain = 'davidjb.com'
     email = me + '@' + domain
     print(email)
