@@ -219,10 +219,6 @@ My CV
     /* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script></div>
                 </div>
                 <div class="col-sm-6">
-                    <strong>Phone</strong>
-                    <div class="phone">+61 439 541 965</div>
-                </div>
-                <div class="col-sm-6">
                     <strong>Website</strong>
                     <div class="website">
                         <a href="http://davidjb.com">http://davidjb.com</a>
@@ -298,10 +294,10 @@ My CV
                         <a href="https://www.jcu.edu.au">https://www.jcu.edu.au</a>
                     </div>
                     <div class="position">
-                        Online Technologies Developer
+                        Full-stack Developer (Online Technologies Manager)
                     </div>
                     <div class="summary">
-                        <p>Full-stack deployment, support, web application and system administration
+                        <p>Web application development, deployment and system administration
     </p>
                     </div>
                     <h4>Highlights</h4>
