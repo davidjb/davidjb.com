@@ -19,18 +19,17 @@ To solve this issue, at least for these sites, I opened my console and did the
 following::
 
     localStorage.clear()
-
-Wait a moment, and then ran::
-
     sessionStorage.clear()
 
 and reloaded the page.  Clearing my cache, my browser's local storage or
 restarting the browser **was not enough** -- I expect because the local
 storage for these specific sites had become corrupted at some point.
-Likewise, running the two commands above in one hit actually produced an
-exception with ``NS_ERROR_FILE_CORRUPTED`` in the mix.  I didn't save this
-error or have persistent logging on unfortunately but running the commands
-one-by-one worked.
+Occasionally, running the two commands above actually produces an
+exception with ``NS_ERROR_FILE_CORRUPTED`` in the console output::
+
+    [Exception... "File error: Corrupted" nsresult: "0x8052000b (NS_ERROR_FILE_CORRUPTED)" location: "JS frame :: debugger eval code :: <TOP_LEVEL> :: line 1" data: no]
+
+In this case, re-running the commands again worked and resolved the issue.
 
 Over time I've switched between stable to Developer Edition and eventually to
 Nightly, and I also actively use tools to block cross-domain resources,
