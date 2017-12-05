@@ -1,5 +1,5 @@
-Tips for the USA: Car Rental, Navigation and SIM Cards
-######################################################
+Tips for the USA: Car Rental, Travel, Navigation and SIM Cards
+##############################################################
 
 :category: Personal
 :tags: Personal, Travel
@@ -141,6 +141,52 @@ a great deal on a rental without getting screwed at the counter.
 Much of this I'd discovered through trial-and-error but there's another great
 reference on `LonelyPlanet` for a breakdown of all things rental cars in the
 USA.
+
+Flying in the USA
+=================
+
+Flying domestically in the USA is a little different to flying domestically in
+Australia.  For starters, the security on American flights matches what you'd
+experience flying internationally -- limits on liquids, aerosols and gels,
+only travellers beyond the TSA checkpoints and detailed screening processes.
+Not too many surprises there.
+
+One key difference you'll find -- or hopefully be aware of after reading this!
+-- is that in the terminal, you won't hear boarding announcements blaring.
+And the same goes for announcements within airline lounges as well.  Speaking
+to one of the staff in the lounge, I found out that they only announce changes
+or delays and if a flight is on time you'll hear nothing at all.
+
+Coming from Australia where each and every flight is called potentially half a
+dozen times before departing, this is a real shock to the system, one I wasn't
+prepared for and *almost* caused us to miss our flight one day.  By
+comparison, in Australia, they'll announce boarding coming up, pre-boarding,
+priority boarding, boarding, a boarding reminder, a final call and if you're
+on a non-discount airline, probably names of individual passengers failed to
+board, and these announcements will go out to the entire terminal (or that
+airline's section if the terminal is like Brisbane domestic and has wings for
+different airlines and separate PA systems).  In the USA, you get far fewer
+announcements and they're limited as I mentioned above to relevant changes, or
+just limited to the gate area for your flight.  In my case, there were gate
+changes (significant ones to the other end of the terminal) and even still,
+there was no announcement in the USA on another occasion.
+
+I expect this is because of the sheer number of flights in the USA compared to
+Australia.  This was evident later after our flight debacle when I checked the
+departure screens in Atlanta -- they're organised by destination
+alphabetically rather than time, and the number of flights within that time
+filled 5+ big-screen TVs.  Even the busiest airports in Australia wouldn't
+come close to comparing, so this key different kind of makes sense.
+
+Anyway, this is what I've experienced in LAX, DFW, Houston, JFK and so on so I
+expect the same applies to most/all other airports across the country.  The
+lounges I've been in are the Admiral's Clubs in those respective ports and the
+same behaviour was what I found so again, it seems to be standard practice.
+
+It's not a mistake I'm ever going to make again anywhere -- I'll be asking the
+customer service staff at check-in whether they make announcements and
+likewise always self-managing myself to the gate.
+
 
 Navigation in the USA
 =====================
