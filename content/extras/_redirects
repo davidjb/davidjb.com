@@ -1,0 +1,5 @@
+# Redirects from what the browser requests to what we serve
+# From          To              HTTP Status Code
+/blog           /               301
+/blog/          /               301
+/blog/2016/11/tips-for-the-usa-car-rental-navigation-and-sim-cards/         /blog/2016/11/tips-for-the-usa/         301

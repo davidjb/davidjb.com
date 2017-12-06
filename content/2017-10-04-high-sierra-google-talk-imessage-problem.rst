@@ -16,6 +16,7 @@ not be sent.  Support for the targeted service Google Talk has been
 discontinued".  It looks like this:
 
 .. image:: https://i.imgur.com/Hte2K7f.png
+   :alt: Unhelpful error message regarding Google Talk
 
 Very helpful, Apple, thank you.  Unfortunately, they also took away the
 ability for me to sign out of my Google account in Messages (these accounts

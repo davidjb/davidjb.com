@@ -3,7 +3,7 @@ Tips for the USA: Car Rental, Travel, Navigation and SIM Cards
 
 :category: Personal
 :tags: Personal, Travel
-:slug: tips-for-the-usa-car-rental-navigation-and-sim-cards
+:slug: tips-for-the-usa
 
 I've travelled to the USA a few times over the past years and typically start
 the trip from California.  The United States is a big country with that comes
