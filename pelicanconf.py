@@ -8,9 +8,9 @@ import os
 PLUGIN_PATHS = ['src/pelican-plugins']
 PLUGINS = ['gravatar', 'tipue_search']
 
-AUTHOR = u'davidjb (David Beitey)'
+AUTHOR = 'davidjb (David Beitey)'
 AUTHOR_EMAIL = codecs.decode('qnivq@qnivqwo.pbz', encoding='rot13')
-SITENAME = u'DavidJB.com'
+SITENAME = 'DavidJB.com'
 SITEURL = 'https://davidjb.com'
 RELATIVE_URLS = True
 SITESUBTITLE = "Python, Technology, Web, Linux, and more, by David Beitey"
@@ -21,6 +21,7 @@ DISQUS_SITENAME = 'davidjb'
 GOOGLE_ANALYTICS = 'UA-24253455-1'
 TWITTER_USERNAME = 'davidjb_'
 
+PATH = 'content'
 PAGE_PATHS = ['pages']
 DISPLAY_PAGES_ON_MENU = True
 DISPLAY_CATEGORIES_ON_MENU = False
@@ -40,7 +41,7 @@ EXTRA_TEMPLATES_PATHS = ['templates']
 TIMEZONE = 'Australia/Queensland'
 TYPOGRIFY = True
 
-DEFAULT_LANG = u'en'
+DEFAULT_LANG = 'en'
 
 ARTICLE_URL = 'blog/{date:%Y}/{date:%m}/{slug}/'
 ARTICLE_SAVE_AS = 'blog/{date:%Y}/{date:%m}/{slug}/index.html'
@@ -53,6 +54,12 @@ PAGE_SAVE_AS = '{slug}'
 YEAR_ARCHIVE_SAVE_AS = 'blog/{date:%Y}/index.html'
 MONTH_ARCHIVE_SAVE_AS = 'blog/{date:%Y}/{date:%m}/index.html'
 
+# Feed generation is usually not desired when developing
+FEED_ALL_ATOM = None
+CATEGORY_FEED_ATOM = None
+TRANSLATION_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
 
 # Blogroll
 # external = (('Planet Plone', 'http://planet.plone.org'),
