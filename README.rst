@@ -1,14 +1,14 @@
 DavidJB Blog
 ============
 
-See http://davidjb.com
+See https://davidjb.com for the live site!
 
 Building
 --------
 
 ::
 
-    virtualenv .
+    virtualenv . -p python3.6
     . bin/activate
     pip install -r requirements.txt
     make html

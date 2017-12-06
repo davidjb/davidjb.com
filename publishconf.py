@@ -7,7 +7,7 @@ from pelicanconf import *
 
 PLUGINS = PLUGINS + ['optimize_images']
 
-SITEURL = 'http://davidjb.com'
+SITEURL = 'https://davidjb.com'
 
 DELETE_OUTPUT_DIRECTORY = True
 

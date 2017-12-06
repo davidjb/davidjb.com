@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 
+import codecs
 import itertools
 import os
 
@@ -8,15 +9,15 @@ PLUGIN_PATHS = ['src/pelican-plugins']
 PLUGINS = ['gravatar', 'tipue_search']
 
 AUTHOR = u'davidjb (David Beitey)'
-AUTHOR_EMAIL = u'qnivq@qnivqwo.pbz'.decode('rot13')
+AUTHOR_EMAIL = codecs.decode('qnivq@qnivqwo.pbz', encoding='rot13')
 SITENAME = u'DavidJB.com'
-SITEURL = 'http://davidjb.com'
+SITEURL = 'https://davidjb.com'
 RELATIVE_URLS = True
 SITESUBTITLE = "Python, Technology, Web, Linux, and more, by David Beitey"
 THEME = 'src/pure-single'
 
 DISQUS_SITENAME = 'davidjb'
-# GITHUB_URL = "http://github.com/davidjb/"
+# GITHUB_URL = "https://github.com/davidjb/"
 GOOGLE_ANALYTICS = 'UA-24253455-1'
 TWITTER_USERNAME = 'davidjb_'
 
