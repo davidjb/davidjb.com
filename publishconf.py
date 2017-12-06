@@ -16,6 +16,9 @@ CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 
 DELETE_OUTPUT_DIRECTORY = True
 
+# Append the full URL for search results
+ARTICLE_URL = SITEURL + '/' + ARTICLE_URL
+
 # Following items are often useful when publishing
 
 #DISQUS_SITENAME = ""
