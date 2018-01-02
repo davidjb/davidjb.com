@@ -15,9 +15,14 @@ I got stuck.
 Let's say you don't realise this "18+" restriction and create an Apple ID with
 an arbitrary date.  In my case, I made my company account a "minor" which
 meant that requests to create an Apple Developer account fail with a
-generic and non-sensical error message about how you can't proceed.  After
-searching for the error, I figured out others had the same issue because they
-were personally underage.
+generic and non-sensical error message about how you can't proceed::
+
+    We are unable to process your request.
+
+    An unknown error occurred.
+
+Very helpful. After searching for the error, I figured out others had the same
+issue because they were personally underage.
 
 Okay, so trying to change the birthdate in the Apple ID is possible, but has
 no effect on the Apple Developer system.  Now, we could try and contact Apple
