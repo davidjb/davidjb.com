@@ -46,4 +46,4 @@ In short, some fun facts about Apple IDs:
 * Changes in DUNS numbers require at least 14 days for D&B to update their
   database and might take another 14 days for Apple to get the new copy of the
   DUNS database.  Check the unofficial schedule at
-  `http://apple-duns.weebly.com/`_.
+  `<http://apple-duns.weebly.com/>`_.
