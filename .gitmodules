@@ -3,4 +3,4 @@
 	url = https://github.com/davidjb/pure-single.git
 [submodule "src/pelican-plugins"]
 	path = src/pelican-plugins
-	url = https://github.com/getpelican/pelican-plugins
+	url = git@github.com:davidjb/pelican-plugins.git
