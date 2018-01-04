@@ -150,6 +150,11 @@ Much of this I'd discovered through trial-and-error but there's another great
 reference on `LonelyPlanet`_ for a breakdown of all things rental cars in the
 USA.
 
+See also:
+
+* `Dollar Rental Car Protection guide <|filename|files/Dollar-Rental-Car-Protection.pdf>`_
+
+
 Flying in the USA
 =================
 
