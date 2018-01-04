@@ -63,8 +63,8 @@ Car Rentals and Insurance
 
 This is a surprisingly major issue for me as an Australian.  I suppose this
 should be expected given how litigious the USA is but there's a lot of key
-differences between Australian motoring operation and the USA.  Firstly, in
-order to legally drive any vehicle, particularly a rental care, each driver
+differences between driving in the USA versus Australia.  Firstly, in
+order to legally drive a rental vehicle in the USA, each driver
 must be named on the rental agreement - the same as here in Australia.  This
 means you'll have your driver's licence sighted and recorded at the time of
 rental. The only exceptions to this are in your rental terms and conditions,
@@ -72,21 +72,25 @@ but in my experience, typically someone who isn't on the agreement can only
 drive in an emergency.  Immediate family, such as a spouse, might also be
 allowed to drive without being named.  If you're arriving later than when your
 travel companions pick up a car, you may be able to visit a rental agency and
-have them amend the booking; it may cost extra though.
+have them amend the booking; it may cost extra though.  Also expect that
+adding extra drivers to the rental agreement will cost per driver as well; Im'
+yet to come across a rental agency that *doesn't* charge.
 
 Now comes the mirth that is insurance.  Each driver must have *personal
 insurance* in order to legally drive in the USA.  This is the equivalent of
 CTP (Compulsory Third Party) insurance here in Australia, which covers you for
 any death or injury you cause in your role as a vehicle operator.  However,
-the key difference is that for us this insurance is on the *vehicle* and
-already included in the registration of all vehicles across the country.  In
-the USA, it's a little different because the insurance is on an individual
-*person* and in order to legally drive, each different state has their own
-minimum value of insurance required (see this `Wikipedia article
+the key difference is that in Australia this insurance is on the *vehicle* and
+already included in the registration of all vehicles across the country
+because - you guessed it - it's *compulsory*.  In the USA, it's a little
+different because the insurance is on an individual *person*. In order to
+legally drive, each different state has their own minimum value of insurance
+required (see this `Wikipedia article
 <https://en.wikipedia.org/wiki/Vehicle_insurance_in_the_United_States>`_ to
 learn more).
 
-In a rental agreement, this type of insurance is called a combination of:
+In a rental agreement, this type of insurance is called one or a combination
+of:
 
 * *SLI* (Supplemental Liability Insurance);
 * *ALI* (Additional Liability Insurance); and
@@ -95,8 +99,8 @@ In a rental agreement, this type of insurance is called a combination of:
 At the time of writing, I have not found any insurer in Australia that offers
 this type of personal insurance and your travel insurance (if any; you really
 should have it for medical cover, but that's a different story) explicitly
-denies coverage of operating a vehicle.  I've also tried sourcing this
-insurance inside the USA but after much searching and calls, no insurer would
+denies coverage of operating a motorised vehicle.  I've also tried sourcing this
+insurance inside the USA but after much searching and calls, no insurer will
 cover a non-resident.  So, the only way a traveller can get this insurance is
 from the rental car agency.  If you know otherwise, I'd love to hear from you;
 comment below.
@@ -105,7 +109,7 @@ It's really important to know that essentially all car rental rates quoted
 from travel comparison sites (eg Expedia, Travelocity etc) or car rental
 companies directly typically don't include this insurance in their quoted
 price.  The result is a shock on your part when you get a good "deal" and then
-are forced to pay upwards of $10 USD **per day** at the rental desk if you
+are forced to pay upwards of $10-30 USD **per day** at the rental desk if you
 book in this way.  Do your calculations and read the terms and conditions and
 make sure you know how much you'll pay all up.
 
@@ -113,7 +117,10 @@ One solution is to use a broker like `Happy Tours USA
 <http://www.happytoursusa.com/en/index.php>`_ who list all their prices with
 "Third Party Liability Insurance" included in the price, as well as collision
 damage and theft insurance as well.  These types of brokers aren't very common
-and the few that I knew of have closed in the last years.
+and the few that I knew of have closed in the last years.  `SkyScanner
+<https://www.skyscanner.com.au>`_ has recently started offering car rental
+searches and a few new brokers have appeared in their listings, many offering
+SLI and LWD (Liability Damage Waiver) for $0 excess so try that too.
 
 The best option I found - although this only works if you're picking up the
 car in California, is to rent directly with Hertz.  They offer $1 million of
@@ -140,7 +147,7 @@ the police or hit/are hit by someone.  Don't cut corners; it's possible to get
 a great deal on a rental without getting screwed at the counter.
 
 Much of this I'd discovered through trial-and-error but there's another great
-reference on `LonelyPlanet` for a breakdown of all things rental cars in the
+reference on `LonelyPlanet`_ for a breakdown of all things rental cars in the
 USA.
 
 Flying in the USA
