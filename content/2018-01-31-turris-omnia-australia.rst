@@ -24,7 +24,9 @@ but yes, it's possible and they'll sell you any of the following models:
 * Turris Omnia 1 GB Wi-Fi - 259,00 USD
 * Turris Omnia 2 GB Wi-Fi - 299,00 USD
 
-In terms of other resellers like Amazon.de, you're getting a good deal
+The items listed on `their web shop <https://www.discomp.cz/default.asp?cls=stoitems&stifulltext_search=and&fulltext=turris&action=setlng&lngid=1>`_
+have different pricing, presumably as they're including VAT (or they gave me a
+good deal).  In terms of other resellers like Amazon.de, you're getting a good deal
 because their price of EUR309 is more like US$334 and even if you were to get
 a freight forwarder, you'd still be paying VAT.
 
