@@ -1,7 +1,7 @@
 Tips for the USA: Car Rental, Travel, Navigation and SIM Cards
 ##############################################################
 
-:category: Personal
+:category: Travel
 :tags: Personal, Travel
 :slug: tips-for-the-usa
 
