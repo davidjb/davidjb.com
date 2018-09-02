@@ -58,7 +58,7 @@ and was left to exit the store accordingly.
 
 So there you have it.  Costco is providing a privilege to non-members for
 specifically this purpose, at least in the state and county of Hawai'i, at
-least at the time of writing in 2018.  Other `online sites
+least at the time of writing in 2018.  Other `pages online
 <https://www.savingadvice.com/articles/2015/01/09/1031836_buy-alcohol-at-costco-without-membership.html>`_
 list various other states where this is/might be possible such as Arizona,
 California, Connecticut, Delaware, Indiana, Massachusetts, Michigan,
