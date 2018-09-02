@@ -32,7 +32,7 @@ So in my case, I have my router configured to use DHCP to connect to the
 Internet and it is connected to my modem via an Ethernet cable
 and the modem is set up in bridge mode.  What this mean, at least in my
 modem's OpenWrt configuration, is that *all* the physical interfaces are
-bridged together like so:
+bridged together like so::
 
     bridge name     bridge id               STP enabled     interfaces
     br-lan          0fff.b8dfe319fa2c       no              eth0
@@ -55,7 +55,7 @@ DHCP messages and getting a response from the ISP (over the modem's bridge
 ``br-lan`` to the PTM interface ``ptm0``).  The way in which the modem knows how
 to magically forward these frames/packets is by maintaining a forwarding table
 of MAC addresses of devices attached to the bridge. You can see this inaction
-by running the command:
+by running the command::
 
     brctl show
     brctl showmacs br-lan
