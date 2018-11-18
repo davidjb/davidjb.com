@@ -18,7 +18,7 @@ THEME = 'src/pure-single'
 
 DISQUS_SITENAME = 'davidjb'
 # GITHUB_URL = "https://github.com/davidjb/"
-GOOGLE_ANALYTICS = 'UA-24253455-1'
+# GOOGLE_ANALYTICS = 'UA-24253455-1'
 TWITTER_USERNAME = 'davidjb_'
 
 PATH = 'content'
