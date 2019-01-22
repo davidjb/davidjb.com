@@ -115,16 +115,18 @@ are forced to pay upwards of $10-30 USD **per day** at the rental desk if you
 book in this way.  Do your calculations and read the terms and conditions and
 make sure you know how much you'll pay all up.
 
-One solution is to use a broker like `Happy Tours USA
-<http://www.happytoursusa.com/en/index.php>`_ who list all their prices with
+One solution is to use a broker like `SkyScanner
+<https://www.skyscanner.com.au>`_ or `Happy Tours USA
+<http://www.happytoursusa.com/en/index.php>`_ who list most prices with
 "Third Party Liability Insurance" included in the price, as well as collision
-damage and theft insurance as well.  These types of brokers aren't very common
-and the few that I knew of have closed in the last years.  `SkyScanner
-<https://www.skyscanner.com.au>`_ has recently started offering car rental
-searches and a few new brokers have appeared in their listings, many offering
-SLI and LWD (Liability Damage Waiver) for $0 excess so try that too.
+damage and theft insurance as well.  Skyscanner offers rates tyically with
+SLI and LDW (Liability Damage Waiver) for $0 excess so try that. In my
+experience, whilst it has more expensive rates than via Skyscanner,
+`Expedia Australia <https://expedia.com.au>`_ offers all-inclusive rates
+with LDW, SLI, UMP, and other taxes from Dollar or Thrifty for renters
+from Australian and NZ renters.
 
-The best option I found - although this only works if you're picking up the
+Another solid option I found - although this only works if you're picking up the
 car in California, is to rent directly with Hertz.  They offer $1 million of
 SLI automatically to foreigners (eg, as long as you have a foreign driver's
 licence) and also provide a $0 excess for loss/collision damage (LDW) for
@@ -137,11 +139,11 @@ if you prepay your rate in AUD, you'll might find random charges for some
 discrepancy; talk to the customer service people when you drop the car and
 they'll fix it.
 
-In summary, read the T&Cs in detail before you book and ensure you have the
+In summary, read the T&Cs in minute detail **before** you book and ensure you have the
 correct insurance. That way, when you get to the rental desk, if they demand
 you buy some insurance, you can refuse and point out why.  In my experience,
 the person at the desk always tries to up-sell you insurance, fuel, GPS etc,
-presumably because they're working on commission.
+even if you already have it, because they're working on commission.
 
 Lastly, if you're thinking of driving without being on the rental agreement or
 without the correct insurance, you're in for pain if you get pulled over by
