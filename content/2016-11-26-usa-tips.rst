@@ -94,7 +94,8 @@ of:
 
 * *SLI* (Supplemental Liability Insurance);
 * *LIS* (Liability Insurance Supplement);
-* *ALI* (Additional Liability Insurance); and
+* *RLP* (Rental Liability Protection);
+* *ALI* (Additional Liability Insurance); or
 * *PAI* (Personal Accident Insurance).
 
 At the time of writing, I have not found any insurer in Australia that offers
