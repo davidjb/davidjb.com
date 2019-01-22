@@ -93,6 +93,7 @@ In a rental agreement, this type of insurance is called one or a combination
 of:
 
 * *SLI* (Supplemental Liability Insurance);
+* *LIS* (Liability Insurance Supplement);
 * *ALI* (Additional Liability Insurance); and
 * *PAI* (Personal Accident Insurance).
 
@@ -254,6 +255,9 @@ devices.
 
 Breakdown support
 =================
+
+**Update in 2017 onward**: AAA no longer partner with Australian automobile
+clubs. Refer to the links below in case this situation has changed again.
 
 As an added bonus, here's how to make your Australian automobile club
 membership (such as RACQ, RACV, NRMA or the like) work for you in the USA.
