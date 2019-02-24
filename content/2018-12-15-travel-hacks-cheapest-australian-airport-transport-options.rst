@@ -31,9 +31,10 @@ Brisbane
 Route
     Brisbane Airport to CBD (Central Station)
 Standard Route
-    Train via AirTrain ($18.50, around 20 mins)
+    Train via AirTrain ($18.50, around 20 mins without waiting, up to 50 mins with
+    waiting for train)
 Optimised route
-    Bus/public train ($3.96, 60+ mins)
+    Bus/public train ($3.96, ~60 mins)
 Transport Card
     Go Card (https://translink.com.au/tickets-and-fares/go-card). Purchase one
     at the train station if starting at at the airport or at convenience stores or
@@ -52,28 +53,42 @@ combination of other methods.
 From the airport:
 
 #. Take the free orange Skygate/T-Bus from your terminal to Skygate shopping
-   centre, otherwise known as DFO.).
+   centre, otherwise known as DFO), ensure that it is the Skygate bus and not
+   the International Transfer Bus.  The Skygate bus stops right at the public
+   bus stop so just get off and wait.
 
-#. From Skygate/DFO, catch the 590 Bus to the Toombul Interchange.
+#. From Skygate/DFO, catch the public 590 Bus to Toombul Interchange.
 
-#. From here, take a Cleveland Line train from Toombul Station and that
-   will get you into the CBD and get off where you so choose, such as Central
-   Station.
+#. From here, walk a short distance across the road to Toombul Station.
 
-For getting back to or to go to the airport, do the same above, just in
+#. Take any south-bound train (Cleveland Line) and that
+   will get you into the CBD.  If you're CBD-bound, get off where you so choose, such as Central
+   Station.  If you're Gold Coast-bound, change at Eagle Junction and jump on
+   the train coming from the airport.
+
+For getting back to or going to the airport, do the same as above, just in
 reverse:
 
-#. Get yourself to Toombul Station from wherever you are
+#. Get yourself to Toombul Station from wherever you are (via the Shorncliffe
+   Line). Changing at Eagle Junction is easiest if coming from the Gold Coast.
 
-#. Catch the 590 bus to Skygate/DFO
+#. Catch the 590 bus to Skygate/DFO.  The bus dropped me at **Skygate Brisbane
+   Airport Stand 2** so it's a very short walk back to Stand 1 to get the next
+   bus.
 
-#. Catch the free orange Skygate/T-Bus to the relevant terminal
+#. Catch the free orange Skygate bus from **Skygate Brisbane Airport Stand 1**
+   to the appropriate terminal.
 
-The only catch, aside from the time factor, is that the Skygate bus `stops
-<https://skygate.com.au/files/airportvillage/Bus%20Timetable.pdf>`_ runs from
-around 6am to 6pm.  If you have an earlier or later flight, your only option
-is the train, up until around 10pm.  After that time your only options are
-taxi, ride sharing or private vehicle.
+The only catch, aside from the additional time and transfers required, is that
+the Skygate bus runs from around `6am to 6pm
+<https://skygate.com.au/files/airportvillage/Bus%20Timetable.pdf>`_. If you
+have an earlier or later flight, your only option is the train, up until
+around 10pm.  After that time your only options are taxi, ride sharing or
+private vehicle.
+
+The Skygate bus is well-equipped to carry baggage but the public bus to/from
+Toombul is less suited for large bags.  It's not a very long trip though, just
+two stops, so you could make it work with luggage if you had to.
 
 Sydney
 ======
