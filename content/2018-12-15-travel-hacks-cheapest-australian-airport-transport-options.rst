@@ -25,6 +25,8 @@ below to get the best pricing, and increasingly, actually being able to travel
 vending machine or train station nearby at the airport.  Your mileage may vary
 so just ask around on arrival.
 
+.. contents:: **Locations**
+
 Brisbane
 ========
 
