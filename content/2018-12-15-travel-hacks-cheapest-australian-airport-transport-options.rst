@@ -118,23 +118,28 @@ You can avoid this though by a combination strategy.
 
 From the airport:
 
+#. Find the Public Bus stand outside **Terminal 3**.  You're looking for a
+   yellow vertical sign that says *Public Bus* or separately marked by the
+   standard blue **Ⓑ** TransportNSW symbol indicating a bus service.
+
 #. Take the **400 PrePay-Only - Sydney Airport to Bondi Junction via
    Eastgardens** bus or the **420 Burwood to Eastgardens** bus from the
    airport.
 
-   * If you're super-stingy, want the exercise and  want to save 20 cents,
-     walk from the airport to Mascot instead.  Add at least 20 minutes to your
-     travel time and longer if your bags are heavy.
+   * If you're super-stingy, want the exercise and want to save 20 cents,
+     walk from the airport to Mascot instead.  With this, add at least 20 minutes
+     to your travel time or longer if your bags are heavy.
 
 #. Get off at **Mascot Station, Coward St, Stand A** (ask the driver to stop or
    use your phone to know when to press the button) -- it's only a short trip,
    around 4 mins.
 
-#. From here, cross the road and walk to Mascot Station around the corner.
+#. From here, walk to Mascot Station just around the corner behind where the bus
+   drops you off.
 
 #. Take the train from Mascot to the city (such as to Circular Quay).
 
-For getting back to or to go to the airport, do the same above, just in reverse:
+For getting back to or to go to the airport, do the same as above, but in reverse:
 
 #. Get onto an Airport-bound train and get off **early** at Mascot Station.
 
@@ -148,21 +153,20 @@ For getting back to or to go to the airport, do the same above, just in reverse:
    is **Stand B** or you'll be going the wrong way).
 
 #. Take either the **400 PrePay-Only - Bondi Junction to Sydney Airport via
-   Eastgardens**  or the **420 Eastgardens to Burwood via Sydney Airport &
+   Eastgardens** or the **420 Eastgardens to Burwood via Sydney Airport &
    Rockdale** bus towards the airport.
 
 #. Get off at your relevant airport terminal.  If you accidentally get off at
-   Domestic but needed International or vice versa, catch the `free shuttle
-   bus
-   <https://www.sydneyairport.com.au/airport-guide/arriving/international/getting-between-terminals>`_`
+   Domestic but need to go to the International or vice versa, catch the
+   `free shuttle bus <https://www.sydneyairport.com.au/airport-guide/arriving/international/getting-between-terminals>`_
    to change terminals.
 
 The only catch, aside from the time factor, is that the bus and trains run
-only from 5am to around 1am.  There are limited stops 420 buses that stop
-*near* the airport, but it's a fair bit of walking to get to the bus stop (if
-there's even a footpath, I've never actually tried it) and then it'd still be an
-effort to get a transfer to the city.  At this point, taxi, ride-share or
-private vehicle your way to your destination.
+only from 5am to around 1am, excepting the **420N** night service which runs
+hourly.  This bus only stops at Terminal 1 (International) and the free T-Bus
+service only runs from 6am to 8.50pm. At this point, taxi, ride-share or
+private vehicle are your best bets to either get to the airport or leave and
+make your way to your destination.  We can only travel hack so far.
 
 Melbourne
 =========
