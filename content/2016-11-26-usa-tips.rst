@@ -77,26 +77,30 @@ adding extra drivers to the rental agreement will cost per driver as well; Im'
 yet to come across a rental agency that *doesn't* charge.
 
 Now comes the mirth that is insurance.  Each driver must have *personal
-insurance* in order to legally drive in the USA.  This is the equivalent of
-CTP (Compulsory Third Party) insurance here in Australia, which covers you for
-any death or injury you cause in your role as a vehicle operator.  However,
-the key difference is that in Australia this insurance is on the *vehicle* and
-already included in the registration of all vehicles across the country
-because - you guessed it - it's *compulsory*.  In the USA, it's a little
-different because the insurance is on an individual *person*. In order to
-legally drive, each different state has their own minimum value of insurance
-required (see this `Wikipedia article
+liability insurance* in order to legally drive in the USA.  This is the
+equivalent of CTP (Compulsory Third Party) insurance here in Australia, which
+covers you for any death or injury you cause in your role as a vehicle
+operator.  However, the key difference is that in Australia this insurance is
+on the *vehicle* and already included in the registration of all vehicles
+across the country because - you guessed it - it's *compulsory*.  In the USA,
+it's a little different because the insurance is on an individual *person*. In
+order to legally drive, each different state has their own minimum value of
+insurance required (see this `Wikipedia article
 <https://en.wikipedia.org/wiki/Vehicle_insurance_in_the_United_States>`_ to
 learn more).
 
 In a rental agreement, this type of insurance is called one or a combination
 of:
 
+.. _personal-insurance-initialisms:
+
 * *SLI* (Supplemental Liability Insurance);
 * *LIS* (Liability Insurance Supplement);
+* *SLP* (Supplemental Liability Protection);
 * *RLP* (Rental Liability Protection);
+* *TPL* (Third Party Liability Insurance);
 * *ALI* (Additional Liability Insurance); or
-* *PAI* (Personal Accident Insurance).
+* *APP* (Alamo Protection Plus, which combines SLI/CDW/AD&D)
 
 At the time of writing, I have not found any insurer in Australia that offers
 this type of personal insurance and your travel insurance (if any; you really
@@ -116,20 +120,22 @@ book in this way.  Do your calculations and read the terms and conditions and
 make sure you know how much you'll pay all up.
 
 One solution is to use a broker like `SkyScanner
-<https://www.skyscanner.com.au>`_ or `Happy Tours USA
-<http://www.happytoursusa.com/en/index.php>`_ who list most prices with
-"Third Party Liability Insurance" included in the price, as well as collision
-damage and theft insurance as well.  Skyscanner offers rates tyically with
-SLI and LDW (Liability Damage Waiver) for $0 excess so try that. In my
-experience, whilst it has more expensive rates than via Skyscanner,
-`Expedia Australia <https://expedia.com.au>`_ offers all-inclusive rates
-with LDW, SLI, UMP, and other taxes from Dollar or Thrifty for renters
-from Australian and NZ renters.
+<https://www.skyscanner.com.au>`_, `Enterprise Rent-a-car
+<https://www.enterpriserentacar.com.au>`_ or `Happy Tours USA
+<http://www.happytoursusa.com>`_ who list prices with "Third Party Liability
+Insurance" included in the price, as well as collision damage and theft
+insurance as well.  Skyscanner offers rates tyically with SLI and LDW
+(Liability Damage Waiver) for $0 excess so try that. In my experience, whilst
+it has more expensive rates than via Skyscanner, `Expedia Australia
+<https://expedia.com.au>`_ offers all-inclusive rates with LDW, SLI, UMP, and
+other taxes from certain provides such as Dollar or Thrifty for renters from
+Australian and NZ renters, but watch out as not all provides include the
+necessary insurances!
 
 Another solid option I found - although this only works if you're picking up the
 car in California, is to rent directly with Hertz.  They offer $1 million of
 SLI automatically to foreigners (eg, as long as you have a foreign driver's
-licence) and also provide a $0 excess for loss/collision damage (LDW) for
+licence) and also provide a $0 excess for loss/collision damage (LDW/CDW) for
 free; so you're automatically covered for personal liability and if you hit
 anything or your car gets stolen.  There's usually some `deals on with Hertz
 <https://www.hertz.com.au/rentacar/Car-hire-deals?categoryId=T>`_.  Make sure
@@ -157,6 +163,47 @@ USA.
 See also:
 
 * `Dollar Rental Car Protection guide <|filename|files/Dollar-Rental-Car-Protection.pdf>`_
+* `Wired's article on rental car fees <https://www.wired.com/2014/12/silly-fees-rental-car-blame-local-politicians/>`_
+
+Quick guide to rental initialisms
+---------------------------------
+
+For liability initialisims (SLI, LIS, SLP etc), `read above <personal-insurance-initialisms_>`_.
+
+* **LDW**: Liability Damage Waiver
+* **CDW**: Collision Damage Waiver
+* **DW**: Damage Waiver
+* **TP**: Theft Protection / Insurance
+* **UMP**: Uninsured Motorist Protection
+* **PAI**: Personal Accident Insurance
+
+  Coverage for the loss or damage to the renter and/or passengers themselves,
+  typically including death and medical expenses.
+
+* **PEC**: Personal Effects Insurance
+
+  Coverage for the loss or damage to the renter's and passengers' personal
+  goods and effects (such as if the vehicle was stolen)
+
+* **AD&D**: Accidental Death and Dismemberment Insurance
+
+  A policy that pays benefits to you and/or your passengers if you're in an
+  accident; essentially a limited form of life insurance.
+
+* **CFC**: Customer Facility Charges
+
+  These are charged by an airport for local infrastructure projects.
+
+* **HSF**: Homeland Security Fees
+
+  These are charged by an airport to recover costs for Homeland Security
+
+* **ESP**: Emergency Sickness Protection
+
+  This is insurance akin to travel insurance in case of illness.
+
+* **RA**: Roadside Assistance
+* **RSP**: Roadside Plus
 
 
 Flying in the USA
