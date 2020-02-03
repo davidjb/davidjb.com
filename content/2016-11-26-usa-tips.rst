@@ -99,6 +99,7 @@ of:
 * *SLP* (Supplemental Liability Protection);
 * *RLP* (Rental Liability Protection);
 * *TPL* (Third Party Liability Insurance);
+* *EP*  (Extended Protection);
 * *ALI* (Additional Liability Insurance); or
 * *APP* (Alamo Protection Plus, which combines SLI/CDW/AD&D)
 
