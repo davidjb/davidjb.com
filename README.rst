@@ -8,7 +8,7 @@ Building
 
 ::
 
-    virtualenv . -p python3.6
+    virtualenv . -p python3
     . bin/activate
     pip install -r requirements.txt
     make html
