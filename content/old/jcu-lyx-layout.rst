@@ -65,8 +65,8 @@ paying real money to Micro$oft.
 Files
 -----
 
-#. `JCU LyX Layout (2008) <|filename|../files/jcu_lyx_layout_2008.zip>`_
-#. `JCU Logo (New, SVG) <|filename|../files/jcu_logo.zip>`_
+#. `JCU LyX Layout (2008) <{static}/files/jcu_lyx_layout_2008.zip>`_
+#. `JCU Logo (New, SVG) <{static}/files/jcu_logo.zip>`_
 
 .. _James Cook University: http://www.jcu.edu.au/
 .. _LyX: http://www.lyx.org/

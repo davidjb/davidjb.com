@@ -102,7 +102,7 @@ PPP overhead imposed by the latter so that's one benefit, as well as not
 needing to maintain credentials in the modem for PPPoE.
 
 For further reading, check out `Using PPPoE and IPoE in Ethernet Broadband
-Networks <|filename|files/using_pppoe_and_ipoe.pdf>`_, a white paper prepared
+Networks <{static}/files/using_pppoe_and_ipoe.pdf>`_, a white paper prepared
 by Juniper Networks, which more or less covers all the ins and outs of IPoE
 and PPPoE, and now you know how the bridge modem fits into that mix.
 

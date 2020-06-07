@@ -5,7 +5,7 @@ Switching to Nginx from Cherokee: Techincal Guide
 :tags: Nginx, Cherokee, web, web servers
 
 This is a follow up to a previous post on 
-`Switching to Nginx from Cherokee <|filename|2013-04-11-cherokee-to-nginx.rst>`_.  Read that in case you're here and haven't already.
+`Switching to Nginx from Cherokee <{filename}2013-04-11-cherokee-to-nginx.rst>`_.  Read that in case you're here and haven't already.
 
 All information here on a server level is related to RHEL 6.  You will
 need to change some instructions for Debian based systems.  CentOS

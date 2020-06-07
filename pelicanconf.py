@@ -36,9 +36,8 @@ EXTRA_PATH_METADATA = {
     for filename in os.listdir('content/extras')
 }
 STATIC_PATHS.extend(EXTRA_PATH_METADATA.keys())
-EXTRA_TEMPLATES_PATHS = ['templates']
 
-TIMEZONE = 'Australia/Queensland'
+TIMEZONE = 'Australia/Brisbane'
 TYPOGRIFY = True
 
 DEFAULT_LANG = 'en'

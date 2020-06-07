@@ -174,5 +174,5 @@ of a problem.
 
 .. _QuintaGroup's instructions: http://projects.quintagroup.com/products/wiki/quintagroup.transmogrifier/plone2-3
 .. _here: http://projects.quintagroup.com/products/wiki/quintagroup.transmogrifier/plone3-4#Installationonbuildout
-.. _transmogrifier-export.txt: |filename|../files/transmogrifier-export.txt
-.. _transmogrifier-import.txt: |filename|../files/transmogrifier-import.txt
+.. _transmogrifier-export.txt: {static}/files/transmogrifier-export.txt
+.. _transmogrifier-import.txt: {static}/files/transmogrifier-import.txt

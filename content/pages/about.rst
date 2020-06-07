@@ -7,7 +7,7 @@ About me
 
    <div style="float: right; margin: 2em;">
 
-.. image:: |filename|../images/me.png
+.. image:: {static}/images/me.png
    :width: 150px
    :align: right
    :alt: What a handsome fellow.
@@ -23,7 +23,7 @@ interest; dev, operations, web, coding, debugging, security, ethical hacking
 and the list goes on.  I'm a financial member of the `Python Software
 Foundation <https://www.python.org/psf/>`_.
 
-Feel free to keep up with my latest `CV/resumé <|filename|cv.rst>`_ online.
+Feel free to keep up with my latest `CV/resumé <{filename}cv.rst>`_ online.
 
 Check out my startup at `Experimental Unicorns
 <http://experimentalunicorns.com>`_. We're currently working on a number of

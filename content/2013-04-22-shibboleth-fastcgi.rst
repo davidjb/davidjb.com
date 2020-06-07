@@ -82,4 +82,4 @@ your FastCGI applications live.
 #. Configure your front-end webserver to talk to these FastCGI applications.
 
 If you're an Nginx user, then you'll probably be interested in the post
-that I've written about `Nginx and Shibboleth <|filename|2013-04-22-nginx-shibboleth-fastcgi.rst>`_.
+that I've written about `Nginx and Shibboleth <{filename}2013-04-22-nginx-shibboleth-fastcgi.rst>`_.

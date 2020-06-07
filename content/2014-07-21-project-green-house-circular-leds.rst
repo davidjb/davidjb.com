@@ -19,11 +19,11 @@ these lamps are more efficient than standard filament  light bulbs and *far*
 more efficient than any halogen bulbs (such as downlights), they still require
 mercury, take a while to start up, and aren't as energy efficient as LEDs.
 
-.. image:: |filename|./images/led-lights/IMG_3545.JPG
+.. image:: {static}/images/led-lights/IMG_3545.JPG
    :width: 300px
    :alt: Before, fluorescent tube present
 
-.. image:: |filename|./images/led-lights/IMG_3546.JPG
+.. image:: {static}/images/led-lights/IMG_3546.JPG
    :width: 300px
    :alt: After, LED board replacement
 
@@ -57,7 +57,7 @@ Things I needed to get started were:
 Replacement lights
 ==================
 
-.. image:: |filename|./images/led-lights/IMG_3532.JPG
+.. image:: {static}/images/led-lights/IMG_3532.JPG
    :width: 400px
    :alt: LED lights delivered
 
@@ -97,7 +97,7 @@ right though, and I can always "colour in" my LEDs with a little felt-tip
 marker if required!  Here's a comparison of the LEDs on the left and the
 original fluorescent tube on the right:
 
-.. image:: |filename|./images/led-lights/IMG_3539.JPG
+.. image:: {static}/images/led-lights/IMG_3539.JPG
    :width: 400px
    :alt: LED light colour compared to fluorescent
 
@@ -155,7 +155,7 @@ your own light fittings.
 
 #. Remove the round diffuser dome from the light.
 
-   .. image:: |filename|./images/led-lights/IMG_3545.JPG
+   .. image:: {static}/images/led-lights/IMG_3545.JPG
       :width: 400px
       :alt: Before, fluorescent tube present
 
@@ -169,11 +169,11 @@ your own light fittings.
 #. Unscrew and remove all electrical components from the panel.  All that
    should be left are the mains cable entering the terminal block.
 
-   .. image:: |filename|./images/led-lights/IMG_3543.JPG
+   .. image:: {static}/images/led-lights/IMG_3543.JPG
       :width: 400px
       :alt: Removed fluorescent electrical components
 
-   .. image:: |filename|./images/led-lights/IMG_3541.JPG
+   .. image:: {static}/images/led-lights/IMG_3541.JPG
       :width: 400px
       :alt: Close up of removed fluorescent electrical components
 
@@ -189,13 +189,13 @@ your own light fittings.
 
 #. The end result looks like this:
 
-   .. image:: |filename|./images/led-lights/IMG_3546.JPG
+   .. image:: {static}/images/led-lights/IMG_3546.JPG
       :width: 400px
       :alt: After - LED board replacement
 
 #. Turn the power back on, and turn on the light switch.
 
-   .. image:: |filename|./images/led-lights/IMG_3557.JPG
+   .. image:: {static}/images/led-lights/IMG_3557.JPG
       :width: 400px
       :alt: After - light on and installed
 

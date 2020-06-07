@@ -10,11 +10,11 @@ round fluorescent tubes in my house over to LEDs.  In this post, I'll cover
 the replacement of long, 1.2 metre, straight T8 fluorescent tubes and discuss
 the interesting results I had in this space.
 
-.. image:: |filename|./images/led-lights/IMG_3663.JPG
+.. image:: {static}/images/led-lights/IMG_3663.JPG
    :width: 300px
    :alt: Before, T8 tube present
 
-.. image:: |filename|./images/led-lights/IMG_3665.JPG
+.. image:: {static}/images/led-lights/IMG_3665.JPG
    :width: 300px
    :alt: After, LED tube replacement
 
@@ -39,11 +39,11 @@ Replacement lights
   `eBay
   <http://www.ebay.com.au/itm/CREE-LED-T8-Light-tube-lamp-fluorescent-replacement-60cm-120cm-COOL-WARM-WHITE-/130975927686>`__
 
-.. image:: |filename|./images/led-lights/IMG_3646.JPG
+.. image:: {static}/images/led-lights/IMG_3646.JPG
    :width: 300px
    :alt: LED lights delivered
 
-.. image:: |filename|./images/led-lights/IMG_3650.JPG
+.. image:: {static}/images/led-lights/IMG_3650.JPG
    :width: 300px
    :alt: LED light driver up close
 
@@ -107,7 +107,7 @@ Step by step
 Your experience may be different, so adapt the instructions to suit your own
 light fittings or LEDs, if ordering different lights.
 
-.. image:: |filename|./images/led-lights/IMG_3658.JPG
+.. image:: {static}/images/led-lights/IMG_3658.JPG
     :width: 400px
     :alt: Before, fluorescent tube present
 
@@ -127,7 +127,7 @@ light fittings or LEDs, if ordering different lights.
    tube connectors at each end need to remain because the new LED tube will be
    fitted here.
 
-    .. image:: |filename|./images/led-lights/IMG_3661.JPG
+    .. image:: {static}/images/led-lights/IMG_3661.JPG
         :width: 400px
         :alt: Fluorescent tube removed
 
@@ -143,7 +143,7 @@ light fittings or LEDs, if ordering different lights.
 #. Fit the reconfigured light fixture back onto the ceiling, reconnecting the
    mains cabling into the original terminal block.
 
-    .. image:: |filename|./images/led-lights/IMG_3664.JPG
+    .. image:: {static}/images/led-lights/IMG_3664.JPG
         :width: 400px
         :alt: Routing cables and fitting LEDs
 
@@ -152,13 +152,13 @@ light fittings or LEDs, if ordering different lights.
 
 #. The end result looks like this:
 
-   .. image:: |filename|./images/led-lights/IMG_3665.JPG
+   .. image:: {static}/images/led-lights/IMG_3665.JPG
       :width: 400px
       :alt: After - LED board replacement
 
 #. Turn the power back on, and turn on the light switch.
 
-   .. image:: |filename|./images/led-lights/IMG_3666.JPG
+   .. image:: {static}/images/led-lights/IMG_3666.JPG
       :width: 400px
       :alt: After - light on and installed
 
@@ -221,9 +221,9 @@ Stay tuned for more of the same as my house becomes more power and energy
 efficient!
 
 
-.. _licence: |filename|pages/licence.rst
-.. _1: |filename|2014-07-21-project-green-house-round-leds.rst
-.. _2: |filename|2014-10-07-project-green-house-straight-led.rst
-.. _first LED replacement post: |filename|2014-07-21-project-green-house-round-leds.rst
-.. _previous post: |filename|2014-07-21-project-green-house-round-leds.rst
+.. _licence: {filename}pages/licence.rst
+.. _1: {filename}2014-07-21-project-green-house-round-leds.rst
+.. _2: {filename}2014-10-07-project-green-house-straight-led.rst
+.. _first LED replacement post: {filename}2014-07-21-project-green-house-round-leds.rst
+.. _previous post: {filename}2014-07-21-project-green-house-round-leds.rst
 .. _Lighting Research Center: http://www.lrc.rpi.edu/programs/nlpip/lightingAnswers/lat5/abstract.asp

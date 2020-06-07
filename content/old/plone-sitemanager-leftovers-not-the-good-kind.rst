@@ -85,4 +85,4 @@ now be able to install or remove products accordingly again -- and also
 get rid of those old packages' physical files you don't need.
 
 .. _wildcard.fixpersistentutilities: http://pypi.python.org/pypi/wildcard.fixpersistentutilities
-.. _ZipFileTransport: |filename|plone-down-with-dodgy-products.rst
+.. _ZipFileTransport: {filename}plone-down-with-dodgy-products.rst

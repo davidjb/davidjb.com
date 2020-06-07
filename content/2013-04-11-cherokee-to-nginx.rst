@@ -13,7 +13,7 @@ configurability (10x for some static files) -- and reliability.
 
 .. note::
    See my `technical guide
-   <|filename|2013-04-12-cherokee-to-nginx-technical.rst>`_ for technical
+   <{filename}2013-04-12-cherokee-to-nginx-technical.rst>`_ for technical
    info about switching.
 
 Background

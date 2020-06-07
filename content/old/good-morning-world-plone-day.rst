@@ -18,11 +18,11 @@ Thanks to some great work by my lovely partner, she's whipped up some
 cupcakes for WPD.  I didn't do much save for helping with design and
 icing -- woo!  Here's the end results:
 
-.. image:: |filename|../images/cupcakes1.jpg
+.. image:: {static}/images/cupcakes1.jpg
    :width: 45%
    :alt: Cupcakes
 
-.. image:: |filename|../images/cupcakes2.jpg
+.. image:: {static}/images/cupcakes2.jpg
    :width: 45%
    :alt: More cupcakes
 

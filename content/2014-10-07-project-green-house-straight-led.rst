@@ -10,11 +10,11 @@ fluorescent tubes in my house over to LEDs.  In this post, I'll cover the
 replacement of short, straight T5 fluorescent tubes and discuss the
 interesting results I had in this space.
 
-.. image:: |filename|./images/led-lights/IMG_3663.JPG
+.. image:: {static}/images/led-lights/IMG_3663.JPG
    :width: 300px
    :alt: Before - T5 tube present
 
-.. image:: |filename|./images/led-lights/IMG_3665.JPG
+.. image:: {static}/images/led-lights/IMG_3665.JPG
    :width: 300px
    :alt: After - LED board replacement
 
@@ -30,11 +30,11 @@ Replacement lights
 * 2 x 16W straight LED panels: Cost $10.00 US each on
   `AliExpress <http://www.aliexpress.com/snapshot/6125442187.html>`__
 
-.. image:: |filename|./images/led-lights/IMG_3646.JPG
+.. image:: {static}/images/led-lights/IMG_3646.JPG
    :width: 300px
    :alt: LED lights delivered
 
-.. image:: |filename|./images/led-lights/IMG_3650.JPG
+.. image:: {static}/images/led-lights/IMG_3650.JPG
    :width: 300px
    :alt: LED light driver up close
 
@@ -85,7 +85,7 @@ Step by step
 Your experience will likely be different, so adapt the instructions to suit
 your own light fittings.
 
-.. image:: |filename|./images/led-lights/IMG_3658.JPG
+.. image:: {static}/images/led-lights/IMG_3658.JPG
     :width: 400px
     :alt: Before tube present
 
@@ -101,7 +101,7 @@ your own light fittings.
    one would remove the tube, the tube connectors, the electronic ballast, and
    all other fittings.
 
-    .. image:: |filename|./images/led-lights/IMG_3661.JPG
+    .. image:: {static}/images/led-lights/IMG_3661.JPG
         :width: 400px
         :alt: Tube removed
 
@@ -112,7 +112,7 @@ your own light fittings.
    require some crafty routing of cables, depending on the size of your light
    fitting and the space available.
 
-    .. image:: |filename|./images/led-lights/IMG_3664.JPG
+    .. image:: {static}/images/led-lights/IMG_3664.JPG
         :width: 400px
         :alt: Routing cables and fitting LEDs
 
@@ -122,13 +122,13 @@ your own light fittings.
 
 #. The end result looks like this:
 
-   .. image:: |filename|./images/led-lights/IMG_3665.JPG
+   .. image:: {static}/images/led-lights/IMG_3665.JPG
       :width: 400px
       :alt: After - LED board replacement
 
 #. Turn the power back on, and turn on the light switch.
 
-   .. image:: |filename|./images/led-lights/IMG_3666.JPG
+   .. image:: {static}/images/led-lights/IMG_3666.JPG
       :width: 400px
       :alt: After - light on and installed
 
@@ -193,7 +193,7 @@ into the room.  This stands to be more efficient, requiring less overall
 light, and thus less power, meaning a lower-power LED panel can equate to a
 higher wattage of a fluorescent tube.
 
-.. image:: |filename|./images/led-lights/IMG_3658.JPG
+.. image:: {static}/images/led-lights/IMG_3658.JPG
     :width: 400px
     :alt: Before tube present
 
@@ -213,5 +213,5 @@ paid back eventually, since a replacement T5 tube costs just shy of $7 AUD.
 Stay tuned for more of the same as the remainder of the house gets converted
 to LEDs and made more efficient!
 
-.. _previous post: |filename|2014-07-21-project-green-house-circular-leds.rst
+.. _previous post: {filename}2014-07-21-project-green-house-circular-leds.rst
 .. _Lighting Research Center: http://www.lrc.rpi.edu/programs/nlpip/lightingAnswers/lat5/abstract.asp

@@ -163,7 +163,7 @@ USA.
 
 See also:
 
-* `Dollar Rental Car Protection guide <|filename|files/Dollar-Rental-Car-Protection.pdf>`_
+* `Dollar Rental Car Protection guide <{static}/files/Dollar-Rental-Car-Protection.pdf>`_
 * `Wired's article on rental car fees <https://www.wired.com/2014/12/silly-fees-rental-car-blame-local-politicians/>`_
 
 Quick guide to rental initialisms

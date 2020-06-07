@@ -81,5 +81,5 @@ Recovery HD installer, you can use the backup copy of `dmtest`_ that I've got
 stored here.  Note again that this file was from Lion and may or may not work
 with any future macOS after 10.12.
 
-.. _dmtest: |filename|files/dmtest
+.. _dmtest: {static}/files/dmtest
 

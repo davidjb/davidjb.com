@@ -64,4 +64,4 @@ book themselves into things.  Would be great to see PFG know when a
 Google Calendar event was on (and stop people submitting) but it's a bit
 much just for now.
 
-.. _GoogleCalendar.py: |filename|../files/GoogleCalendar.py
+.. _GoogleCalendar.py: {static}/files/GoogleCalendar.py
