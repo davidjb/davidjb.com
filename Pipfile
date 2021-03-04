@@ -10,6 +10,3 @@ pelican = {git = "https://github.com/getpelican/pelican.git"}
 typogrify = "*"
 rst2html5 = "*"
 beautifulsoup4 = "*"
-
-[requires]
-python_version = "3.8"
