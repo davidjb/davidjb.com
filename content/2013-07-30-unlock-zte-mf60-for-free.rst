@@ -38,7 +38,7 @@ You'll need
   * `Firmware version check patch <https://sites.google.com/site/mf60guide/MF60-patch.zip?attredirects=0>`_ -
     (Thanks to Hexecute @ https://sites.google.com/site/mf60guide/)
 
-    (`Mirror <https://docs.google.com/file/d/0B5CAsXBD5-mAbzZKOFRwM3RfdkE/view>`__)
+    (`Mirror <https://drive.google.com/file/d/0B5CAsXBD5-mAbzZKOFRwM3RfdkE/view?resourcekey=0-C_JdcvtD5dI2u5OJvwDFwA>`__)
 
   * Drivers for Telstra Elite device circa June 2013):
     `ZTEMODEM.ISO <https://drive.google.com/file/d/0B5CAsXBD5-mAV2k1NGpKU1JJVkk/view?resourcekey=0-5hq0uDdCtRJ6N5RxYuiAxg>`_
