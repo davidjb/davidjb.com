@@ -60,14 +60,6 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# Blogroll
-# external = (('Planet Plone', 'http://planet.plone.org'),
-#             ('Apple Insider', 'http://appleinsider.com/'))
-# professional = (('jcu.me Research Porfolio', 'http://jcu.me'),
-#                 ('Latest coding activity', 'http://git.io/djb'))
-# fun = (('XKCD', 'http://xckd.com'),)
-# LINKS = list(itertools.chain(*itertools.izip(external, professional, fun)))
-
 # Social widget
 SOCIAL = (('github-square', 'http://git.io/djb'),
           ('twitter-square', 'http://twitter.com/davidjb_'),
