@@ -18,7 +18,6 @@ THEME = 'src/pure-single'
 
 DISQUS_SITENAME = 'davidjb'
 # GITHUB_URL = "https://github.com/davidjb/"
-# GOOGLE_ANALYTICS = 'UA-24253455-1'
 TWITTER_USERNAME = 'davidjb_'
 
 PATH = 'content'
@@ -63,9 +62,7 @@ AUTHOR_FEED_RSS = None
 # Social widget
 SOCIAL = (('github-square', 'http://git.io/djb'),
           ('twitter-square', 'http://twitter.com/davidjb_'),
-          ('linkedin-square', 'http://linkedin.com/in/davidbeitey'),
-          ('facebook-square', 'http://facebook.com/david.beitey'),
-          ('google-plus-square', 'http://google.com/+DavidBeitey'))
+          ('linkedin-square', 'http://linkedin.com/in/davidbeitey'))
 
 DEFAULT_PAGINATION = 10
 SUMMARY_MAX_LENGTH = 100
