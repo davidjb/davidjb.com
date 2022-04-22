@@ -6,9 +6,11 @@ JCU LyX Layout
 :slug: jcu-lyx-layout
 
 
-.. note Update: this is now available on GitHub at 
-       https://github.com/davidjb/JCU-Thesis-LyX-Layout for you to fork and
-       improve.  Feel free to drop me a line if you're using it!
+.. note::
+
+   Update: this is now available on GitHub at
+   https://github.com/davidjb/JCU-Thesis-LyX-Layout for you to fork and
+   improve.  Feel free to drop me a line if you're using it!
 
 What might be interesting to all you `James Cook
 University`_ or **JCU** folk out there (yeah, you know who you are!), is
