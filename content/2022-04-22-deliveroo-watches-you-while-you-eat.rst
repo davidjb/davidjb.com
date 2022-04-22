@@ -40,7 +40,7 @@ thousands of tracking events.
 Being of the same ilk, Deliveroo also tracks you as you use their system.  As
 you browse pages, click elements on a page or scroll up or down, Deliveroo
 fires off dozens requests with an event payload describing what you just did.
-For example, the following get sent every time your viewport scrolls to or
+For example, the following is sent every time your viewport scrolls to or
 past a category on a restaurant's menu:
 
 .. code-block:: text
@@ -80,9 +80,9 @@ past a category on a restaurant's menu:
 
 The specifics of the event data are hardly surprising, but what's really fun
 is a header that gets returned from the response to the API call – the
-developers at Deliveroo clearly have a sense of humour while they play `Big
-Brother`_ whilst spend your bandwidth and Internet quota. This header comes
-back in the HTTP response::
+developers at Deliveroo clearly have a sense of humour, all while they
+play `Big Brother`_, spending your bandwidth and Internet quota in the
+process. This header comes back in the HTTP response::
 
     x-watch-while-you-eat: Guardians of the Garlic: Vol. 2
 
