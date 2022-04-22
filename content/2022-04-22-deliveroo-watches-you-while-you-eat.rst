@@ -1,5 +1,5 @@
-﻿Deliveroo watches you while you eat
-####################################
+Deliveroo watches you while you eat
+###################################
 
 :date: 2022-04-22
 :category: Tech
@@ -172,9 +172,9 @@ and what settings they consider for someone to choosing to remain anonymous.
 Maybe they're good netizens and apply the settings supplied in Do Not Track
 (DNT) or Global Privacy Control (GPC) headers on the server-side *after*
 you've sent your data to them. Or maybe it's just another perfunctory attempt
-to 
+to appease anyone who might challenge it. 🤷‍♂️
 
-It's dinner time so I'm off to get some takeaway and watch a movie…
+It's dinner time — I'm off to get some takeaway and watch a movie…  
 
 .. _Deliveroo: https://deliveroo.com.au
 .. _behavioural analytics: https://en.wikipedia.org/wiki/Behavioral_analytics
