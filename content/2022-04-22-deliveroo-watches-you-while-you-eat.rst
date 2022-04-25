@@ -153,15 +153,15 @@ Origin`_ (or Adblock Plus, etc) to block these requests::
     ||events-tracker.deliveroo.net^
 
 This works for any Deliveroo site worldwide (and probably its white-labelled
-solution, Deliveroo Signature, as well). These `have been submitted
+solution, Deliveroo Signature, as well). These `have been submitted and merged
 <https://github.com/easylist/easylist/issues/11758>`_ for inclusion in
 `EasyPrivacy`_, which is something worth using in this case too because when
 an error occurs sending a tracking event, Deliveroo will attempt to send a
 crash report off to Sentry; EasyPrivacy has a rule for handling this already.
 
 Whilst on the topic of privacy, it's worth noting that Deliveroo does a
-`Privacy Policy <https://deliveroo.com.au/privacy>`_ which supposedly
-protects your data.  However, I'm really curious to know what they mean by:
+`Privacy Policy <https://deliveroo.com.au/privacy>`_ which supposedly protects
+your data.  However, I'm really curious to know what they mean by:
 
     Unless you have elected to remain anonymous through your device and/or
     platform settings, this information may be collected and use [sic] by us
